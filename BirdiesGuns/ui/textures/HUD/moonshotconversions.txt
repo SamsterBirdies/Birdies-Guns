@@ -1,0 +1,4 @@
+A = white (255,255,255) @ opacity 105
+D = white @ opacity 46
+R = white (255,255,255) @ opacity 105  insides=(brightness + 20)
+S = insides=(brightness + 20, brightness + 20)

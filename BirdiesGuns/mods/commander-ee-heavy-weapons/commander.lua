@@ -1,0 +1,5 @@
+table.insert(WeaponsToMark, "sbsaw")
+table.insert(WeaponsToMark, "sbquadcannon")
+table.insert(WeaponsToMark, "sbdowncannon")
+table.insert(WeaponsToMark, "sbrmhe")
+table.insert(WeaponsToMark, "sbdowndrone")

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7b09ba15-df9d-4d15-8b00-2ba9f61d05b5}">
+		<property name="assetPath">
+			<value>casings2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.9141950113378685</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4c822b67-4c04-48df-ba09-75b85bd024f2}</destination>
+		</relationship>
+	</object>
+</objects>

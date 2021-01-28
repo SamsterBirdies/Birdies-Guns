@@ -1,0 +1,1 @@
+ReloadTime = 2.4

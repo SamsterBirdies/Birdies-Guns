@@ -1,0 +1,9 @@
+dofile(path .. "/weapons/sbroofgunner/sbroofgunner.lua")
+Sprites={{Name = "sbroofgunner-base28",States={Normal={Frames={{texture= path .. "/weapons/sbroofgunner/base.tga",colour={0.5,0.8660254037844386,0.0,1},},mipmap=true,},},Idle=Normal,},},}
+Root.Sprite="sbroofgunner-base28"
+NodeEffects = {}
+MinFireSpeed = 2000.0
+MaxFireSpeed = 4000.1
+EnergyFireCost = 91.19112681877449
+MetalFireCost = 3.039704227292483
+Projectile = "_sbroofgunner28"

@@ -263,6 +263,9 @@
 		<relationship name="automators">
 			<destination>{99efadec-b704-4bdf-b3ba-12ffb33045e6}</destination>
 		</relationship>
+		<relationship name="modulators">
+			<destination>{daf81ff5-76ee-4bba-8c44-a41809762b91}</destination>
+		</relationship>
 	</object>
 	<object class="LowpassSimpleEffect" id="{e3b297bf-b774-43a6-8587-c18fc83552fe}">
 		<relationship name="automators">
@@ -355,6 +358,23 @@
 		<relationship name="automationCurves">
 			<destination>{f808de81-6fd1-4b23-a52e-d7bfe5608791}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{daf81ff5-76ee-4bba-8c44-a41809762b91}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>frequencyA</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="peakValue">
+			<value>10</value>
+		</property>
+		<property name="holdTime">
+			<value>0</value>
+		</property>
+		<property name="decayTime">
+			<value>20</value>
+		</property>
 	</object>
 	<object class="Automator" id="{d82f47e6-ad45-4ae3-9f80-2b0b1c4b787d}">
 		<property name="nameOfPropertyBeingAutomated">
@@ -460,7 +480,7 @@
 	</object>
 	<object class="AutomationPoint" id="{0b8cee76-75a7-4a4a-b828-f80f925b863b}">
 		<property name="position">
-			<value>0.91550451189499593</value>
+			<value>0.5</value>
 		</property>
 		<property name="value">
 			<value>22000</value>
@@ -503,7 +523,7 @@
 			<value>10000</value>
 		</property>
 		<property name="value">
-			<value>-8</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{c5c78e59-9ee3-4b66-b1bc-b9e557a43ab2}">

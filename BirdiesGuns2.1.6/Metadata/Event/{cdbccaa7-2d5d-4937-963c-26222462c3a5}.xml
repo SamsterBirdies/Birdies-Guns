@@ -49,7 +49,6 @@
 			<destination>{f9215789-f852-4159-ac3f-932b61e36cbd}</destination>
 			<destination>{98221694-0ff2-4a41-8371-984de18ede47}</destination>
 			<destination>{0c23a7e6-80d9-413c-95f1-82c7a1c1ba32}</destination>
-			<destination>{33efdf74-6483-4a36-aa19-c036f9b690af}</destination>
 			<destination>{749b54d8-79cf-4e48-9fdc-8a39aac0b61b}</destination>
 			<destination>{9ef8207a-ac3f-414c-af9e-ae88e65f0565}</destination>
 		</relationship>
@@ -127,11 +126,6 @@
 	<object class="AutomationTrack" id="{0c23a7e6-80d9-413c-95f1-82c7a1c1ba32}">
 		<relationship name="automator">
 			<destination>{04cb1632-5f9f-4831-858b-a5085a0037d3}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationTrack" id="{33efdf74-6483-4a36-aa19-c036f9b690af}">
-		<relationship name="automator">
-			<destination>{001c1b06-82f4-46fe-abfe-87dc2c71c0a1}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationTrack" id="{749b54d8-79cf-4e48-9fdc-8a39aac0b61b}">
@@ -245,7 +239,9 @@
 		</property>
 		<relationship name="automators">
 			<destination>{e188b347-3018-4e4b-a55e-b21e5abc91d2}</destination>
-			<destination>{001c1b06-82f4-46fe-abfe-87dc2c71c0a1}</destination>
+		</relationship>
+		<relationship name="modulators">
+			<destination>{74d0050f-88f6-4dc8-81c6-fdc3e47cf350}</destination>
 		</relationship>
 	</object>
 	<object class="LowpassSimpleEffect" id="{8123acc6-86da-44b0-bef9-59fa04b0b823}">
@@ -294,13 +290,28 @@
 			<destination>{3695d526-e177-4225-8883-15cc5a963c06}</destination>
 		</relationship>
 	</object>
-	<object class="Automator" id="{001c1b06-82f4-46fe-abfe-87dc2c71c0a1}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>qualityA</value>
+	<object class="ADSRModulator" id="{74d0050f-88f6-4dc8-81c6-fdc3e47cf350}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>frequencyA</value>
 		</property>
-		<relationship name="automationCurves">
-			<destination>{c233c7ed-155c-422e-88de-adc74a98bf15}</destination>
-		</relationship>
+		<property name="initialValue">
+			<value>35</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="peakValue">
+			<value>27</value>
+		</property>
+		<property name="holdTime">
+			<value>0</value>
+		</property>
+		<property name="decayTime">
+			<value>140</value>
+		</property>
+		<property name="sustainValue">
+			<value>-4</value>
+		</property>
 	</object>
 	<object class="Automator" id="{475f51c3-00e2-43aa-9343-2e30df8734c2}">
 		<property name="nameOfPropertyBeingAutomated">
@@ -333,15 +344,6 @@
 		<relationship name="automationPoints">
 			<destination>{a13d4f68-a08c-48f3-9c9b-93b054e4532b}</destination>
 			<destination>{a28f6f23-2020-455b-8786-56fce0d63e5c}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{c233c7ed-155c-422e-88de-adc74a98bf15}">
-		<relationship name="parameter">
-			<destination>{499ea026-1f78-4adc-aa2a-d38243ff9ef6}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{0c237eed-d400-45d8-96c3-ac7dec04475b}</destination>
-			<destination>{0c2bd508-48d8-49d4-9ae8-8ba59647287b}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{675b0607-5a35-44a6-b2b5-502425944c6d}">
@@ -384,26 +386,7 @@
 			<value>0.99589827727645619</value>
 		</property>
 		<property name="value">
-			<value>400</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{0c237eed-d400-45d8-96c3-ac7dec04475b}">
-		<property name="position">
-			<value>0.14009433962264151</value>
-		</property>
-		<property name="value">
-			<value>0.519999981</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{0c2bd508-48d8-49d4-9ae8-8ba59647287b}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>3.60000014</value>
-		</property>
-		<property name="curveShape">
-			<value>0.167298213</value>
+			<value>300</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{924c1a79-9e92-4c02-ba0b-82116cff4c22}">

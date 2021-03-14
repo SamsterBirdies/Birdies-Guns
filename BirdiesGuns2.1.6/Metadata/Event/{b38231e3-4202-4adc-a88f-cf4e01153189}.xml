@@ -49,7 +49,6 @@
 			<destination>{9502685a-c2db-499b-9143-ebba43f87276}</destination>
 			<destination>{af7139d8-a0a4-440d-beaf-235e569c32f9}</destination>
 			<destination>{26a1711f-a332-48e0-876c-7470c559c8e8}</destination>
-			<destination>{b069f8f0-575a-44b4-9b67-bc5409e45a4e}</destination>
 			<destination>{10ec185a-ef34-4867-b360-102b54ac406a}</destination>
 			<destination>{2b6fb01a-a43f-4232-8d4b-67577d164314}</destination>
 		</relationship>
@@ -130,11 +129,6 @@
 	<object class="AutomationTrack" id="{26a1711f-a332-48e0-876c-7470c559c8e8}">
 		<relationship name="automator">
 			<destination>{1deae080-fa8f-47e8-9bdd-400d29d8c1f7}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationTrack" id="{b069f8f0-575a-44b4-9b67-bc5409e45a4e}">
-		<relationship name="automator">
-			<destination>{546cc240-7cdb-4f8c-9560-7e4d8358774a}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationTrack" id="{10ec185a-ef34-4867-b360-102b54ac406a}">
@@ -248,7 +242,9 @@
 		</property>
 		<relationship name="automators">
 			<destination>{e2c4d3bd-da04-4dc8-a3a6-82aee33c9cbc}</destination>
-			<destination>{546cc240-7cdb-4f8c-9560-7e4d8358774a}</destination>
+		</relationship>
+		<relationship name="modulators">
+			<destination>{d335bb80-2505-464a-b509-3b2a57486470}</destination>
 		</relationship>
 	</object>
 	<object class="LowpassSimpleEffect" id="{62602528-0c9b-4ff1-8a09-8e84af1fba72}">
@@ -297,13 +293,22 @@
 			<destination>{2a571b34-db43-40a4-b7e9-4aad1ad46c8d}</destination>
 		</relationship>
 	</object>
-	<object class="Automator" id="{546cc240-7cdb-4f8c-9560-7e4d8358774a}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>qualityA</value>
+	<object class="ADSRModulator" id="{d335bb80-2505-464a-b509-3b2a57486470}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>frequencyA</value>
 		</property>
-		<relationship name="automationCurves">
-			<destination>{0021687c-e985-4959-9cb9-1caff16da0ed}</destination>
-		</relationship>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="peakValue">
+			<value>34</value>
+		</property>
+		<property name="holdTime">
+			<value>60</value>
+		</property>
+		<property name="decayTime">
+			<value>360</value>
+		</property>
 	</object>
 	<object class="Automator" id="{62a112f5-faa4-4cb9-9a4e-6962bcf5f6e7}">
 		<property name="nameOfPropertyBeingAutomated">
@@ -338,15 +343,6 @@
 			<destination>{a2623c46-60c4-44d6-a001-239d7cc6b0b7}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationCurve" id="{0021687c-e985-4959-9cb9-1caff16da0ed}">
-		<relationship name="parameter">
-			<destination>{bdee47d3-37ca-42d3-83f2-559a555b0304}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{1bc2068a-ef41-4ba0-af4e-0e919368d179}</destination>
-			<destination>{f6c4d51e-89df-4c67-a42d-4acb4f5e496a}</destination>
-		</relationship>
-	</object>
 	<object class="AutomationCurve" id="{da72744e-e12c-47e9-b08e-baf7e0012957}">
 		<relationship name="parameter">
 			<destination>{dabfcd41-64dd-4c2a-be52-ca80cf9756a2}</destination>
@@ -379,7 +375,7 @@
 			<value>0.99589827727645619</value>
 		</property>
 		<property name="value">
-			<value>400</value>
+			<value>320</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{a2623c46-60c4-44d6-a001-239d7cc6b0b7}">
@@ -388,25 +384,6 @@
 		</property>
 		<property name="value">
 			<value>22000</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{1bc2068a-ef41-4ba0-af4e-0e919368d179}">
-		<property name="position">
-			<value>0.14009433962264151</value>
-		</property>
-		<property name="value">
-			<value>0.519999981</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{f6c4d51e-89df-4c67-a42d-4acb4f5e496a}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>3.60000014</value>
-		</property>
-		<property name="curveShape">
-			<value>0.167298213</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{290ae035-9802-41a2-9d74-e50c40b58da5}">

@@ -12,5 +12,5 @@ if sbflamecopter then
 end
 local sbfognerf = FindWeapon("sbfog")
 if sbfognerf then
-	sbfognerf.MetalCost = 350
+	sbfognerf.MetalCost = 300
 end

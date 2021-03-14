@@ -118,8 +118,8 @@ table.insert(Projectiles,
 	Impact = 1,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
-	ProjectileDamage = 30000,
-	ProjectileSplashDamage = 30000,
+	ProjectileDamage = 300000,
+	ProjectileSplashDamage = 300000,
 	ProjectileSplashDamageMaxRadius = 90.0,
 	ProjectileSplashMaxForce = 1,
 	SpeedIndicatorFactor = 0.50,
@@ -171,7 +171,6 @@ table.insert(Projectiles,
 
 	DamageMultiplier =
 	{
-		{ SaveName = "adamantium", Direct = 900000000, Splash = 900000000},
 		{ SaveName = "shield", Direct = 0, Splash = 0},
 		{ SaveName = "backbracing", Direct = 0, Splash = 0},
 	},
@@ -685,13 +684,13 @@ table.insert(Projectiles,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
 	PenetrationDamage = 400,
-	ProjectileDamage = 5.0,
+	ProjectileDamage = 4.0,
 	WeaponDamageBonus = -2.0,
-	ProjectileSplashDamage = 2.0, -- low splash damage
+	ProjectileSplashDamage = 1.5, -- low splash damage
 	ProjectileSplashDamageMaxRadius = 100.0,
 	ProjectileSplashMaxForce = 10000, -- moderate shockwave
-	AntiAirHitpoints = 1000,
-	AntiAirDamage = 2000,
+	AntiAirHitpoints = 100,
+	AntiAirDamage = 200,
 	SpeedIndicatorFactor = 0.25,
 	Gravity = 0,
 	

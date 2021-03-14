@@ -5,7 +5,7 @@ LifeSpan = 1.9
 Sprites =
 {
 }
---SoundEvent = "mods/sbBGsoundbank/effects/reload_slingshot"
+SoundEvent = "mods/sbBGsoundbank/effects/reload_slingshot"
 Effects =
 {
 	--[[{

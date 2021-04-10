@@ -3,7 +3,7 @@
  
 I am unlikely to add much more weapons to the mod. If you wish to add more weapons, please fork this repo.
  
-You are allowed to post your own version of Birdies Guns or copy anything from this mod.
+You are allowed to upload your own version of Birdies Guns to the steam workshop or copy anything from this mod for use on the steam workshop
  
  To get sound working in the mod, download FMOD studio version 2.1.6 and import the project folder "BirdiesGuns2.1.6".
  Delete the master bank, create a new master bank, and re-assign the sound events to that bank.

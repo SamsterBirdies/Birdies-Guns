@@ -197,7 +197,15 @@ Sprites =
 				{
 					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload01.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload02.png", duration = 0.1 },
-					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload03.png", duration = 13.6 },
+					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload03.png", duration = 200},
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload02.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbpullbeam/FirebeamReload01.png", duration = 0.1 },
 					mipmap = true,

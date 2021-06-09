@@ -92,32 +92,28 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbperiscope/base.tga", duration = (ReloadTime - 1.25)},
+					{ texture = path .. "/weapons/sbperiscope/base.tga", duration = 100},
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbperiscope/base-0.tga", duration = 0.05 },
-				
 					{ texture = path .. "/weapons/sbperiscope/base-2.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-4.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-6.tga", duration = 0.05 },
-				
 					{ texture = path .. "/weapons/sbperiscope/base-8.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-10.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-12.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-14.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-16.tga", duration = 0.05 },
-				
 					{ texture = path .. "/weapons/sbperiscope/base-18.tga", duration = 0.05 },
-				
 					{ texture = path .. "/weapons/sbperiscope/base-20.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/base-22.tga", duration = 0.05 },
-				
-					{ texture = path .. "/weapons/sbperiscope/base.tga", duration = 0.05 },
+					{ texture = path .. "/weapons/sbperiscope/base.tga", duration = 0.65 },
 					mipmap = true,
 					duration = 0.2,
 				},
@@ -137,43 +133,33 @@ Sprites =
 				{
 					{ texture = path .. "/weapons/sbperiscope/head1.tga", duration = 0.2 },
 					{ texture = path .. "/weapons/sbperiscope/head1-26.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/head1-24.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/head1-22.tga", duration = 0.05 },
-					
 					{ texture = path .. "/weapons/sbperiscope/head1-28.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-0.tga", duration = (ReloadTime - 1.1) },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-2.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-4.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-6.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-8.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-10.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-12.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-14.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-16.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-18.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-20.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-22.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-24.tga", duration = 0.05 },
-					
-					{ texture = path .. "/weapons/sbperiscope/head1-26.tga", duration = 0.05 },
-					{ texture = path .. "/weapons/sbperiscope/head1.tga", duration = 0.2 },
+					{ texture = path .. "/weapons/sbperiscope/head1-0.tga", duration = 200 },
 					mipmap = true,
 					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
+					{ texture = path .. "/weapons/sbperiscope/head1-2.tga",  },
+					{ texture = path .. "/weapons/sbperiscope/head1-4.tga",  },
+					{ texture = path .. "/weapons/sbperiscope/head1-6.tga",  },
+					{ texture = path .. "/weapons/sbperiscope/head1-8.tga",  },
+					{ texture = path .. "/weapons/sbperiscope/head1-10.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-12.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-14.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-16.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-18.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-20.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-22.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-24.tga", },
+					{ texture = path .. "/weapons/sbperiscope/head1-26.tga", },
+					mipmap = true,
+					duration = 0.05,
 				},
 				NextState = "Normal",
 			},

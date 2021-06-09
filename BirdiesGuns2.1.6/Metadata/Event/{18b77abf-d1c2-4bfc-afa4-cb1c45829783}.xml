@@ -71,9 +71,6 @@
 		<property name="priority">
 			<value>3</value>
 		</property>
-		<property name="triggerCooldown">
-			<value>20</value>
-		</property>
 	</object>
 	<object class="MarkerTrack" id="{3078ac9a-c258-4036-ae75-924a5007c40b}" />
 	<object class="GroupTrack" id="{eed3cb1a-3eb4-43f8-a153-091bf688555b}">
@@ -348,7 +345,7 @@
 			<value>7530.7629204265795</value>
 		</property>
 		<property name="value">
-			<value>9000</value>
+			<value>3000</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{7da7a642-e496-40a2-b310-5e4cdb39f552}">
@@ -356,7 +353,7 @@
 			<value>7530.7629204265795</value>
 		</property>
 		<property name="value">
-			<value>250</value>
+			<value>300</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{2bd35024-b928-44eb-a775-7e1b2d9af97e}">

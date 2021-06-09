@@ -103,7 +103,15 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbsaw/reload1-0-4.png", duration = ReloadTime - 2.1 },
+					{ texture = path .. "/weapons/sbsaw/reload1-0-4.png", duration = 200 },
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbsaw/reload1-0-3", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload1-0-2", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload1-0-1", duration = 0.1 },
@@ -115,9 +123,7 @@ Sprites =
 					{ texture = path .. "/weapons/sbsaw/reload1-5", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload1-6", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload1-7", duration = 0.1 },
-					{ texture = path .. "/weapons/sbsaw/reload1-8", duration = 1.1 },
-					
-					
+					{ texture = path .. "/weapons/sbsaw/reload1-8.tga", duration = 1.1 },
 					mipmap = true,
 					duration = 0.2,
 				},
@@ -135,7 +141,16 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/effects/media/blank.png", duration = ReloadTime - 1.2 },
+					{ texture = path .. "/effects/media/blank.png", duration = 200 },
+					mipmap = true,
+					duration = 0.2,
+				},
+				NextState = "Normal",
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbsaw/reload2-0", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload2-1", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload2-2", duration = 0.1 },
@@ -148,8 +163,6 @@ Sprites =
 					{ texture = path .. "/weapons/sbsaw/reload2-9", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload2-10", duration = 0.1 },
 					{ texture = path .. "/weapons/sbsaw/reload2-11", duration = 0.1 },
-					{ texture = path .. "/weapons/sbsaw/reload2-12", duration = 5.0 },
-					
 					mipmap = true,
 					duration = 0.2,
 				},

@@ -1,6 +1,6 @@
 --  age (in seconds) at which the explosion deletes itself
 --  make sure this exceedes the age of all effects
-LifeSpan = 30.0
+LifeSpan = 1
 
 Effects =
 {

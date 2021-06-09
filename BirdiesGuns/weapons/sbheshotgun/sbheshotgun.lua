@@ -105,7 +105,15 @@ Sprites =
 					{ texture = "mods/weapon_pack/weapons/shotgun/barrel03.png", duration = 0.1 },
 					{ texture = "mods/weapon_pack/weapons/shotgun/barrel04.png", duration = 0.1 },
 					{ texture = "mods/weapon_pack/weapons/shotgun/barrel05.png", duration = 0.1 },
-					{ texture = "mods/weapon_pack/weapons/shotgun/barrel04.png", duration = (ReloadTime - 1.1) },
+					{ texture = "mods/weapon_pack/weapons/shotgun/barrel04.png", duration = 100 },
+					mipmap = true,
+					duration = ReloadFramePeriod,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = "mods/weapon_pack/weapons/shotgun/barrel03.png", duration = 0.1 },
 					{ texture = "mods/weapon_pack/weapons/shotgun/barrel02.png", duration = 0.1 },
 					mipmap = true,

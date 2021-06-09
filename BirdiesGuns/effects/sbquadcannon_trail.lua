@@ -1,6 +1,6 @@
 --  age (in seconds) at which the explosion deletes itself
 --  make sure this exceedes the age of all effects
-LifeSpan = 3
+LifeSpan = 0.8
 SoundEvent = "effects/mortar_trail.lua"
 Effects =
 {

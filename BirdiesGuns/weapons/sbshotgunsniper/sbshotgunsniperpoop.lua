@@ -110,7 +110,16 @@ Sprites =
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim07.png", duration = 0.1 },
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim08.png", duration = 0.1 },
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim09.png", duration = 0.1 },
-					{ texture = "weapons/snipertower/Sniper-ReloadAnim10.png", duration = (ReloadTime - 1.9) },
+					{ texture = "weapons/snipertower/Sniper-ReloadAnim10.png", duration = 100 },
+					mipmap = true,
+					duration = 0.2,
+				},
+
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim11.png", duration = 0.1 },
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim12.png", duration = 0.1 },
 					{ texture = "weapons/snipertower/Sniper-ReloadAnim13.png", duration = 0.1 },

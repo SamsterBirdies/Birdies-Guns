@@ -683,14 +683,14 @@ table.insert(Projectiles,
 	ProjectileShootDownRadius = 60,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
-	PenetrationDamage = 400,
-	ProjectileDamage = 4.0,
-	WeaponDamageBonus = -2.0,
+	PenetrationDamage = 380,
+	ProjectileDamage = 2.0,
+	--WeaponDamageBonus = -1.0,
 	ProjectileSplashDamage = 1.5, -- low splash damage
 	ProjectileSplashDamageMaxRadius = 100.0,
 	ProjectileSplashMaxForce = 10000, -- moderate shockwave
-	AntiAirHitpoints = 100,
-	AntiAirDamage = 200,
+	AntiAirHitpoints = 10,
+	AntiAirDamage = 50,
 	SpeedIndicatorFactor = 0.25,
 	Gravity = 0,
 	
@@ -722,6 +722,7 @@ table.insert(Projectiles,
 		{ SaveName = "sbantigravity", Direct = 1, Splash = 0 },
 		{ SaveName = "sbcardboard", Direct = 0.5, Splash = 0.5 },
 		{ SaveName = "sbcardboardbg", Direct = 0.5, Splash = 0.5 },
+		{ SaveName = "weapon", Direct = 0, Splash = 1 },
 	},
 
 })
@@ -2964,6 +2965,8 @@ function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incend
 	table.insert(Projectiles, flamingProjectile)
 end
 --flaming versions
+--MakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
+
 sbMakeFlamingVersion("sbfirerocket", 1.3, 3.5, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbarrow", 1.3, 0.3, "flaming_sniper_trail", 50, nil, nil)
 sbMakeFlamingVersion("sbarrowr", 1.3, 1.25, "flaming_sniper_trail", 70, nil, genericFlamingExpire)
@@ -2976,7 +2979,7 @@ sbMakeFlamingVersion("sbheshotgun", 1.25, 0.2, "flaming_sniper_trail", nil, smal
 sbMakeFlamingVersion("sbquadcannon", 1.25, 0.1, "flaming_trail", 50, nil, nil)
 sbMakeFlamingVersion("sbssm", 1.25, 5, "flaming_trail", 80, nil, genericFlamingExpire )
 sbMakeFlamingVersion("sbssmfire", 1.3, 10, "flaming_trail", 120, nil, genericFlamingExpire )
-sbMakeFlamingVersion("sbfog", 3.0, 20, "empty", 10, nil, nil)
+sbMakeFlamingVersion("sbfog", 1.0, 20, "empty", 0, nil, nil)
 	local sbflamefogfind = FindProjectile("flamingsbfog") if sbflamefogfind then 
 		sbflamefogfind.Projectile.Root.Sprite = "sbfog_yellow"
 		sbflamefogfind.Effects.Impact.default = path .. "/effects/empty.lua"

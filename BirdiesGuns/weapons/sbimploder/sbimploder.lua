@@ -33,7 +33,7 @@ CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
 ShellEffect = ""
 ReloadEffect = path .. "/effects/sbimploderreload.lua"
-ReloadEffectOffset = -2.3
+ReloadEffectOffset = -1.8
 Projectile = "sbimploder"
 BarrelLength = 100.0
 MinFireClearance = 500
@@ -113,7 +113,15 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbimploder/Cannon-Reload03.png", duration = (ReloadTime - 1.8) },
+					{ texture = path .. "/weapons/sbimploder/Cannon-Reload03.png", duration = 200 },
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload04.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload05.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload06.png", duration = 0.1 },
@@ -126,7 +134,6 @@ Sprites =
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload13.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload14.png", duration = 0.1 },
 					{ texture = path .. "/weapons/sbimploder/Cannon-Reload15.png", duration = 0.1 },
-					{ texture = path .. "/weapons/sbimploder/Cannon-Reload01.png", duration = 0.9 },
 					mipmap = true,
 					duration = 0.2,
 				},

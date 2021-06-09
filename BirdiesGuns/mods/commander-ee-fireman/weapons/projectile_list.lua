@@ -1,8 +1,12 @@
 if active then
---[[sbfogflame = FindProjectile("sbfog")
-sbfogflame.Projectile.Root.Sprite = "sbfog_yellow"
-sbfogflame.Effects.Impact.default = path .. "/effects/smoke.lua"
-sbfogflame.IncendiaryRadius = 10]]
+
+sbfogflame = FindProjectile("flamingsbfog")
+if sbfogflame then 
+	sbfogflame.IncendiaryRadius = 0
+	sbfogflame.IncendiaryRadiusHeated = 0
+end
+
+
 end
 if active then
 sbimploderflame = FindProjectile("sbimploder")

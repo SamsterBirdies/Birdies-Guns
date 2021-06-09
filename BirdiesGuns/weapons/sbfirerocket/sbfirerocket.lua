@@ -95,7 +95,15 @@ Sprites =
 				{
 					{ texture = path .. "/weapons/sbfirerocket/head02.png", duration = 0.05 },
 					{ texture = path .. "/weapons/sbfirerocket/head03.png", duration = 0.05  },
-					{ texture = path .. "/weapons/sbfirerocket/head04.png", duration = 11.6  },
+					{ texture = path .. "/weapons/sbfirerocket/head04.png", duration = 100  },
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbfirerocket/head05.png", duration = 0.05  },
 					{ texture = path .. "/weapons/sbfirerocket/head06.png", duration = 0.05  },
 					{ texture = path .. "/weapons/sbfirerocket/head07.png", duration = 0.05  },

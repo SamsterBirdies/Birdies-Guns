@@ -110,7 +110,16 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/effects/media/blank.png", duration = (ReloadTime - 1.1)},
+					{ texture = path .. "/effects/media/blank.png", duration = 200},
+					mipmap = true,
+					duration = 0.2,
+				},
+				NextState = "Normal",
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .."/weapons/sbdowndrone/reload-22.png", duration = 0.05 },
 					{ texture = path .."/weapons/sbdowndrone/reload-21.png", duration = 0.05 },
 					{ texture = path .."/weapons/sbdowndrone/reload-20.png", duration = 0.05 },
@@ -132,7 +141,6 @@ Sprites =
 					{ texture = path .."/weapons/sbdowndrone/reload-4.png", duration = 0.05 },
 					{ texture = path .."/weapons/sbdowndrone/reload-3.png", duration = 0.05 },
 					{ texture = path .."/weapons/sbdowndrone/reload-2.png", duration = 0.05 },
-					{ texture = path .."/weapons/sbdowndrone/reload-1.png", duration = 0.2 },
 					mipmap = true,
 					duration = 0.2,
 				},

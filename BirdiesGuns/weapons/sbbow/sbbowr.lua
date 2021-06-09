@@ -91,7 +91,15 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbbow/reload1.tga", duration = (ReloadTime - 0.3) },
+					{ texture = path .. "/weapons/sbbow/reload1.tga", duration = 200 },
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbbow/reload2.tga", duration = 0.3 },
 					mipmap = true,
 					duration = 0.2,
@@ -110,7 +118,15 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/effects/media/blank.tga", duration = (ReloadTime - 0.3) },
+					{ texture = path .. "/effects/media/blank.tga", duration = 200 },
+					mipmap = true,
+					duration = 0.2,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbbow/reloadr1-2.tga", duration = 0.3 },
 					mipmap = true,
 					duration = 0.2,

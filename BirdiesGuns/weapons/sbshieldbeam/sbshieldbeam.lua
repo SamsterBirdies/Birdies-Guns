@@ -188,7 +188,15 @@ Sprites =
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_19", duration = 0.05 },
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.05 },
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_21", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_22", duration = (ReloadTime - 2) },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_22", duration = 200 },
+					mipmap = true,
+					duration = 0.05,
+				},
+			},
+			ReloadEnd =
+			{
+				Frames =
+				{
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_21", duration = 0.05 },
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.05 },
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_19", duration = 0.05 },

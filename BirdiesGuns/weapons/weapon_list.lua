@@ -2021,7 +2021,7 @@ table.insert(Weapons, IndexOfWeapon("sboilgun"),
 	
 })
 
-
+--[[
 local sbnukenerfs = FindWeapon("missile")
 if sbnukenerfs then
 sbnukenerfs.Upgrades =
@@ -2050,7 +2050,7 @@ sbnukenerfsinv.Upgrades =
 			},
 		}
 end
-
+]]
 --indef functions
 RegisterApplyMod(function()
 	local indefcheck = FindWeapon("_cannon2")

@@ -133,8 +133,8 @@ Root =
 		{
 			Name = "Head",
 			Angle = 0,
-			Pivot = { -0.065, 0.15 },
-			PivotOffset = { 0.2, 0.0 },
+			Pivot = { -0.0765, 0.166 },
+			PivotOffset = { 0.224, 0.0086 },
 --			Pivot = { 0, -1 },
 --			PivotOffset = { 0, 1 },
 			Sprite = "sboilgun-head",

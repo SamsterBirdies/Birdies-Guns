@@ -2671,6 +2671,7 @@ SetDamageMultiplier("missile2", { SaveName = "sbroofminigun", Direct = 1, Splash
 SetDamageMultiplier("missile2", { SaveName = "sb50cal", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("missile2", { SaveName = "sbarrowr", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("missile2", { SaveName = "sbslingshotgrenade", Direct = 1, Splash = 0.4 })]]
+--[[
 SetDamageMultiplier("damagedmissile2", { SaveName = "machinegun", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("damagedmissile2", { SaveName = "minigun", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("damagedmissile2", { SaveName = "sniper2", Direct = 1, Splash = 0.4 })
@@ -2679,7 +2680,7 @@ SetDamageMultiplier("damagedmissile2", { SaveName = "sbroofgunner", Direct = 1, 
 SetDamageMultiplier("damagedmissile2", { SaveName = "sbroofminigun", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("damagedmissile2", { SaveName = "sb50cal", Direct = 1, Splash = 0.4 })
 SetDamageMultiplier("damagedmissile2", { SaveName = "sbarrowr", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sbslingshotgrenade", Direct = 1, Splash = 0.4 })
+SetDamageMultiplier("damagedmissile2", { SaveName = "sbslingshotgrenade", Direct = 1, Splash = 0.4 })]]
 
 --multipliers against periscopes
 SetDamageMultiplier("mortar2", { SaveName = "sbperiscope2", Direct = 2.5, Splash = 2.0 })

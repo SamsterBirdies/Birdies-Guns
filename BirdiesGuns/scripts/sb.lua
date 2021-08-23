@@ -1,6 +1,6 @@
 --Anyone may copy and freely use anything in this file regardless of what the mod description says. -SamsterBirdies
 
-sbinfinity = math.huge
+sbinfinity = 2000000000
 sbblank = path .. "/effects/media/blank.png"
 sbUniversalImpactMultiplier = 1.0
 

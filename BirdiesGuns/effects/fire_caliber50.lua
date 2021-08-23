@@ -86,4 +86,5 @@ Effects =
 	},]]
 
 }
-	SoundEvent = "mods/sbBGsoundbank/effects/fire_caliber50"
+SoundEvent = "mods/sbBGsoundbank/effects/fire_caliber50"
+--SoundEvent = "effects/missile_ground_hit"

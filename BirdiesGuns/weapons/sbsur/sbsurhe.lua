@@ -153,7 +153,7 @@ Root =
 		{
 			Name = "Head",
 			Angle = 0,
-			Pivot = { -0.12, -0.08},
+			Pivot = { -0.14, -0.065},
 			PivotOffset = { 0.12, 0.08 },
 			Sprite = "sbsurhe-head",
 			UserData = 50,

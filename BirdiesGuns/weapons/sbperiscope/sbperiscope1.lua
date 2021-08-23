@@ -162,8 +162,8 @@ Root =
 		{
 			Name = "Head",
 			Angle = 0,
-			Pivot = { 0, -0.55},
-			PivotOffset = { 0.1, -0.18 },
+			Pivot = { 0.0016, -0.4633},
+			PivotOffset = {0.0767, -0.29},
 			Sprite = "sbperiscope2-head",
 			UserData = 50,
 

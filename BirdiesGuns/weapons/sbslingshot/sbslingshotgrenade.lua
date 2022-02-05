@@ -30,6 +30,7 @@ ReloadEffectOffset = -0.2
 Projectile = "sbgrenade"
 BarrelLength = 60.0
 MinFireClearance = 500
+RetriggerFireEffect = true
 FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
 ReloadTime = 4.5

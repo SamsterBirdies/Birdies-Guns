@@ -7,3 +7,4 @@ MaxFireSpeed = 8008.1
 EnergyFireCost = 788.5549346006883
 MetalFireCost = 19.06356660099118
 Projectile = "_sbfirebullet7"
+RoundsEachBurst = 7

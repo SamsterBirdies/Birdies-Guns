@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{5d0b093b-9c9a-41aa-8f04-3fd08cc5144e}">
 		<property name="assetPath">
 			<value>firebooom.ogg</value>

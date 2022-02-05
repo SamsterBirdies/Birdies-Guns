@@ -7,3 +7,4 @@ MaxFireSpeed = 9022.1
 EnergyFireCost = 5749.40413057126
 MetalFireCost = 116.90200781645524
 Projectile = "_sbbigminigun10"
+RoundsEachBurst = 14

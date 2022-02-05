@@ -1,5 +1,4 @@
---  age (in seconds) at which the explosion actor deletes itself
---  make sure this exceedes the age of all effects
+
 LifeSpan = 6.0
 
 LaunchDelay = 0.5
@@ -8,18 +7,6 @@ EffectDepth = 90
 SoundEvent = "mods/sbBGsoundbank/effects/fire_sbdrone"
 Effects =
 {
---[[
-	{
-		Type = "sound",
-		TimeToTrigger = LaunchDelay,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/rocket_launch.mp3",
-		PlayForEnemy = true,
-		Volume = 1,
-		Priority = 254,
-		Falloff = true,
-	},
-]]	
 	{
 		Type = "sparks",
 		TimeToTrigger = 0.0,
@@ -27,49 +14,41 @@ Effects =
 		SparkCount = 20,
 		BurstPeriod = 0.5,
 		SparksPerBurst = 2,
-		LocalPosition = { x = 0, y = EffectVerticalOffset, z = EffectDepth },	-- how to place the origin relative to effect position and direction (0, 0) 
+		LocalPosition = { x = 0, y = EffectVerticalOffset, z = EffectDepth },	
 		Sprite = "effects/media/Steam.tga",
 
-		Gravity = 0,						-- gravity applied to particle (981 is earth equivalent)
+		Gravity = 0,					
 
-		NormalDistribution =					-- distribute sparks evenly between two angles with optional variation
+		NormalDistribution =		
 		{
 			Mean = 0,
-			StdDev = 5,						-- standard deviation at each iteration in degrees (zero will make them space perfectly even)
+			StdDev = 5,					
 		},
 
 		Keyframes =							
 		{
 			{
-				Angle = 0,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
-				RadialOffsetMin = 0,		-- minimum distance from effect origin
-				RadialOffsetMax = 5,		-- maximum distance from effect origin
-				ScaleMean = 0.35,			-- mean scale (normal distribution)
-				ScaleStdDev = 0.01,			-- standard deviation of scale (0 will make them all the same size)
-				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 50,				-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 1,			-- standard deviation of spark speed at emission
-				Drag = 0,					-- drag of sparks (zero will make them continue at same speed)
-				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
-				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
-				RotationalSpeedMean = 5,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 3,				-- mean age in seconds (normal distribution)
-				AgeStdDev = .1,				-- standard deviation of age in seconds (zero makes them last the same length of time)
-				AlphaKeys = { 0.5, 0.75 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
-				ScaleKeys = { 0.25, 0.75 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 255 }, -- Colour used to modulate the sprite
+				Angle = 0,					
+				RadialOffsetMin = 0,		
+				RadialOffsetMax = 5,		
+				ScaleMean = 0.35,			
+				ScaleStdDev = 0.01,			
+				SpeedStretch = 0,			
+				SpeedMean = 50,				
+				SpeedStdDev = 1,			
+				Drag = 0,					
+				RotationMean = 0,			
+				RotationStdDev = 45,		
+				RotationalSpeedMean = 5,	
+				RotationalSpeedStdDev = 0,	
+				AgeMean = 3,				
+				AgeStdDev = .1,				
+				AlphaKeys = { 0.5, 0.75 },	
+				ScaleKeys = { 0.25, 0.75 },	
+				colour = { 255, 255, 255, 255 }, 
 			},
 		},
 	},
---[[
-	{
-		Type = "sound",
-		TimeToTrigger = LaunchDelay,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/audio/sfx/weapons/weapon_missile_swarm_fire_01.wav",
-	},
-]]
 	{
 		Type = "sparks",
 		TimeToTrigger = 0,
@@ -77,18 +56,10 @@ Effects =
 		SparkCount = 12,
 		BurstPeriod = 0.2,
 		SparksPerBurst = 3,
-		LocalPosition = { x = 0, y = EffectVerticalOffset, z = EffectDepth },	-- how to place the origin relative to effect position and direction (0, 0) 
+		LocalPosition = { x = 0, y = EffectVerticalOffset, z = EffectDepth },
 		Sprite = "effects/media/Steam",
 
-		Gravity = -50,						-- gravity applied to particle (981 is earth equivalent)
---[[
-		EvenDistribution =					-- distribute sparks evenly between two angles with optional variation
-		{
-			Min = -30,						-- minimum angle in degrees (e.g. -180, 45, 0)
-			Max = 30,						-- maximum angle in degrees (e.g. -180, 45, 0)
-			StdDev = 1,						-- standard deviation at each iteration in degrees (zero will make them space perfectly even)
-		},
-]]
+		Gravity = -50,
 		NormalDistribution =
 		{
 			Mean = 180,
@@ -98,109 +69,85 @@ Effects =
 		Keyframes =
 		{
 			{
-				Angle = -180,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
-				RadialOffsetMin = 0,		-- minimum distance from effect origin
-				RadialOffsetMax = 50,		-- maximum distance from effect origin
-				ScaleMean = 0.5,			-- mean scale (normal distribution)
-				ScaleStdDev = 0.02,			-- standard deviation of scale (0 will make them all the same size)
-				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 350,			-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 10,			-- standard deviation of spark speed at emission
-				Drag = 0.1,					-- drag of sparks (zero will make them continue at same speed)
-				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
-				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
-				RotationalSpeedMean = 5,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 1.5,				-- mean age in seconds (normal distribution)
-				AgeStdDev = .2,				-- standard deviation of age in seconds (zero makes them last the same length of time)
-				AlphaKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
-				ScaleKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 255 }, -- Colour used to modulate the sprite
+				Angle = -180,				
+				RadialOffsetMin = 0,		
+				RadialOffsetMax = 50,		
+				ScaleMean = 0.5,			
+				ScaleStdDev = 0.02,			
+				SpeedStretch = 0,			
+				SpeedMean = 350,			
+				SpeedStdDev = 10,			
+				Drag = 0.1,					
+				RotationMean = 0,			
+				RotationStdDev = 45,		
+				RotationalSpeedMean = 5,	
+				RotationalSpeedStdDev = 0,	
+				AgeMean = 1.5,				
+				AgeStdDev = .2,				
+				AlphaKeys = { 0.1, 0.75 },	
+				ScaleKeys = { 0.1, 0.75 },	
+				colour = { 255, 255, 255, 255 }, 
 			},
 			{
-				Angle = -165,				-- angle of keyframe in degrees (e.g. -180, 45, 0)
-				RadialOffsetMin = 0,		-- minimum distance from effect origin
-				RadialOffsetMax = 20,		-- maximum distance from effect origin
-				ScaleMean = 0.5,			-- mean scale (normal distribution)
-				ScaleStdDev = 0.02,			-- standard deviation of scale (0 will make them all the same size)
-				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 30,				-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 1,			-- standard deviation of spark speed at emission
-				Drag = 0.2,					-- drag of sparks (zero will make them continue at same speed)
-				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
-				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
-				RotationalSpeedMean = -180,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 1,				-- mean age in seconds (normal distribution)
-				AgeStdDev = .1,				-- standard deviation of age in seconds (zero makes them last the same length of time)
-				AlphaKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
-				ScaleKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 255 }, -- Colour used to modulate the sprite
+				Angle = -165,				
+				RadialOffsetMin = 0,		
+				RadialOffsetMax = 20,		
+				ScaleMean = 0.5,			
+				ScaleStdDev = 0.02,			
+				SpeedStretch = 0,			
+				SpeedMean = 30,				
+				SpeedStdDev = 1,			
+				Drag = 0.2,					
+				RotationMean = 0,			
+				RotationStdDev = 45,		
+				RotationalSpeedMean = -180,	
+				RotationalSpeedStdDev = 0,	
+				AgeMean = 1,				
+				AgeStdDev = .1,				
+				AlphaKeys = { 0.1, 0.75 },	
+				ScaleKeys = { 0.1, 0.75 },	
+				colour = { 255, 255, 255, 255 },
 			},
 			{
-				Angle = 165,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
-				RadialOffsetMin = 0,		-- minimum distance from effect origin
-				RadialOffsetMax = 20,		-- maximum distance from effect origin
-				ScaleMean = 0.5,			-- mean scale (normal distribution)
-				ScaleStdDev = 0.02,			-- standard deviation of scale (0 will make them all the same size)
-				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 30,				-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 1,			-- standard deviation of spark speed at emission
-				Drag = 0.2,					-- drag of sparks (zero will make them continue at same speed)
-				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
-				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
-				RotationalSpeedMean = 180,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 1,				-- mean age in seconds (normal distribution)
-				AgeStdDev = .1,				-- standard deviation of age in seconds (zero makes them last the same length of time)
-				AlphaKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
-				ScaleKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 255 }, -- Colour used to modulate the sprite
+				Angle = 165,					
+				RadialOffsetMin = 0,	
+				RadialOffsetMax = 20,	
+				ScaleMean = 0.5,		
+				ScaleStdDev = 0.02,		
+				SpeedStretch = 0,		
+				SpeedMean = 30,			
+				SpeedStdDev = 1,		
+				Drag = 0.2,				
+				RotationMean = 0,		
+				RotationStdDev = 45,	
+				RotationalSpeedMean = 180,
+				RotationalSpeedStdDev = 0,
+				AgeMean = 1,			
+				AgeStdDev = .1,			
+				AlphaKeys = { 0.1, 0.75 },
+				ScaleKeys = { 0.1, 0.75 },
+				colour = { 255, 255, 255, 255 },
 			},
 			{
-				Angle = 180,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
-				RadialOffsetMin = 0,		-- minimum distance from effect origin
-				RadialOffsetMax = 50,		-- maximum distance from effect origin
-				ScaleMean = 0.5,			-- mean scale (normal distribution)
-				ScaleStdDev = 0.02,			-- standard deviation of scale (0 will make them all the same size)
-				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 350,			-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 10,			-- standard deviation of spark speed at emission
-				Drag = 0.1,					-- drag of sparks (zero will make them continue at same speed)
-				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
-				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
-				RotationalSpeedMean = 5,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 1.5,				-- mean age in seconds (normal distribution)
-				AgeStdDev = .2,				-- standard deviation of age in seconds (zero makes them last the same length of time)
-				AlphaKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
-				ScaleKeys = { 0.1, 0.75 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 255 }, -- Colour used to modulate the sprite
+				Angle = 180,				
+				RadialOffsetMin = 0,		
+				RadialOffsetMax = 50,		
+				ScaleMean = 0.5,			
+				ScaleStdDev = 0.02,			
+				SpeedStretch = 0,			
+				SpeedMean = 350,			
+				SpeedStdDev = 10,			
+				Drag = 0.1,					
+				RotationMean = 0,			
+				RotationStdDev = 45,		
+				RotationalSpeedMean = 5,	
+				RotationalSpeedStdDev = 0,	
+				AgeMean = 1.5,				
+				AgeStdDev = .2,				
+				AlphaKeys = { 0.1, 0.75 },	
+				ScaleKeys = { 0.1, 0.75 },	
+				colour = { 255, 255, 255, 255 },
 			},
 		},
 	},
-	--[[{
-		Type = "sound",
-		TimeToTrigger = 0.1,
-		TimeToTriggerStdDev = 0.03,
-		FadeInPeriod = 0.5,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/firerocketfire.ogg",
-		Volume = 0.45,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},
-	{
-		Type = "sound",
-		TimeToTrigger = 0.1,
-		TimeToTriggerStdDev = 0.03,
-		FadeInPeriod = 0.5,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/launchielaunchie.ogg",
-		Volume = 0.12,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},]]
 }

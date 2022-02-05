@@ -1,3 +1,4 @@
+--[[
 table.insert(Devices, IndexOfDevice("battery") + 1,
 {
 		Enabled = false,
@@ -22,7 +23,6 @@ table.insert(Devices, IndexOfDevice("battery") + 1,
 		SelectEffect = "ui/hud/devices/ui_devices",
 })
 
---[[
 local batteryupgrade = FindDevice("battery")
 if not batteryupgrade.Upgrades then 
 	batteryupgrade.Upgrades = {} end
@@ -37,7 +37,7 @@ table.insert(batteryupgrade.Upgrades,
 	EnergyCost = 600,
 	Button = "hud-sbbg-upgrade",
 })
-end]]
+end
 
 table.insert(Devices, IndexOfDevice("battery"),
 {
@@ -62,7 +62,6 @@ table.insert(Devices, IndexOfDevice("battery"),
 		BuildOnGroundOnly = false,
 		SelectEffect = "ui/hud/devices/ui_devices",
 })
---[[
 local storeupgrade = FindDevice("store")
 if storeupgrade then
 	if not storeupgrade.Upgrades then storeupgrade.Upgrades = {} end
@@ -75,7 +74,6 @@ table.insert(storeupgrade.Upgrades,
 	Button = "hud-sbbg-upgrade",
 })
 end
-]]
 table.insert(Devices, IndexOfDevice("mine") + 1,	
 {
 		Enabled = false,
@@ -98,7 +96,7 @@ table.insert(Devices, IndexOfDevice("mine") + 1,
 		BuildOnOreOnly = true,
 		AlignToCursorNormal = false,
 		SelectEffect = "ui/hud/devices/ui_devices",
-})
+})]]
 table.insert(Devices,
 {
 		Enabled = false,

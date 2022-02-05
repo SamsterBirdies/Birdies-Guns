@@ -1,5 +1,3 @@
---  age (in seconds) at which the explosion actor deletes itself
---  make sure this exceedes the age of all effects
 LifeSpan = 7.0
 
 LaunchDelay = 0.8
@@ -8,18 +6,6 @@ EffectDepth = 90
 
 Effects =
 {
---[[
-	{
-		Type = "sound",
-		TimeToTrigger = LaunchDelay,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/rocket_launch.mp3",
-		PlayForEnemy = true,
-		Volume = 1,
-		Priority = 254,
-		Falloff = true,
-	},
-]]	
 	{
 		Type = "sparks",
 		TimeToTrigger = 0.8,
@@ -62,14 +48,6 @@ Effects =
 			},
 		},
 	},
---[[
-	{
-		Type = "sound",
-		TimeToTrigger = LaunchDelay,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/audio/sfx/weapons/weapon_missile_swarm_fire_01.wav",
-	},
-]]
 	{
 		Type = "sparks",
 		TimeToTrigger = 0.8,
@@ -179,30 +157,5 @@ Effects =
 			},
 		},
 	},
-	--[[{
-		Type = "sound",
-		TimeToTrigger = 0.0,
-		TimeToTriggerStdDev = 0.00,
-		FadeInPeriod = 0.0,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/sawspin.ogg",
-		Volume = 0.30,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},
-	{
-		Type = "sound",
-		TimeToTrigger = 0.8,
-		TimeToTriggerStdDev = 0.00,
-		FadeInPeriod = 0.0,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/sawmissilelaunch.ogg",
-		Volume = 0.45,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},]]
-	
 }
 SoundEvent = "mods/sbBGsoundbank/effects/fire_sbsaw"

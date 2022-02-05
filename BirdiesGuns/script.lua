@@ -16,3 +16,4 @@ function OnLinkHit(nodeIdA, nodeIdB, sourceId, sourceTeamId, sourceSaveName, dam
 		EnableDevice("sboildrumempdevice", false, 2)
 	end
 end
+--SamsterBirdies belongs to Chocola <3.

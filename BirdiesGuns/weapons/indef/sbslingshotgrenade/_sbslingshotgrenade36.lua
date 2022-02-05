@@ -7,3 +7,4 @@ MaxFireSpeed = 2200.1
 EnergyFireCost = 3326.1088200821773
 MetalFireCost = 63.32102105308072
 Projectile = "_sbgrenade36"
+RoundsEachBurst = 5

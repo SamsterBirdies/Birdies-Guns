@@ -7,3 +7,5 @@ MaxFireSpeed = 30000.1
 EnergyFireCost = 8914.635292997922
 MetalFireCost = 61.36223611380255
 Projectile = "_sbimploder35"
+RoundsEachBurst = 3
+RoundPeriod = 0.1

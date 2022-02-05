@@ -17,6 +17,8 @@ for x in range (2, iterations + 1):
 	MetalFireCost = MetalFireCost + MetalFireCost / 64 + 1
 	MaxFireSpeed = MaxFireSpeed
 	MinFireSpeed = MinFireSpeed
+	RoundsEachBurst = 1 + (x//15)
+	RoundPeriod = 0.1
 	#ReloadTime = max(base_ReloadTime - base_ReloadTime * (x / (iterations * 2) ), base_ReloadTime / 2.0)
 	Projectile = "\"" + base_Projectile + str(x) + "\""
 	file = open("../../weapons/indef/sbimplodernocap/_sbimplodernocap" + str(x) + ".lua","w")
@@ -30,6 +32,8 @@ for x in range (2, iterations + 1):
 	file.write("MetalFireCost = " + str(MetalFireCost) + "\n")
 	#file.write("ReloadTime = " + str(ReloadTime) + "\n")
 	file.write("Projectile = " + str(Projectile) + "\n")
+	file.write("RoundsEachBurst = " + str(RoundsEachBurst) + "\n")
+	file.write("RoundPeriod = " + str(RoundPeriod) + "\n")
 	file.close()
 print("done")
 

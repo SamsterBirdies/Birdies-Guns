@@ -2,10 +2,6 @@ sbBGpath = path
 dofile("scripts/type.lua")
 dofile( path .. "/scripts/sb.lua")
 dofile( path .. "/scripts/sbweirdprojectiles.lua")
---test area-------
-
-
-------------------
 
 table.insert(Projectiles,
 {
@@ -780,7 +776,7 @@ table.insert(Projectiles,
 	ProjectileDamage = 15.0,
 	ProjectileSplashDamage = 5,
 	ProjectileSplashDamageMaxRadius = 30,
-	WeaponDamageBonus = -17.0,
+	--WeaponDamageBonus = -17.0,
 	SpeedIndicatorFactor = 0.5,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
@@ -806,6 +802,11 @@ table.insert(Projectiles,
 			{
 			},
 		},
+	DamageMultiplier =
+	{
+		{ SaveName = "weapon", Direct = 0.00, Splash = 0.0 },
+		{ SaveName = "device", Direct = 0.5, Splash = 0.0 },
+	}
 })
 table.insert(Sprites,
 {
@@ -1466,7 +1467,7 @@ table.insert(Projectiles,
 			ErraticAnglePeriodMean = 0.5,
 			ErraticAnglePeriodStdDev = 0.1,
 			LaunchThrust = 105000,
-			RocketThrust = 500000,
+			RocketThrust = 250000,
 			RocketThrustChange = 0,
 			CruiseTargetDistance = 2000,
 			CruiseTargetDuration = .5,
@@ -1599,7 +1600,7 @@ table.insert(Projectiles,
 		ProjectileSplashMaxForce = 10000,
 		SpeedIndicatorFactor = 0.05,
 		AntiAirDamage = 9000,
-		AntiAirHitpoints = 60,
+		AntiAirHitpoints = 10,
 		MaxAge = 20,
 		EMPSensitivity = 1,
 		EMPMissileProbabilityOfCircling = 1,
@@ -1798,7 +1799,7 @@ table.insert(Projectiles,
 		EMPRadius = 230,
 		EMPDuration = 4,
 
-		TrailEffect = path .. "/effects/empmortar_trail.lua",
+		TrailEffect = path .. "/effects/EMP_mortar_trail.lua",
 
 		Projectile =
 		{
@@ -2767,6 +2768,7 @@ if endosempbeamcheck then
 	MakeEMPVersion("sbdrone", 1.25, "blue_trail", 100, 3, EAModPath)
 	end
 
+--//VACUUM BEAM START//--
 
 --vacuumbeamversions_vanilla/tog
 MakeVacuumVersion("machinegun", "vacuumtrailsmall", 170000)
@@ -2924,6 +2926,53 @@ if extrashieldcheck then
 	MakeVacuumVersion("minicannon", "vacuumtrail", 1000, 420000)
 	MakeVacuumVersion("potionh", "vacuumtrail", 90000000, 5000000)
 end
+--tons of upgrades
+local toucheck = FindProjectile("sbMightyHowie")
+if toucheck then
+	--MakeVacuumVersion("", "vacuumtrail",)
+	MakeVacuumVersion("sbHeavyMachinegun", "vacuumtrailsmall", 200000)
+	MakeVacuumVersion("sbAPcannon", "vacuumtrail", 1000, 700000)
+	MakeVacuumVersion("sbShotgunMinigun", "vacuumtrailsmall", 140000)
+	MakeVacuumVersion("sbNapalmMortar", "vacuumtrail", 2500000)
+	MakeVacuumVersion("sbFlareMortar", "vacuumtrail", 100000)
+		MakeVacuumVersion("sbFlareMortarFlares", "vacuumtrailsmall", 350000)
+		local touflaremortar = FindProjectile("vacuumsbFlareMortar")
+		if touflaremortar then
+			touflaremortar.Effects.Impact.default.Projectile.Type = "vacuumsbFlareMortarFlares"
+		end
+	MakeVacuumVersion("sbMortarAP", "vacuumtrail", 2500000)
+	MakeVacuumVersion("sbMightyHowie", "vacuumtrail", 1000, 750000)
+	MakeVacuumVersion("sbFatboy", "vacuumtrailsmall", 1300000)
+	MakeVacuumVersion("sbDartRocket", "vacuumtrailsmall", 900000)
+	MakeVacuumVersion("sbDrill-air", "vacuumtrailsmall", 1000000)
+	MakeVacuumVersion("sbAPcannon20mm", "vacuumtrail", 800000)
+	MakeVacuumVersion("sbAutoFlak", "vacuumtrailsmall",100)
+		MakeVacuumVersion("sbAutoShrapnel", "vacuumtrailsmall", 600000)
+		local touflak = FindProjectile("vacuumsbAutoFlak")
+		if touflak then
+			touflak.Effects.Age = {}
+			touflak.Effects.Impact.default.Projectile.Type = "vacuumsbAutoShrapnel"
+		end
+	MakeVacuumVersion("sbFlakShotgun", "vacuumtrailsmall",100)
+		MakeVacuumVersion("sbShotgunShrapnel", "vacuumtrailsmall", 120000)
+		local touflak = FindProjectile("vacuumsbFlakShotgun")
+		if touflak then
+			touflak.Effects.Age = {}
+			touflak.Effects.Impact.default.Projectile.Type = "vacuumsbShotgunShrapnel"
+		end
+	MakeVacuumVersion("sbflak20mm", "vacuumtrailsmall",100)
+		MakeVacuumVersion("sb20mmshrapnel", "vacuumtrailsmall", 200000)
+		local touflak = FindProjectile("vacuumsbflak20mm")
+		if touflak then
+			touflak.Effects.Age = {}
+			touflak.Effects.Impact.default.Projectile.Type = "vacuumsb20mmshrapnel"
+		end
+	MakeVacuumVersion("sbfirerocketMU", "vacuumtrail", 100000, 490000)
+	
+end
+
+--//VACUUM BEAM END//--
+
 --firebeamversions
 sbflametrail = "mods/weapon_pack/effects/flaming_trail.lua"
 sbflametrailsmall = "mods/weapon_pack/effects/flaming_sniper_trail.lua"
@@ -2983,7 +3032,7 @@ sbMakeFlamingVersion("sbssmfire", 1.3, 10, "flaming_trail", 120, nil, genericFla
 sbMakeFlamingVersion("sbfog", 1.0, 20, "empty", 0, nil, nil)
 	local sbflamefogfind = FindProjectile("flamingsbfog") if sbflamefogfind then 
 		sbflamefogfind.Projectile.Root.Sprite = "sbfog_yellow"
-		sbflamefogfind.Effects.Impact.default = path .. "/effects/empty.lua"
+		sbflamefogfind.Effects.Impact.default = path .. "/effects/cloudSmoke.lua"
 	end
 sbMakeFlamingVersion("sbfirebullet", 1.5, 0.2, "flaming_sniper_trail", nil, smallArmsFlare)
 sbMakeFlamingVersion("sbrmemp", 1.25, 3, "flaming_trail", 150, nil, missileStructureHit)
@@ -3085,8 +3134,7 @@ RegisterApplyMod(function()
 	else
 		--Log("Indef not detected :( projectile_list")
 	end
-end
-)
+end)
 
 
 	

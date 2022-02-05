@@ -7,3 +7,4 @@ MaxFireSpeed = 7040.1
 EnergyFireCost = 1930.0439091586277
 MetalFireCost = 53.82384726160938
 Projectile = "_sbarrowr31"
+RoundsEachBurst = 4

@@ -7,3 +7,4 @@ MaxFireSpeed = 11280.1
 EnergyFireCost = 6687.069035017442
 MetalFireCost = 174.30371520298442
 Projectile = "_sbfog61"
+RoundsEachBurst = 413

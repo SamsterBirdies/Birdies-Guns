@@ -7,3 +7,4 @@ MaxFireSpeed = 10178.1
 EnergyFireCost = 607.03125
 MetalFireCost = 28.390625
 Projectile = "_sb50cal2"
+RoundsEachBurst = 10

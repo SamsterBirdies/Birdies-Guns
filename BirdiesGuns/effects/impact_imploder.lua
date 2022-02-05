@@ -1,7 +1,5 @@
 dofile("effects/device_explode_util.lua")
 
---  age (in seconds) at which the explosion actor deletes itself
---  make sure this exceedes the age of all effects
 LifeSpan = 15
 
 Sprites =
@@ -26,13 +24,12 @@ Sprites =
 					{ texture = "mods/weapon_pack/effects/media/impact_shield_12.tga", colour = { 0.65, 1, 0.5, 1.0 } },
 					{ texture = "mods/weapon_pack/effects/media/impact_shield_13.tga", colour = { 0.65, 1, 0.5, 1.0 } },
 					{ texture = "mods/weapon_pack/effects/media/impact_shield_14.tga", colour = { 0.65, 1, 0.5, 1.0 } },
-					{ texture = "mods/weapon_pack/effects/media/impact_shield_14.tga", colour = { 1, 1, 1, 0.0 }, duration = 15 }, -- just makes a blank frame long enough to last the rest of the effect
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_14.tga", colour = { 1, 1, 1, 0.0 }, duration = 15 },
 
 					duration = 0.03,
 					blendColour = false,
 					blendCoordinates = false,
 				},
-				--RandomPlayLength = 2,
 				NextState = "Normal",
 			},
 		},
@@ -274,38 +271,6 @@ Effects =
 		TimeToLive = 1,
 		Magnitude = 20,
 	},
---[[	{
-		Type = "sound",
-		TimeToTrigger = 0,
-		TimeToTriggerStdDev = 0.00,
-		FadeInPeriod = 0.0,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/thunder.ogg",
-		Volume = 0.35,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},]]
+
 }
 SoundEvent = "mods/sbBGsoundbank/effects/impact_imploder"
---[[
-ImpactSounds =
-{
-	path .. "/effects/media/impact_cannon_01_546179_SOUNDDOGS__ca.mp3",
-	path .. "/effects/media/impact_cannon_02_546179_SOUNDDOGS__ca.mp3",
-	path .. "/effects/media/impact_cannon_03_546180_SOUNDDOGS__ca.mp3",
-}
-
-function UpdateEffect(self, effectTime, pos)
-	if effectTime == 0 then
-		TriggerSound(ImpactSounds[math.random(#ImpactSounds)], 1, 192, true, true, pos)
-	end
-	
-	return self
-end
-
-
-function InitEffect()
-	SFXVariants("/audio/sfx/explosions/explosion_small_", 4)
-end
-]]

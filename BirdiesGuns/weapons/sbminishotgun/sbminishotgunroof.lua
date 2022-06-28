@@ -25,6 +25,7 @@ ShellEffect = ""
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_small.lua"
 Projectile = "sbroofgunner"
 BarrelLength = 60.0
 MinFireClearance = 500

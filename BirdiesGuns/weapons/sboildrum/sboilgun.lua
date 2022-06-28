@@ -33,6 +33,7 @@ FireEffect = path .. "/effects/fire_sboilgun.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/barrel_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ReloadEffect = path .. "/effects/reload_sboilgun.lua"
 ReloadEffectOffset = -0.4
 RetriggerFireEffect = true
@@ -43,9 +44,9 @@ FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
 ReloadTime = 18
 ReloadTimeIncludesBurst = false
-MinFireSpeed = 4500.0
+MinFireSpeed = 3000.0
 MaxFireSpeed = 4500.1
-
+MaxFireClamp = 0.8
 MinFireRadius = 200.0
 MaxFireRadius = 500.0
 MinVisibility = 1
@@ -66,7 +67,7 @@ MetalFireCost = 70
 
 
 ShowFireAngle = true
-ShowFireSpeed = false
+ShowFireSpeed = true
 
 ParachuteDelayMean = 200
 ParachuteDelayStdDev = 0.15

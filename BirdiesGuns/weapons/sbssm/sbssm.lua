@@ -32,6 +32,7 @@ FireEffect = path .. "/effects/sbfirerocket_launch.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ShellEffect = ""
 ReloadEffect = path .. "/effects/reload_rocketbattery.lua"
 RetriggerFireEffect = true

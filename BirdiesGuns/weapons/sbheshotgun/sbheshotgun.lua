@@ -26,6 +26,7 @@ ShellEffect = "mods/weapon_pack/effects/shell_eject_shotgun.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = "mods/weapon_pack/effects/reload_shotgun.lua"
 ReloadEffectOffset = -0.5
 Projectile = "sbheshotgun"

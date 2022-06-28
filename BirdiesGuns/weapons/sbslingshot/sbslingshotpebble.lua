@@ -25,6 +25,7 @@ ShellEffect = ""
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_small.lua"
 Projectile = "sbpebble"
 BarrelLength = 60.0
 MinFireClearance = 500
@@ -152,7 +153,7 @@ Root =
 				{
 					Name = "Hardpoint0",
 					Angle = 90,
-					Pivot = { 0, 0 },
+					Pivot = { 0, -0.053 },
 					PivotOffset = { 0, 0 },
 				},
 				{

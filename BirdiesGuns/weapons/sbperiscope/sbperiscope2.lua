@@ -27,6 +27,7 @@ ShellEffect = ""
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 FireEndEffect = path .. "/effects/end_periscope.lua"
 ReloadEffect = path .. "/effects/reload_periscope2.lua"
 ReloadEffectOffset = -1.25

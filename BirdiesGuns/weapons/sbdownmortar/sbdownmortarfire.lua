@@ -28,10 +28,12 @@ IgnitePlatformOnDestruct = true
 StructureSplashDamage = 30
 StructureSplashDamageMaxRadius = 150
 
+CanFireUnderwater = true
 FireEffect = "effects/fire_mortar.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/mortar_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = "effects/mortar_incendiary_reload.lua"
 ReloadEffectOffset = -1
 Projectile = "sbdownmortar"

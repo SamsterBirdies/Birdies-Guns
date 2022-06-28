@@ -32,6 +32,7 @@ FireEffect = path .. "/effects/fire_sbsaw.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ReloadEffect = path .. "/effects/reload_saw.lua"
 ReloadEffectOffset = -2
 Projectile = "sbsaw"
@@ -206,7 +207,7 @@ Root =
 						{
 							Name = "Hardpoint0",
 							Angle = 90,
-							Pivot = { 0, -0.15 },
+							Pivot = { 0, -0.074 },
 							PivotOffset = { 0, 0 },
 						},
 						{

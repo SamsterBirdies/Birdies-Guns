@@ -24,6 +24,7 @@ FireEffect = "effects/sniper-ap_flash.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/sniper-ap_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_small.lua"
 ShellEffect = "effects/shell_eject_sniper_ap.lua"
 ReloadEffect = "effects/sniper_ap_reload.lua"
 ReloadEffectOffset = -.5

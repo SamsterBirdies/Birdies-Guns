@@ -30,6 +30,7 @@ ShellEffect = path .. "/effects/shell_eject_bigminigun.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/minigun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ReloadEffect = path .. "/effects/reload_sbbigminigun.lua"
 ReloadEffectOffset = -3
 Projectile = "sbbigminigun"

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{4db46470-10b7-42a4-bdc5-9d96dbaae3c2}">
 		<property name="assetPath">
 			<value>airplane.ogg</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -27,6 +27,7 @@ FireEffect = path .. "/effects/fire_sbdrunklaser.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "mods/weapon_pack/effects/firebeam_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbdrunklaser.lua"
 ReloadEffectOffset = -1
 Projectile = "sbdrunklaser"

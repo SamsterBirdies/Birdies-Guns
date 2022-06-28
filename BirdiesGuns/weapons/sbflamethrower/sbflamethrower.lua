@@ -10,7 +10,7 @@ RecessionBox =
 CanFlip = false
 
 WeaponMass = 100.0
-HitPoints = 150.0
+HitPoints = 120.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0
 EnergyStorageCapacity = 0.0
@@ -32,6 +32,7 @@ FireEffect = path .. "/effects/flamethrowerstart.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "mods/weapon_pack/effects/20mmcannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ShellEffect = path .. "/effects/shell_eject_20mmcannon.lua"
 ReloadEffect =  path .. "/effects/reload_flamethrower.lua"
 FireEndEffect = path .. "/effects/cooldown_20mmcannon.lua"
@@ -146,7 +147,7 @@ Root =
 						{
 							Name = "Hardpoint0",
 							Angle = 90,
-							Pivot = { 0, 0.2},
+							Pivot = { 0, 0.015625},
 							PivotOffset = { 0, 0 },
 						},
 						{

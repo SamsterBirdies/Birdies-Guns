@@ -32,6 +32,7 @@ FireEffect = "effects/fire_mortar_heavy.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/mortar_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = "effects/mortar_heavy_reload.lua"
 ReloadEffectOffset = -1.5
 Projectile = "sbtriplemortar1"

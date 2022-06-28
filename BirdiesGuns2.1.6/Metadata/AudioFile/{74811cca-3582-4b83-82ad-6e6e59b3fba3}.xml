@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{74811cca-3582-4b83-82ad-6e6e59b3fba3}">
 		<property name="assetPath">
 			<value>portal.ogg</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

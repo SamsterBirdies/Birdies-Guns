@@ -24,6 +24,7 @@ FireEffect = path .. "/effects/bowshoot.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/sniper_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_small.lua"
 ReloadEffect = nil
 ReloadEffectOffset = -.5
 Projectile = "sbarrow"
@@ -188,7 +189,7 @@ Root =
 						{
 							Name = "Hardpoint0",
 							Angle = 90,
-							Pivot = { -0.40, -0.13 },
+							Pivot = { -0.40, -0.068 },
 							PivotOffset = { 0, 0 },
 						},
 						{

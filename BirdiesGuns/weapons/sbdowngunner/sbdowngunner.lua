@@ -20,11 +20,13 @@ MinWindEfficiency = 1
 MaxWindHeight = 0
 MaxRotationalSpeed = 0
 
+CanFireUnderwater = true
 FireEffect = "effects/fire_machinegun.lua"
 ShellEffect = "effects/shell_eject_small.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_small.lua"
 Projectile = "sbdowngunner"
 BarrelLength = 60.0
 MinFireClearance = 500

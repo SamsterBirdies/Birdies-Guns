@@ -32,6 +32,7 @@ FireEffect = path .. "/effects/fire_downcannon.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ShellEffect = "effects/shell_eject_cannon.lua"
 ReloadEffect = ""
 ReloadEffectOffset = -2

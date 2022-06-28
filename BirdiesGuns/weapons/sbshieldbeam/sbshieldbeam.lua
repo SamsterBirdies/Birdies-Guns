@@ -26,6 +26,7 @@ FireEndEffect = path .. "/effects/sbshieldbeamend.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/beam_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbshieldbeam.lua"
 ReloadEffectOffset = -1.72
 Projectile = "sbshieldbeam"

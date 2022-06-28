@@ -26,6 +26,7 @@ FireEffect = path .. "/effects/fire_sbpullbeam.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/beam_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbpullbeam.lua"
 ReloadEffectOffset = -0.58
 Projectile = "sbpullbeam"
@@ -252,7 +253,7 @@ Root =
 					Name = "Hardpoint0",
 					Angle = 90,
 --					Pivot = { 0.47, -0.16 },
-					Pivot = { -0.07, -0.27 },
+					Pivot = { -0.07, -0.2 },
 					PivotOffset = { 0, 0 },
 				},
 				

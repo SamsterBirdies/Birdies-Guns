@@ -18,13 +18,13 @@ table.insert(Projectiles,
 		Impact = 150000,
 		BeamTileRate = 0.02,
 		BeamScrollRate = 0.0,
-		ProjectileDamage = 10.0,
-		ProjectileSplashDamage = 10.0,
-		ProjectileSplashDamageMaxRadius = 10.0,
+		ProjectileDamage = 40.0,
+		ProjectileSplashDamage = 40.0,
+		ProjectileSplashDamageMaxRadius = 100.0,
 		ProjectileSplashMaxForce = 10000,
 		SpeedIndicatorFactor = 0.05,
 		MaxAge = 9,
-		Gravity = 400,
+		Gravity = 981,
 		MagneticModifierFriendly = 0,
 		Projectile =
 		{
@@ -62,7 +62,7 @@ table.insert(Projectiles,
 			},
 			Age =
 			{
-				t600 = sbspawnphase2down,
+				t900 = sbspawnphase2down,
 			},
 		},
 		DamageMultiplier =
@@ -72,9 +72,10 @@ table.insert(Projectiles,
 		},
 })
 --new damage values for phase 2
-sbp2projectiledamage = 110
-sbp2projectilesplashdamage = 110
-sbp2projectilesplashdamagemaxradius = 210
+sbp2projectiledamage = 100
+sbp2projectilesplashdamage = 100
+sbp2projectilesplashdamagemaxradius = 200
+sbp2gravity = 981
 
 --create copiable projectile
 sbdronemissiletocopy = FindProjectile("sbdronemissiledown")
@@ -84,6 +85,7 @@ sbmakedronep2.SaveName = "sbdronemissiledownp2"
 sbmakedronep2.ProjectileDamage = sbp2projectiledamage
 sbmakedronep2.ProjectileSplashDamage = sbp2projectilesplashdamage
 sbmakedronep2.ProjectileSplashDamageMaxRadius = sbp2projectilesplashdamagemaxradius
+sbmakedronep2.Gravity = sbp2gravity
 sbmakedronep2.Effects.Age = {}
 table.insert(Projectiles, sbmakedronep2)
 --create upside down version
@@ -96,7 +98,7 @@ table.insert(Projectiles, sbmakedroneup)
 sbdronemissilephase2tocopy = FindProjectile("sbdronemissiledownp2")
 sbmakedroneupp2 = DeepCopy(sbdronemissilephase2tocopy)
 sbmakedroneupp2.SaveName = "sbdronemissileupp2"
-sbmakedroneupp2.Gravity = (sbmakedroneupp2.Gravity * -1)
+sbmakedroneupp2.Gravity = (sbp2gravity * -1)
 table.insert(Projectiles, sbmakedroneupp2)
 
 sbDroneup = { Effect = path .. "/effects/flak_explode.lua", Projectile = { Count = 1, Type = "sbdronemissileup", StdDev = 0 }, Terminate = false, }
@@ -118,9 +120,9 @@ table.insert(Projectiles,
 	Impact = 150000,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
-	ProjectileDamage = 280.0,
-	ProjectileSplashDamage = 125.0,
-	ProjectileSplashDamageMaxRadius = 230.0,
+	ProjectileDamage = 250.0,
+	ProjectileSplashDamage = 150.0,
+	ProjectileSplashDamageMaxRadius = 250.0,
 	ProjectileSplashMaxForce = 100000,
 	SpeedIndicatorFactor = 0.05,
 	MaxAge = 60,
@@ -168,7 +170,7 @@ table.insert(Projectiles,
 		ErraticThrust = 0.12,
 		ErraticThrustMagneticField = 0.3,
 		LaunchThrust = 75000,
-		RocketThrust = 70000,
+		RocketThrust = 60000,
 		CruiseTargetDistance = 2000,
 		CruiseTargetDuration = .5,
 		TargetRearOffsetDistance = 100000,
@@ -195,7 +197,6 @@ table.insert(Projectiles,
 	},
 	DamageMultiplier =
 		{
-			{ SaveName = "bracing", Direct = 0.5, Splash = 0.90 },
 			{ SaveName = "backbracing", Direct = 0.0, Splash = 0.60 },
 		},
 })

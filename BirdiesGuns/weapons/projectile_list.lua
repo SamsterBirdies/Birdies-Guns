@@ -2,6 +2,15 @@ sbBGpath = path
 dofile("scripts/type.lua")
 dofile( path .. "/scripts/sb.lua")
 dofile( path .. "/scripts/sbweirdprojectiles.lua")
+--test for tog
+sbToG = false
+if FindProjectile("flak") or FindProjectile("shotgun") or FindProjectile("rocketemp") or FindProjectile("rocket") or FindProjectile("cannon20mm") or FindProjectile ("firebeam") then
+	sbToG = true
+end
+
+
+
+--//START WEAPON INSERTION//--
 
 table.insert(Projectiles,
 {
@@ -1308,8 +1317,7 @@ table.insert(Projectiles,
 			Impact =
 			{
 				["antiair"] = "effects/mortar_air_burst.lua",
-					["bracing"] = "effects/impact_mortar_incendiary.lua",
-					["default"] = "effects/impact_mortar_incendiary_no_fire.lua",
+				["default"] = path .. "/effects/impact_napalm.lua",
 				["shield"] = "effects/impact_shield.lua",
 			},
 			Deflect =
@@ -1600,11 +1608,11 @@ table.insert(Projectiles,
 		ProjectileSplashMaxForce = 10000,
 		SpeedIndicatorFactor = 0.05,
 		AntiAirDamage = 9000,
-		AntiAirHitpoints = 10,
+		AntiAirHitpoints = 5,
 		MaxAge = 20,
 		EMPSensitivity = 1,
 		EMPMissileProbabilityOfCircling = 1,
-		EMPRadius = 100,
+		EMPRadius = 75,
 		EMPDuration = 2,
 
 		Projectile =
@@ -2023,7 +2031,7 @@ table.insert(Projectiles,
 		AntiAirDamage = 20,
 		SpeedIndicatorFactor = 0.05,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		TrailEffect = "effects/mortar_trail_upgrade.lua",
 
 		Projectile =
@@ -2077,7 +2085,7 @@ table.insert(Projectiles,
 		ProjectileSplashDamageMaxRadius = 130.0,
 		SpeedIndicatorFactor = 0.05,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		TrailEffect = "effects/mortar_trail.lua",
 
 		Projectile =
@@ -2131,7 +2139,7 @@ table.insert(Projectiles,
 		ProjectileSplashDamageMaxRadius = 130.0,
 		SpeedIndicatorFactor = 0.05,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		TrailEffect = "effects/mortar_trail.lua",
 
 		Projectile =
@@ -2187,7 +2195,7 @@ table.insert(Projectiles,
 		AntiAirDamage = 20,
 		SpeedIndicatorFactor = 0.05,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		TrailEffect = "effects/mortar_trail_upgrade.lua",
 
 		Projectile =
@@ -2248,7 +2256,7 @@ table.insert(Projectiles,
 		EMPRadius = 230,
 		EMPDuration = 4,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		TrailEffect = path .. "/effects/empmortar_trail.lua",
 
 		Projectile =
@@ -2302,6 +2310,7 @@ table.insert(Projectiles,
 	BeamTileRate = 0.02,
 	BeamScrollRate = 0.0,
 	Gravity = -981,
+	MaxAgeUnderwater = 2,
 	Effects =
 	{
 		Impact =
@@ -2350,7 +2359,7 @@ table.insert(Projectiles,
 		WeaponDamageBonus = -5.0,
 		SpeedIndicatorFactor = 5.0,
 		Gravity = -981,
-
+		MaxAgeUnderwater = 60,
 		Effects =
 		{
 			Impact =
@@ -2640,6 +2649,52 @@ table.insert(Projectiles,
 		},
 })
 
+table.insert(Sprites,
+{
+	Name = "sbtorpedoswim",
+			
+	States =
+	{
+		Normal =  
+		{  
+			Frames =
+			{
+				{ texture = path .. "/weapons/sbtorpedo/projectile3.png" },
+				{ texture = path .. "/weapons/sbtorpedo/projectile2.png" },
+				{ texture = path .. "/weapons/sbtorpedo/projectile3.png" },
+				{ texture = path .. "/weapons/sbtorpedo/projectile4.png" },
+				
+				duration = 0.05,
+				mipmap = true,
+			},
+			NextState = "Normal",
+		},
+		
+	},
+}) 
+
+local sbtorpedo = DeepCopy(FindProjectile("cannon"))
+if sbtorpedo then
+	sbtorpedo.SaveName = "sbtorpedo"
+	sbtorpedo.AntiAirHitpoints = 5
+	sbtorpedo.MaxAgeUnderwater = 60
+	sbtorpedo.Gravity = 0
+	sbtorpedo.ProjectileSprite = nil
+	sbtorpedo.ExplodeOnTouch = true
+	sbtorpedo.DrawBlurredProjectile = false
+	sbtorpedo.Projectile =
+	{
+		Root =
+		{
+			Name = "Root",
+			Angle = 0,
+			Sprite = "sbtorpedoswim",
+		}
+	}
+	table.insert(Projectiles, sbtorpedo)
+end
+--//END PROJECTILE INSERTION//--
+
 --Isolated projectile lists:
 --helicopters
 dofile(path .. "/weapons/sbhelicopter/scripts/projectilelist.lua")
@@ -2651,37 +2706,6 @@ dofile(path .. "/weapons/sboildrum/projectilelist.lua")
 dofile(path .. "/weapons/sbdrunklaser/projectilelist.lua")
 --drone
 dofile(path .. "/weapons/sbdowndrone/projectilelist.lua")
-
---tweaks/balances
-
---[[
-local sbnukenerf = FindProjectile("damagedmissile2")
-if sbnukenerf then
-sbnukenerf.Missile.RocketThrust = 55000
-sbnukenerf.Missile.RocketThrustChange = 6500
-sbnukenerf.Missile.ErraticAnglePeriodMean = 1.5
-sbnukenerf.Missile.ErraticAnglePeriodStdDev = 1.5
-end]]
---[[
-SetDamageMultiplier("missile2", { SaveName = "machinegun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "minigun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sniper2", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "rocket", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sbroofgunner", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sbroofminigun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sb50cal", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sbarrowr", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("missile2", { SaveName = "sbslingshotgrenade", Direct = 1, Splash = 0.4 })]]
---[[
-SetDamageMultiplier("damagedmissile2", { SaveName = "machinegun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "minigun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sniper2", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "rocket", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sbroofgunner", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sbroofminigun", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sb50cal", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sbarrowr", Direct = 1, Splash = 0.4 })
-SetDamageMultiplier("damagedmissile2", { SaveName = "sbslingshotgrenade", Direct = 1, Splash = 0.4 })]]
 
 --multipliers against periscopes
 SetDamageMultiplier("mortar2", { SaveName = "sbperiscope2", Direct = 2.5, Splash = 2.0 })
@@ -3061,17 +3085,18 @@ MakeArmouredVersion("sbrmfire", path .. "/weapons/sbrm/armorprojectilefire", "ef
 MakeArmouredVersion("sbrmhe", path .. "/weapons/sbrm/armorprojectilehe", "effects/missile_armor_debris.lua")
 MakeArmouredVersion("sbfirerocket", path .. "/weapons/sbfirerocket/armorprojectile", "effects/missile_armor_debris.lua")
 --armored turn flaming
-MakeArmouredMissileTurnFlaming("sbsuremp")
-MakeArmouredMissileTurnFlaming("sbsurfire")
-MakeArmouredMissileTurnFlaming("sbsurhe")
-MakeArmouredMissileTurnFlaming("sbrmemp")
-MakeArmouredMissileTurnFlaming("sbrmfire")
-MakeArmouredMissileTurnFlaming("sbrmhe")
-MakeArmouredMissileTurnFlaming("sbfirerocket")
---applymod stuff
+if sbToG then
+	MakeArmouredMissileTurnFlaming("sbsuremp")
+	MakeArmouredMissileTurnFlaming("sbsurfire")
+	MakeArmouredMissileTurnFlaming("sbsurhe")
+	MakeArmouredMissileTurnFlaming("sbrmemp")
+	MakeArmouredMissileTurnFlaming("sbrmfire")
+	MakeArmouredMissileTurnFlaming("sbrmhe")
+	MakeArmouredMissileTurnFlaming("sbfirerocket")
+end
 
+--applymod stuff
 RegisterApplyMod(function()
-	
 	for k,v in pairs(Projectiles) do
 		if not v.Effects then v.Effects = { Impact = {} } end
 		if not v.Effects.Impact then v.Effects.Impact = {} end
@@ -3091,45 +3116,19 @@ RegisterApplyMod(function()
 		--Log("INDEF DETECTED projectile_list")
 		local upgradeCount = 64
 		addUpgrades({
-			{
-				SaveName = "sbfirebullet",
-			},
-			{
-				SaveName = "sbbigminigun",
-			},
-			{
-				SaveName = "sb50cal",
-			},
-			{
-				SaveName = "sbarrowr",
-			},
-			{
-				SaveName = "sbdowncannon",
-			},
-			{
-				SaveName = "sbssmfire",
-			},
-			{
-				SaveName = "sbimploder",
-			},
-			{
-				SaveName = "sbgrenade",
-			},
-			{
-				SaveName = "sbflames",
-			},
-			{
-				SaveName = "sbroofgunner",
-			},
-			{
-				SaveName = "sbdowngunner",
-			},
-			{
-				SaveName = "sbpebble",
-			},
-			{
-				SaveName = "sbfog",
-			},
+			{ SaveName = "sbfirebullet"},
+			{ SaveName = "sbbigminigun"},
+			{ SaveName = "sb50cal"},
+			{ SaveName = "sbarrowr"},
+			{ SaveName = "sbdowncannon"},
+			{ SaveName = "sbssmfire"},
+			{ SaveName = "sbimploder"},
+			{ SaveName = "sbgrenade"},
+			{ SaveName = "sbflames"},
+			{ SaveName = "sbroofgunner"},
+			{ SaveName = "sbdowngunner"},
+			{ SaveName = "sbpebble"},
+			{ SaveName = "sbfog"},
 		})
 	else
 		--Log("Indef not detected :( projectile_list")

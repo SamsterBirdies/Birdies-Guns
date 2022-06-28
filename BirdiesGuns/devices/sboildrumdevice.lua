@@ -3,9 +3,9 @@
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 Scale = 1.0
-SelectionWidth = 40.0
-SelectionHeight = 25.0
-SelectionOffset = { 0.0, -25.5 }
+SelectionWidth = 25.0
+SelectionHeight = 30.0
+SelectionOffset = { 0.0, -30.5 }
 Mass = 40.0
 HitPoints = 15.0
 EnergyProductionRate = 0.0

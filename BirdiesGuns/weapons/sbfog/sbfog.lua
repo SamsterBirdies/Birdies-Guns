@@ -26,6 +26,7 @@ ShellEffect = ""
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/machinegun_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbfog.lua"
 ReloadEffectOffset = -0.5
 Projectile = "sbfog"

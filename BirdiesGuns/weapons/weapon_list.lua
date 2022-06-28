@@ -3,59 +3,75 @@ for k,v in pairs(Weapons) do
     if not v.Upgrades then v.Upgrades = {} end
 end
 table.insert(Sprites, ButtonSprite("hud-sbbg-upgrade", "context/sbbgupgrade", nil, nil, nil, nil, path))
-
-table.insert(Sprites, DetailSprite("hud-detail-sbfirerocket", "sbfirerocket", path))
-table.insert(Sprites, ButtonSprite("hud-sbfirerocket-icon", "HUD/HUD-sbfirerocket", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Weapons, IndexOfWeapon("rocketemp") + 1,
-{
-	Enabled = true,
-	SaveName = "sbfirerocket",
-	FileName = path .. "/weapons/sbfirerocket/sbfirerocket.lua",
-	Prerequisite = "armoury",
-	Icon = "hud-sbfirerocket-icon",
-	GroupButton = "hud-group-rocket",
-	Detail = "hud-detail-sbfirerocket",
-	BuildTimeIntermediate = 3.0,
-	BuildTimeComplete = 40.0,
-	ScrapPeriod = 5,
-	MetalCost = 200,
-	EnergyCost = 2000,
-	MetalRepairCost = 132,
-	EnergyRepairCost = 1320,
-	MetalReclaimMin = 0.5,
-	MetalReclaimMax = 0.9,
-	EnergyReclaimMin = 0.1,
-	EnergyReclaimMax = 0.4,
-	SpotterFactor = 0,
-	MaxSpotterAssistance = 0.1, -- small benefit from other spotters
-	MaxUpAngle = StandardMaxUpAngle,
-	BuildOnGroundOnly = false,
-	DrawBlurredProjectile = true,
-	SelectEffect = "ui/hud/weapons/ui_weapons",
-	
-	CompatibleGroupTypes =
-	{
-		"rocketemp", "rocket",
-	},
-	Upgrades =
-	{
-		["rocket"] =
-		{
-			Enabled = true,
-			SaveName = "rocket",
-			MetalCost = 200,
-			EnergyCost = 2000,
-		},
-	},
-		
-})
-local rocketemp = FindWeapon("rocketemp")
-if rocketemp then
-	table.insert(rocketemp.CompatibleGroupTypes, "sbfirerocket")
+--test for tog
+sbToG = false
+if FindWeapon("flak") or FindWeapon("shotgun") or FindWeapon("rocketemp") or FindWeapon("rocket") or FindWeapon("cannon20mm") or FindWeapon("firebeam") then
+	sbToG = true
 end
-local rocket = FindWeapon("rocket")
-if rocket then
-	table.insert(rocket.CompatibleGroupTypes, "sbfirerocket")
+
+--if tog is disabled then add tog sprites 
+if not sbToG then
+	table.insert(Sprites, ButtonSprite("hud-group-rocket", "groups/Group-Rocket", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, "mods/weapon_pack"))
+	table.insert(Sprites, ButtonSprite("hud-group-flak", "groups/Group-Flak", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, "mods/weapon_pack"))
+	table.insert(Sprites, ButtonSprite("hud-group-shotgun", "groups/Group-Shotgun", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, "mods/weapon_pack"))
+end
+
+--//START WEAPON INSERTION//--
+
+--fire rocket
+if FindWeapon("rocket") and FindWeapon("rocketemp") then
+	table.insert(Sprites, DetailSprite("hud-detail-sbfirerocket", "sbfirerocket", path))
+	table.insert(Sprites, ButtonSprite("hud-sbfirerocket-icon", "HUD/HUD-sbfirerocket", nil, ButtonSpriteBottom, nil, nil, path))
+	table.insert(Weapons, IndexOfWeapon("rocketemp") + 1,
+	{
+		Enabled = true,
+		SaveName = "sbfirerocket",
+		FileName = path .. "/weapons/sbfirerocket/sbfirerocket.lua",
+		Prerequisite = "armoury",
+		Icon = "hud-sbfirerocket-icon",
+		GroupButton = "hud-group-rocket",
+		Detail = "hud-detail-sbfirerocket",
+		BuildTimeIntermediate = 3.0,
+		BuildTimeComplete = 40.0,
+		ScrapPeriod = 5,
+		MetalCost = 200,
+		EnergyCost = 2000,
+		MetalRepairCost = 132,
+		EnergyRepairCost = 1320,
+		MetalReclaimMin = 0.5,
+		MetalReclaimMax = 0.9,
+		EnergyReclaimMin = 0.1,
+		EnergyReclaimMax = 0.4,
+		SpotterFactor = 0,
+		MaxSpotterAssistance = 0.1, -- small benefit from other spotters
+		MaxUpAngle = StandardMaxUpAngle,
+		BuildOnGroundOnly = false,
+		DrawBlurredProjectile = true,
+		SelectEffect = "ui/hud/weapons/ui_weapons",
+		
+		CompatibleGroupTypes =
+		{
+			"rocketemp", "rocket",
+		},
+		Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "rocket",
+				MetalCost = 200,
+				EnergyCost = 2000,
+			},
+		},
+			
+	})
+	local rocketemp = FindWeapon("rocketemp")
+	if rocketemp then
+		table.insert(rocketemp.CompatibleGroupTypes, "sbfirerocket")
+	end
+	local rocket = FindWeapon("rocket")
+	if rocket then
+		table.insert(rocket.CompatibleGroupTypes, "sbfirerocket")
+	end
 end
 table.insert(Sprites, DetailSprite("hud-detail-sbimploder", "sbimploder", path))
 table.insert(Sprites, ButtonSprite("hud-sbimploder-icon", "HUD/HUD-sbimploder", nil, ButtonSpriteBottom, nil, nil, path))
@@ -366,52 +382,48 @@ table.insert(Weapons, IndexOfWeapon("sbminishotgun") + 1,
 })
 
 
-local shotgunupgrade = FindWeapon("shotgun")
-if shotgunupgrade then
-table.insert(shotgunupgrade.Upgrades,
-{
-	Enabled = true,
-	SaveName = "sbheshotgun",
-	MetalCost = 250,
-	EnergyCost = 2000,
-	Button = "hud-sbbg-upgrade",
-})
-end
-table.insert(Weapons, IndexOfWeapon("shotgun") + 1,
-{
-		SaveName = "sbheshotgun",
-		Enabled = false,
-		FileName = path .. "/weapons/sbheshotgun/sbheshotgun.lua",
-		Icon = "hud-shotgun-icon",
-		GroupButton = "hud-group-shotgun",
-		Detail = "hud-detail-shotgun",
-		Prerequisite = "upgrade",
-		BuildTimeIntermediate = 1.0,
-		BuildTimeComplete = 35.0,
-		ScrapPeriod = 5,
-		MetalCost = 600,
-		EnergyCost = 5000,
-		MetalRepairCost = 7.5,
-		EnergyRepairCost = 225,
-		MetalReclaimMin = 0.25,
-		MetalReclaimMax = 0.5,
-		EnergyReclaimMin = 0.1,
-		EnergyReclaimMax = 0.5,
-		MaxSpotterAssistance = 0, -- machinegun doesn't benefit from spotters
-		MaxUpAngle = StandardMaxUpAngle,
-		BuildOnGroundOnly = false,
-		FireGroupWhenDoorBlocks = true,
-		SelectEffect = "ui/hud/weapons/ui_weapons",
-		CompatibleGroupTypes =
-		{
-			"shotgun",
-		},
-})
-
 local shotgun = FindWeapon("shotgun")
 if shotgun then
+	table.insert(shotgun.Upgrades,
+	{
+		Enabled = true,
+		SaveName = "sbheshotgun",
+		MetalCost = 250,
+		EnergyCost = 2000,
+		Button = "hud-sbbg-upgrade",
+	})
+	table.insert(Weapons, IndexOfWeapon("shotgun") + 1,
+	{
+			SaveName = "sbheshotgun",
+			Enabled = false,
+			FileName = path .. "/weapons/sbheshotgun/sbheshotgun.lua",
+			Icon = "hud-shotgun-icon",
+			GroupButton = "hud-group-shotgun",
+			Detail = "hud-detail-shotgun",
+			Prerequisite = "upgrade",
+			BuildTimeIntermediate = 1.0,
+			BuildTimeComplete = 35.0,
+			ScrapPeriod = 5,
+			MetalCost = 600,
+			EnergyCost = 5000,
+			MetalRepairCost = 7.5,
+			EnergyRepairCost = 225,
+			MetalReclaimMin = 0.25,
+			MetalReclaimMax = 0.5,
+			EnergyReclaimMin = 0.1,
+			EnergyReclaimMax = 0.5,
+			MaxSpotterAssistance = 0, -- machinegun doesn't benefit from spotters
+			MaxUpAngle = StandardMaxUpAngle,
+			BuildOnGroundOnly = false,
+			FireGroupWhenDoorBlocks = true,
+			SelectEffect = "ui/hud/weapons/ui_weapons",
+			CompatibleGroupTypes =
+			{
+				"shotgun",
+			},
+	})
 	if not shotgun.CompatibleGroupTypes then shotgun.CompatibleGroupTypes = {} end
-table.insert(shotgun.CompatibleGroupTypes, "sbheshotgun")
+	table.insert(shotgun.CompatibleGroupTypes, "sbheshotgun")
 end
 table.insert(Sprites, DetailSprite("hud-detail-sbssm", "sbssm", path))
 table.insert(Weapons, IndexOfWeapon("sbbigminigun") + 1,
@@ -781,7 +793,7 @@ table.insert(Weapons, IndexOfWeapon("rocketemp"),
 				Enabled = true,
 				SaveName = "sbswarmshield",
 				MetalCost = 200,
-				EnergyCost = 2000,
+				EnergyCost = 1000,
 				Button = "hud-sbbg-upgrade",
 			},
 		},
@@ -1116,10 +1128,10 @@ table.insert(Weapons, IndexOfWeapon("sbfog") + 1,
 		Detail = "hud-detail-sbswarmshield", 
 		Prerequisite = "upgrade",
 		BuildTimeIntermediate = 1.0,
-		BuildTimeComplete = 45.0,
+		BuildTimeComplete = 40.0,
 		ScrapPeriod = 5,
 		MetalCost = 400,
-		EnergyCost = 4000,
+		EnergyCost = 3000,
 		MetalRepairCost = 7.5,
 		EnergyRepairCost = 225,
 		MetalReclaimMin = 0.25,
@@ -1532,8 +1544,8 @@ table.insert(Weapons, IndexOfWeapon("cannon"),
 		{
 				Enabled = true,
 				SaveName = "sbdowndrone",
-				MetalCost = 50,
-				EnergyCost = 1000,
+				MetalCost = 150,
+				EnergyCost = 2500,
 				Button = "hud-sbbg-upgrade",
 		},
 	},
@@ -1550,10 +1562,10 @@ table.insert(Weapons, IndexOfWeapon("sbdowncannon") + 1,
 	GroupButton = "hud-group-rocket",
 	Detail = "hud-detail-sbdrone",
 	BuildTimeIntermediate = 20.0,
-	BuildTimeComplete = 45.0,
+	BuildTimeComplete = 50.0,
 	ScrapPeriod = 6,
-	MetalCost = 900,
-	EnergyCost = 6500,
+	MetalCost = 1000,
+	EnergyCost = 8000,
 	MetalRepairCost = 132,
 	EnergyRepairCost = 1320,
 	MetalReclaimMin = 0.5,
@@ -2022,35 +2034,36 @@ table.insert(Weapons, IndexOfWeapon("sboilgun"),
 })
 
 --[[
-local sbnukenerfs = FindWeapon("missile")
-if sbnukenerfs then
-sbnukenerfs.Upgrades =
-		{
-			["missile2"] =
+local sbTorpedo = FindWeapon("cannon")
+if sbTorpedo then
+	table.insert(Weapons, IndexOfWeapon("cannon"),
+		InheritType(FindWeapon("cannon"),nil,
 			{
-				Enabled = true,
-				SaveName = "missile2",
-				MetalCost = 200,
-				EnergyCost = 2000,
-				BuildTimeComplete = 75,
-			},
-		}
+				Enabled = false,
+				SaveName = "sbtorpedo",
+				FileName = path .. "/weapons/sbtorpedo/sbtorpedo.lua",
+				MetalCost = 700,
+				EnergyCost = 4500,
+				Prerequisite = "munitions",
+				CompatibleGroupTypes = {},
+			}
+		)
+	)
+end]]
+
+--END WEAPON INSERTION
+
+if not sbToG then
+	for k, v in pairs(Weapons) do
+		if v.Prerequisite then
+			if v.Prerequisite == "armoury" then
+				v.Prerequisite = "workshop"
+			elseif v.Prerequisite == "munitions" then
+				v.Prerequisite = "factory"
+			end
+		end
+	end
 end
-local sbnukenerfsinv = FindWeapon("missileinv")
-if sbnukenerfsinv then
-sbnukenerfsinv.Upgrades =
-		{
-			["missile2inv"] =
-			{
-				Enabled = true,
-				SaveName = "missile2inv",
-				MetalCost = 200,
-				EnergyCost = 2000,
-				BuildTimeComplete = 75,
-			},
-		}
-end
-]]
 --indef functions
 RegisterApplyMod(function()
 	local indefcheck = FindWeapon("_cannon2")
@@ -2218,3 +2231,25 @@ RegisterApplyMod(function()
 	end
 end)
 
+function sbAddOilUpg()
+	for k, v in pairs(Weapons) do
+		if not v.Upgrades then v.Upgrades = {} end
+		if not v.BuildOnOreOnly and not v.BuildOnGroundOnly then
+			table.insert(v.Upgrades, 
+			{
+				Enabled = false,
+				SaveName = "sboildrumempdevice",
+				MetalCost = 0,
+				EnergyCost = 0,
+			})
+			table.insert(v.Upgrades, 
+			{
+				Enabled = false,
+				SaveName = "sboildrumdevice",
+				MetalCost = 0,
+				EnergyCost = 0,
+			})
+		end
+	end
+end
+RegisterApplyMod(sbAddOilUpg)

@@ -7,7 +7,8 @@ sbUniversalImpactMultiplier = 1.0
 --Function is a copy of ToG MakeFlamingVersion for the kinetic beam.
 function MakeVacuumVersion(saveName, trailEffect, impact, splashforce, customPath)
 	local projectile = FindProjectile(saveName)
-	if not projectile then Log("Error: MakeVacuumVersion unable to find " .. saveName) return end
+	if not projectile then --Log("Error: MakeVacuumVersion unable to find " .. saveName) 
+	return end
 
 	projectile.CollidesWithBeams = true
 	projectile.Effects.Impact["sbpullbeam"] = { Effect = (customPath or path) .. "/effects/sbpullbeam_hit2.lua", Projectile = { Count = 1, Type = "vacuum" .. saveName, StdDev = 0 }, Splash = false, Terminate = true, KeepLifespan = true, PosT = 1, Offset = 0 }

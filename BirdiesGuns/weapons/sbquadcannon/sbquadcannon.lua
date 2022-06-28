@@ -33,6 +33,7 @@ FireEffect = "mods/weapon_pack/effects/fire_20mmcannon.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ShellEffect = path .. "/effects/shell_eject_sbquadcannon.lua"
 ReloadEffect = "effects/reload_cannon.lua"
 ReloadEffectOffset = -2

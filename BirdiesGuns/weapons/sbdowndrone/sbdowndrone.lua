@@ -12,7 +12,7 @@ RecessionBox =
 CanFlip = false
 
 WeaponMass = 120.0
-HitPoints = 400.0
+HitPoints = 300.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0
 EnergyStorageCapacity = 0.0
@@ -21,7 +21,7 @@ MinWindEfficiency = 1
 MaxWindHeight = 0
 MaxRotationalSpeed = 0
 DeviceSplashDamage = 150
-DeviceSplashDamageMaxRadius = 400
+DeviceSplashDamageMaxRadius = 350
 DeviceSplashDamageDelay = 0.2
 IncendiaryRadius = 120
 IncendiaryRadiusHeated = 150
@@ -32,6 +32,7 @@ FireEffect = path .. "/effects/fire_sbdrone.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"
+DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged_large.lua"
 ShellEffect = "effects/shell_eject_cannon.lua"
 ReloadEffect = path .. "/effects/reload_sbdrone.lua"
 ReloadEffectOffset = -1.1
@@ -41,7 +42,7 @@ MinFireClearance = 500
 FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
 AttractZoomOutDuration = 5
-ReloadTime = 25
+ReloadTime = 28
 MinFireSpeed = 1300.0
 MaxFireSpeed = 1300.1
 MinFireRadius = 600.0
@@ -58,7 +59,7 @@ FireStdDev = 0.01
 FireStdDevAuto = 0.012
 Recoil = 600000
 EnergyFireCost = 4000.0
-MetalFireCost = 70.0
+MetalFireCost = 80.0
 FireDelay = 0.5
 --[[
 TriggerProjectileAgeAction = true
@@ -182,7 +183,7 @@ Root =
 				{
 					Name = "Hardpoint0",
 					Angle = 90,
-					Pivot = { 0, 0.00 },
+					Pivot = { 0, -0.01 },
 					PivotOffset = { 0, 0 },
 				},
 				{

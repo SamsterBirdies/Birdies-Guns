@@ -4,6 +4,7 @@ sbfogflame = FindProjectile("flamingsbfog")
 if sbfogflame then 
 	sbfogflame.IncendiaryRadius = 0
 	sbfogflame.IncendiaryRadiusHeated = 0
+	sbfogflame.ProjectileDamage = sbfogflame.ProjectileDamage / 2
 	sbfogflame.Effects.Impact.default = sbBGpath .. "/effects/cloudSmoke.lua"
 end
 

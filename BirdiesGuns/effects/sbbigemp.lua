@@ -6,6 +6,79 @@ LifeSpan = 3
 
 Sprites =
 {
+	{
+		Name = "sbunTOGimpact_emp",
+
+		States =
+		{
+			Normal =
+			{
+				Frames =
+				{
+					--{ texture = path .. "/effects/media/RocketEMP00.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP01.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP02.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP03.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP04.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP05.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP06.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP07.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP08.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP09.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP10.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP11.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP12.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP13.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP14.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP15.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP16.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP17.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP18.png" },
+					{ texture = "mods/weapon_pack/effects/media/RocketEMP18.png", colour = { 1, 1, 1, 0.0 }, duration = 2 }, -- just makes a blank frame long enough to last the rest of the effect
+
+					duration = 0.04,
+					blendColour = false,
+					blendCoordinates = false,
+				},
+				--RandomPlayLength = 2,
+				NextState = "Normal",
+			},
+		},
+	},
+	{
+		Name = "sbunTOGimpact_shield_emp",
+
+		States =
+		{
+			Normal =
+			{
+				Frames =
+				{
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_01.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_02.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_03.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_04.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_05.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_06.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_07.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_08.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_09.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_10.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_11.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_12.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_13.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_14.tga" },
+					{ texture = "mods/weapon_pack/effects/media/impact_shield_14.tga", colour = { 1, 1, 1, 0.0 }, duration = 2 }, -- just makes a blank frame long enough to last the rest of the effect
+
+					duration = 0.07,
+					blendColour = false,
+					blendCoordinates = false,
+				},
+				--RandomPlayLength = 2,
+				NextState = "Normal",
+			},
+		},
+	},
 }
 SoundEvent = "mods/sbBGsoundbank/effects/megaemp2"
 Effects =
@@ -175,7 +248,7 @@ Effects =
 		LocalVelocity = { x = 0, y = 0, z = 0 },
 		Acceleration = { x = 0, y = 0, z = 0 },
 		Drag = 0.0,
-		Sprite = "impact_shield_emp",
+		Sprite = "sbunTOGimpact_shield_emp",
 		Additive = false,
 		TimeToLive = 2,
 		InitialSize = 2.8,
@@ -193,7 +266,7 @@ Effects =
 		LocalVelocity = { x = 0, y = 0, z = 0 },
 		Acceleration = { x = 0, y = 0, z = 0 },
 		Drag = 0.0,
-		Sprite = "impact_emp",
+		Sprite = "sbunTOGimpact_emp",
 		Additive = true,
 		TimeToLive = 2,
 		InitialSize = 4.5,

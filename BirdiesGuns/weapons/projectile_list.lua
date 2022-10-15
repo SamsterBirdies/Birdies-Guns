@@ -2815,12 +2815,7 @@ MakeVacuumVersion("mortar", "vacuumtrail", 2500000)
 MakeVacuumVersion("mortar2", "vacuumtrail", 2550000)
 MakeVacuumVersion("missile", "vacuumtrailsmall", 780000)
 MakeVacuumVersion("missile2", "vacuumtrail_long", 1000, 400000)
---vacuumbeamversions_hs
-if FindProjectile("paveway") then
-	MakeVacuumVersion("paveway", "vacuumtrail", 1000, 750000)
-	MakeVacuumVersion("bomb", "vacuumtrail", 2700000)
-	MakeVacuumVersion("turret", "vacuumtrail", 1000, 900000)
-end
+
 --vacuumbeamversions_birdiesguns
 MakeVacuumVersion("sbfirerocket", "vacuumtrail", 100000, 490000)
 --MakeVacuumVersion("sbimploder", "vacuumtrailsmall", 1700000, 4290000)
@@ -2877,6 +2872,12 @@ local moonshotcheck = FindProjectile("magnabeam")
 if moonshotcheck then
 	MakeVacuumVersion("buzzsaw", "vacuumtrail", 1500000)
 	MakeVacuumVersion("howitzer", "vacuumtrail", 1000, 750000)
+end
+--vacuumbeamversions_hs
+if FindProjectile("paveway") then
+	MakeVacuumVersion("paveway", "vacuumtrail", 1000, 750000)
+	MakeVacuumVersion("bomb", "vacuumtrail", 2700000)
+	MakeVacuumVersion("turret", "vacuumtrail", 1000, 900000)
 end
 --vacuumbeamversions_flyingforts
 local flyingfortscheck = FindProjectile("sbjetair")

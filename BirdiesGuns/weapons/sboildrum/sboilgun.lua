@@ -62,8 +62,8 @@ PanDuration = 0
 FireStdDev = 0.0 -- 0.03
 FireStdDevAuto = 0.012
 Recoil = 900000
-EnergyFireCost = 1100.0
-MetalFireCost = 70
+EnergyFireCost = 1000.0
+MetalFireCost = 40
 
 
 ShowFireAngle = true

@@ -3000,7 +3000,33 @@ if toucheck then
 	MakeVacuumVersion("sbfirerocketMU", "vacuumtrail", 100000, 490000)
 	
 end
-
+--birdies ammo
+if FindProjectile("sbApacheP1") then
+	MakeVacuumVersion("sbba_NapalmMortar", "vacuumtrail", 2550000)
+	MakeVacuumVersion("sbExtraHeavyMortar", "vacuumtrail", 2550000)
+	MakeVacuumVersion("sbSmokeMortar", "vacuumtrail", 2550000)
+	MakeVacuumVersion("sbAIOmortarP2", "vacuumtrail", 3550000)
+	MakeVacuumVersion("sbAIOmortarP1", "vacuumtrail", 3550000)
+	local sbAIO = FindProjectile("vacuumsbAIOmortarP1")
+	if sbAIO then
+		sbAIO.Effects.Impact.default.Projectile.Type = "vacuumsbAIOmortarP2"
+	end
+	MakeVacuumVersion("sbAirburstS1", "vacuumtrailsmall", 240000)
+	MakeVacuumVersion("sbAirburstP1", "vacuumtrail", 1700000)
+	local sbAB = FindProjectile("vacuumsbAirburstP1")
+	if sbAB then
+		sbAB.Effects.Impact.default.Projectile.Type = "vacuumsbAirburstS1"
+	end
+	MakeVacuumVersion("sbBombGlider", "vacuumtrail", 6000000)
+	local sbBombGlider = FindProjectile("vacuumsbBombGlider")
+	if sbBombGlider then
+		sbBombGlider.Effects.Age = {}
+	end
+	MakeVacuumVersion("sbBombGliderBomb", "vacuumtrail", 6000000)
+	MakeVacuumVersion("sbB2bomb", "vacuumtrailsmall", 5550000)
+	MakeVacuumVersion("sbArtilleryHail", "vacuumtrail", 6000000)
+	MakeVacuumVersion("sbRocketCannon2", "vacuumtrail_long", 1000, 220000)
+end
 --//VACUUM BEAM END//--
 
 --firebeamversions

@@ -12,7 +12,7 @@ RecessionBox =
 CanFlip = false
 
 WeaponMass = 120.0
-HitPoints = 550.0
+HitPoints = 300.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0
 EnergyStorageCapacity = 0.0

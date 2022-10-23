@@ -9,8 +9,8 @@ RecessionBox =
 	Offset = { -42.5, -40 },
 }
 
-WeaponMass = 80.0
-HitPoints = 130.0
+WeaponMass = 40.0
+HitPoints = 80.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0
 EnergyStorageCapacity = 0.0

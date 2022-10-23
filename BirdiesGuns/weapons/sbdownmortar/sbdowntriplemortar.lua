@@ -13,7 +13,7 @@ RecessionBox =
 ]]
 
 WeaponMass = 60.0
-HitPoints = 70.0
+HitPoints = 100.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0
 EnergyStorageCapacity = 0.0

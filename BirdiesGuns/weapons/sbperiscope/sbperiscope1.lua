@@ -6,7 +6,7 @@ SelectionHeight = 40.0
 SelectionOffset = { 0.0, -40.5 }
 
 
-WeaponMass = 40.0
+WeaponMass = 60.0
 HitPoints = 20.0
 EnergyProductionRate = 0.0
 MetalProductionRate = 0.0

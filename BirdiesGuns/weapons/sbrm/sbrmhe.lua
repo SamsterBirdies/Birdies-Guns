@@ -1,12 +1,12 @@
 sbBGpath = path
 Scale = 1
 SelectionWidth = 63.75
-SelectionHeight = 98.0
-SelectionOffset = { 0.0, -104.0 }
+SelectionHeight = 75.0
+SelectionOffset = { 0.0, -80.5 }
 RecessionBox =
 {
 	Size = { 25, 1000 },
-	Offset = { 0, -890 },
+	Offset = { 0, -1050 },
 	AutoCreateDoor = false,
 }
 CanFlip = false
@@ -28,7 +28,7 @@ DestroyEffect = "effects/missile_explode.lua"
 ReloadEffect = "effects/silo_reload.lua"
 ReloadEffectOffset = -2.5
 Projectile = "sbrmhe"
-BarrelLength = 0.0
+BarrelLength = 50.0
 MinFireClearance = 1000
 FireClearanceOffsetInner = 40
 FireClearanceOffsetOuter = 40
@@ -108,7 +108,7 @@ Root =
 		{
 			Name = "Hardpoint0",
 			Angle = 0,
-			Pivot = { 0, -0.5 }, -- modify this to adjust height of spawned projectile
+			Pivot = { 0, -0.0 }, -- modify this to adjust height of spawned projectile
 			PivotOffset = { 0, 0 },
 		},
 		{

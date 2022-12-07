@@ -1,4 +1,5 @@
 sbBGpath = path
+dofile("scripts/type.lua")
 for k,v in pairs(Weapons) do
     if not v.Upgrades then v.Upgrades = {} end
 end
@@ -804,6 +805,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmhe",
 	Enabled = false,
+	InvertedType = "sbrmheinv",
 	FileName = path .. "/weapons/sbrm/sbrmhe.lua",
 	Icon = "hud-sbrmhe-icon",
 	GroupButton = "hud-group-missile",
@@ -813,7 +815,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	BuildTimeComplete = 75.0,
 	ScrapPeriod = 8,
 	MetalCost = 700,
-	EnergyCost = 5700,
+	EnergyCost = 6700,
 	MetalRepairCost = 80,
 	EnergyRepairCost = 1250,
 	MetalReclaimMin = 0.25,
@@ -826,10 +828,12 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	BuildOnGroundOnly = true,
 	AlignToCursorNormal = false,
 	RequiresSpotterToFire = true,
+	RequiresLand = true,
+	RequiresWater = false,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
 	CompatibleGroupTypes =
 	{
-		"sbrmemp", "sbrmfire",
+		"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
 	},
 })
 table.insert(Sprites, ButtonSprite("hud-sbrmfire-icon", "HUD/HUD-sbrmfire", nil, ButtonSpriteBottom, nil, nil, path))
@@ -837,6 +841,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmfire",
 	Enabled = false,
+	InvertedType = "sbrmfireinv",
 	FileName = path .. "/weapons/sbrm/sbrmfire.lua",
 	Icon = "hud-sbrmfire-icon",
 	GroupButton = "hud-group-missile",
@@ -859,21 +864,22 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	BuildOnGroundOnly = true,
 	AlignToCursorNormal = false,
 	RequiresSpotterToFire = true,
+	RequiresLand = true,
+	RequiresWater = false,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
 	Upgrades =
 	{
-		["sbrmhe"] =
 		{
 			Enabled = true,
 			SaveName = "sbrmhe",
-			MetalCost = 275,
+			MetalCost = 225,
 			EnergyCost = 2200,
 			Button = "hud-sbbg-upgrade",
 		},
 	},
 	CompatibleGroupTypes =
 	{
-		"sbrmemp", "sbrmhe", 
+		"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
 	},
 })
 table.insert(Sprites, ButtonSprite("hud-sbrmemp-icon", "HUD/HUD-sbrmemp", nil, ButtonSpriteBottom, nil, nil, path))
@@ -881,6 +887,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmemp",
 	Enabled = true,
+	InvertedType = "sbrmempinv",
 	FileName = path .. "/weapons/sbrm/sbrmemp.lua",
 	Icon = "hud-sbrmemp-icon",
 	GroupButton = "hud-group-missile",
@@ -903,10 +910,11 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	BuildOnGroundOnly = true,
 	AlignToCursorNormal = false,
 	RequiresSpotterToFire = true,
+	RequiresLand = true,
+	RequiresWater = false,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
 	Upgrades =
 	{
-		["sbrmfire"] =
 		{
 			Enabled = true,
 			SaveName = "sbrmfire",
@@ -917,9 +925,132 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	},
 	CompatibleGroupTypes =
 	{
-		"sbrmfire", "sbrmhe", 
+		"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
 	},
 })
+--marine versions
+table.insert(Sprites, ButtonSprite("hud-sbrmempmarine-icon", "HUD/HUD-sbrmempmarine", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmfiremarine-icon", "HUD/HUD-sbrmfiremarine", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmhemarine-icon", "HUD/HUD-sbrmhemarine", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmhe"), nil,
+	{
+		SaveName = "sbrmhemarine",
+		FileName = path .. "/weapons/sbrm/sbrmhemarine.lua",
+		RequiresLand = false,
+		RequiresWater = true,
+		BuildOnGroundOnly = false,
+		MetalCost = 900,
+		CompatibleGroupTypes = { "sbrmempmarine", "sbrmfiremarine", "sbrmhemarine"},
+		Icon = "hud-sbrmhemarine-icon",
+	})
+)
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmfire"), nil,
+	{
+		SaveName = "sbrmfiremarine",
+		FileName = path .. "/weapons/sbrm/sbrmfiremarine.lua",
+		MetalCost = 675,
+		RequiresLand = false,
+		RequiresWater = true,
+		BuildOnGroundOnly = false,
+		Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "sbrmhemarine",
+				MetalCost = 225,
+				EnergyCost = 2200,
+				Button = "hud-sbbg-upgrade",
+			},
+		},
+		CompatibleGroupTypes = { "sbrmempmarine", "sbrmfiremarine", "sbrmhemarine"},
+		Icon = "hud-sbrmfiremarine-icon",
+	})
+)
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmemp"), nil,
+	{
+		SaveName = "sbrmempmarine",
+		FileName = path .. "/weapons/sbrm/sbrmempmarine.lua",
+		RequiresLand = false,
+		RequiresWater = true,
+		BuildOnGroundOnly = false,
+		MetalCost = 600,
+		Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "sbrmfiremarine",
+				MetalCost = 75,
+				EnergyCost = 1000,
+				Button = "hud-sbbg-upgrade",
+			},
+		},
+		CompatibleGroupTypes = { "sbrmempmarine", "sbrmfiremarine", "sbrmhemarine"},
+		Icon = "hud-sbrmempmarine-icon",
+	})
+)
+--inverted versions
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmhe"), nil,
+	{
+		SaveName = "sbrmheinv",
+		Enabled = false,
+		Inverted = true,
+		FileName = path .. "/weapons/sbrm/sbrmheinv.lua",
+		CompatibleGroupTypes =
+		{
+			"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
+		},
+	})
+)
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmfire"), nil,
+	{
+		SaveName = "sbrmfireinv",
+		Enabled = false,
+		Inverted = true,
+		FileName = path .. "/weapons/sbrm/sbrmfireinv.lua",
+		Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "sbrmheinv",
+				MetalCost = 225,
+				EnergyCost = 2200,
+				Button = "hud-sbbg-upgrade",
+			},
+		},
+		CompatibleGroupTypes =
+		{
+			"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
+		},
+	})
+)
+table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
+	InheritType(FindWeapon("sbrmemp"), nil,
+	{
+		SaveName = "sbrmempinv",
+		Enabled = true,
+		Inverted = true,
+		FileName = path .. "/weapons/sbrm/sbrmempinv.lua",
+		Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "sbrmfireinv",
+				MetalCost = 75,
+				EnergyCost = 1000,
+				Button = "hud-sbbg-upgrade",
+			},
+		},
+		CompatibleGroupTypes =
+		{
+			"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
+		},
+	})
+)
 table.insert(Sprites, DetailSprite("hud-detail-sbsur", "sbsur", path))
 table.insert(Sprites, ButtonSprite("hud-sbsuremp-icon", "HUD/HUD-sbsuremp", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("rocketemp"),

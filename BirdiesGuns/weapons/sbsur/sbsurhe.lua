@@ -64,6 +64,8 @@ AutofireCloseDoorTicks = DoorCloseDelay*25
 EMPRadius = 140
 EMPDuration = 7
 
+EagleEyeReloadBank = {Max = 0}
+
 TargetIcon =
 {
 	Persistent = true,

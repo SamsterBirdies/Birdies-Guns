@@ -73,6 +73,12 @@ TargetIcon =
 	Height = 32,
 }
 
+EagleEyeReloadBank = 
+{
+	Max = 3,
+	ReloadTime = 2,
+}
+
 dofile("effects/device_smoke.lua")
 SmokeEmitter = StandardDeviceSmokeEmitter
 

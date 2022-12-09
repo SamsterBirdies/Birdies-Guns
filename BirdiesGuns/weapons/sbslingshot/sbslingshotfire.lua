@@ -64,6 +64,12 @@ HeatPeriod = 2
 CoolPeriod = 5
 CoolPeriodOverheated = 7
 
+EagleEyeReloadBank = 
+{
+	Max = 3,
+	ReloadTime = 2,
+}
+
 TargetIcon =
 {
 	Persistent = true,

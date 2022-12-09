@@ -53,6 +53,12 @@ MetalFireCost = 10
 AutofireCloseDoorTicks = 2*25
 ShowFireAngle = true
 
+EagleEyeReloadBank = 
+{
+	Max = 3,
+	ReloadTime = 3,
+}
+
 TargetIcon =
 {
 	Persistent = true,

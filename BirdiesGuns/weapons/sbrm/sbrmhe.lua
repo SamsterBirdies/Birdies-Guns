@@ -126,3 +126,6 @@ Root =
 		},
 	},
 }
+function sbApplyXmas()
+	FireEffect = path .. "/effects/sbrmempfire_xmas.lua"
+end

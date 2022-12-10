@@ -7,4 +7,3 @@ RecessionBox = {}
 MinFireAngle = MinFireAngle + 180
 MaxFireAngle = MaxFireAngle + 180
 Inverted = true
-

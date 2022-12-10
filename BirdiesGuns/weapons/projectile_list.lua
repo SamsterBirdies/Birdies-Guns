@@ -3126,6 +3126,10 @@ if sbToG then
 	MakeArmouredMissileTurnFlaming("sbrmhe")
 	MakeArmouredMissileTurnFlaming("sbfirerocket")
 end
+--seasonal additions
+dofile(path .. "/seasonal/xmas/projectile_list.lua")
+--dofile(path .. "/seasonal/halloween/projectile_list.lua")
+--dofile(path .. "/seasonal/easter/projectile_list.lua")
 
 --applymod stuff
 RegisterApplyMod(function()
@@ -3166,21 +3170,3 @@ RegisterApplyMod(function()
 		--Log("Indef not detected :( projectile_list")
 	end
 end)
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-

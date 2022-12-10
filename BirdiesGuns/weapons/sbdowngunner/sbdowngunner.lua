@@ -152,3 +152,6 @@ Root =
 	{
 	},
 }
+function sbApplyXmas()
+	RetriggerFireEffect = true
+end

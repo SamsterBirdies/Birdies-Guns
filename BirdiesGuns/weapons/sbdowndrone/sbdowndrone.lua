@@ -202,3 +202,15 @@ Root =
 		},
 	},
 }
+function sbApplyXmas()
+	Root.ChildrenInFront =
+	{
+		{
+			Name = "santahat",
+			Scale = 0.4,
+			Sprite = path .. "/seasonal/xmas/santahat.png",
+			Pivot = {-0.098, -0.2265},
+			UserData = 100,
+		}
+	}
+end

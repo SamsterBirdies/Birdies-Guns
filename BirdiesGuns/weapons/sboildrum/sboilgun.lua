@@ -128,7 +128,7 @@ Root =
 	Sprite = "sboilgun-base",
 	UserData = 0,
 --	AllowMirror = false,
-	
+	ChildrenInFront = {},
 	ChildrenBehind =
 	{
 		{
@@ -168,3 +168,13 @@ Root =
 		},
 	},
 }
+function sbApplyXmas()
+	table.insert(Root.ChildrenInFront,
+	{
+		Name = "xmashat",
+		Scale = 0.35,
+		Pivot = {0.197, -0.12469},
+		Sprite = path .. "/seasonal/xmas/santahat.png",
+		UserData = 100,
+	})
+end

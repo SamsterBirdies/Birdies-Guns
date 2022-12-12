@@ -319,19 +319,16 @@ Root =
 			},
 		},
 	},
---[[
-	ChildrenInFront =
+}
+function sbApplyXmas()
+	Root.ChildrenInFront =
 	{
 		{
-			Name = "Scaffold",
-			Sprite = "under_construction",
-			Visible = false,
-		},
-		{
-			Name = "ScaffoldProgress",
-			Sprite = "under_construction_progress",
-			Visible = false,
-		},
-	},
-]]
-}
+			Name = "santahat",
+			Scale = 0.5,
+			Sprite = path .. "/seasonal/xmas/santahat.png",
+			Pivot = {-0.162, 0.058},
+			UserData = 100,
+		}
+	}
+end

@@ -128,4 +128,14 @@ Root =
 }
 function sbApplyXmas()
 	FireEffect = path .. "/effects/sbrmempfire_xmas.lua"
+	Root.ChildrenInFront = 
+	{
+		{
+			Name = "Reef",
+			Scale = 1.25,
+			Pivot = {0,0},
+			Sprite = path .. "/seasonal/xmas/reef.png",
+			UserData = 100,
+		}
+	}
 end

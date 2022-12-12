@@ -208,3 +208,13 @@ Root =
 		},
 	},
 }
+function sbApplyXmas()
+	table.insert(Root.ChildrenInFront[1].ChildrenInFront,
+	{
+		Name = "xmashat",
+		Scale = 0.5,
+		Pivot = {-0.3171, -0.2792},
+		Sprite = path .. "/seasonal/xmas/santahat.png",
+		UserData = 100,
+	})
+end

@@ -126,16 +126,20 @@ Root =
 					Pivot = { 0.165, -0.05 },
 					PivotOffset = { 0, 0 },
 				},
---[[			{
-					Name = "MuzzleFlash",
-					Angle = 0,
-					Pivot = { 0.6, -0.02 },
-					PivotOffset = { 0, 0 },
-					Sprite = "flak-flash",
-					Visible = false,
-				},
-				]]
 			},
 		},
 	},
 }
+function sbApplyXmas()
+	Root.ChildrenInFront[1].ChildrenInFront =
+	{
+		{
+			Name = "reef",
+			Scale = 1,
+			Angle = 90,
+			Pivot = {0,0},
+			Sprite = path .. "/seasonal/xmas/reef.png",
+			UserData = 100,
+		},
+	}
+end

@@ -156,3 +156,16 @@ Root =
 		},
 	},
 }
+function sbApplyXmas()
+	Root.ChildrenInFront[1].ChildrenInFront =
+	{
+		{
+			Name = "reef",
+			Scale = 1,
+			Angle = 90,
+			Pivot = {0,0},
+			Sprite = path .. "/seasonal/xmas/reef.png",
+			UserData = 100,
+		},
+	}
+end

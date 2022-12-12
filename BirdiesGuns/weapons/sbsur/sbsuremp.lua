@@ -114,6 +114,24 @@ Sprites =
 		},
 	},
 	{
+		Name = "sbsuremp-reload-xmas",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/seasonal/xmas/gift_blue.png" }, mipmap = true, }, },
+			Idle = Normal,
+			Reload =
+			{
+				Frames =
+				{
+					{ texture = path .. "/effects/media/blank.png", duration = sbinfinity, },
+					mipmap = true,
+					duration = ReloadFramePeriod,
+				},
+				NextState = "Normal",
+			},
+		},
+	},
+	{
 		Name = "sbsuremp-reload-armoured",
 		States =
 		{
@@ -196,3 +214,16 @@ Root =
 	{
 	},
 }
+function sbApplyXmas()
+	Root.ChildrenBehind[1].ChildrenInFront =
+	{
+		{
+			Name = "Reload-xmas",
+			Sprite = "sbsuremp-reload-xmas",
+			Scale = 1.75,
+			Angle = 90,
+			Pivot = {0.15, -0.239},
+			UserData = 100,
+		}
+	}
+end

@@ -3035,11 +3035,14 @@ sbflametrailsmall = "mods/weapon_pack/effects/flaming_sniper_trail.lua"
 --In older versions of forts, their built in function was broken. Its fixed now, but this still works so theres no point in removing it.
 function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
 	local projectile = FindProjectile(saveName)
-	if not projectile then Log("Error: MakeFlamingVersion unable to find " .. saveName) return end
+	--cancel if projectile not found
+	if not projectile then return end
 
 	projectile.CollidesWithBeams = true
 	projectile.Effects.Impact["firebeam"] = { Effect = flareEffect, Projectile = { Count = 1, Type = "flaming" .. saveName, StdDev = 0 }, Splash = false, Terminate = true, KeepLifespan = true, PosT = 1, Offset = 0 }
-
+	--if projectile already found, then just apply the Impact Effect only and return.
+	if FindProjectile("flaming" .. saveName) then return end
+	
 	local flamingProjectile = DeepCopy(projectile)
 	flamingProjectile.SaveName = "flaming" .. saveName
 	if projectile.ProjectileType == "bullet" then
@@ -3068,11 +3071,11 @@ function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incend
 		flamingProjectile.Effects.Age = {}
 		flamingProjectile.Effects.Age["t1000000"] = { Effect = expireEffect, Terminate = true, }
 	end
+	
 	table.insert(Projectiles, flamingProjectile)
 end
 --flaming versions
 --MakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
-
 sbMakeFlamingVersion("sbfirerocket", 1.3, 3.5, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbarrow", 1.3, 0.3, "flaming_sniper_trail", 50, nil, nil)
 sbMakeFlamingVersion("sbarrowr", 1.3, 1.25, "flaming_sniper_trail", 70, nil, genericFlamingExpire)

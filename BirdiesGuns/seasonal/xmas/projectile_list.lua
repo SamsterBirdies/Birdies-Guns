@@ -3,9 +3,8 @@ local snowball = path .. "/seasonal/xmas/snowball.png"
 local impacts = "effects/impact_light_snow.lua"
 local impactm = "effects/impact_medium_snow.lua"
 local impactl = "effects/impact_heavy_snow.lua"
-local trails = "effects/bullet_trail.lua"
-local trailm = "mods/weapon_pack/effects/20mmcannon_trail.lua"
-local traill = "effects/cannon_trail.lua"
+local trails = "effects/snow_trail.lua"
+local traill = "effects/snow_trail_large.lua"
 --redundant christmas theming test. Just to help turn off christmas theming automatically after christmas is over and before i can update the mod. To avoid errors.
 if FindProjectile("machinegun").ProjectileSprite == "weapons/media/bullet_snowball_sml" or FindProjectile("machinegun").Effects.ImpactDevice == "effects/impact_light_snow.lua" then
 	--asset swap
@@ -16,6 +15,7 @@ if FindProjectile("machinegun").ProjectileSprite == "weapons/media/bullet_snowba
 		sbrg.DrawBlurredProjectile = false
 		sbrg.ProjectileType = "mortar"
 		sbrg.Effects.Impact = {["default"] = impacts}
+		sbrg.TrailEffect = trails
 	end
 	local sbpebble = FindProjectile("sbpebble")
 	if sbpebble then

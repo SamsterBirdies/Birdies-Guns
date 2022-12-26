@@ -1,9 +1,9 @@
 --seasonal additons
-
+--[[
 if sbApplyXmas then
 	sbApplyXmas()
 end
-
+]]
 --[[
 if sbApplyHalloween then
 	sbApplyHalloween()

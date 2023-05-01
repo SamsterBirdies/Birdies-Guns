@@ -2648,7 +2648,7 @@ table.insert(Projectiles,
 			{ SaveName = "shield", Direct = 0.2, Splash = 0.2 },
 		},
 })
-
+--[[`
 table.insert(Sprites,
 {
 	Name = "sbtorpedoswim",
@@ -2692,7 +2692,7 @@ if sbtorpedo then
 		}
 	}
 	table.insert(Projectiles, sbtorpedo)
-end
+end]]
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:
@@ -3023,9 +3023,15 @@ if FindProjectile("sbApacheP1") then
 		sbBombGlider.Effects.Age = {}
 	end
 	MakeVacuumVersion("sbBombGliderBomb", "vacuumtrail", 6000000)
-	MakeVacuumVersion("sbB2bomb", "vacuumtrailsmall", 5550000)
+	MakeVacuumVersion("sbB2bomb", "vacuumtrailsmall", 2000000)
 	MakeVacuumVersion("sbArtilleryHail", "vacuumtrail", 6000000)
 	MakeVacuumVersion("sbRocketCannon2", "vacuumtrail_long", 1000, 220000)
+	MakeVacuumVersion("sbFlechetteP2", "vacuumtrailsmall", 270000)
+	MakeVacuumVersion("sbFMJmachinegun", "vacuumtrailsmall", 170000)
+	MakeVacuumVersion("sbFMJsniper", "vacuumtrailsmall", 1000000)
+	MakeVacuumVersion("sbFMJminigun", "vacuumtrailsmall", 365000)
+	MakeVacuumVersion("sbFMJshotgun", "vacuumtrailsmall", 365000)
+	MakeVacuumVersion("sbult_mg2", "vacuumtrailsmall", 1000000)
 end
 --//VACUUM BEAM END//--
 
@@ -3135,6 +3141,18 @@ end
 --dofile(path .. "/seasonal/easter/projectile_list.lua")
 
 --applymod stuff
+--indef extra functions
+function sb_indef_sbimploder()
+	local imploder = FindProjectile("sbimploder")
+	if imploder then
+		for i = 2, 64 do
+			local new_imploder = DeepCopy(imploder)
+			new_imploder.SaveName = "_sbimploder" .. tostring(i)
+			new_imploder.ProjectileSplashDamageMaxRadius = imploder.ProjectileSplashDamageMaxRadius + i * 5
+			table.insert(Projectiles, new_imploder)
+		end
+	end
+end
 RegisterApplyMod(function()
 	for k,v in pairs(Projectiles) do
 		if not v.Effects then v.Effects = { Impact = {} } end
@@ -3161,7 +3179,7 @@ RegisterApplyMod(function()
 			{ SaveName = "sbarrowr"},
 			{ SaveName = "sbdowncannon"},
 			{ SaveName = "sbssmfire"},
-			{ SaveName = "sbimploder"},
+			--{ SaveName = "sbimploder"}, --has problems with damage clamps. Overriding with custom function sb_indef_sbimploder()
 			{ SaveName = "sbgrenade"},
 			{ SaveName = "sbflames"},
 			{ SaveName = "sbroofgunner"},
@@ -3169,6 +3187,7 @@ RegisterApplyMod(function()
 			{ SaveName = "sbpebble"},
 			{ SaveName = "sbfog"},
 		})
+		sb_indef_sbimploder()
 	else
 		--Log("Indef not detected :( projectile_list")
 	end

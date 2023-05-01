@@ -13,11 +13,11 @@ base_Projectile = "_sbimploder"
 for x in range (2, iterations + 1):
 	newSprite = "Sprites={{Name = \"sbimplodernocap-barrel"+str(x)+ "\",States={Normal={Frames={{texture= path .. \"/weapons/sbimploder/barrel.tga\",colour={"+str(math.sqrt(((x>>4) & 3)/4.0))+","+str(math.sqrt(((x>>2) & 3)/4.0))+","+str(math.sqrt((x & 3)/4.0))+",1},},mipmap=true,},},Idle=Normal,},},}"
 	newRoot = "Root.ChildrenBehind[1].ChildrenBehind[1].Sprite=\"sbimplodernocap-barrel"+str(x)+"\""
-	EnergyFireCost = EnergyFireCost + EnergyFireCost / 64 + 10
-	MetalFireCost = MetalFireCost + MetalFireCost / 64 + 1
+	EnergyFireCost = EnergyFireCost + EnergyFireCost / 32 + 10
+	MetalFireCost = MetalFireCost + MetalFireCost / 64 + 2
 	MaxFireSpeed = MaxFireSpeed
 	MinFireSpeed = MinFireSpeed
-	RoundsEachBurst = 1 + (x//15)
+	RoundsEachBurst = 1
 	RoundPeriod = 0.1
 	#ReloadTime = max(base_ReloadTime - base_ReloadTime * (x / (iterations * 2) ), base_ReloadTime / 2.0)
 	Projectile = "\"" + base_Projectile + str(x) + "\""

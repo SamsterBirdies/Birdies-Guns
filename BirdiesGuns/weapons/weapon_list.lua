@@ -103,6 +103,7 @@ table.insert(Weapons, IndexOfWeapon("laser") + 1,
 	DrawBlurredProjectile = true,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
 	PopulationCap = 1,
+	ObserverBuildEvent = true,
 	
 	CompatibleGroupTypes =
 	{
@@ -260,6 +261,7 @@ table.insert(Weapons, IndexOfWeapon("cannon20mm") + 1,
 		MaxUpAngle = StandardMaxUpAngle,
 		BuildOnGroundOnly = false,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
+		ObserverBuildEvent = true,
 })
 table.insert(Sprites, DetailSprite("hud-detail-sbminishotgun", "sbminishotgun", path))
 table.insert(Sprites, ButtonSprite("hud-sbminishotgun-icon", "HUD/HUD-sbminishotgun", nil, ButtonSpriteBottom, nil, nil, path))
@@ -541,7 +543,7 @@ table.insert(Weapons, IndexOfWeapon("sbssm"),
 				Button = "hud-sbbg-upgrade",
 			},
 		},
-	
+	ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sniper") + 1,
 {
@@ -835,6 +837,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	{
 		"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
 	},
+	ObserverBuildEvent = true,
 })
 table.insert(Sprites, ButtonSprite("hud-sbrmfire-icon", "HUD/HUD-sbrmfire", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("missile2") + 1,
@@ -943,6 +946,7 @@ table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
 		MetalCost = 900,
 		CompatibleGroupTypes = { "sbrmempmarine", "sbrmfiremarine", "sbrmhemarine"},
 		Icon = "hud-sbrmhemarine-icon",
+		ObserverBuildEvent = true,
 	})
 )
 table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
@@ -1463,6 +1467,7 @@ table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 		FireGroupWhenDoorBlocks = true,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Sprites, ButtonSprite("hud-sbdownmortar-icon", "HUD/HUD-sbdownmortar", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
@@ -1680,6 +1685,7 @@ table.insert(Weapons, IndexOfWeapon("cannon"),
 				Button = "hud-sbbg-upgrade",
 		},
 	},
+	ObserverBuildEvent = true,
 })
 table.insert(Sprites, ButtonSprite("hud-sbdrone-icon", "HUD/HUD-sbdowndrone", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Sprites, DetailSprite("hud-detail-sbdrone", "sbdrone", path))
@@ -1709,6 +1715,7 @@ table.insert(Weapons, IndexOfWeapon("sbdowncannon") + 1,
 	BuildOnGroundOnly = false,
 	DrawBlurredProjectile = true,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
+	ObserverBuildEvent = true,
 })
 table.insert(Sprites, DetailSprite("hud-detail-sb50cal", "sb50cal", path))
 table.insert(Sprites, ButtonSprite("hud-sb50cal-icon", "HUD/HUD-sb50cal", nil, ButtonSpriteBottom, nil, nil, path))
@@ -1770,6 +1777,7 @@ table.insert(Weapons, IndexOfWeapon("sbimplodernocap") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		PopulationCap = 3,
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbsnipercopter") + 1,
 {
@@ -1799,6 +1807,7 @@ table.insert(Weapons, IndexOfWeapon("sbsnipercopter") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		PopulationCap = 2,
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbseepcopter") + 1,
 {
@@ -1828,6 +1837,7 @@ table.insert(Weapons, IndexOfWeapon("sbseepcopter") + 1,
 		PopulationCap = 3,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbflamecopter") + 1,
 {
@@ -1856,6 +1866,7 @@ table.insert(Weapons, IndexOfWeapon("sbflamecopter") + 1,
 		MaxWeaponGroupSize = 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbspookcopter") + 1,
 {
@@ -1884,6 +1895,7 @@ table.insert(Weapons, IndexOfWeapon("sbspookcopter") + 1,
 		MaxWeaponGroupSize = 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbshockcopter") + 1,
 {
@@ -1913,6 +1925,7 @@ table.insert(Weapons, IndexOfWeapon("sbshockcopter") + 1,
 		PopulationCap = 3,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbshotcopter") + 1,
 {
@@ -1942,6 +1955,7 @@ table.insert(Weapons, IndexOfWeapon("sbshotcopter") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		PopulationCap = 1,
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 table.insert(Weapons, IndexOfWeapon("sbshotcopter") + 1,
 {
@@ -1971,6 +1985,7 @@ table.insert(Weapons, IndexOfWeapon("sbshotcopter") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		PopulationCap = 1,
 		AffectedBysbNCE = true,
+		ObserverBuildEvent = true,
 })
 --END OF HELICOPTER SECTION----------------------------------------------------------------------------------------------------
 
@@ -2012,7 +2027,7 @@ table.insert(Weapons, IndexOfWeapon("cannon") + 1,
 	BuildOnGroundOnly = false,
 	DrawBlurredProjectile = true,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
-	
+	ObserverBuildEvent = true,
 		
 })
 table.insert(Sprites, ButtonSprite("hud-group-sbbow", "groups/Group-sbbow", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))

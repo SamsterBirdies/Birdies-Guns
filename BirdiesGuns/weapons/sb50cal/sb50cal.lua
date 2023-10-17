@@ -158,3 +158,15 @@ function sbApplyXmas()
 		}
 	}
 end
+function sbApplyHalloween()
+	Root.ChildrenInFront =
+	{
+		{
+			Name = "pumpkin",
+			Scale = 0.5,
+			Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
+			Pivot = {-0.1367, -0.06},
+			UserData = 100,
+		}
+	}
+end

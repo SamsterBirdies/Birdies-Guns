@@ -139,3 +139,6 @@ function sbApplyXmas()
 		}
 	}
 end
+function sbApplyHalloween()
+	FireEffect = path .. "/effects/sbrmempfire_halloween.lua"
+end

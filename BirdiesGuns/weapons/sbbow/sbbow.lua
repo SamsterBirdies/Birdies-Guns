@@ -215,3 +215,13 @@ function sbApplyXmas()
 		UserData = 100,
 	})
 end
+function sbApplyHalloween()
+	table.insert(Root.ChildrenInFront[1].ChildrenInFront,
+	{
+		Name = "pumpkin",
+		Scale = 0.6,
+		Pivot = {-0.2971, -0.2792},
+		Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
+		UserData = 100,
+	})
+end

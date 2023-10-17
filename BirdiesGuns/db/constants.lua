@@ -1,6 +1,7 @@
-View.HUD.ItemSlider.SpeedLimit = 1000
-View.HUD.WeaponGroups.Count = 10
-Devices.LaserSightAdjustment.Min = -10
---Devices.RestoreGroupScreen = false
---table.insert(Sound.Banks, path .. "/audio/BirdiesGUNS_Bank.bank")
---table.insert(Sound.Banks, path .. "/audio/BirdiesGUNS_Bank.strings.bank")
+--support explosions mod
+--device destruction effects { device_savename, effect_path, use_included_path (optional, 1) }
+if not sb_EXPLOSIONS_destruct then sb_EXPLOSIONS_destruct = {} end
+--projectile impact effects { projectile_savename, effect_path, use_included_path (optional, 1)}
+if not sb_EXPLOSIONS_impact then sb_EXPLOSIONS_impact = {} end
+
+table.insert(sb_EXPLOSIONS_destruct, {"sbsuremp", "rocketemp_explode.lua", 1})

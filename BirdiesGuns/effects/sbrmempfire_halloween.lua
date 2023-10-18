@@ -107,4 +107,4 @@ Effects =
 		},
 	},
 }
-SoundEvent = "mods/sbBGsoundbank/effects/sbrmempfire"
+SoundEvent = "mods/sbBGsoundbank/effects/sbrmempfire_halloween"

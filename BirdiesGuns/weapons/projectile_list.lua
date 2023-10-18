@@ -3137,7 +3137,7 @@ if sbToG then
 end
 --seasonal additions
 --dofile(path .. "/seasonal/xmas/projectile_list.lua")
---dofile(path .. "/seasonal/halloween/projectile_list.lua")
+dofile(path .. "/seasonal/halloween/projectile_list.lua")
 --dofile(path .. "/seasonal/easter/projectile_list.lua")
 
 --applymod stuff

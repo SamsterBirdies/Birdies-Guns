@@ -141,4 +141,5 @@ function sbApplyXmas()
 end
 function sbApplyHalloween()
 	FireEffect = path .. "/effects/sbrmempfire_halloween.lua"
+	Root.Sprite = path .. "/seasonal/halloween/basehe.png"
 end

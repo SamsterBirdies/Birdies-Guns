@@ -448,9 +448,6 @@
 		<property name="gainB">
 			<value>13.965519</value>
 		</property>
-		<property name="gainC">
-			<value>15.5172405</value>
-		</property>
 		<relationship name="automators">
 			<destination>{395cb461-94b5-4a19-bc21-0b53698e6d4f}</destination>
 			<destination>{51401ed9-0a6d-4667-aca5-24cb5e05a66f}</destination>

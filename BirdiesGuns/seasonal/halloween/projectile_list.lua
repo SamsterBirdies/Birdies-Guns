@@ -1,3 +1,13 @@
+--sprites
+table.insert(Sprites,
+{
+	Name = "sbfog_halloween",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.39, 0.55, 0.47, 1.0 } }, mipmap = true, }, },
+		Idle = Normal,
+	},
+})
 --sbrm
 local sbrmemp = FindProjectile("sbrmemp")
 if sbrmemp then
@@ -21,5 +31,9 @@ for k, v in pairs(Projectiles) do
 		elseif v.TrailEffect == path .. "/effects/sbdrone_trail.lua" then
 			v.TrailEffect = path .. "/effects/sbdrone_trail_halloween.lua"
 		end
+	end
+	if v.SaveName == "sbfog" then
+		v.Projectile.Root.Sprite = "sbfog_halloween"
+		v.Effects.Impact.default = path .. "/effects/cloud_halloween.lua"
 	end
 end

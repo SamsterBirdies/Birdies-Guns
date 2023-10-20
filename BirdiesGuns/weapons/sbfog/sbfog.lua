@@ -143,3 +143,17 @@ function sbApplyXmas()
 		},
 	}
 end
+function sbApplyHalloween()
+	FireEffect = path .. "/effects/fire_sbfog_halloween.lua"
+	Root.ChildrenInFront[1].ChildrenInFront =
+	{
+		{
+			Name = "witch_hat",
+			Scale = 1.5,
+			Angle = 0,
+			Pivot = {-0.05,-0.7},
+			Sprite = path .. "/seasonal/halloween/witch_hat.png",
+			UserData = 100,
+		},
+	}
+end

@@ -826,6 +826,37 @@ table.insert(Sprites,
 			Idle = Normal,
 		},
 })
+table.insert(Sprites,
+{
+		Name = "sbflames_bloom",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/effects/media/bloom1.dds", colour = { 1, 0.6, 0.2, 0.2 }}, mipmap = true, }, },
+			Idle = Normal,
+		},
+})
+local sbflame2 = DeepCopy(FindProjectile("sbflames"))
+if sbflame2 then
+	sbflame2.SaveName = "sbflames2"
+	sbflame2.TrailEffect = path .. "/effects/flames_trail.lua"
+	sbflame2.Projectile.Root.Scale = 0.0
+	sbflame2.DrawBlurredProjectile = false
+	sbflame2.MaxAge = 0.75
+	sbflame2.Effects.Impact.default = path .. "/effects/flames_smoke.lua"
+	sbflame2.Effects.Age = {t99999 = path .. "/effects/flames_smoke.lua"}
+	sbflame2.Projectile.Root.ChildrenInFront = 
+	{
+		{
+			Name = "Bloom",
+			Angle = 0,
+			Sprite = "sbflames_bloom",
+			Scale = 14,
+			Offset = { 0, 0},
+			Additive = true,
+		},
+	}
+	table.insert(Projectiles, sbflame2)
+end
 table.insert(Projectiles,
 {
 		SaveName = "sbfirebullet",
@@ -1979,7 +2010,7 @@ table.insert(Projectiles,
 		AntiAirDamage = 20,
 		SpeedIndicatorFactor = 0.05,
 
-		TrailEffect = "effects/swarm_trail.lua",
+		TrailEffect = path .. "/effects/pebble_trail.lua",
 
 		Projectile =
 		{
@@ -2839,7 +2870,7 @@ MakeVacuumVersion("sbsurfire", "vacuumtrail_long", 100000, 380000)
 MakeVacuumVersion("sbsurhe", "vacuumtrail_long", 100000, 450000)
 MakeVacuumVersion("sbmolotov", "vacuumtrail", 3600000)
 MakeVacuumVersion("sbgrenade", "vacuumtrail", 3600000)
-MakeVacuumVersion("sbpebble", "vacuumtrail", 1600000)
+MakeVacuumVersion("sbpebble", "vacuumtrailsmall", 480000)
 MakeVacuumVersion("sbtriplemortar1", "vacuumtrail", 2000000)	
 	MakeVacuumVersion("sbtriplemortar2", "vacuumtrail", 2000000)	
 	MakeVacuumVersion("sbtriplemortar3", "vacuumtrail", 2000000)
@@ -3137,7 +3168,7 @@ if sbToG then
 end
 --seasonal additions
 --dofile(path .. "/seasonal/xmas/projectile_list.lua")
-dofile(path .. "/seasonal/halloween/projectile_list.lua")
+--dofile(path .. "/seasonal/halloween/projectile_list.lua")
 --dofile(path .. "/seasonal/easter/projectile_list.lua")
 
 --applymod stuff

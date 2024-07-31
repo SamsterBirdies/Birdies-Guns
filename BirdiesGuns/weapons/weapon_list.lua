@@ -1377,6 +1377,7 @@ table.insert(Weapons, IndexOfWeapon("machinegun") + 2,
 		},
 	
 })
+
 table.insert(Sprites, ButtonSprite("hud-sbslingshotgrenade-icon", "HUD/HUD-sbslingshotgrenade", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Sprites, DetailSprite("hud-detail-sbslingshotgrenade", "sbslingshotgrenade", path))
 table.insert(Weapons, IndexOfWeapon("sbslingshotfire") + 1,
@@ -1437,7 +1438,30 @@ table.insert(Weapons, IndexOfWeapon("machinegun") + 2,
 		FireGroupWhenDoorBlocks = true,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
+		Upgrades =
+		{
+			{
+				Enabled = false,
+				SaveName = "sbslingshotpebble_OP",
+				MetalCost = 0,
+				EnergyCost = 0,
+				Button = "hud-sbbg-upgrade",
+			},
+		},
 })
+table.insert(Weapons,
+	InheritType(FindWeapon("sbslingshotpebble"),nil,
+		{	
+			SaveName = "sbslingshotpebble_OP",
+			FileName = path .. "/weapons/sbslingshot/sbslingshotpebble_OP.lua",
+			MetalCost = 900,
+			EnergyCost = 9000,
+			BuildTimeComplete = 0.04,
+			Enabled = false,
+			Upgrades = {},
+		}
+	)
+)
 table.insert(Sprites, ButtonSprite("hud-group-sbflame", "groups/Group-sbflame", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
 table.insert(Sprites, DetailSprite("hud-detail-sbflamethrower", "sbflamethrower", path))
 table.insert(Sprites, ButtonSprite("hud-sbflamethrower-icon", "HUD/HUD-sbflamethrower", nil, ButtonSpriteBottom, nil, nil, path))
@@ -1468,7 +1492,31 @@ table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		AffectedBysbNCE = true,
 		ObserverBuildEvent = true,
+		--[[Upgrades =
+		{
+			{
+				Enabled = true,
+				SaveName = "sbflamethrower2",
+				MetalCost = 300,
+				EnergyCost = 1500,
+				Prerequisite = "upgrade",
+			},
+		},]]
 })
+--[[table.insert(Weapons,
+	InheritType(FindWeapon("sbflamethrower"),nil,
+		{	
+			SaveName = "sbflamethrower2",
+			FileName = path .. "/weapons/sbflamethrower/flamethrower2.lua",
+			MetalCost = 800,
+			EnergyCost = 4500,
+			BuildTimeComplete = 40.0,
+			Prerequisite = "upgrade",
+			Enabled = false,
+			AnimationScript = path .. "/weapons/sbflamethrower/animationscript.lua",
+		}
+	)
+)]]
 table.insert(Sprites, ButtonSprite("hud-sbdownmortar-icon", "HUD/HUD-sbdownmortar", nil, ButtonSpriteBottom, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
 {

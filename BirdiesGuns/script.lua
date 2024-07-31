@@ -7,6 +7,9 @@ function Load(gameStart)
 		EnableWeapon("sbpullbeam", false, 1)
 		EnableWeapon("sbpullbeam", false, 2)
 	end
+	--count pebbles
+	data.pebbles = {}
+	data.pebblesop_count = 0
 end
 
 --barrel creating function
@@ -65,5 +68,67 @@ function OnLinkHit(nodeIdA, nodeIdB, sourceId, sourceTeamId, sourceSaveName, dam
 			EnableDevice(drumtype, false, 1)
 			EnableDevice(drumtype, false, 2)
 		end
+	end
+end
+
+--pebble slingshot stuff
+function OnDeviceCompleted(teamId, deviceId, saveName)
+	if saveName == "sbslingshotpebble" then
+		if type(data.pebbles[tostring(teamId)]) ~= "table" then
+			data.pebbles[tostring(teamId)] = {}
+		end
+		table.insert(data.pebbles[tostring(teamId)], deviceId)
+		if #data.pebbles[tostring(teamId)] >= 42 and data.pebblesop_count < 3 then
+			UpgradeDevice(data.pebbles[tostring(teamId)][1], "sbslingshotpebble_OP")
+			for k, v in pairs(data.pebbles[tostring(teamId)]) do
+				ApplyDamageToDevice(v, 1000)
+			end
+			data.pebbles[tostring(teamId)] = {}
+		end
+	elseif saveName == "sbslingshotpebble_OP" then
+		data.pebblesop_count = data.pebblesop_count + 1
+	end
+end
+function OnDeviceDestroyed(teamId, deviceId, saveName, nodeA, nodeB, t)
+	if saveName == "sbslingshotpebble" then
+		if type(data.pebbles[tostring(teamId)]) ~= "table" then
+			data.pebbles[tostring(teamId)] = {}
+		end
+		for k, v in pairs(data.pebbles[tostring(teamId)]) do
+			if v == deviceId then
+				table.remove(data.pebbles[tostring(teamId)], k)
+				break
+			end
+		end
+	end
+end
+function OnDeviceDeleted(teamId, deviceId, saveName, nodeA, nodeB, t)
+	if saveName == "sbslingshotpebble" then
+		if type(data.pebbles[tostring(teamId)]) ~= "table" then
+			data.pebbles[tostring(teamId)] = {}
+		end
+		for k, v in pairs(data.pebbles[tostring(teamId)]) do
+			if v == deviceId then
+				table.remove(data.pebbles[tostring(teamId)], k)
+				break
+			end
+		end
+	end
+end
+function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
+	if saveName == "sbslingshotpebble" then
+		if type(data.pebbles[tostring(oldTeamId)]) ~= "table" then
+			data.pebbles[tostring(oldTeamId)] = {}
+		end
+		if type(data.pebbles[tostring(newTeamId)]) ~= "table" then
+			data.pebbles[tostring(newTeamId)] = {}
+		end
+		for k, v in pairs(data.pebbles[tostring(oldTeamId)]) do
+			if v == deviceId then
+				table.remove(data.pebbles[tostring(oldTeamId)], k)
+				break
+			end
+		end
+		table.insert(data.pebbles[tostring(newTeamId)], deviceId)
 	end
 end

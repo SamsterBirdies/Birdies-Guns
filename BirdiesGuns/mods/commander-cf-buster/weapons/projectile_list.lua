@@ -64,3 +64,36 @@ end
 for k, v in pairs(Projectiles) do
   modDUsupport(v.SaveName, 720)
 end]]
+--support buster shrapnel
+local function sbeat(saveName, saveName2)
+	--returns true for other versions of the projectile aswell like flaming versions.
+	if saveName == saveName2 or saveName == "flaming" .. saveName2 or saveName == "armoured" .. saveName2 or saveName == "vacuum" .. saveName2 or saveName == "drunk" .. saveName2 or saveName == "damaged" .. saveName2 then 
+		return true
+	else
+		return false
+	end
+end
+local mortarshrapnel = FindProjectile("mortar2").Effects.Impact.antiair
+local add_shrapnel = 
+{
+	"sbdownmortar2", "sbdowntriplemortar1", "sbtriplemortar1",
+	"sbrmemp", "sbrmfire", "sbrmhe",
+	"sbsuremp", "sbsurefire", "sbsurehe",
+	"sbdrone",
+}
+for k, v in pairs(Projectiles) do
+	for kk, vv in pairs(add_shrapnel) do
+		if sbeat(v.SaveName, vv) then
+			local effectname = ""
+			if type(v.Effects.Impact.antiair) == "string" then
+				effectname = v.Effects.Impact.antiair
+			elseif type(v.Effects.Impact.default) == "string" then
+				effectname = v.Effects.Impact.default
+			end
+			v.Effects.Impact.antiair = DeepCopy(mortarshrapnel)
+			if effectname ~= "" then
+				v.Effects.Impact.antiair.Effect = effectname
+			end
+		end
+	end
+end

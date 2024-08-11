@@ -56,7 +56,7 @@ RoundPeriod = 0.15
 BeamDuration = 0.05
 ReloadFramePeriod = (ReloadTime + RoundsEachBurst*RoundPeriod)/12
 AutofireCloseDoorTicks = 4*25
-
+CutOffEffects = true
 CanOverheat = true
 HeatPeriod = 1.8
 CoolPeriod = 6

@@ -57,10 +57,10 @@ FireStdDevAuto = 0.02
 Recoil = 240000
 EnergyFireCost = 3000.0
 MetalFireCost = 50
-RoundsEachBurst = 20
+RoundsEachBurst = 24
 RoundPeriod = 0.07999
 ShowFireAngle = true
-
+CutOffEffects = true
 --[[
 -- sinusoid sweep
 function ProjectileAngle(index)

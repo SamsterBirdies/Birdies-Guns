@@ -208,19 +208,19 @@
 			<value>true</value>
 		</property>
 		<property name="length">
-			<value>7.9000453514739233</value>
+			<value>9.3000000000000007</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{4448fc83-c457-4f14-8d93-481ec81d6098}</destination>
-		</relationship>
-		<relationship name="fadeInCurve">
-			<destination>{da19e1af-0b24-499c-a575-e66cc051f1fc}</destination>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{e7c1af9d-e874-4b4e-9ec9-c5dcb795e24a}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{567ecc5f-1a4c-48d0-b43f-f291866dbc5a}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -281,14 +281,6 @@
 		<property name="eventState">
 			<value>1</value>
 		</property>
-	</object>
-	<object class="FadeCurve" id="{da19e1af-0b24-499c-a575-e66cc051f1fc}">
-		<relationship name="startPoint">
-			<destination>{f716e0a5-83b4-4afa-8978-d4858329d0f5}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{ecbe5c5c-1305-4aa4-91ba-3a2ba882d236}</destination>
-		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{61c927c3-6cac-4b96-a87d-7c0681995a1a}">
 		<relationship name="effects">
@@ -357,25 +349,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{25d797df-a069-4fd4-b56a-dc4bf0bb51ec}" />
-	<object class="AutomationPoint" id="{f716e0a5-83b4-4afa-8978-d4858329d0f5}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>0.00677884696</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{ecbe5c5c-1305-4aa4-91ba-3a2ba882d236}">
-		<property name="position">
-			<value>0.90000000000000002</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
 	<object class="MixerBusFader" id="{eb913ece-b632-4ced-b787-82361e42c20f}" />
 	<object class="AutomationPoint" id="{24de8737-528c-427d-9302-36603a9b745b}">
 		<property name="position">

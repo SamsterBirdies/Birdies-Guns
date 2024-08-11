@@ -58,7 +58,7 @@ RoundsEachBurst = 13
 RoundPeriod = 0.08
 ShowFireAngle = true
 ShowFireSpeed = true
-
+CutOffEffects = true
 --[[
 -- sinusoid sweep
 function ProjectileAngle(index)

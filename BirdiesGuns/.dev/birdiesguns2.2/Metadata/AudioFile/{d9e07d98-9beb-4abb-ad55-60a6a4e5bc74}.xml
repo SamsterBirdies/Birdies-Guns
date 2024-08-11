@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d9e07d98-9beb-4abb-ad55-60a6a4e5bc74}">
+		<property name="assetPath">
+			<value>bigminigunfire_on.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.423197278911565</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57da8d23-6797-4a81-8598-bfcd0d674e8d}</destination>
+		</relationship>
+	</object>
+</objects>

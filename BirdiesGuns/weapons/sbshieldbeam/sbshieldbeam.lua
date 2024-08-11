@@ -56,7 +56,7 @@ Recoil = 0
 BeamDuration = 3
 EnergyFireCost = 2000/BeamDuration
 MetalFireCost = 0.0
-BeamEndEffectTime = 2.9
+BeamEndEffectTime = 0
 BeamThicknessMultiplier = 1.0
 BeamDamageMultiplier = 1.0
 BeamPenetrationRotationThreshold = 999
@@ -64,9 +64,10 @@ IncendiaryRadius = 150
 IncendiaryRadiusHeated = 180
 DoorCloseDelay = 2
 AutofireCloseDoorTicks = DoorCloseDelay*25
-
+BeamsCutOffEffects = true
+BeamsRecycleEffects = true
 ShowFireAngle = true
-
+CutOffEffects = true
 TargetIcon =
 {
 	Persistent = true,

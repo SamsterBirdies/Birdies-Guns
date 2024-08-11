@@ -21,4 +21,8 @@ if active then
 	flamingmoonfog.EMPRadius = 50
 	flamingmoonfog.Projectile.Root.Sprite = "sbfog_green"
 	end
+	local bigminigun = FindProjectile("sbbigminigun")
+	if bigminigun then
+		bigminigun.Effects.Impact.default = "mods/weapon_pack/effects/impact_emp_medium.lua"
+	end
 end

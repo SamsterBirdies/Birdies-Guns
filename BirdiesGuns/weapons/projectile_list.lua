@@ -719,6 +719,10 @@ table.insert(Projectiles,
 			Deflect =
 			{
 			},
+			Penetrate =
+			{
+				["default"] = path .. "/effects/cloud.lua",
+			}
 		},
 	DamageMultiplier =
 	{
@@ -908,6 +912,13 @@ table.insert(Projectiles,
 				["shield"] = "effects/energy_shield_ricochet.lua",
 				["default"] = "effects/bracing_bullet_hit.lua",
 			},
+			Penetrate =
+			{
+				["default"] = "effects/bullet_bracing_hit.lua",
+				["armour"] = "effects/bullet_armor_hit.lua",
+				["door"] = "effects/bullet_armor_hit.lua",
+				["shield"] = "effects/energy_shield_ricochet.lua",
+			}
 		},
 })
 --twin missile silo section----------------------------------------------------------------------

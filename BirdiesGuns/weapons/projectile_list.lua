@@ -805,7 +805,7 @@ table.insert(Projectiles,
 		{
 			Impact =
 			{	
-					["default"] = path .. "/effects/empty.lua",
+					["default"] = path .. "/effects/flames_smoke.lua",
 			},
 			Deflect =
 			{
@@ -841,7 +841,6 @@ if sbflame2 then
 	sbflame2.TrailEffect = path .. "/effects/flames_trail.lua"
 	sbflame2.Projectile.Root.Scale = 0.0
 	sbflame2.DrawBlurredProjectile = false
-	sbflame2.MaxAge = 0.75
 	sbflame2.Effects.Impact.default = path .. "/effects/flames_smoke.lua"
 	sbflame2.Effects.Age = {t99999 = path .. "/effects/flames_smoke.lua"}
 	sbflame2.Projectile.Root.ChildrenInFront = 
@@ -3184,7 +3183,69 @@ function sb_indef_sbimploder()
 		end
 	end
 end
+--explosions mod
+function addmissilesprite_exp(savename)
+	local projectile = FindProjectile(savename)
+	if not projectile then 
+		Log("Warning: " .. savename .. " not found (exp)")
+		return
+	end
+	table.insert(projectile.Projectile.Root.ChildrenInFront,
+	{
+		Name = "Bloom",
+		Angle = 0,
+		Offset = { 0, 0.2 },
+		Pivot = { 0, 0.2 },
+		PivotOffset = { 0, 0 },
+		Sprite = "sb_bloom_swarm",
+		Additive = true,
+		Scale = 4,
+	})
+end
+if not sbe_effects_list then sbe_effects_list = {} end
+local exp_effects =
+{
+	"vacuumtrail", "vacuumtrail_long", "sbpullbeam_hit", "sbpullbeam_hit2",
+	"sbbigemp", "sbmegaemp",
+	"impact_imploder",
+}
+for k, v in pairs(exp_effects) do
+	sbe_effects_list[path .. "/effects/" .. v .. ".lua"] = path .. "/effects/z_" .. v .. ".lua"
+end
+--apply mod
 RegisterApplyMod(function()
+	--explosions mod
+	if sb_EXPLOSIONS_path then
+		addmissilesprite_exp("sbarrowr")
+		addmissilesprite_exp("sbfirerocket")
+		addmissilesprite_exp("sbsuremp")
+		addmissilesprite_exp("sbsurfire")
+		addmissilesprite_exp("sbsurhe")
+		addmissilesprite_exp("sbrmemp")
+		addmissilesprite_exp("sbrmfire")
+		addmissilesprite_exp("sbrmhe")
+		addmissilesprite_exp("sbdrone")
+		addmissilesprite_exp("sbsaw")
+		addmissilesprite_exp("sbsawwood")
+		addmissilesprite_exp("sbssm")
+		addmissilesprite_exp("sbssmfire")
+		local flames = FindProjectile("sbflames")
+		flames.Projectile.Root.ChildrenInFront =
+		{{
+			Name = "Bloom",
+			Angle = 0,
+			Offset = { 0, 0 },
+			Pivot = { 0, 0 },
+			PivotOffset = { 0, 0 },
+			Sprite = "sbflames_bloom",
+			Additive = true,
+			Scale = 14,
+		}}
+		
+		flames.TrailEffect = sbBGpath .. "/effects/flames_trail.lua"
+		flames.DrawBlurredProjectile = false
+		flames.Projectile.Root.Scale = 0.25
+	end
 	for k,v in pairs(Projectiles) do
 		if not v.Effects then v.Effects = { Impact = {} } end
 		if not v.Effects.Impact then v.Effects.Impact = {} end

@@ -67,7 +67,7 @@ RoundsEachBurst = 60
 RoundPeriod = 0.03
 DoorCloseDelay = 1.25
 AutofireCloseDoorTicks = DoorCloseDelay*25
-
+CutOffEffects = true
 ShowFireAngle = true
 
 TargetIcon =

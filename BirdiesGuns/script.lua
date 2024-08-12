@@ -9,7 +9,6 @@ function Load(gameStart)
 	end
 	--count pebbles
 	data.pebbles = {}
-	data.pebblesop_count = 0
 end
 
 --barrel creating function
@@ -78,15 +77,13 @@ function OnDeviceCompleted(teamId, deviceId, saveName)
 			data.pebbles[tostring(teamId)] = {}
 		end
 		table.insert(data.pebbles[tostring(teamId)], deviceId)
-		if #data.pebbles[tostring(teamId)] >= 42 and data.pebblesop_count < 3 then
+		if #data.pebbles[tostring(teamId)] >= 42 then
 			UpgradeDevice(data.pebbles[tostring(teamId)][1], "sbslingshotpebble_OP")
 			for k, v in pairs(data.pebbles[tostring(teamId)]) do
 				ApplyDamageToDevice(v, 1000)
 			end
 			data.pebbles[tostring(teamId)] = {}
 		end
-	elseif saveName == "sbslingshotpebble_OP" then
-		data.pebblesop_count = data.pebblesop_count + 1
 	end
 end
 function OnDeviceDestroyed(teamId, deviceId, saveName, nodeA, nodeB, t)

@@ -1458,6 +1458,7 @@ table.insert(Weapons,
 			EnergyCost = 9000,
 			BuildTimeComplete = 0.04,
 			Enabled = false,
+			PopulationCap = 3,
 			Upgrades = {},
 		}
 	)

@@ -101,6 +101,10 @@
 			<destination>{0bd4063b-3048-431f-aa8a-ad164d681a64}</destination>
 			<destination>{1053ae2a-3c64-47ee-8ccb-30ccec8c71cb}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{abbe2e7d-bbdb-4356-b707-667b0249f2da}</destination>
+			<destination>{6dec1bc9-b501-4198-b566-1b289bff1947}</destination>
+		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{73301e3c-6bb4-4f8f-8b7c-bb920625dd67}">
 		<relationship name="preset">
@@ -217,6 +221,46 @@
 			<destination>{791fc73b-cc30-4db3-be35-c9baf1233ccf}</destination>
 		</relationship>
 	</object>
+	<object class="TransitionRegion" id="{abbe2e7d-bbdb-4356-b707-667b0249f2da}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>0.6500680272108843</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{96bb3446-6334-48c2-ba01-cb8756d679e2}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{19b8dbc9-7763-4185-a158-d9e277cc6221}</destination>
+		</relationship>
+		<relationship name="destination">
+			<destination>{6dec1bc9-b501-4198-b566-1b289bff1947}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{9dbc6489-8d23-4876-b39c-0552e2c5e111}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{6dec1bc9-b501-4198-b566-1b289bff1947}">
+		<property name="position">
+			<value>3</value>
+		</property>
+		<property name="length">
+			<value>0.20000000000000001</value>
+		</property>
+		<property name="name">
+			<value>end</value>
+		</property>
+		<property name="looping">
+			<value>0</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{96bb3446-6334-48c2-ba01-cb8756d679e2}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{19b8dbc9-7763-4185-a158-d9e277cc6221}</destination>
+		</relationship>
+	</object>
 	<object class="Automator" id="{9b8f8712-1a93-45aa-9398-d42d98b868fe}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>volume</value>
@@ -255,6 +299,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c27c5df2-205a-45d9-a46e-4e85017a876b}" />
+	<object class="EventCondition" id="{9dbc6489-8d23-4876-b39c-0552e2c5e111}">
+		<property name="eventState">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{a6dd5eed-dce6-42d7-8ee0-c39e44870419}">
 		<relationship name="parameter">
 			<destination>{9136f95c-a5cb-4317-a757-fc39449a7679}</destination>

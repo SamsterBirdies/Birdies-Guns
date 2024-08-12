@@ -3219,6 +3219,7 @@ local exp_effects =
 	"vacuumtrail", "vacuumtrail_long", "sbpullbeam_hit", "sbpullbeam_hit2",
 	"sbbigemp", "sbmegaemp",
 	"impact_imploder",
+	"EMP_mortar_trail",
 }
 for k, v in pairs(exp_effects) do
 	sbe_effects_list[path .. "/effects/" .. v .. ".lua"] = path .. "/effects/z_" .. v .. ".lua"

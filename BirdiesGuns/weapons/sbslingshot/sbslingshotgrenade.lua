@@ -171,6 +171,20 @@ Root =
 					Pivot = { 0.165, -0.05 },
 					PivotOffset = { 0, 0 },
 				},
+				{
+					Name = "xmashat",
+					Scale = 0.5,
+					Pivot = {-0.16, -0.145},
+					Sprite = "sbSantaHat",
+					UserData = 100,
+				},
+				{
+					Name = "pumpkin",
+					Scale = 0.5,
+					Pivot = {-0.12, -0.105},
+					Sprite = "sbPumpkinHat",
+					UserData = 100,
+				}
 			},
 		},
 	},
@@ -179,23 +193,3 @@ Root =
 		
 	},
 }
-function sbApplyXmas()
-	table.insert(Root.ChildrenBehind[1].ChildrenInFront,
-	{
-		Name = "xmashat",
-		Scale = 0.5,
-		Pivot = {-0.16, -0.145},
-		Sprite = path .. "/seasonal/xmas/santahat.png",
-		UserData = 100,
-	})
-end
-function sbApplyHalloween()
-	table.insert(Root.ChildrenBehind[1].ChildrenInFront,
-	{
-		Name = "pumpkin",
-		Scale = 0.5,
-		Pivot = {-0.12, -0.105},
-		Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
-		UserData = 100,
-	})
-end

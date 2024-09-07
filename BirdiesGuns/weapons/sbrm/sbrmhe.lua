@@ -22,6 +22,8 @@ MaxWindHeight = 0
 MaxRotationalSpeed = 0
 
 FireEffect = path .. "/effects/sbrmempfire.lua"
+FireEffect_halloween = path .. "/effects/sbrmempfire_halloween.lua"
+FireEffect_christmas = path .. "/effects/sbrmempfire_xmas.lua"
 ConstructEffect = "effects/device_upgrade.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/missile_explode.lua"
@@ -67,6 +69,7 @@ Sprites =
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/weapons/sbrm/basehe.tga" }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/basehe.png" }, mipmap = true, }, EventTag = "_halloween" },
 			Idle = Normal,
 		},
 	},
@@ -125,21 +128,14 @@ Root =
 			Visible = false,
 		},
 	},
-}
-function sbApplyXmas()
-	FireEffect = path .. "/effects/sbrmempfire_xmas.lua"
-	Root.ChildrenInFront = 
+	ChildrenInFront =
 	{
 		{
 			Name = "Reef",
 			Scale = 1.25,
 			Pivot = {0,0},
-			Sprite = path .. "/seasonal/xmas/reef.png",
+			Sprite = "sbReef",
 			UserData = 100,
 		}
 	}
-end
-function sbApplyHalloween()
-	FireEffect = path .. "/effects/sbrmempfire_halloween.lua"
-	Root.Sprite = path .. "/seasonal/halloween/basehe.png"
-end
+}

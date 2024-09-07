@@ -236,4 +236,21 @@ Root =
 			
 		},
 	},
+	ChildrenInFront =
+	{
+		{
+			Name = "santahat",
+			Scale = 0.4,
+			Sprite = "sbSantaHat",
+			Pivot = {-0.122, 0.0273},
+			UserData = 100,
+		},
+		{
+			Name = "pumpkin",
+			Scale = 0.4,
+			Sprite = "sbPumpkinHat",
+			Pivot = {-0.100, 0.0473},
+			UserData = 100,
+		}
+	}
 }

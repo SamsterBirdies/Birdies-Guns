@@ -203,28 +203,21 @@ Root =
 						},
 					},
 				},
-				
+				{
+					Name = "xmashat",
+					Scale = 0.5,
+					Pivot = {-0.3171, -0.2792},
+					Sprite = "sbSantaHat",
+					UserData = 100,
+				},
+				{
+					Name = "pumpkin",
+					Scale = 0.6,
+					Pivot = {-0.2971, -0.2792},
+					Sprite = "sbPumpkinHat",
+					UserData = 100,
+				}
 			},
 		},
 	},
 }
-function sbApplyXmas()
-	table.insert(Root.ChildrenInFront[1].ChildrenInFront,
-	{
-		Name = "xmashat",
-		Scale = 0.5,
-		Pivot = {-0.3171, -0.2792},
-		Sprite = path .. "/seasonal/xmas/santahat.png",
-		UserData = 100,
-	})
-end
-function sbApplyHalloween()
-	table.insert(Root.ChildrenInFront[1].ChildrenInFront,
-	{
-		Name = "pumpkin",
-		Scale = 0.6,
-		Pivot = {-0.2971, -0.2792},
-		Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
-		UserData = 100,
-	})
-end

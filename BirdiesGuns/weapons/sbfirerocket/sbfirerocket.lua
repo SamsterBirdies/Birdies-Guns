@@ -118,6 +118,125 @@ Sprites =
 			},
 		},
 	},
+	{
+		Name = "sbPumpkinHat",
+		States = {
+			Normal = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/halloween/pumpkin_hat_empty.png"
+					},
+					mipmap = true
+				}
+			},
+			Normal_halloween = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/halloween/pumpkin_hat.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_halloween"
+			}
+		}
+	},
+	{
+		Name = "sbSantaHat",
+		States = {
+			Normal = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/santahat_empty.png"
+					},
+					mipmap = true
+				}
+			},
+			Normal_christmas = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/santahat.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_christmas"
+			}
+		}
+	},
+	{
+		Name = "sbHat",
+		States = {
+			Normal = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/santahat_empty.png"
+					},
+					mipmap = true
+				}
+			},
+			Normal_christmas = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/santahat.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_christmas"
+			},
+			Normal_halloween = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/halloween/pumpkin_hat.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_halloween"
+			}
+		}
+	},
+	{
+		Name = "sbReef",
+		States = {
+			Normal = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/reef_empty.png"
+					},
+					mipmap = true
+				}
+			},
+			Normal_christmas = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/xmas/reef.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_christmas"
+			}
+		}
+	},
+	{
+		Name = "sbWitchHat",
+		States = {
+			Normal = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/halloween/witch_hat_empty.png"
+					},
+					mipmap = true
+				}
+			},
+			Normal_halloween = {
+				Frames = {
+					{
+						texture = path .. "/seasonal/halloween/witch_hat.png"
+					},
+					mipmap = true
+				},
+				EventTag = "_halloween"
+			}
+		}
+	},
 }
 
 Root =

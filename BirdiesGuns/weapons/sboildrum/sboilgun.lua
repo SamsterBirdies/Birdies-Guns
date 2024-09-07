@@ -128,7 +128,23 @@ Root =
 	Sprite = "sboilgun-base",
 	UserData = 0,
 --	AllowMirror = false,
-	ChildrenInFront = {},
+	ChildrenInFront = 
+	{
+		{
+			Name = "xmashat",
+			Scale = 0.35,
+			Pivot = {0.197, -0.12469},
+			Sprite = "sbSantaHat",
+			UserData = 100,
+		},
+		{
+			Name = "pumpkin",
+			Scale = 0.45,
+			Pivot = {0.227, -0.12469},
+			Sprite = "sbPumpkinHat",
+			UserData = 100,
+		}
+	},
 	ChildrenBehind =
 	{
 		{
@@ -168,23 +184,3 @@ Root =
 		},
 	},
 }
-function sbApplyXmas()
-	table.insert(Root.ChildrenInFront,
-	{
-		Name = "xmashat",
-		Scale = 0.35,
-		Pivot = {0.197, -0.12469},
-		Sprite = path .. "/seasonal/xmas/santahat.png",
-		UserData = 100,
-	})
-end
-function sbApplyHalloween()
-	table.insert(Root.ChildrenInFront,
-	{
-		Name = "pumpkin",
-		Scale = 0.45,
-		Pivot = {0.227, -0.12469},
-		Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
-		UserData = 100,
-	})
-end

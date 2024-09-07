@@ -49,7 +49,6 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/small_swarm_trail.lua",
-
 		Effects =
 		{
 			Impact =
@@ -157,7 +156,7 @@ table.insert(Projectiles,
 	},
 
 	TrailEffect = path .. "/effects/sbdrone_trail.lua",
-
+	TrailEffect_halloween = path .. "/effects/sbdrone_trail_halloween.lua",
 	Missile =
 	{
 		ThrustAngleExtent = 7,

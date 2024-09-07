@@ -73,6 +73,12 @@
 		<property name="voiceStealing">
 			<value>4</value>
 		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+		<property name="dopplerScale">
+			<value>30</value>
+		</property>
 		<property name="minimumDistance">
 			<value>600</value>
 		</property>

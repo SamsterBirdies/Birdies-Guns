@@ -70,6 +70,12 @@
 		<property name="maxVoices">
 			<value>12</value>
 		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+		<property name="dopplerScale">
+			<value>30</value>
+		</property>
 		<property name="minimumDistance">
 			<value>2000</value>
 		</property>

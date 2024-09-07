@@ -161,28 +161,14 @@ Root =
 			},
 		},
 	},
-}
-function sbApplyXmas()
-	Root.ChildrenInFront =
+	ChildrenInFront =
 	{
 		{
 			Name = "santahat",
 			Scale = 0.5,
-			Sprite = path .. "/seasonal/xmas/santahat.png",
+			Sprite = "sbHat",
 			Pivot = {-0.1328125, 0.03125},
 			UserData = 100,
-		}
+		},
 	}
-end
-function sbApplyHalloween()
-	Root.ChildrenInFront =
-	{
-		{
-			Name = "pumpkin",
-			Scale = 0.5,
-			Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
-			Pivot = {-0.1328125, 0.03125},
-			UserData = 100,
-		}
-	}
-end
+}

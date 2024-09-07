@@ -22,6 +22,7 @@ StructureSplashDamage = 60
 StructureSplashDamageMaxRadius = 150
 
 FireEffect = path .. "/effects/fire_sbfog.lua"
+FireEffect_halloween = path .. "/effects/fire_sbfog_halloween.lua"
 ShellEffect = ""
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
@@ -127,33 +128,25 @@ Root =
 					PivotOffset = { 0, 0 },
 				},
 			},
+			ChildrenInFront =
+			{
+				{
+					Name = "reef",
+					Scale = 1,
+					Angle = 90,
+					Pivot = {0,0},
+					Sprite = "sbReef",
+					UserData = 100,
+				},
+				{
+					Name = "witch_hat",
+					Scale = 1.5,
+					Angle = 0,
+					Pivot = {-0.05,-0.7},
+					Sprite = "sbWitchHat",
+					UserData = 100,
+				},
+			}
 		},
 	},
 }
-function sbApplyXmas()
-	Root.ChildrenInFront[1].ChildrenInFront =
-	{
-		{
-			Name = "reef",
-			Scale = 1,
-			Angle = 90,
-			Pivot = {0,0},
-			Sprite = path .. "/seasonal/xmas/reef.png",
-			UserData = 100,
-		},
-	}
-end
-function sbApplyHalloween()
-	FireEffect = path .. "/effects/fire_sbfog_halloween.lua"
-	Root.ChildrenInFront[1].ChildrenInFront =
-	{
-		{
-			Name = "witch_hat",
-			Scale = 1.5,
-			Angle = 0,
-			Pivot = {-0.05,-0.7},
-			Sprite = path .. "/seasonal/halloween/witch_hat.png",
-			UserData = 100,
-		},
-	}
-end

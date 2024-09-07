@@ -262,29 +262,23 @@ Root =
 							Sprite = "sbdlfirebeam-spinning-barrel",
 							Visible = false,
 						},
+						{
+							Name = "xmashat",
+							Scale = 0.35,
+							Pivot = {-0.29, -0.31071},
+							Sprite = "sbSantaHat",
+							UserData = 100,
+						},
+						{
+							Name = "pumpkin",
+							Scale = 0.35,
+							Pivot = {-0.27, -0.31071},
+							Sprite = "sbPumpkinHat",
+							UserData = 100,
+						}
 					},
 				},
 			},
 		},
 	},
 }
-function sbApplyXmas()
-	table.insert(Root.ChildrenInFront[1].ChildrenInFront[1].ChildrenInFront,
-	{
-		Name = "xmashat",
-		Scale = 0.35,
-		Pivot = {-0.29, -0.31071},
-		Sprite = path .. "/seasonal/xmas/santahat.png",
-		UserData = 100,
-	})
-end
-function sbApplyHalloween()
-	table.insert(Root.ChildrenInFront[1].ChildrenInFront[1].ChildrenInFront,
-	{
-		Name = "pumpkin",
-		Scale = 0.35,
-		Pivot = {-0.27, -0.31071},
-		Sprite = path .. "/seasonal/halloween/pumpkin_hat.png",
-		UserData = 100,
-	})
-end

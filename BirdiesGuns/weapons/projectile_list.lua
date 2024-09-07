@@ -705,7 +705,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/effects/media/fog",
+				Sprite = "sbfog",
 				Offset = { 0, -0.6 },
 			},
 		},	
@@ -734,6 +734,16 @@ table.insert(Projectiles,
 		{ SaveName = "weapon", Direct = 0, Splash = 1 },
 	},
 
+})
+table.insert(Sprites,
+{
+		Name = "sbfog",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 1, 1.0, 1, 1.0 } }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.39, 0.55, 0.47, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Idle = Normal,
+		},
 })
 table.insert(Sprites,
 {
@@ -922,6 +932,37 @@ table.insert(Projectiles,
 		},
 })
 --twin missile silo section----------------------------------------------------------------------
+table.insert(Sprites,
+{
+	Name = "sbrmemp",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectileemp" }, mipmap = true, }, },
+		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectileemp.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Idle = Normal,
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sbrmfire",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectilefire" }, mipmap = true, }, },
+		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectilefire.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Idle = Normal,
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sbrmhe",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectilehe" }, mipmap = true, }, },
+		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectilehe.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Idle = Normal,
+	},
+})
+
 table.insert(Projectiles,
 {
 		SaveName = "sbrmemp",
@@ -957,7 +998,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/weapons/sbrm/projectileemp",
+				Sprite = "sbrmemp",
 				Pivot = { 0, 0.35 },
 
 				ChildrenInFront =
@@ -975,7 +1016,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1046,7 +1087,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/weapons/sbrm/projectilefire",
+				Sprite = "sbrmfire",
 				Pivot = { 0, 0.35 },
 
 				ChildrenInFront =
@@ -1064,7 +1105,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1128,7 +1169,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/weapons/sbrm/projectilehe",
+				Sprite = "sbrmhe",
 				Pivot = { 0, 0.35 },
 
 				ChildrenInFront =
@@ -1146,7 +1187,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1240,7 +1281,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1335,7 +1376,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1416,7 +1457,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
-
+		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,

@@ -124,7 +124,7 @@ Sprites =
 			Normal = {
 				Frames = {
 					{
-						texture = path .. "/seasonal/halloween/pumpkin_hat_empty.png"
+						{texture = path .. "/seasonal/halloween/pumpkin_hat.png", colour = { 0, 0, 0, 0 },}
 					},
 					mipmap = true
 				}
@@ -146,7 +146,7 @@ Sprites =
 			Normal = {
 				Frames = {
 					{
-						texture = path .. "/seasonal/xmas/santahat_empty.png"
+						{texture = path .. "/seasonal/xmas/santahat.png", colour = { 0, 0, 0, 0 }}
 					},
 					mipmap = true
 				}
@@ -168,7 +168,7 @@ Sprites =
 			Normal = {
 				Frames = {
 					{
-						texture = path .. "/seasonal/xmas/santahat_empty.png"
+						{texture = path .. "/seasonal/halloween/pumpkin_hat.png", colour = { 0, 0, 0, 0 }}
 					},
 					mipmap = true
 				}
@@ -199,7 +199,7 @@ Sprites =
 			Normal = {
 				Frames = {
 					{
-						texture = path .. "/seasonal/xmas/reef_empty.png"
+						{texture = path .. "/seasonal/xmas/reef.png", colour = { 0, 0, 0, 0 }}
 					},
 					mipmap = true
 				}
@@ -221,7 +221,7 @@ Sprites =
 			Normal = {
 				Frames = {
 					{
-						texture = path .. "/seasonal/halloween/witch_hat_empty.png"
+						{texture = path .. "/seasonal/halloween/witch_hat.png", colour = { 0, 0, 0, 0 }}
 					},
 					mipmap = true
 				}

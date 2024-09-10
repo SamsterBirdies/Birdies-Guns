@@ -99,142 +99,6 @@ Sprites =
 			Idle = Normal,
 		},
 	},
-	{
-		Name = "sbbigminigun-spinning-barrel",
-		InitialState = "Null",
-		States =
-		{
-			Null = {},
-			Flash =
-			{
-				Frames =
-				{
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel05.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel06.tga" },
-
-					duration = 0.05,
-					blendColour = false,
-					blendCoordinates = false,
-					mipmap = true,
-				},
-				--RandomPlayLength = 2,
-				NextState = "Flash",
-				
-				LoopLength = 2.8,
-				LoopExitState = "Null",
-			},
-		},
-	},
---[[	{
-		Name = "sbbigminigun-reload",
-		States =
-		{
-			Normal = { Frames = { { texture = path .. "/effects/media/blank.png" }, mipmap = true, }, },
-			Idle = Normal,
-			Reload =
-			{
-				Frames =
-				{
-					{ texture = path .. "/effects/media/blank.png", duration = 27.0 },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel05.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel06.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/effects/media/blank.png", duration = 0.3 },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel05.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel06.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel05.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel06.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel04.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun-barrel05.tga" },
-					{ texture = path .. "/effects/media/blank.png", duration = 0.5 },
-
-					duration = 0.05,
-					blendColour = false,
-					blendCoordinates = false,
-					mipmap = true,
-				},
-				--RandomPlayLength = 2,
-				NextState = "Normal",
-			},
-		},
-	},]]
-	{
-		Name = "sbbigminigun-arm",
-		States =
-		{
-			Normal = { Frames = { { texture = "weapons/machinegun/MachineGun-ReloadAnim01.png" }, mipmap = true, }, },
-			Idle = Normal,
-			Reload =
-			{
-				Frames =
-				{
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim01.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim02.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim03.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim04.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim05.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim06.png", duration = 5 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim08.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim09.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim10.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim11.png", duration = 0.1 },
-					{ texture = "weapons/machinegun/MachineGun-ReloadAnim12.png", duration = 0.1 },
-					mipmap = true,
-					duration = 0.2,
-				},
-				NextState = "Normal",
-			},
-		},
-	},
-	{
-		Name = "sbbigminigun-flash",
-		InitialState = "Null",
-		States =
-		{
-			Null = {},
-			Flash =
-			{
-				Frames =
-				{
-					{ texture = path .. "/weapons/sbbigminigun/minigun_flash01.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun_flash02.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun_flash03.tga" },
-					{ texture = path .. "/weapons/sbbigminigun/minigun_flash04.tga" },
-
-					duration = 0.05,
-					blendColour = false,
-					blendCoordinates = false,
-				},
-				--RandomPlayLength = 2,
-				NextState = "Flash",
-				
-				LoopLength = 2.20,
-				LoopExitState = "Null",
-			},
-		},
-	},
 }
 
 Root =
@@ -259,22 +123,6 @@ Root =
 			ChildrenInFront =
 			{
 				{
-					Name = "Arm",
-					Angle = 0,
-					Pivot = { -0.011, 0.08 },
-					Sprite = "sbbigminigun-arm",
-					PivotOffset = { 0, 0 },
-					UserData = 50,
-				},
-				{
-					Name = "Belt",
-					Angle = 0,
-					Pivot = { -0.09, 0.03 },
-					Sprite = "weapons/minigun/minigun-belt.png",
-					PivotOffset = { 0, 0 },
-					UserData = 50,
-				},
-				{
 					Name = "Hardpoint0",
 					Angle = 90,
 					Pivot = { 0, -0.01 },
@@ -289,9 +137,10 @@ Root =
 				{
 					Name = "MuzzleFlash",
 					Angle = 0,
+					Scale = 1.664,
 					Pivot = { 0.34, 0.02 },
 					PivotOffset = { 0, 0 },
-					Sprite = "sbbigminigun-spinning-barrel",
+					Sprite = "minigun-spinning-barrel",
 					Visible = false,
 				},
 				--[[{
@@ -307,7 +156,8 @@ Root =
 					Angle = 0,
 					Pivot = { 0.9, -0.01 },
 					PivotOffset = { 0, 0 },
-					Sprite = "sbbigminigun-flash",
+					Scale = 1.664,
+					Sprite = "minigun-flash",
 					Visible = false,
 				},
 				{

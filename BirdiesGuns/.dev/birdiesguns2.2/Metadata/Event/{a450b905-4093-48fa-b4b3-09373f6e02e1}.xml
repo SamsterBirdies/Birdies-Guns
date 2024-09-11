@@ -75,9 +75,6 @@
 		<property name="priority">
 			<value>3</value>
 		</property>
-		<property name="dopplerEnabled">
-			<value>true</value>
-		</property>
 		<property name="dopplerScale">
 			<value>10</value>
 		</property>

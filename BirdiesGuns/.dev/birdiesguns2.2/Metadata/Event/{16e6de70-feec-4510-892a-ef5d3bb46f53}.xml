@@ -64,9 +64,6 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6834ab53-3e23-4d34-985a-0f40875cf20a}">
-		<property name="dopplerEnabled">
-			<value>true</value>
-		</property>
 		<property name="dopplerScale">
 			<value>20</value>
 		</property>

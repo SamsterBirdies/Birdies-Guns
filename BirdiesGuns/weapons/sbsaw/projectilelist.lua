@@ -169,6 +169,7 @@ table.insert(Projectiles,
 		},
 
 		TrailEffect = path .. "/effects/sawcut_trail.lua",
+		TrailEffect_halloween = path .. "/effects/sawcut_trail_halloween.lua",
 
 		Missile =
 		{

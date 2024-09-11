@@ -28,6 +28,7 @@ IncendiaryRadiusHeated = 150
 StructureSplashDamage = 200
 StructureSplashDamageMaxRadius = 150
 FireEffect = path .. "/effects/sbimploderfire.lua"
+FireEffect_halloween = path .. "/effects/sbimploderfire_halloween.lua"
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"
 DestroyEffect = "effects/cannon_explode.lua"

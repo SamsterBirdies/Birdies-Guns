@@ -43,17 +43,17 @@ function OnLinkHit(nodeIdA, nodeIdB, sourceId, sourceTeamId, sourceSaveName, dam
 		--if no device on strut then attempt to create device
 		if deviceId == -1 then
 			--Log("no device, creating barrel")
-			local result = CreateBarrel( 3 - sourceTeamId, drumtype, nodeIdA, nodeIdB, 0.5)
+			local result = CreateBarrel( NodeTeam(nodeIdA), drumtype, nodeIdA, nodeIdB, 0.5)
 			--Log(tostring(result))
 			--if device cannot be placed because a device is overlapping, attempt to place on a different position on the strut
 			if result == -9 then
-				local result = CreateBarrel( 3 - sourceTeamId, drumtype, nodeIdA, nodeIdB, 0.25)
+				local result = CreateBarrel( NodeTeam(nodeIdA), drumtype, nodeIdA, nodeIdB, 0.25)
 				if result == -9 then
-					local result = CreateBarrel( 3 - sourceTeamId, drumtype, nodeIdA, nodeIdB, 0.75)
+					local result = CreateBarrel( NodeTeam(nodeIdA), drumtype, nodeIdA, nodeIdB, 0.75)
 					if result == -9 then
-						local result = CreateBarrel( 3 - sourceTeamId, drumtype, nodeIdA, nodeIdB, 0)
+						local result = CreateBarrel( NodeTeam(nodeIdA), drumtype, nodeIdA, nodeIdB, 0)
 						if result == -9 then
-							local result = CreateBarrel( 3 - sourceTeamId, drumtype, nodeIdA, nodeIdB, 1)
+							local result = CreateBarrel( NodeTeam(nodeIdA), drumtype, nodeIdA, nodeIdB, 1)
 						end
 					end
 				end

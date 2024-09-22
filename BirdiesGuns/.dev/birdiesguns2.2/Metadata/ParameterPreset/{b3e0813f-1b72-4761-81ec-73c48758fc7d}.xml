@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b3e0813f-1b72-4761-81ec-73c48758fc7d}">
+		<property name="name">
+			<value>semitone</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e17bc097-402e-48cf-9781-870d0d3b3a7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{04a930cd-583c-41a9-86b2-12f9f4d83f78}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{04a930cd-583c-41a9-86b2-12f9f4d83f78}">
+		<property name="minimum">
+			<value>-24</value>
+		</property>
+		<property name="maximum">
+			<value>24</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

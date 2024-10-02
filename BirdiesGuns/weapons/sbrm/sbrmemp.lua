@@ -70,7 +70,10 @@ Sprites =
 		{
 			Normal = { Frames = { { texture = path .. "/weapons/sbrm/baseemp.tga" }, mipmap = true, }, },
 			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/baseemp.png" }, mipmap = true, }, EventTag = "_halloween" },
-			Idle = Normal,
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/baseemp.png" }, mipmap = true, }, EventTag = "_halloween" },
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/baseemp.png" }, mipmap = true, }, EventTag = "_halloween" },
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/baseemp.png" }, mipmap = true, }, EventTag = "_halloween" },
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/baseemp.png" }, mipmap = true, }, EventTag = "_halloween" },
 		},
 	},
 }

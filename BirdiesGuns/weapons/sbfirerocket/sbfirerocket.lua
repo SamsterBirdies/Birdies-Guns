@@ -129,15 +129,11 @@ Sprites =
 					mipmap = true
 				}
 			},
-			Normal_halloween = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/halloween/pumpkin_hat.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_halloween"
-			}
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
 		}
 	},
 	{
@@ -151,15 +147,11 @@ Sprites =
 					mipmap = true
 				}
 			},
-			Normal_christmas = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/xmas/santahat.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_christmas"
-			}
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
 		}
 	},
 	{
@@ -173,24 +165,16 @@ Sprites =
 					mipmap = true
 				}
 			},
-			Normal_christmas = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/xmas/santahat.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_christmas"
-			},
-			Normal_halloween = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/halloween/pumpkin_hat.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_halloween"
-			}
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/santahat.png" }, mipmap = true }, EventTag = "_christmas" },
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/pumpkin_hat.png" }, mipmap = true }, EventTag = "_halloween"},
 		}
 	},
 	{
@@ -204,15 +188,11 @@ Sprites =
 					mipmap = true
 				}
 			},
-			Normal_christmas = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/xmas/reef.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_christmas"
-			}
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/reef.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/reef.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/reef.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/reef.png" }, mipmap = true }, EventTag = "_christmas" },
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/reef.png" }, mipmap = true }, EventTag = "_christmas" },
 		}
 	},
 	{
@@ -226,15 +206,11 @@ Sprites =
 					mipmap = true
 				}
 			},
-			Normal_halloween = {
-				Frames = {
-					{
-						texture = path .. "/seasonal/halloween/witch_hat.png"
-					},
-					mipmap = true
-				},
-				EventTag = "_halloween"
-			}
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/witch_hat.png" }, mipmap = true }, EventTag = "_halloween" },
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/witch_hat.png" }, mipmap = true }, EventTag = "_halloween" },
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/witch_hat.png" }, mipmap = true }, EventTag = "_halloween" },
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/witch_hat.png" }, mipmap = true }, EventTag = "_halloween" },
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/witch_hat.png" }, mipmap = true }, EventTag = "_halloween" },
 		}
 	},
 }

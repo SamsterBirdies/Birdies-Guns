@@ -698,7 +698,8 @@ table.insert(Projectiles,
 	AntiAirDamage = 50,
 	SpeedIndicatorFactor = 0.25,
 	Gravity = 0,
-	
+	FlipSpriteFacingLeft = true,
+	TrailEffect_halloween = path .. "/effects/trail_fog_h.lua",
 	Projectile =
 		{
 			Root =
@@ -741,7 +742,7 @@ table.insert(Sprites,
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 1, 1.0, 1, 1.0 } }, mipmap = true, }, },
-			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.39, 0.55, 0.47, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 1, 1.0, 1, 1.0 } } , mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })
@@ -751,6 +752,7 @@ table.insert(Sprites,
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })
@@ -760,6 +762,7 @@ table.insert(Sprites,
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.65, 0.85, 1.0, 1.0 } }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.65, 0.85, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })
@@ -768,7 +771,8 @@ table.insert(Sprites,
 		Name = "sbfog_yellow",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/effects/media/fogflame.png", colour = { 1.0, 1.0, 1.0, 1.0 } }, mipmap = true, }, },
+			Normal = { Frames = { { texture = path .. "/effects/media/fogflame.png", colour = { 1.0, 1.0, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost.png", colour = { 1.0, 0.9, 0.6, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })

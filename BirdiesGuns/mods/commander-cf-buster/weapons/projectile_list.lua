@@ -102,43 +102,45 @@ for k, v in pairs(Projectiles) do
 	end
 end
 
-local fxsmall = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_small.lua"
-local fxlarge = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly.lua"
-local fxlong = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_long.lua"
-local fxmissile = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_missile.lua"
---explosions mod support
-if not sbe_du_trails then
-	sbe_du_trails = {}
+if sb_EXPLOSIONS_path then
+	local fxsmall = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_small.lua"
+	local fxlarge = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly.lua"
+	local fxlong = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_long.lua"
+	local fxmissile = sb_EXPLOSIONS_path .. "/effects/buster_uranium_fly_missile.lua"
+	--explosions mod support
+	if not sbe_du_trails then
+		sbe_du_trails = {}
+	end
+	sbe_du_trails.sbbigminigun = {fxlarge, "effects/impact_medium.lua"}
+	sbe_du_trails.sbrmemp = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbrmfire = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbrmhe = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbsuremp = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbsurfire = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbsurhe = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbdowncannon = {fxlarge, "effects/impact_medium.lua"}
+	sbe_du_trails.sbsawarmour = {fxmissile, "effects/impact_medium.lua"} 
+	sbe_du_trails.sbtriplemortar1 = {fxsmall, "effects/impact_medium.lua"}
+	sbe_du_trails.sbdowntriplemortar1 = {fxsmall, "effects/impact_medium.lua"}
+	sbe_du_trails.sbquadcannon = {fxsmall, "effects/impact_medium.lua"}
+	sbe_du_trails.sbdrone = {fxmissile, "effects/impact_medium.lua"}
+	sbe_du_trails.sbdownmortar2 = {fxsmall, "effects/impact_medium.lua"}
+	--projectiles to add impact effect
+	if not sbe_du_projectile_list then
+		sbe_du_projectile_list = {}
+	end
+	sbe_du_projectile_list.uraniumsbbigminigun = true
+	sbe_du_projectile_list.uraniumsbrmemp = true
+	sbe_du_projectile_list.uraniumsbrmfire = true
+	sbe_du_projectile_list.uraniumsbrmhe = true
+	sbe_du_projectile_list.uraniumsbsuremp = true
+	sbe_du_projectile_list.uraniumsbsurfire = true
+	sbe_du_projectile_list.uraniumsbsurhe = true
+	sbe_du_projectile_list.uraniumsbdowncannon = true
+	sbe_du_projectile_list.uraniumsbsawarmour = true
+	sbe_du_projectile_list.uraniumsbtriplemortar1 = true
+	sbe_du_projectile_list.uraniumsbdowntriplemortar1 = true
+	sbe_du_projectile_list.uraniumsbquadcannon = true
+	sbe_du_projectile_list.uraniumsbdrone = true
+	sbe_du_projectile_list.uraniumsbdownmortar2 = true
 end
-sbe_du_trails.sbbigminigun = {fxlarge, "effects/impact_medium.lua"}
-sbe_du_trails.sbrmemp = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbrmfire = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbrmhe = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbsuremp = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbsurfire = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbsurhe = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbdowncannon = {fxlarge, "effects/impact_medium.lua"}
-sbe_du_trails.sbsawarmour = {fxmissile, "effects/impact_medium.lua"} 
-sbe_du_trails.sbtriplemortar1 = {fxsmall, "effects/impact_medium.lua"}
-sbe_du_trails.sbdowntriplemortar1 = {fxsmall, "effects/impact_medium.lua"}
-sbe_du_trails.sbquadcannon = {fxsmall, "effects/impact_medium.lua"}
-sbe_du_trails.sbdrone = {fxmissile, "effects/impact_medium.lua"}
-sbe_du_trails.sbdownmortar2 = {fxsmall, "effects/impact_medium.lua"}
---projectiles to add impact effect
-if not sbe_du_projectile_list then
-	sbe_du_projectile_list = {}
-end
-sbe_du_projectile_list.uraniumsbbigminigun = true
-sbe_du_projectile_list.uraniumsbrmemp = true
-sbe_du_projectile_list.uraniumsbrmfire = true
-sbe_du_projectile_list.uraniumsbrmhe = true
-sbe_du_projectile_list.uraniumsbsuremp = true
-sbe_du_projectile_list.uraniumsbsurfire = true
-sbe_du_projectile_list.uraniumsbsurhe = true
-sbe_du_projectile_list.uraniumsbdowncannon = true
-sbe_du_projectile_list.uraniumsbsawarmour = true
-sbe_du_projectile_list.uraniumsbtriplemortar1 = true
-sbe_du_projectile_list.uraniumsbdowntriplemortar1 = true
-sbe_du_projectile_list.uraniumsbquadcannon = true
-sbe_du_projectile_list.uraniumsbdrone = true
-sbe_du_projectile_list.uraniumsbdownmortar2 = true

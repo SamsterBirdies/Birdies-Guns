@@ -1,3 +1,0 @@
-Hue -89
-Saturation 192
-lightness 56

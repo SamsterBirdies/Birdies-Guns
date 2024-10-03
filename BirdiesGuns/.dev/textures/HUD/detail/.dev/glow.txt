@@ -1,0 +1,3 @@
+outline object
+width 25
+softness 255

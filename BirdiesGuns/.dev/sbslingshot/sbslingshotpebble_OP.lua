@@ -1,0 +1,25 @@
+dofile(path .. "/weapons/sbslingshot/sbslingshotpebble.lua")
+Sprites = {}
+Root.ChildrenBehind[1].Sprite = path .. "/weapons/sbslingshot/head_OP.png"
+RetriggerFireEffect = true
+EnergyFireCost = 2000.0
+MetalFireCost = 50
+RoundsEachBurst = 200
+RoundPeriod = 0.04
+FireStdDev = 0.05
+ReloadTime = 26
+MinFireSpeed = 800.0
+MaxFireSpeed = 6000.1
+HitPoints = 200
+WeaponMass = 180.0
+EnergyProductionRate = -5
+MetalProductionRate = -0.1
+EnergyStorageCapacity = 1000.0
+MetalStorageCapacity = 100.0
+DeviceSplashDamage = 120
+DeviceSplashDamageMaxRadius = 200
+DeviceSplashDamageDelay = 0.2
+StructureSplashDamage = 120
+StructureSplashDamageMaxRadius = 150
+IgnitePlatformOnDestruct = true
+DestroyEffect = path .. "/effects/fart.lua"

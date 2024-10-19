@@ -2,38 +2,6 @@
 --  make sure this exceedes the age of all effects
 LifeSpan = 3.0
 
-Sprites =
-{
-	{
-		Name = "sbimploder_fire_h",
-
-		States =
-		{
-			Normal =
-			{
-				Frames =
-				{
-					{ texture = path .. "/effects/media/imploder1.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder2.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder3.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder4.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder5.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder6.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder7.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder8.tga", colour = { 1, 0.3, 0.5, 1 } },
-					{ texture = path .. "/effects/media/imploder8.tga", colour = { 1, 1.0, 1, 0.0 }, duration = 2 }, -- just makes a blank frame long enough to last the rest of the effect
-
-					duration = 0.025,
-					blendColour = false,
-					blendCoordinates = false,
-				},
-				--RandomPlayLength = 2,
-				NextState = "Normal",
-			},
-		},
-	},
-}
-
 Effects =
 {
 	{
@@ -83,11 +51,11 @@ Effects =
 		LocalVelocity = { x = 0, y = 0, z = 0 },
 		Acceleration = { x = 0, y = 0, z = 0 },
 		Drag = 0.0,
-		Sprite = "sbimploder_fire_h",
+		Sprite = "sbimploder_fire",
 		Additive = false,
 		TimeToLive = 2,
 		Angle = -90,
-		InitialSize = 3,
+		InitialSize = 12,
 		ExpansionRate = 0,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 0,

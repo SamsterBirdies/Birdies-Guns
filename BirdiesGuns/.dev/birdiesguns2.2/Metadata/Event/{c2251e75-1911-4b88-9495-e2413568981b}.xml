@@ -247,7 +247,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>14.5</value>
+			<value>24.5</value>
 		</property>
 		<property name="isAsync">
 			<value>true</value>

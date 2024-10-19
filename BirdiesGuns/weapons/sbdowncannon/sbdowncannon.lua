@@ -100,6 +100,11 @@ Sprites =
 		{
 			Normal = { Frames = { { texture = path .."/weapons/sbdowncannon/base.tga" }, mipmap = true, }, },
 			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_base.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_base.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_base.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_base.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_base.tga" }, mipmap = true, }, EventTag = "_halloween"},
 		},
 	},
 	{
@@ -108,6 +113,11 @@ Sprites =
 		{
 			Normal = { Frames = { { texture = path .."/weapons/sbdowncannon/head.tga" }, mipmap = true, }, },
 			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
 		},
 	},
 	{
@@ -116,6 +126,11 @@ Sprites =
 		{
 			Normal = { Frames = { { texture = path .."/weapons/sbdowncannon/barrel.tga" }, mipmap = true, }, },
 			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/downcannon_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
 		},
 	},
 	{

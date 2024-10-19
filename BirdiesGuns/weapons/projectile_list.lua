@@ -707,6 +707,7 @@ table.insert(Projectiles,
 				Name = "Root",
 				Angle = 0,
 				Sprite = "sbfog",
+				Scale = 2,
 				Offset = { 0, -0.6 },
 			},
 		},	
@@ -741,7 +742,7 @@ table.insert(Sprites,
 		Name = "sbfog",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 1, 1.0, 1, 1.0 } }, mipmap = true, }, },
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 1, 1.0, 1, 1.0 } }, mipmap = true, }, },
 			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 1, 1.0, 1, 1.0 } } , mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
@@ -751,7 +752,7 @@ table.insert(Sprites,
 		Name = "sbfog_green",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, },
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, },
 			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
@@ -761,7 +762,7 @@ table.insert(Sprites,
 		Name = "sbfog_blue",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/effects/media/fog", colour = { 0.65, 0.85, 1.0, 1.0 } }, mipmap = true, }, },
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 0.65, 0.85, 1.0, 1.0 } }, mipmap = true, }, },
 			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.65, 0.85, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
@@ -771,7 +772,7 @@ table.insert(Sprites,
 		Name = "sbfog_yellow",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/effects/media/fogflame.png", colour = { 1.0, 1.0, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 1.0, 1.0, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost.png", colour = { 1.0, 0.9, 0.6, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},

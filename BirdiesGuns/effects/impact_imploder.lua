@@ -50,9 +50,9 @@ Sprites =
 					{ texture = path .. "/effects/media/RocketEMP08.png", colour = { 0.65, 1, 0.5, 1.0 } },
 					{ texture = path .. "/effects/media/RocketEMP09.png", colour = { 0.65, 1, 0.5, 1.0 } },
 					{ texture = path .. "/effects/media/RocketEMP10.png", colour = { 0.65, 1, 0.5, 1.0 } },
-					{ texture = path .. "/effects/media/RocketEMP11.png", colour = { 0.65, 1, 0.5, 1.0 } },
-					{ texture = path .. "/effects/media/RocketEMP12.png", colour = { 0.65, 1, 0.5, 1.0 } },
-					{ texture = path .. "/effects/media/RocketEMP13.png", colour = { 0.65, 1, 0.5, 1.0 } },
+					{ texture = path .. "/effects/media/RocketEMP10.png", colour = { 0.65, 1, 0.5, 0.5 } },
+					{ texture = path .. "/effects/media/RocketEMP10.png", colour = { 0.65, 1, 0.5, 0.25 } },
+					{ texture = path .. "/effects/media/RocketEMP10.png", colour = { 0.65, 1, 0.5, 0.12 } },
 					{ texture = path .. "/effects/media/blank.png", colour = { 1, 1, 1, 0.0 }, duration = 15 }, -- just makes a blank frame long enough to last the rest of the effect
 
 					duration = 0.01,

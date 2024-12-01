@@ -27,6 +27,8 @@ function MakeVacuumVersion(saveName, trailEffect, impact, splashforce, customPat
 	end
 	vacuumProjectile.Effects.Impact["sbpullbeam"] = { Splash = false, Terminate = false, }
 	
+	vacuumProjectile.TrailEffect_halloween = nil
+	vacuumProjectile.TrailEffect_christmas = nil
 	table.insert(Projectiles, vacuumProjectile)
 end
 

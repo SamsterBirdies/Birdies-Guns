@@ -7,8 +7,15 @@ sbToG = false
 if FindProjectile("flak") or FindProjectile("shotgun") or FindProjectile("rocketemp") or FindProjectile("rocket") or FindProjectile("cannon20mm") or FindProjectile ("firebeam") then
 	sbToG = true
 end
-
-
+--common paths
+local xmas_snowball = "mods/theme_christmas/weapons/media/bullet_snowball_sml"
+local xmas_snowball_h = "mods/theme_christmas/weapons/media/bullet_snowball_lg"
+local xmas_impact_s = "mods/theme_christmas/effects/impact_light_snow.lua"
+local xmas_impact_m = "mods/theme_christmas/effects/impact_medium_snow.lua"
+local xmas_impact_h = "mods/theme_christmas/effects/impact_heavy_snow.lua"
+local xmas_trail_s = "mods/theme_christmas/effects/snow_trail.lua"
+local xmas_trail_h = "mods/theme_christmas/effects/snow_trail_large.lua"
+local xmas_trail_f = "mods/theme_christmas/effects/steaming_trail.lua"
 
 --//START WEAPON INSERTION//--
 
@@ -187,6 +194,7 @@ table.insert(Projectiles,
 
 	ProjectileType = "bullet",
 	ProjectileSprite = "weapons/media/bullet",
+	ProjectileSprite_christmas = xmas_snowball,
 	ProjectileSpriteMipMap = false,
 	ExpiresOnFreeFall = false,
 	DrawBlurredProjectile = true,
@@ -208,14 +216,12 @@ table.insert(Projectiles,
 	{
 		Impact =
 		{
-			["device"] = "effects/impact_light.lua",
 			["foundations"] = "effects/ground_hit.lua",
 			["rocks01"] = "effects/ground_hit.lua",
 			["bracing"] = "effects/bracing_bullet_hit.lua",
 			["backbracing"] = "effects/bracing_bullet_hit.lua",
 			["armour"] = "effects/armor_bullet_hit.lua",
 			["door"] = "effects/armor_bullet_hit.lua",
-			["shield"] = "effects/impact_light.lua",
 			["default"] = "effects/impact_light.lua",
 		},
 		Deflect =
@@ -228,6 +234,28 @@ table.insert(Projectiles,
 			["default"] = "effects/bracing_bullet_hit.lua",
 		},
 	},
+	Effects_christmas =
+	{
+		Impact =
+		{
+			["foundations"] = xmas_impact_s,
+			["rocks01"] = xmas_impact_s,
+			["bracing"] = xmas_impact_s,
+			["backbracing"] = xmas_impact_s,
+			["armour"] = xmas_impact_s,
+			["door"] = xmas_impact_s,
+			["default"] = xmas_impact_s,
+		},
+		Deflect =
+		{
+			["bracing"] = xmas_impact_s,
+			["backbracing"] = xmas_impact_s,
+			["armour"] = xmas_impact_s,
+			["door"] = xmas_impact_s,
+			["shield"] = "effects/energy_shield_ricochet.lua",
+			["default"] = xmas_impact_s,
+		},
+	},
 	
 })
 table.insert(Projectiles,
@@ -236,6 +264,7 @@ table.insert(Projectiles,
 
 		ProjectileType = "bullet",
 		ProjectileSprite = "weapons/media/bullet",
+		ProjectileSprite_christmas = xmas_snowball,
 		ProjectileSpriteMipMap = false,
 		ExpiresOnFreeFall = false,
 		DrawBlurredProjectile = true,
@@ -257,14 +286,12 @@ table.insert(Projectiles,
 		{
 			Impact =
 			{
-				["device"] = "effects/impact_light.lua",
 				["foundations"] = "effects/ground_hit.lua",
 				["rocks01"] = "effects/ground_hit.lua",
 				["bracing"] = "effects/bracing_bullet_hit.lua",
 				["backbracing"] = "effects/bracing_bullet_hit.lua",
 				["armour"] = "effects/armor_bullet_hit.lua",
 				["door"] = "effects/armor_bullet_hit.lua",
-				["shield"] = "effects/impact_light.lua",
 				["default"] = "effects/impact_light.lua",
 			},
 			Deflect =
@@ -277,6 +304,28 @@ table.insert(Projectiles,
 				["default"] = "effects/bracing_bullet_hit.lua",
 			},
 		},
+		Effects_christmas =
+		{
+			Impact =
+			{
+				["foundations"] = xmas_impact_s,
+				["rocks01"] = xmas_impact_s,
+				["bracing"] = xmas_impact_s,
+				["backbracing"] = xmas_impact_s,
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
+				["default"] = xmas_impact_s,
+			},
+			Deflect =
+			{
+				["bracing"] = xmas_impact_s,
+				["backbracing"] = xmas_impact_s,
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
+				["shield"] = "effects/energy_shield_ricochet.lua",
+				["default"] = xmas_impact_s,
+			},
+		},
 })
 table.insert(Projectiles,
 {
@@ -284,6 +333,7 @@ table.insert(Projectiles,
 
 	ProjectileType = "mortar",
 	ProjectileSprite = "weapons/media/bullet",
+	ProjectileSprite_christmas = xmas_snowball_h,
 	ProjectileSpriteMipMap = false,
 	DrawBlurredProjectile = true,
 	ProjectileMass = 16,
@@ -306,17 +356,11 @@ table.insert(Projectiles,
 	Gravity = 1450.8,
 
 	TrailEffect = path .. "/effects/bigminigun_trail.lua",
-
+	TrailEffect_christmas = xmas_trail_h,
 	Effects =
 	{
 		Impact =
 		{
---			["device"] = "effects/impact_medium.lua",
---			["foundations"] = "effects/impact_medium.lua",
---			["rocks01"] = "effects/impact_heavy_ground.lua",
---			["bracing"] = "effects/impact_medium.lua",
---			["armour"] = "effects/impact_medium.lua",
---			["door"] = "effects/impact_medium.lua",
 			["shield"] = "effects/impact_shield.lua",
 			["default"] = "effects/impact_medium.lua",
 		},	
@@ -324,6 +368,20 @@ table.insert(Projectiles,
 		{
 			["armour"] = { Effect = "effects/armor_ricochet.lua", Splash = false },
 			["door"] = { Effect = "effects/armor_ricochet.lua", Splash = false },
+			["shield"] = { Effect = "effects/energy_shield_ricochet.lua", Splash = false },
+		},
+	},
+	Effects_christmas =
+	{
+		Impact =
+		{
+			["shield"] = "effects/impact_shield.lua",
+			["default"] = xmas_impact_m,
+		},	
+		Deflect =
+		{
+			["armour"] = { Effect =  xmas_impact_m, Splash = false },
+			["door"] = { Effect =  xmas_impact_m, Splash = false },
 			["shield"] = { Effect = "effects/energy_shield_ricochet.lua", Splash = false },
 		},
 	},
@@ -944,6 +1002,7 @@ table.insert(Sprites,
 	{
 		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectileemp" }, mipmap = true, }, },
 		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectileemp.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/projectileemp.png" }, mipmap = true, }, EventTag = "_christmas"},
 		Idle = Normal,
 	},
 })
@@ -954,6 +1013,7 @@ table.insert(Sprites,
 	{
 		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectilefire" }, mipmap = true, }, },
 		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectilefire.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/projectilefire.png" }, mipmap = true, }, EventTag = "_christmas"},
 		Idle = Normal,
 	},
 })
@@ -964,6 +1024,7 @@ table.insert(Sprites,
 	{
 		Normal = { Frames = { { texture = path .. "/weapons/sbrm/projectilehe" }, mipmap = true, }, },
 		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/projectilehe.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/projectilehe.png" }, mipmap = true, }, EventTag = "_christmas"},
 		Idle = Normal,
 	},
 })
@@ -1022,6 +1083,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1111,6 +1173,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1193,6 +1256,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1287,6 +1351,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1382,6 +1447,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -1463,6 +1529,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rm_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rm_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rm_trail_christmas.lua",
 		Missile =
 		{
 			ThrustAngleExtent = 10,
@@ -2065,10 +2132,11 @@ table.insert(Projectiles,
 		ProjectileSplashDamageMaxRadius = 0.0,
 		AntiAirDamage = 20,
 		SpeedIndicatorFactor = 0.05,
-
+		ProjectileSprite = path .. "/weapons/sbslingshot/projectilepebble",
+		ProjectileSprite_christmas = xmas_snowball,
 		TrailEffect = path .. "/effects/pebble_trail.lua",
-
-		Projectile =
+		TrailEffect_christmas = xmas_trail_s,
+		--[[Projectile =
 		{
 			Root =
 			{
@@ -2076,8 +2144,7 @@ table.insert(Projectiles,
 				Angle = 0,
 				Sprite = path .. "/weapons/sbslingshot/projectilepebble",
 			}
-		},
-
+		},]]
 		ParachuteDelayMean = 200,
 		ParachuteDelayStdDev = 0.15,
 		ParachuteDrag = 10.0,
@@ -2092,6 +2159,18 @@ table.insert(Projectiles,
 			{
 				["armour"] = "effects/armor_ricochet.lua",
 				["door"] = "effects/armor_ricochet.lua",
+			},
+		},
+		Effects_christmas =
+		{
+			Impact =
+			{
+				["default"] = xmas_impact_s,
+			},
+			Deflect =
+			{
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
 			},
 		},
 })
@@ -2380,6 +2459,7 @@ table.insert(Projectiles,
 
 	ProjectileType = "bullet",
 	ProjectileSprite = "weapons/media/bullet",
+	ProjectileSprite_christmas = xmas_snowball,
 	ProjectileSpriteMipMap = false,
 	ExpiresOnFreeFall = false,
 	DrawBlurredProjectile = true,
@@ -2402,14 +2482,13 @@ table.insert(Projectiles,
 	{
 		Impact =
 		{
-			["device"] = "effects/impact_light.lua",
+
 			["foundations"] = "effects/ground_hit.lua",
 			["rocks01"] = "effects/ground_hit.lua",
 			["bracing"] = "effects/bracing_bullet_hit.lua",
 			["backbracing"] = "effects/bracing_bullet_hit.lua",
 			["armour"] = "effects/armor_bullet_hit.lua",
 			["door"] = "effects/armor_bullet_hit.lua",
-			["shield"] = "effects/impact_light.lua",
 			["default"] = "effects/impact_light.lua",
 		},
 		Deflect =
@@ -2420,6 +2499,29 @@ table.insert(Projectiles,
 			["door"] = "effects/armor_bullet_ricochet.lua",
 			["shield"] = "effects/energy_shield_ricochet.lua",
 			["default"] = "effects/bracing_bullet_hit.lua",
+		},
+	},
+	Effects_christmas =
+	{
+		Impact =
+		{
+
+			["foundations"] = xmas_impact_s,
+			["rocks01"] = xmas_impact_s,
+			["bracing"] = xmas_impact_s,
+			["backbracing"] = xmas_impact_s,
+			["armour"] = xmas_impact_s,
+			["door"] = xmas_impact_s,
+			["default"] = xmas_impact_s,
+		},
+		Deflect =
+		{
+			["bracing"] = xmas_impact_s,
+			["backbracing"] = xmas_impact_s,
+			["armour"] = xmas_impact_s,
+			["door"] = xmas_impact_s,
+			["shield"] = xmas_impact_s,
+			["default"] = xmas_impact_s,
 		},
 	},
 	
@@ -2478,6 +2580,7 @@ table.insert(Projectiles,
 
 	ProjectileType = "mortar",
 	ProjectileSprite = "weapons/media/bullet",
+	ProjectileSprite_christmas = xmas_snowball_h,
 	ProjectileSpriteMipMap = false,
 	DrawBlurredProjectile = true,
 	ProjectileMass = 16,
@@ -2500,18 +2603,11 @@ table.insert(Projectiles,
 	Gravity = -981,
 
 	TrailEffect = "mods/weapon_pack/effects/20mmcannon_trail.lua",
-
+	TrailEffect_christmas = xmas_trail_h,
 	Effects =
 	{
 		Impact =
 		{
---			["device"] = "effects/impact_medium.lua",
---			["foundations"] = "effects/impact_medium.lua",
---			["rocks01"] = "effects/impact_heavy_ground.lua",
---			["bracing"] = "effects/impact_medium.lua",
---			["armour"] = "effects/impact_medium.lua",
---			["door"] = "effects/impact_medium.lua",
---			["shield"] = "effects/impact_shield.lua",
 			["default"] = "effects/impact_heavy.lua",
 		},	
 		Deflect =
@@ -2519,6 +2615,19 @@ table.insert(Projectiles,
 			["armour"] = { Effect = "effects/armor_ricochet.lua", Splash = false },
 			["door"] = { Effect = "effects/armor_ricochet.lua", Splash = false },
 			["shield"] = { Effect = "effects/energy_shield_ricochet.lua", Splash = false },
+		},
+	},
+	Effects_christmas =
+	{
+		Impact =
+		{
+			["default"] = xmas_impact_h,
+		},	
+		Deflect =
+		{
+			["armour"] = { Effect = xmas_impact_h, Splash = false },
+			["door"] = { Effect = xmas_impact_h, Splash = false },
+			["shield"] = { Effect = xmas_impact_h, Splash = false },
 		},
 	},
 	
@@ -2533,6 +2642,7 @@ table.insert(Projectiles,
 
 		ProjectileType = "mortar", -- necessary to make a trail
 		ProjectileSprite = "weapons/media/bullet",
+		ProjectileSprite_christmas = xmas_snowball,
 		ProjectileSpriteMipMap = true,
 		DrawBlurredProjectile = true,
 
@@ -2554,7 +2664,7 @@ table.insert(Projectiles,
 		SpeedIndicatorFactor = 0.05,
 
 		TrailEffect = "effects/sniper_trail.lua",
-
+		TrailEffect_christmas = xmas_trail_s,
 		Effects =
 		{
 			Impact =
@@ -2583,6 +2693,36 @@ table.insert(Projectiles,
 				["armour"] = "effects/armor_bullet_hit.lua",
 				["door"] = "effects/armor_bullet_hit.lua",
 				["shield"] = "effects/energy_shield_ricochet.lua",
+			},
+		},
+		Effects_christmas =
+		{
+			Impact =
+			{
+				["device"] = xmas_impact_s,
+				["foundations"] = xmas_impact_s,
+				["rocks01"] = xmas_impact_s,
+				["bracing"] = xmas_impact_s,
+				["backbracing"] = xmas_impact_s,
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
+				["shield"] = xmas_impact_s,
+				["default"] = xmas_impact_s,
+			},
+			Deflect =
+			{
+				["bracing"] = xmas_impact_s,
+				["backbracing"] = xmas_impact_s,
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
+				["shield"] = xmas_impact_s,
+			},
+			Penetrate =
+			{
+				["bracing"] = xmas_impact_s,
+				["armour"] = xmas_impact_s,
+				["door"] = xmas_impact_s,
+				["shield"] = xmas_impact_s,
 			},
 		},
 		DamageMultiplier =
@@ -3164,7 +3304,23 @@ function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incend
 		flamingProjectile.Effects.Age = {}
 		flamingProjectile.Effects.Age["t1000000"] = { Effect = expireEffect, Terminate = true, }
 	end
-	
+	--xmas and halloween fix
+	if flamingProjectile.TrailEffect_halloween then
+		if flamingProjectile.TrailEffect_halloween_flaming then
+			flamingProjectile.TrailEffect_halloween = flamingProjectile.TrailEffect_halloween_flaming
+		else
+			flamingProjectile.TrailEffect_halloween = nil
+		end
+	end
+	if flamingProjectile.TrailEffect_christmas then
+		if flamingProjectile.TrailEffect_christmas_flaming then
+			flamingProjectile.TrailEffect_christmas = flamingProjectile.TrailEffect_christmas_flaming
+		elseif flamingProjectile.TrailEffect_christmas == xmas_trail_s or flamingProjectile.TrailEffect_christmas == xmas_trail_h then
+			flamingProjectile.TrailEffect_christmas = xmas_trail_f
+		else
+			flamingProjectile.TrailEffect_christmas = nil
+		end
+	end
 	table.insert(Projectiles, flamingProjectile)
 end
 --flaming versions
@@ -3190,6 +3346,7 @@ sbMakeFlamingVersion("sbfirebullet", 1.5, 0.2, "flaming_sniper_trail", nil, smal
 sbMakeFlamingVersion("sbrmemp", 1.25, 3, "flaming_trail", 150, nil, missileStructureHit)
 sbMakeFlamingVersion("sbrmfire", 1.25, 3, "flaming_trail", 270, nil, missileStructureHit)
 sbMakeFlamingVersion("sbrmhe", 1.25, 3, "flaming_trail", 240, nil, missileStructureHit)
+
 sbMakeFlamingVersion("sbsaw", 1.25, 0.2, "flaming_trail", 240, nil, missileStructureHit)
 sbMakeFlamingVersion("sbsuremp", 1.25, 3, "flaming_trail", 120, nil, missileStructureHit)
 sbMakeFlamingVersion("sbsurfire", 1.25, 3, "flaming_trail", 280, nil, missileStructureHit)
@@ -3204,6 +3361,7 @@ sbMakeFlamingVersion("sb50cal", 1.25, 0.2, "flaming_sniper_trail", nil, smallArm
 sbMakeFlamingVersion("sboildrumprojectile", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sboildrumprojectileshock", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbdrone", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
+
 --armored versions
 MakeArmouredVersion("sbsuremp", path .. "/weapons/sbsur/armorprojectileemp", "effects/missile_armor_debris.lua")
 MakeArmouredVersion("sbsurfire", path .. "/weapons/sbsur/armorprojectilefire", "effects/missile_armor_debris.lua")
@@ -3304,7 +3462,7 @@ RegisterApplyMod(function()
 		flames.DrawBlurredProjectile = false
 		flames.Projectile.Root.Scale = 0.25
 	end
-	for k,v in pairs(Projectiles) do
+	for k, v in pairs(Projectiles) do
 		if not v.Effects then v.Effects = { Impact = {} } end
 		if not v.Effects.Impact then v.Effects.Impact = {} end
 		
@@ -3316,6 +3474,7 @@ RegisterApplyMod(function()
 		if sbmagnetcollide then
 			sbmagnetcollide.CollidesWithBeams = false
 		end
+		
 	end
 	--indef functions
 	local indefcheck = FindProjectile("_cannon2")

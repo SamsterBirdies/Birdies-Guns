@@ -100,6 +100,11 @@ Sprites =
 			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
 			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
 			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_head.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_head.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_head.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_head.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_head.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_head.tga" }, mipmap = true, }, EventTag = "_christmas"},
 		},
 	},
 	{
@@ -113,6 +118,11 @@ Sprites =
 			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
 			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
 			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/imploder_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
 		},
 	},
 	{

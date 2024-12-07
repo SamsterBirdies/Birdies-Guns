@@ -147,7 +147,7 @@ function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
 end
 
 --christmas rm music
-
+--[[
 dofile("ui/uihelper.lua")
 Sprites = { ButtonSprite("music_btn", "context/HUD-music_btn", nil, nil, nil, nil, path) }
 function SetData(variable, value)
@@ -198,4 +198,4 @@ function OnContextButtonDevice(name, deviceTeamId, deviceId, saveName)
 			SendScriptEvent("SpawnMusic", SSEParams(music_path, deviceId), "script.lua", true)
 		end
 	end
-end
+end]]

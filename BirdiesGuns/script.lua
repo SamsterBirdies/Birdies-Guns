@@ -159,9 +159,10 @@ function SetData(variable, value)
 	end
 end
 function SpawnMusic(sound, deviceId)
-	local effectid = SpawnEffect(sound, GetDevicePosition(deviceId))
-	SendScriptEvent("SetData", SSEParams('data.music_device', deviceId), "script.lua", true)
-	SendScriptEvent("SetData", SSEParams('music_effect', effectid), "script.lua", true)
+	
+	local effectid = SpawnEffect(path .. sound, GetDevicePosition(deviceId))
+	SetData(data.music_device, deviceId)
+	SetData(music_effect, effectid)
 end
 function OnContextMenuDevice(deviceTeamId, deviceId, saveName)
 	local devices = {'sbrmemp', 'sbrmfire', 'sbrmhe', 'sbrmempinv', 'sbrmfireinv', 'sbrmheinv', 'sbrmempmarine', 'sbrmfiremarine', 'sbrmhemarine'}
@@ -189,11 +190,11 @@ function OnContextButtonDevice(name, deviceTeamId, deviceId, saveName)
 		else
 			local music_path = ""
 			if saveName == "sbrmemp" or saveName == "sbrmempinv" or saveName == "sbrmempmarine" then
-				music_path = path .. "/effects/music_rm_jinglebells.lua"
+				music_path = "/effects/music_rm_jinglebells.lua"
 			elseif saveName == "sbrmfire" or saveName == "sbrmfireinv" or saveName == "sbrmfiremarine" then
-				music_path = path .. "/effects/music_rm_silentnight.lua"
+				music_path = "/effects/music_rm_silentnight.lua"
 			elseif saveName == "sbrmhe" or saveName == "sbrmheinv" or saveName == "sbrmhemarine" then
-				music_path = path .. "/effects/music_rm_deckthehalls.lua"
+				music_path = "/effects/music_rm_deckthehalls.lua"
 			end
 			SendScriptEvent("SpawnMusic", SSEParams(music_path, deviceId), "script.lua", true)
 		end

@@ -2429,7 +2429,11 @@ end)
 function sbAddOilUpg()
 	for k, v in pairs(Weapons) do
 		if not v.Upgrades then v.Upgrades = {} end
-		if not v.BuildOnOreOnly and not v.BuildOnGroundOnly then
+		if v.BuildOnGroundOnly or v.BuildOnOreOnly 
+		or v.SaveName == "sbOrbitalArtillery_source" or v.SaveName == "sbOrbitalArtillerySpread_source"
+		then
+			--pass
+		else
 			table.insert(v.Upgrades, 
 			{
 				Enabled = false,

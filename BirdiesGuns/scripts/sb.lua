@@ -9,8 +9,10 @@ function MakeVacuumVersion(saveName, trailEffect, impact, splashforce, customPat
 	local projectile = FindProjectile(saveName)
 	if not projectile then --Log("Error: MakeVacuumVersion unable to find " .. saveName) 
 	return end
-
-	projectile.CollidesWithBeams = true
+	
+	if projectile.CollidesWithBeams == nil then
+		projectile.CollidesWithBeams = true
+	end
 	projectile.Effects.Impact["sbpullbeam"] = { Effect = (customPath or path) .. "/effects/sbpullbeam_hit2.lua", Projectile = { Count = 1, Type = "vacuum" .. saveName, StdDev = 0 }, Splash = false, Terminate = true, KeepLifespan = true, PosT = 1, Offset = 0 }
 
 	local vacuumProjectile = DeepCopy(projectile)

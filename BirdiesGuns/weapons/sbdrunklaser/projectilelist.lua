@@ -12,7 +12,9 @@ function MakeDrunkVersion(saveName)
 	if not projectile.Effects.Impact then projectile.Effects.Impact = {} end
 	if not projectile.Effects.Age then projectile.Effects.Age = {} end
 	
-	projectile.CollidesWithBeams = true
+	if projectile.CollidesWithBeams == nil then 
+		projectile.CollidesWithBeams = true
+	end
 	
 	projectile.Effects.Impact["sbdrunklaser"] =
 	{

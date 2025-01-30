@@ -3017,7 +3017,7 @@ if endosempbeamcheck then
 	MakeEMPVersion("sbdownmortar2", 1.25, "blue_trail", 50, 5, EAModPath)
 	MakeEMPVersion("sbdowncannon", 1.25, "blue_trail", 100, 3, EAModPath)
 	MakeEMPVersion("sbdrone", 1.25, "blue_trail", 100, 3, EAModPath)
-	end
+end
 
 --//VACUUM BEAM START//--
 

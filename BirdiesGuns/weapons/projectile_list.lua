@@ -2148,7 +2148,7 @@ table.insert(Projectiles,
 		ParachuteDelayMean = 200,
 		ParachuteDelayStdDev = 0.15,
 		ParachuteDrag = 10.0,
-
+		DeflectedByTerrain = true,
 		Effects =
 		{
 			Impact =

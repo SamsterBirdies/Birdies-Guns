@@ -23,3 +23,4 @@ StructureSplashDamage = 120
 StructureSplashDamageMaxRadius = 150
 IgnitePlatformOnDestruct = true
 DestroyEffect = path .. "/effects/fart.lua"
+DestroyUnderwaterEffect = nil

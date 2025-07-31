@@ -2920,6 +2920,15 @@ if sbtorpedo then
 	}
 	table.insert(Projectiles, sbtorpedo)
 end]]
+
+local mosin = DeepCopy(FindProjectile("sniper"))
+if mosin then
+	mosin.SaveName = 'sbmosin'
+	mosin.ProjectileDamage = mosin.ProjectileDamage * 0.75
+	mosin.WeaponDamageBonus = mosin.WeaponDamageBonus / 2
+	table.insert(Projectiles, mosin)
+end
+
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:

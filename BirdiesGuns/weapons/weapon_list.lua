@@ -2245,7 +2245,23 @@ if sbTorpedo then
 		)
 	)
 end]]
-
+local mosin = FindWeapon("sniper")
+if mosin then
+	table.insert(Weapons, IndexOfWeapon("sniper2"),
+		InheritType(FindWeapon("sniper"),nil,
+			{
+				Enabled = false,
+				SaveName = "sbmosin",
+				FileName = path .. "/weapons/sbmosin/mosin.lua",
+				MetalCost = 300,
+				EnergyCost = 1000,
+				Prerequisite = nil,
+				CompatibleGroupTypes = {},
+				SpotterFactor = 0,
+			}
+		)
+	)
+end
 --END WEAPON INSERTION
 
 if not sbToG then

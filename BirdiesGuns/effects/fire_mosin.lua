@@ -9,15 +9,6 @@ Sprites =
 
 Effects =
 {
---[[
-	{
-		Type = "sound",
-		TimeToTrigger = 0.0,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/fire_sniper_light_01_1001108_SOUNDDOGS__sp.mp3",
-		Volume = 0.8,
-	},
-]]	
 	{
 		Type = "sprite",
 		TimeToTrigger = 0,
@@ -36,26 +27,36 @@ Effects =
 		Colour1 = { 128, 128, 128, 255 },
 		Colour2 = { 128, 128, 128, 255 },
 	},
---[[	{
-		Type = "bullettime",
-		TimeToTrigger = 0,
-		TimeToContinue = 1.5,
-		Speed = 0.25,
-	},
-]]
-	--[[{
-		Type = "sound",
-		TimeToTrigger = 0.0,
-		TimeToTriggerStdDev = 0,
-		FadeInPeriod = 0,
-		LocalPosition = { x = 0, y = 0, z = 0 },
-		Sound = path .. "/effects/media/caliber50.ogg",
-		Volume = 0.28,
-		Priority = 192,
-		Repeat = false,
-		RandomiseStart = false,
-	},]]
-
 }
 SoundEvent = "mods/sbBGsoundbank/effects/fire_mosin"
---SoundEvent = "effects/missile_ground_hit"
+table.insert(Effects,
+	{
+		Type = "sprite",
+		TimeToTrigger = 0.04,
+		LocalPosition = { x = 0, y = 70, z = -100 },
+		LocalVelocity = { x = 0, y = 0, z = 0 },
+		Acceleration = { x = 0, y = 0, z = 0 },
+		Drag = 0,
+		Sprite = path .. "/effects/media/bloom1.png",
+		Additive = true,
+		TimeToLive = 0.08,
+		InitialSize = 4,
+		ExpansionRate = 100,
+		Angle = 0,
+		AngularVelocity = 0,
+		RandomAngularVelocityMagnitude = 0,
+		Colour1 = { 255, 255, 90, 150 },
+		Colour2 = { 255, 190, 50, 68 },
+	}
+)
+table.insert(Effects,
+	{
+		Type = "shake",
+		PlayForEnemy = true,
+		FalloffStart = 500,
+		FalloffEnd = 2000,
+		TimeToTrigger = 0,
+		TimeToLive = 0.12,
+		Magnitude = 4,
+	}
+)

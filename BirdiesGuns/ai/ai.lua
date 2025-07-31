@@ -99,6 +99,7 @@ ShootableProjectile["armouredsbsurfire"] = true
 ShootableProjectile["armouredsbsurhe"] = true
 ShootableProjectile["sbmolotov"] = true
 ShootableProjectile["sbgrenade"] = true
+ShootableProjectile["sbswarmshield"] = true
 ShootableProjectile["sbswarmshieldswarm"] = true
 ShootableProjectile["sbswarmshousing"] = true
 ShootableProjectile["sbswarmshousing2"] = true

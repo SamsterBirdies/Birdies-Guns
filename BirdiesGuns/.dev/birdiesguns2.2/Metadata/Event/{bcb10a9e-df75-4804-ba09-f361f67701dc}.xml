@@ -106,6 +106,9 @@
 			<destination>{1c217cf9-5ced-4595-98c6-dc926beca108}</destination>
 			<destination>{85259899-1976-44bf-ad67-86d1b32d0a30}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{7a93cd3c-ff3f-46df-a72a-4f73cb42c27c}</destination>
+		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{a39910dc-2c62-49e3-aebe-0717beeb0fc3}">
 		<relationship name="preset">
@@ -242,6 +245,23 @@
 			<destination>{6ae508ee-9439-4f5b-9bb5-89455e79b177}</destination>
 		</relationship>
 	</object>
+	<object class="TransitionRegion" id="{7a93cd3c-ff3f-46df-a72a-4f73cb42c27c}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>2.6000000000000001</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{5a6f2fa2-f91c-405a-95ba-ec1761a74dd5}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{a0e12f68-48ae-4fe5-b69a-532e969e5c9b}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{448ed0d8-0d32-4eb1-a814-ddfdc1132ce3}</destination>
+		</relationship>
+	</object>
 	<object class="Automator" id="{9eda86c4-5390-47ae-baaf-1b486ad1b8d0}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>volume</value>
@@ -326,6 +346,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{45239e33-b239-48b3-86f4-071b151c5a1b}" />
+	<object class="EventCondition" id="{448ed0d8-0d32-4eb1-a814-ddfdc1132ce3}">
+		<property name="eventState">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{4491289b-7e69-4234-959f-3dc7b4383801}">
 		<relationship name="parameter">
 			<destination>{9136f95c-a5cb-4317-a757-fc39449a7679}</destination>
@@ -433,7 +458,7 @@
 			<value>1.8260869565217392</value>
 		</property>
 		<property name="value">
-			<value>-2.5</value>
+			<value>-5.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{8b203845-7fb5-4cd5-8fdb-5236c695d386}">

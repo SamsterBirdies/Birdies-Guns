@@ -38,9 +38,9 @@ BarrelLength = 60.0
 MinFireClearance = 500
 FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
-ReloadTime = 28
-MinFireSpeed = 4000.0
-MaxFireSpeed = 4000.1
+ReloadTime = 24
+MinFireSpeed = 2340.0
+MaxFireSpeed = 2340.1
 MaxFireClamp = 0.85
 MinFireRadius = 350.0
 MaxFireRadius = 1200.0
@@ -67,8 +67,8 @@ DoorCloseDelay = 1
 AutofireCloseDoorTicks = DoorCloseDelay*25
 
 TriggerProjectileAgeAction = true
-MinAgeTrigger = 0.3
-MaxAgeTrigger = 2.5
+MinAgeTrigger = 0.8
+MaxAgeTrigger = 4.8
 
 TargetIcon =
 {

@@ -3,7 +3,7 @@ dofile("scripts/core.lua")
 --  age (in seconds) at which the explosion actor deletes itself
 --  make sure this exceedes the age of all effects
 LifeSpan = 6.0
-
+SoundEvent = "mods/sbBGsoundbank/effects/reload_mosin"
 Effects =
 {
 --[[	{
@@ -46,7 +46,7 @@ function UpdateEffect(self, effectTime, pos, normal, mirror)
 	if self == nil then
 		-- create new state for the effect
 		self = {}
-		self.openTime = 0.5
+		self.openTime = 0.32
 		self.closeTime = self.openTime + 1.2
 	end
 

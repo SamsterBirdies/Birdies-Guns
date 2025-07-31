@@ -2254,10 +2254,12 @@ if mosin then
 				SaveName = "sbmosin",
 				FileName = path .. "/weapons/sbmosin/mosin.lua",
 				MetalCost = 300,
-				EnergyCost = 1000,
+				EnergyCost = 2000,
 				Prerequisite = nil,
 				CompatibleGroupTypes = {},
 				SpotterFactor = 0,
+				BuildTimeComplete = 30.0,
+				AnimationScript = path .. "/weapons/sbmosin/animationscript.lua",
 			}
 		)
 	)

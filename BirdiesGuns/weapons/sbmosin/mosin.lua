@@ -27,6 +27,8 @@ BarrelRecoilSpeed = -3
 BarrelReturnForce = 0.5
 FireStdDev = 0.004
 FireStdDevAuto = 0.006
+MetalFireCost = 2
+EnergyFireCost = 100
 Sprites = 
 {
 	{

@@ -2247,6 +2247,7 @@ if sbTorpedo then
 end]]
 local mosin = FindWeapon("sniper")
 if mosin then
+	table.insert(Sprites, DetailSprite("hud-detail-sbmosin", "sbmosin", path))
 	table.insert(Sprites, ButtonSprite("hud-sbmosin-icon", "HUD/HUD-mosin", nil, ButtonSpriteBottom, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("sniper2"),
 		InheritType(FindWeapon("sniper"),nil,
@@ -2262,6 +2263,8 @@ if mosin then
 				BuildTimeComplete = 30.0,
 				AnimationScript = path .. "/weapons/sbmosin/animationscript.lua",
 				Icon = "hud-sbmosin-icon",
+				Detail = "hud-detail-sbmosin", 
+				AffectedBysbNCE = true,
 				Upgrades = {}
 			}
 		)

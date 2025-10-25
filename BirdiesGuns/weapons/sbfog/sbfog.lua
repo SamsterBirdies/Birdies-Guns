@@ -1,3 +1,4 @@
+sbBGpath = path
 Scale = 1
 SelectionWidth = 40.0
 SelectionHeight = 56.0

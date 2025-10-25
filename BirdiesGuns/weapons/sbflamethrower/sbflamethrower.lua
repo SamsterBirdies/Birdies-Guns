@@ -28,6 +28,7 @@ StructureSplashDamage = 160
 StructureSplashDamageMaxRadius = 150
 
 FireEffect = path .. "/effects/flamethrowerstart.lua"
+FireEffect_halloween = path .. "/effects/flamethrowerstart_halloween.lua"
 
 ConstructEffect = "effects/device_construct.lua"
 CompleteEffect = "effects/device_complete.lua"

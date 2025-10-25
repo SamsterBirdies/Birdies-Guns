@@ -25,7 +25,8 @@ ReloadTimeIncludesBurst = false
 BarrelRecoilLimit = -0.01
 BarrelRecoilSpeed = -3
 BarrelReturnForce = 0.5
-
+FireStdDev = 0.004
+FireStdDevAuto = 0.006
 Sprites = 
 {
 	{
@@ -130,6 +131,19 @@ Sprites =
 			},
 		},
 	},
+	{
+		Name = "sbmosin-head",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/weapons/sbmosin/barrel.png" }, mipmap = true, }, },
+			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+		},
+	},
 }
 Root.Sprite = "mods/faction-Russia/weapons/snipertower/base"
 Root.ChildrenInFront[1].Sprite = path .. "/weapons/sbmosin/barrel.png"
@@ -160,7 +174,7 @@ Root =
 					Angle = 0,
 					Pivot = { -0.25, 0 },
 					PivotOffset = { 0.25, 0 },
-					Sprite =  path .. "/weapons/sbmosin/barrel.png",
+					Sprite = "sbmosin-head",
 					UserData = 50,
 					ChildrenInFront =
 					{
@@ -183,12 +197,6 @@ Root =
 							Scale = 1.0,
 						},
 						{
-							Name = "Hardpoint0",
-							Angle = 90,
-							Pivot = { -0.17, -0.15 },
-							PivotOffset = { 0, 0 },
-						},
-						{
 							Name = "LaserSight",
 							Angle = 90,
 							Pivot = { -0.04, -0.2 },
@@ -200,7 +208,20 @@ Root =
 							Pivot = {-0.09142212189616253, -0.13063063063063063},
 							PivotOffset = { 0, 0 },
 						},
+						{
+							Name = "santahat",
+							Scale = 0.32,
+							Sprite = "sbSantaHat",
+							Pivot = {-0.1367, -0.06},
+							UserData = 100,
+						},
 					},
+				},
+				{
+					Name = "Hardpoint0",
+					Angle = 90,
+					Pivot = { -0.17, -0.15 },
+					PivotOffset = { 0, 0 },
 				},
 			},
 		},

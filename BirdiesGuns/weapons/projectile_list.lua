@@ -810,8 +810,8 @@ table.insert(Sprites,
 		Name = "sbfog_green",
 		States =
 		{
-			Normal = { Frames = { { texture = "effects/media/steam", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, },
-			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.5, 1.0, 0.7, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 0.2, 1.0, 0.4, 0.7 } }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost", colour = { 0.2, 1.0, 0.4, 0.7 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })
@@ -830,8 +830,8 @@ table.insert(Sprites,
 		Name = "sbfog_yellow",
 		States =
 		{
-			Normal = { Frames = { { texture = "effects/media/steam", colour = { 1.0, 1.0, 1.0, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
-			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost.png", colour = { 1.0, 0.9, 0.6, 1.0 } }, mipmap = true, }, EventTag = "_halloween"},
+			Normal = { Frames = { { texture = "effects/media/steam", colour = { 1.0, 0.6, 0.2, 0.8 } }, mipmap = true, },},
+			Normal_halloween = { Frames = { { texture = path .. "/effects/media/fog_ghost.png", colour = { 1.0, 0.8, 0.2, 1 } }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 })
@@ -909,6 +909,24 @@ table.insert(Sprites,
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/effects/media/bloom1.dds", colour = { 1, 0.6, 0.2, 0.2 }}, mipmap = true, }, },
+			Idle = Normal,
+		},
+})
+table.insert(Sprites,
+{
+		Name = "sbfogemp_bloom",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/effects/media/bloom1.dds", colour = { 0.2, 0.6, 1, 0.2 }}, mipmap = true, }, },
+			Idle = Normal,
+		},
+})
+table.insert(Sprites,
+{
+		Name = "sbfogvacuum_bloom",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/effects/media/bloom1.dds", colour = { 0.3, 1, 0.3, 0.2 }}, mipmap = true, }, },
 			Idle = Normal,
 		},
 })
@@ -3065,7 +3083,11 @@ MakeVacuumVersion("sbquadcannon", "vacuumtrail", 20000, 320000)
 MakeVacuumVersion("sbssm", "vacuumtrail", 900000)
 MakeVacuumVersion("sbssmfire", "vacuumtrail", 900000)
 MakeVacuumVersion("sbfog", "empty", 1250000)
-	local sbfogfind = FindProjectile("vacuumsbfog") if sbfogfind then sbfogfind.Projectile.Root.Sprite = "sbfog_green" end
+	local sbfogfind = FindProjectile("vacuumsbfog") 
+	if sbfogfind then 
+		sbfogfind.Projectile.Root.Sprite = "sbfog_green" 
+		sbfogfind.Projectile.Root.Additive = true
+	end
 MakeVacuumVersion("sbfirebullet", "vacuumtrailsmall", 175000)
 MakeVacuumVersion("sbrmemp", "vacuumtrail_long", 100000, 370000)
 MakeVacuumVersion("sbrmfire", "vacuumtrail_long", 100000, 400000)
@@ -3347,9 +3369,12 @@ sbMakeFlamingVersion("sbquadcannon", 1.25, 0.1, "flaming_trail", 50, nil, nil)
 sbMakeFlamingVersion("sbssm", 1.25, 5, "flaming_trail", 80, nil, genericFlamingExpire )
 sbMakeFlamingVersion("sbssmfire", 1.3, 10, "flaming_trail", 120, nil, genericFlamingExpire )
 sbMakeFlamingVersion("sbfog", 1.0, 20, "empty", 0, nil, nil)
-	local sbflamefogfind = FindProjectile("flamingsbfog") if sbflamefogfind then 
+	local sbflamefogfind = FindProjectile("flamingsbfog") 
+	if sbflamefogfind then 
 		sbflamefogfind.Projectile.Root.Sprite = "sbfog_yellow"
+		sbflamefogfind.Projectile.Root.Additive = true
 		sbflamefogfind.Effects.Impact.default = path .. "/effects/cloudSmoke.lua"
+		sbflamefogfind.Effects.Penetrate.default = path .. "/effects/cloudSmoke.lua"
 	end
 sbMakeFlamingVersion("sbfirebullet", 1.5, 0.2, "flaming_sniper_trail", nil, smallArmsFlare)
 sbMakeFlamingVersion("sbrmemp", 1.25, 3, "flaming_trail", 150, nil, missileStructureHit)
@@ -3470,6 +3495,31 @@ RegisterApplyMod(function()
 		flames.TrailEffect = sbBGpath .. "/effects/flames_trail.lua"
 		flames.DrawBlurredProjectile = false
 		flames.Projectile.Root.Scale = 0.25
+		
+		local flamingfog = FindProjectile("flamingsbfog")
+		flamingfog.Projectile.Root.ChildrenInFront =
+		{{
+			Name = "Bloom",
+			Angle = 0,
+			Offset = { 0, 0 },
+			Pivot = { 0, 0 },
+			PivotOffset = { 0, 0 },
+			Sprite = "sbflames_bloom",
+			Additive = true,
+			Scale = 11,
+		}}
+		local flamingfog = FindProjectile("vacuumsbfog")
+		flamingfog.Projectile.Root.ChildrenInFront =
+		{{
+			Name = "Bloom",
+			Angle = 0,
+			Offset = { 0, 0 },
+			Pivot = { 0, 0 },
+			PivotOffset = { 0, 0 },
+			Sprite = "sbfogvacuum_bloom",
+			Additive = true,
+			Scale = 10,
+		}}
 	end
 	for k, v in pairs(Projectiles) do
 		if not v.Effects then v.Effects = { Impact = {} } end

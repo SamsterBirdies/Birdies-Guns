@@ -2247,23 +2247,47 @@ if sbTorpedo then
 end]]
 local mosin = FindWeapon("sniper")
 if mosin then
+	table.insert(Sprites, ButtonSprite("hud-sbmosin-icon", "HUD/HUD-mosin", nil, ButtonSpriteBottom, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("sniper2"),
 		InheritType(FindWeapon("sniper"),nil,
 			{
 				Enabled = false,
 				SaveName = "sbmosin",
 				FileName = path .. "/weapons/sbmosin/mosin.lua",
-				MetalCost = 300,
-				EnergyCost = 2000,
+				MetalCost = 150,
+				EnergyCost = 800,
 				Prerequisite = nil,
 				CompatibleGroupTypes = {},
 				SpotterFactor = 0,
 				BuildTimeComplete = 30.0,
 				AnimationScript = path .. "/weapons/sbmosin/animationscript.lua",
+				Icon = "hud-sbmosin-icon",
+				Upgrades = {}
 			}
 		)
 	)
 end
+--[[
+local bpc = FindWeapon("cannon")
+if bpc then
+	table.insert(Weapons, IndexOfWeapon("machinegun"),
+		InheritType(FindWeapon("cannon"),nil,
+			{
+				Enabled = false,
+				SaveName = "sbbpc",
+				FileName = path .. "/weapons/sbbpc/bpc.lua",
+				MetalCost = 300,
+				EnergyCost = 3000,
+				Prerequisite = nil,
+				CompatibleGroupTypes = {"sbbpc"},
+				SpotterFactor = 0,
+				BuildTimeComplete = 48.0,
+				Upgrades = {}
+				--AnimationScript = path .. "/weapons/sbbpc/animationscript.lua",
+			}
+		)
+	)
+end]]
 --END WEAPON INSERTION
 
 if not sbToG then

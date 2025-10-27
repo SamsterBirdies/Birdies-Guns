@@ -109,6 +109,11 @@ Sprites =
 		States =
 		{
 			Normal = { Frames = { { texture = path .. "/weapons/sbquadcannon/barrel.tga" }, mipmap = true, }, },
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/quad_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/quad_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/quad_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/quad_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/quad_barrel.tga" }, mipmap = true, }, EventTag = "_halloween"},
 			Idle = Normal,
 		},
 	},

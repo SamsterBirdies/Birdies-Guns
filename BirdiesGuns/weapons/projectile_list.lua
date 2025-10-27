@@ -599,6 +599,26 @@ table.insert(Projectiles,
 		{ SaveName = "reactor", Direct = 0, Splash = 0 },
 	},
 })
+table.insert(Sprites,
+{
+	Name = "sbssm",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectile.tga" }, mipmap = true, }, },
+		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/sbssm.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Idle = Normal,
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sbssmfire",
+	States =
+	{
+		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectile.tga" }, mipmap = true, }, },
+		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/sbssmfire.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Idle = Normal,
+	},
+})
 table.insert(Projectiles,
 {
 		SaveName = "sbssm",
@@ -622,6 +642,7 @@ table.insert(Projectiles,
 		SpeedIndicatorFactor = 0.05,
 
 		TrailEffect = path .. "/effects/rocket_trail.lua",
+		TrailEffect_halloween = path .. "/effects/rocket_trail_halloween.lua",
 
 		Projectile =
 		{
@@ -629,7 +650,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/weapons/sbssm/projectile.tga",
+				Sprite = "sbssm",
 			
 				ChildrenInFront =
 				{
@@ -661,6 +682,7 @@ table.insert(Projectiles,
 		{
 		},
 })
+
 table.insert(Projectiles,
 {
 		SaveName = "sbssmfire",
@@ -691,6 +713,7 @@ table.insert(Projectiles,
 		IncendiaryRadiusHeated = 0,
 
 		TrailEffect = path .. "/effects/rocket_trail.lua",
+		TrailEffect_halloween = path .. "/effects/rocket_trail_halloween.lua",
 
 		Projectile =
 		{
@@ -698,7 +721,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = path .. "/weapons/sbssm/projectilefire.tga",
+				Sprite = "sbssmfire",
 			
 				ChildrenInFront =
 				{

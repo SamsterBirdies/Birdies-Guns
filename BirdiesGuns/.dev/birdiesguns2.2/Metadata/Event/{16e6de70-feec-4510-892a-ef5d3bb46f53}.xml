@@ -64,6 +64,12 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6834ab53-3e23-4d34-985a-0f40875cf20a}">
+		<property name="maxVoices">
+			<value>20</value>
+		</property>
+		<property name="voiceStealing">
+			<value>2</value>
+		</property>
 		<property name="dopplerScale">
 			<value>20</value>
 		</property>
@@ -129,9 +135,6 @@
 	<object class="SingleSound" id="{c43ec2e8-ece8-4349-9888-0760854ed0de}">
 		<property name="length">
 			<value>4.4453287981859413</value>
-		</property>
-		<property name="pitch">
-			<value>1.60000002</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{46404dd2-39f0-4c64-9506-9e13a917b111}</destination>

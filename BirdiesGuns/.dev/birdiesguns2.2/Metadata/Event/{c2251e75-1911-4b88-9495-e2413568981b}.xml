@@ -158,6 +158,9 @@
 		<property name="length">
 			<value>0.75895691609977323</value>
 		</property>
+		<property name="pitch">
+			<value>-5</value>
+		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{65fff4e9-afcd-42ce-958a-ccdb96fd6aff}</destination>
 		</relationship>
@@ -174,6 +177,9 @@
 		</property>
 		<property name="volume">
 			<value>-2</value>
+		</property>
+		<property name="pitch">
+			<value>-5</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{02f22a8f-627b-4f11-aa23-94fbb4dc31cb}</destination>
@@ -211,6 +217,9 @@
 		</property>
 		<property name="volume">
 			<value>-2</value>
+		</property>
+		<property name="pitch">
+			<value>-5</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -278,7 +287,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{62952171-c191-4370-ad8e-ca7530a29683}">
 		<property name="volume">
-			<value>-8</value>
+			<value>-5.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>

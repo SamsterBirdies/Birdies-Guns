@@ -144,7 +144,7 @@ Root =
 {
 	Name = "base",
 	Angle = 0,
-	Pivot = { 0, -0.55 },
+	Pivot = { 0, -0.5 },
 	PivotOffset = { 0, 0 },
 	Sprite = "sbwarthogcopter-base",
 	UserData = 0,

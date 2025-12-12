@@ -694,6 +694,13 @@ table.insert(Projectiles,
 				["door"] = "effects/armor_ricochet.lua",
 			},
 		},
+		sbexp_overrides =
+		{
+			Effects_christmas = 
+			{
+				Impact = {["default"] = path .. "/effects/z_impact_bells.lua"},
+			},
+		},
 })
 
 table.insert(Projectiles,
@@ -775,6 +782,13 @@ table.insert(Projectiles,
 			{
 				["armour"] = "effects/armor_ricochet.lua",
 				["door"] = "effects/armor_ricochet.lua",
+			},
+		},
+		sbexp_overrides =
+		{
+			Effects_christmas = 
+			{
+				Impact = {["default"] = path .. "/effects/z_impact_bells.lua"},
 			},
 		},
 })
@@ -3508,6 +3522,7 @@ local exp_effects =
 	"sbbigemp", "sbmegaemp",
 	"impact_imploder",
 	"EMP_mortar_trail",
+	"impact_bells",
 }
 for k, v in pairs(exp_effects) do
 	sbe_effects_list[path .. "/effects/" .. v .. ".lua"] = path .. "/effects/z_" .. v .. ".lua"

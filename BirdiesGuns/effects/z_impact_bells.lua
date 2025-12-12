@@ -1,0 +1,41 @@
+dofile(path .. "/effects/impact_bells.lua")
+table.insert(Effects,
+	{
+		Type = "sprite",
+		TimeToTrigger = 0,
+		LocalPosition = { x = 0, y = 0, z = -100 },
+		LocalVelocity = { x = 0, y = 0, z = 0 },
+		Acceleration = { x = 0, y = 0, z = 0 },
+		Drag = 0,
+		Sprite = path .. "/effects/media/bloom3.png",
+		Additive = true,
+		TimeToLive = 0.16,
+		InitialSize = 6,
+		ExpansionRate = -700,
+		Angle = -90,
+		AngularVelocity = 0,
+		RandomAngularVelocityMagnitude = 200,
+		Colour1 = { 255, 180, 100, 130 },
+		Colour2 = { 255, 80, 40, 0 },
+	}
+)
+table.insert(Effects,
+	{
+		Type = "sprite",
+		TimeToTrigger = 0,
+		LocalPosition = { x = 0, y = 0, z = -100 },
+		LocalVelocity = { x = 0, y = 0, z = 0 },
+		Acceleration = { x = 0, y = 0, z = 0 },
+		Drag = 0,
+		Sprite = path .. "/effects/media/bloom1.png",
+		Additive = true,
+		TimeToLive = 0.16,
+		InitialSize = 3.0,
+		ExpansionRate = -100,
+		Angle = -90,
+		AngularVelocity = 0,
+		RandomAngularVelocityMagnitude = 200,
+		Colour1 = { 255, 255, 255, 120 },
+		Colour2 = { 255, 190, 50, 60 },
+	}
+)

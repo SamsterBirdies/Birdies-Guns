@@ -70,63 +70,22 @@ Effects =
 		},
 	},
 	{
-	--DEBRIS
-		Type = "sparks",
-		TimeToTrigger = 0.1,
-		SparkCount = 12,
-		LocalPosition = { x = 0, y = 0 },	-- how to place the origin relative to effect position and direction (0, 0) 
-		Texture = "mods/weapon_pack/effects/media/debris",
-
-		Gravity = 0981,						-- gravity applied to particle (981 is earth equivalent)
-		
-		EvenDistribution =					-- distribute sparks evenly between two angles with optional variation
-		{
-			Min = -35,						-- minimum angle in degrees (e.g. -180, 45, 0)
-			Max = 35,						-- maximum angle in degrees (e.g. -180, 45, 0)
-			StdDev = 5,						-- standard deviation at each iteration in degrees (zero will make them space perfectly even)
-		},
-
-		Keyframes =							
-		{
-			{
-				Angle = -35,
-				RadialOffsetMin = 0,
-				RadialOffsetMax = 20,
-				ScaleMean = 0.5,
-				ScaleStdDev = 0.25,
-				SpeedStretch = 0,
-				SpeedMean = 500,
-				SpeedStdDev = 200,
-				Drag = 1,
-				RotationMean = 45,
-				RotationStdDev = 180,
-				RotationalSpeedMean = 10,
-				RotationalSpeedStdDev = 5,
-				AgeMean = 1,
-				AgeStdDev = 0.5,
-				AlphaKeys = { 0.1, 0.8 },
-				ScaleKeys = { 0.1, 1 },
-			},
-			{
-				Angle = 35,
-				RadialOffsetMin = 0,
-				RadialOffsetMax = 20,
-				ScaleMean = 0.5,
-				ScaleStdDev = 0.25,
-				SpeedStretch = 0,
-				SpeedMean = 500,
-				SpeedStdDev = 200,
-				Drag = 1,
-				RotationMean = -45,
-				RotationStdDev = -180,
-				RotationalSpeedMean = 10,
-				RotationalSpeedStdDev = 5,
-				AgeMean = 1,
-				AgeStdDev = 0.5,
-				AlphaKeys = { 0.1, 0.8 },
-				ScaleKeys = { 0.1, 1 },
-			},
-		},
+		Type = "sprite",
+		TimeToTrigger = 0,
+		LocalPosition = { x = 0, y = 80, z = 0 },
+		LocalVelocity = { x = 0, y = 0, z = 0 },
+		Acceleration = { x = 0, y = 0, z = 0 },
+		Drag = 0.0,
+		Sprite = "impact_medium",
+		Additive = true,
+		TimeToLive = 2,
+		Angle = -90,
+		InitialSize = 2,
+		ExpansionRate = 0,
+		AngularVelocity = 0,
+		RandomAngularVelocityMagnitude = 0,
+		Colour1 = { 255, 255, 255, 255 },
+		Colour2 = { 255, 255, 255, 255 },
 	},
 	{
 	--DUST CLOUDS
@@ -151,7 +110,7 @@ Effects =
 				Angle = 90,				-- angle of keyframe in degrees (e.g. -180, 45, 0)
 				RadialOffsetMin = 0,		-- minimum distance from effect origin
 				RadialOffsetMax = 20,		-- maximum distance from effect origin
-				ScaleMean = 1,				-- mean scale (normal distribution)
+				ScaleMean = 1.5,				-- mean scale (normal distribution)
 				ScaleStdDev = 0.2,			-- standard deviation of scale (0 will make them all the same size)
 				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
 				SpeedMean = 900,				-- mean speed of sparks at emission (normal distribution)
@@ -160,8 +119,8 @@ Effects =
 				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
 				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
 				RotationalSpeedMean = -180,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 0.6,				-- mean age in seconds (normal distribution)
+				RotationalSpeedStdDev = 200,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
+				AgeMean = 1,				-- mean age in seconds (normal distribution)
 				AgeStdDev = 0.25,				-- standard deviation of age in seconds (zero makes them last the same length of time)
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
@@ -179,8 +138,8 @@ Effects =
 				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
 				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
 				RotationalSpeedMean = 5,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 1.3,				-- mean age in seconds (normal distribution)
+				RotationalSpeedStdDev = 300,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
+				AgeMean = 1.8,				-- mean age in seconds (normal distribution)
 				AgeStdDev = 0.5,				-- standard deviation of age in seconds (zero makes them last the same length of time)
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
@@ -189,7 +148,7 @@ Effects =
 				Angle = 90,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
 				RadialOffsetMin = 0,		-- minimum distance from effect origin
 				RadialOffsetMax = 20,		-- maximum distance from effect origin
-				ScaleMean = 1,				-- mean scale (normal distribution)
+				ScaleMean = 1.5,				-- mean scale (normal distribution)
 				ScaleStdDev = 0.2,			-- standard deviation of scale (0 will make them all the same size)
 				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
 				SpeedMean = 800,				-- mean speed of sparks at emission (normal distribution)
@@ -198,8 +157,8 @@ Effects =
 				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
 				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
 				RotationalSpeedMean = 180,	-- mean rotational speed in degrees per second (e.g. -180, 45, 0) (normal distribution)
-				RotationalSpeedStdDev = 0,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
-				AgeMean = 0.6,				-- mean age in seconds (normal distribution)
+				RotationalSpeedStdDev = 200,	-- standard deviation of rotational speed in degrees per second (zero will make them rotate at the same rate)
+				AgeMean = 1,				-- mean age in seconds (normal distribution)
 				AgeStdDev = 0.25,				-- standard deviation of age in seconds (zero makes them last the same length of time)
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },	-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)

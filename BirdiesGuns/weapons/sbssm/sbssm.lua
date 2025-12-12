@@ -111,11 +111,11 @@ Sprites =
 		{
 			Normal = { Frames = { { texture = path .. "/weapons/sbssm/barrel.tga" }, mipmap = true, }, },
 			Idle = Normal,
-			Normal_christmas = { Frames = { { texture = path .. "/seasonal/christmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
-			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/christmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
-			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/christmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
-			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/christmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
-			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/christmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmbarrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
 		},
 	},
 	{

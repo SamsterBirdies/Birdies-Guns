@@ -601,21 +601,23 @@ table.insert(Projectiles,
 })
 table.insert(Sprites,
 {
-	Name = "sbssm",
+	Name = "sbssmsprite",
 	States =
 	{
-		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectile.tga" }, mipmap = true, }, },
+		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectile.tga" }, mipmap = true, },},
 		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/sbssm.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssm.png" }, mipmap = true, }, EventTag = "_christmas" },
 		Idle = Normal,
 	},
 })
 table.insert(Sprites,
 {
-	Name = "sbssmfire",
+	Name = "sbssmfiresprite",
 	States =
 	{
-		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectile.tga" }, mipmap = true, }, },
+		Normal = { Frames = { { texture = path .. "/weapons/sbssm/projectilefire.tga" }, mipmap = true, }, },
 		Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/sbssmfire.png" }, mipmap = true, }, EventTag = "_halloween"},
+		Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/sbssmfire.png" }, mipmap = true, }, EventTag = "_christmas"},
 		Idle = Normal,
 	},
 })
@@ -641,8 +643,9 @@ table.insert(Projectiles,
 		ProjectileSplashDamageMaxRadius = 150.0,
 		SpeedIndicatorFactor = 0.05,
 
-		TrailEffect = path .. "/effects/rocket_trail.lua",
+		TrailEffect  = path .. "/effects/rocket_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rocket_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rocket_trail_xmas.lua",
 
 		Projectile =
 		{
@@ -650,7 +653,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = "sbssm",
+				Sprite = "sbssmsprite",
 			
 				ChildrenInFront =
 				{
@@ -678,8 +681,18 @@ table.insert(Projectiles,
 				["door"] = "effects/armor_ricochet.lua",
 			},
 		},
-		DamageMultiplier =
+		Effects_christmas =
 		{
+			Impact =
+			{
+				["shield"] = "effects/energy_shield_ricochet.lua",
+				["default"] = path .. "/effects/impact_bells.lua",
+			},
+			Deflect =
+			{
+				["armour"] = "effects/armor_ricochet.lua",
+				["door"] = "effects/armor_ricochet.lua",
+			},
 		},
 })
 
@@ -714,6 +727,7 @@ table.insert(Projectiles,
 
 		TrailEffect = path .. "/effects/rocket_trail.lua",
 		TrailEffect_halloween = path .. "/effects/rocket_trail_halloween.lua",
+		TrailEffect_christmas = path .. "/effects/rocket_trail_xmas.lua",
 
 		Projectile =
 		{
@@ -721,7 +735,7 @@ table.insert(Projectiles,
 			{
 				Name = "Root",
 				Angle = 0,
-				Sprite = "sbssmfire",
+				Sprite = "sbssmfiresprite",
 			
 				ChildrenInFront =
 				{
@@ -743,6 +757,19 @@ table.insert(Projectiles,
 				["shield"] = "effects/energy_shield_ricochet.lua",
 				["bracing"] = "effects/impact_mortar_incendiary.lua",
 				["default"] = "effects/impact_mortar_incendiary_no_fire.lua",
+			},
+			Deflect =
+			{
+				["armour"] = "effects/armor_ricochet.lua",
+				["door"] = "effects/armor_ricochet.lua",
+			},
+		},
+		Effects_christmas =
+		{
+			Impact =
+			{
+				["shield"] = "effects/energy_shield_ricochet.lua",
+				["default"] = path .. "/effects/impact_bells.lua",
 			},
 			Deflect =
 			{

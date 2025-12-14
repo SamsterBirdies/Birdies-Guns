@@ -816,8 +816,8 @@ table.insert(Projectiles,
 	ProjectileSplashDamage = 1.5, -- low splash damage
 	ProjectileSplashDamageMaxRadius = 100.0,
 	ProjectileSplashMaxForce = 10000, -- moderate shockwave
-	AntiAirHitpoints = 10,
-	AntiAirDamage = 50,
+	AntiAirHitpoints = 1,
+	AntiAirDamage = 10,
 	SpeedIndicatorFactor = 0.25,
 	Gravity = 0,
 	FlipSpriteFacingLeft = true,

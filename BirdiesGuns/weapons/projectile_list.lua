@@ -777,6 +777,7 @@ table.insert(Projectiles,
 			{
 				["shield"] = "effects/energy_shield_ricochet.lua",
 				["default"] = path .. "/effects/impact_bells.lua",
+				["bracing"] = path .. "/effects/impact_bells.lua",
 			},
 			Deflect =
 			{
@@ -788,7 +789,11 @@ table.insert(Projectiles,
 		{
 			Effects_christmas = 
 			{
-				Impact = {["default"] = path .. "/effects/z_impact_bells.lua"},
+				Impact = 
+				{
+					["default"] = path .. "/effects/z_impact_bells.lua",
+					["bracing"] = path .. "/effects/z_impact_bells.lua",
+				},
 			},
 		},
 })
@@ -1373,6 +1378,18 @@ table.insert(Projectiles,
 				["shield"] = "effects/energy_shield_ricochet.lua",
 			},
 		},
+		--[[Effects_christmas =
+		{
+			Impact =
+			{
+				["device"] = path .. "/effects/impact_he_xmas.lua",
+				["antiair"] = path .. "/effects/impact_he_xmas.lua",
+				["foundations"]= path .. "/effects/impact_he_xmas.lua",
+				["rocks01"]= path .. "/effects/impact_he_xmas.lua",
+				["shield"] = path .. "/effects/impact_he_xmas.lua",
+				["default"] = path .. "/effects/impact_he_xmas.lua",
+			},
+		},]]
 		DamageMultiplier =
 		{
 			{ SaveName = "weapon", Direct = 1.00, Splash = 0.0 },

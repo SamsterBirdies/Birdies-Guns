@@ -3027,7 +3027,27 @@ if mosin then
 	mosin.WeaponDamageBonus = mosin.WeaponDamageBonus / 2
 	table.insert(Projectiles, mosin)
 end
-
+local sbrailgun = DeepCopy(FindProjectile("cannon"))
+if sbrailgun then
+	sbrailgun.SaveName = "sbrailgun"
+	sbrailgun.ProjectileSplashDamage = 0
+	sbrailgun.ProjectileSplashDamageMaxRadius = 0
+	sbrailgun.ProjectileDamage = 1800
+	sbrailgun.DestroyShields = false
+	sbrailgun.DamageMultiplier =
+	{
+		{ SaveName = "bracing", Direct = 1.25, Splash = 1.0 },
+		{ SaveName = "howitzer", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "turret", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "turret2", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "turret2_focus", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "turret3", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "turret3_focus", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "reactor", Direct = 0.1, Splash = 1.0 },
+		{ Savename = "sandbags", Direct = 0.5, Splash = 1.0 },
+	}
+	table.insert(Projectiles, sbrailgun)
+end
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:

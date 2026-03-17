@@ -61,7 +61,7 @@ Recoil = 0
 EnergyFireCost = 5000.0
 MetalFireCost = 10.0
 FireDelay = 0.65
-
+CutOffEffects = true
 ShowFireAngle = true
 
 TargetIcon =

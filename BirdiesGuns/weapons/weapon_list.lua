@@ -2227,24 +2227,6 @@ table.insert(Weapons, IndexOfWeapon("sboilgun"),
 		},
 	
 })
-
---[[
-local sbTorpedo = FindWeapon("cannon")
-if sbTorpedo then
-	table.insert(Weapons, IndexOfWeapon("cannon"),
-		InheritType(FindWeapon("cannon"),nil,
-			{
-				Enabled = false,
-				SaveName = "sbtorpedo",
-				FileName = path .. "/weapons/sbtorpedo/sbtorpedo.lua",
-				MetalCost = 700,
-				EnergyCost = 4500,
-				Prerequisite = "munitions",
-				CompatibleGroupTypes = {},
-			}
-		)
-	)
-end]]
 local mosin = FindWeapon("sniper")
 if mosin then
 	table.insert(Sprites, DetailSprite("hud-detail-sbmosin", "sbmosin", path))
@@ -2270,7 +2252,8 @@ if mosin then
 		)
 	)
 end
---[[
+--firebird update
+
 local bpc = FindWeapon("cannon")
 if bpc then
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
@@ -2290,7 +2273,26 @@ if bpc then
 			}
 		)
 	)
-end]]
+end
+local sbrailgun = FindWeapon("cannon")
+if sbrailgun then
+	table.insert(Weapons, IndexOfWeapon("machinegun"),
+		InheritType(FindWeapon("cannon"),nil,
+			{
+				Enabled = false,
+				SaveName = "sbrailgun",
+				FileName = path .. "/weapons/sbrailgun/railgun.lua",
+				MetalCost = 1800,
+				EnergyCost = 12000,
+				Prerequisite = "factory",
+				CompatibleGroupTypes = {"sbrailgun"},
+				SpotterFactor = 0,
+				BuildTimeComplete = 200.0,
+				Upgrades = {},
+			}
+		)
+	)
+end
 --END WEAPON INSERTION
 
 if not sbToG then

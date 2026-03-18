@@ -17,6 +17,11 @@ CutOffEffects = true
 Projectile = "sbrailgun"
 EnergyFireCost = 8000
 MetalFireCost = 75
+WeaponMass = 200
+RoundsEachBurst = 1
+RoundPeriod = 0.25
+FireStdDev = 0.0015
+FireStdDevAuto = 0.004
 
 FireEffect = path .. "/effects/fire_railgun.lua"
 

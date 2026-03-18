@@ -2282,7 +2282,7 @@ if sbrailgun then
 				Enabled = false,
 				SaveName = "sbrailgun",
 				FileName = path .. "/weapons/sbrailgun/railgun.lua",
-				MetalCost = 1800,
+				MetalCost = 1500,
 				EnergyCost = 12000,
 				Prerequisite = "factory",
 				CompatibleGroupTypes = {"sbrailgun"},

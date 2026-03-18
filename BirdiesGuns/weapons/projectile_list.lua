@@ -3034,6 +3034,11 @@ if sbrailgun then
 	sbrailgun.ProjectileSplashDamageMaxRadius = 0
 	sbrailgun.ProjectileDamage = 1800
 	sbrailgun.DestroyShields = false
+	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
+	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
+	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
+	sbrailgun.AntiAirHitpoints = 2000
+	sbrailgun.AntiAirDamage = 3000
 	sbrailgun.DamageMultiplier =
 	{
 		{ SaveName = "bracing", Direct = 1.25, Splash = 1.0 },

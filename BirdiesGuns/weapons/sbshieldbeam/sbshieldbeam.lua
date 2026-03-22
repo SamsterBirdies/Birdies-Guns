@@ -30,7 +30,7 @@ DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbshieldbeam.lua"
 ReloadEffectOffset = -1.72
 Projectile = "sbshieldbeam"
-BarrelLength = 58.0
+BarrelLength = 78.0
 MinFireClearance = 500
 FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
@@ -170,26 +170,16 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_2", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_3", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_4", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_5", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_6", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_7", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_8", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_9", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_10", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_11", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_12", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_13", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_14", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_15", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_16", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_17", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_18", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_19", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_21", duration = 0.05 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_2", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_4", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_6", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_8", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_10", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_12", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_14", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_16", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_18", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.1 },
 					{ texture = path .. "/weapons/sbshieldbeam/barrel_22", duration = 200 },
 					mipmap = true,
 					duration = 0.05,
@@ -199,26 +189,17 @@ Sprites =
 			{
 				Frames =
 				{
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_21", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_19", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_18", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_17", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_16", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_15", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_14", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_13", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_12", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_11", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_10", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_9", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_8", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_7", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_6", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_5", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_4", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_3", duration = 0.05 },
-					{ texture = path .. "/weapons/sbshieldbeam/barrel_2", duration = 0.05 },
+
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_20", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_18", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_16", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_14", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_12", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_10", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_8", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_6", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_4", duration = 0.1 },
+					{ texture = path .. "/weapons/sbshieldbeam/barrel_2", duration = 0.1 },
 					
 					mipmap = true,
 					duration = 0.05,
@@ -233,7 +214,7 @@ Root =
 {
 	Name = "Laser",
 	Angle = 0,
-	Pivot = { 0, -0.43 },
+	Pivot = { -0.2, -0.6 },
 	PivotOffset = { 0, 0 },
 --	PivotOffset = { -0.15, 0 },
 	Sprite = "sbshieldbeam-base",
@@ -244,8 +225,8 @@ Root =
 		{
 			Name = "beacon",
 			Angle = 0,
-			Pivot = { 3.835, 0.2 },
-			PivotOffset = { 0, 0 },
+			Pivot = {0.40234375, 0.0625},
+			PivotOffset = {0.49466666666666664, 0.015625},
 			Sprite = "sbshieldbeam-beacon",
 			UserData = 100,
 							
@@ -253,9 +234,8 @@ Root =
 		{
 			Name = "Head",
 			Angle = 0,
-			Pivot = { -0.15, 0 },
---			Pivot = { 0, 0 },
-			PivotOffset = { 0.15, 0 },
+			Pivot = {0, -0.2},
+			PivotOffset = {-0.084375, -0.3385416},
 			Sprite = "sbshieldbeam-head",
 			UserData = 30,
 
@@ -264,9 +244,9 @@ Root =
 				{
 					Name = "Reload",
 					Angle = 0,
-					Pivot = { 0.24, 0 },
+					Pivot = {0.203125, 0.14583},
 					Sprite = "sbshieldbeam-reload",
-					PivotOffset = { 0, 0 },
+					PivotOffset = {0.390625, 0.109375},
 					UserData = 80,
 				
 					ChildrenBehind =
@@ -274,8 +254,8 @@ Root =
 						{
 							Name = "Muzzle",
 							Angle = 0,
-							Pivot = { 0.0, -0 },
-							PivotOffset = { 0, 0 },
+							Pivot = {0.01953125, -0.1015625},
+							PivotOffset = {0.4140625, -0.296875},
 							Sprite = "sbshieldbeam-barrel",
 							UserData = 100,
 							
@@ -285,8 +265,7 @@ Root =
 				{
 					Name = "Hardpoint0",
 					Angle = 90,
---					Pivot = { 0.47, -0.16 },
-					Pivot = { 0.10, -0.09 },
+					Pivot = {0.203125, 0.15625},
 					PivotOffset = { 0, 0 },
 				},
 				
@@ -296,7 +275,7 @@ Root =
 					Pivot = { 0, -0.16 },
 					PivotOffset = { 0, 0 },
 				},
-				{
+				--[[{
 					Name = "xmashat",
 					Scale = 0.35,
 					Pivot = {-0.2375, -0.31071},
@@ -309,7 +288,7 @@ Root =
 					Pivot = {-0.22, -0.31071},
 					Sprite = "sbPumpkinHat",
 					UserData = 100,
-				}
+				}]]
 			},
 		},
 	},

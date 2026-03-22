@@ -153,7 +153,7 @@ Root =
 			},
 		},
 	},
-	ChildrenInFront =
+	--[[ChildrenInFront =
 	{
 		{
 			Name = "hat",
@@ -162,5 +162,5 @@ Root =
 			Pivot = {-0.162, 0.058},
 			UserData = 100,
 		}
-	}
+	}]]
 }

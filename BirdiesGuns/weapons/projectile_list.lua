@@ -3032,24 +3032,34 @@ if sbrailgun then
 	sbrailgun.SaveName = "sbrailgun"
 	sbrailgun.ProjectileSplashDamage = 0
 	sbrailgun.ProjectileSplashDamageMaxRadius = 0
-	sbrailgun.ProjectileDamage = 1800
+	sbrailgun.ProjectileDamage = 1899
 	sbrailgun.DestroyShields = false
+	sbrailgun.DeflectedByShields = true
+	sbrailgun.Impact = 400000
 	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
 	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
 	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
-	sbrailgun.AntiAirHitpoints = 2000
-	sbrailgun.AntiAirDamage = 3000
+	sbrailgun.AntiAirHitpoints = 3000
+	sbrailgun.AntiAirDamage = 4000
 	sbrailgun.DamageMultiplier =
 	{
-		{ SaveName = "bracing", Direct = 1.25, Splash = 1.0 },
-		{ SaveName = "howitzer", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "turret", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "turret2", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "turret2_focus", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "turret3", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "turret3_focus", Direct = 0.5, Splash = 1.0 },
+		--{ SaveName = "bracing", Direct = 1.3, Splash = 1.0 },
 		{ SaveName = "reactor", Direct = 0.1, Splash = 1.0 },
 		{ Savename = "sandbags", Direct = 0.5, Splash = 1.0 },
+	}
+	sbrailgun.Effects =
+	{
+		Impact =
+		{
+			["antiair"] = "effects/mortar_air_burst.lua",
+			["default"] = "effects/impact_medium.lua",
+		},
+		Deflect =
+		{
+			["armour"] = "effects/armor_ricochet.lua",
+			["door"] = "effects/armor_ricochet.lua",
+			["shield"] = "effects/energy_shield_ricochet.lua",
+		},
 	}
 	table.insert(Projectiles, sbrailgun)
 end
@@ -3229,6 +3239,7 @@ MakeVacuumVersion("sbsaw", "vacuumtrail", 10000, 650000)
 		vacuumsbsawarmour = { Projectile = { Count = 1, Type = "vacuumsbsawarmour", StdDev = 0.0}, Splash = false, Terminate = true, Offset = -5, }
 		local sbsawfind = FindProjectile("vacuumsbsaw") if sbsawfind then sbsawfind.Effects.Impact.bracing = vacuumsbsawwood end
 		local sbsawwoodfind = FindProjectile("vacuumsbsawwood") if sbsawwoodfind then sbsawwoodfind.Effects.Impact.default = vacuumsbsawarmour end
+MakeVacuumVersion("sbrailgun", "vacuumtrailsmall", 1800000)
 --vacuumbeamversions_helicopters
 
 --vacuumbeamversions_moonshot
@@ -3501,6 +3512,7 @@ sbMakeFlamingVersion("sb50cal", 1.25, 0.2, "flaming_sniper_trail", nil, smallArm
 sbMakeFlamingVersion("sboildrumprojectile", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sboildrumprojectileshock", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbdrone", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
+sbMakeFlamingVersion("sbrailgun", 1.0, 0.3, "flaming_sniper_trail", 80, nil, nil)
 
 --armored versions
 MakeArmouredVersion("sbsuremp", path .. "/weapons/sbsur/armorprojectileemp", "effects/missile_armor_debris.lua")

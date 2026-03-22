@@ -2253,7 +2253,7 @@ if mosin then
 	)
 end
 --firebird update
-
+--[[
 local bpc = FindWeapon("cannon")
 if bpc then
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
@@ -2273,7 +2273,7 @@ if bpc then
 			}
 		)
 	)
-end
+end]]
 local sbrailgun = FindWeapon("cannon")
 if sbrailgun then
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
@@ -2282,13 +2282,14 @@ if sbrailgun then
 				Enabled = false,
 				SaveName = "sbrailgun",
 				FileName = path .. "/weapons/sbrailgun/railgun.lua",
-				MetalCost = 1500,
-				EnergyCost = 12000,
+				MetalCost = 1800,
+				EnergyCost = 15000,
 				Prerequisite = "factory",
 				CompatibleGroupTypes = {"sbrailgun"},
 				SpotterFactor = 0,
 				BuildTimeComplete = 200.0,
 				Upgrades = {},
+				MaxWeaponGroupSize = 1,
 			}
 		)
 	)

@@ -1,8 +1,8 @@
  dofile("scripts/interpolate.lua")
 
 Scale = 1.0
-SelectionWidth = 50.0
-SelectionHeight = 50.0
+SelectionWidth = 75.0
+SelectionHeight = 45.0
 SelectionOffset = { 0.0, -50.5 }
 RecessionBox =
 {
@@ -31,7 +31,7 @@ DestroyUnderwaterEffect = "mods/dlc2/effects/device_explode_submerged.lua"
 ReloadEffect = path .. "/effects/reload_sbdrunklaser.lua"
 ReloadEffectOffset = -1
 Projectile = "sbdrunklaser"
-BarrelLength = 58.0
+BarrelLength = 63.0
 MinFireClearance = 500
 FireClearanceOffsetInner = 20
 FireClearanceOffsetOuter = 40
@@ -203,7 +203,7 @@ Root =
 {
 	Name = "Laser",
 	Angle = 0,
-	Pivot = { 0.00, -0.43 },
+	Pivot = { -0.2, -0.6 },
 	PivotOffset = { 0, 0 },
 --	PivotOffset = { -0.15, 0 },
 	Sprite = "sbdlfirebeam-base",
@@ -214,7 +214,7 @@ Root =
 		{
 			Name = "Anim",
 			Angle = 0,
-			Pivot = { -0.15, 0.0 },
+			Pivot = {0, -0.2},
 			PivotOffset = { 0, 0 },
 			--PivotOffset = { -0.15, 0 },
 			Sprite = "sbdlanim",
@@ -224,9 +224,8 @@ Root =
 				{
 					Name = "Head",
 					Angle = 0,
-					Pivot = { -0.15, 0 },
-		--			Pivot = { 0, 0 },
-					PivotOffset = { 0.25, 0 },
+					Pivot = { 0, 0 },
+					PivotOffset = {0.12760416666666666, -0.3177083333333333},
 					Sprite = "sbdlfirebeam-head",
 					UserData = 30,
 
@@ -244,7 +243,7 @@ Root =
 							Name = "Hardpoint0",
 							Angle = 90,
 		--					Pivot = { 0.47, -0.16 },
-							Pivot = { -0.05, -0.05 },
+							Pivot = {-0.00520833, 0.1770833},
 							PivotOffset = { 0, 0 },
 						},
 						
@@ -257,8 +256,8 @@ Root =
 						{
 							Name = "MuzzleFlash",
 							Angle = 0,
-							Pivot = { 0, 0 },
-							PivotOffset = { 0, 0 },
+							Pivot = {0.06770833333333333, 0.171875},
+							PivotOffset = {0.1015625, 0.1015625},
 							Sprite = "sbdlfirebeam-spinning-barrel",
 							Visible = false,
 						},

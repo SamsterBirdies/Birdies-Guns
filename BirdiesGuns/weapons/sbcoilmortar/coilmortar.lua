@@ -6,6 +6,9 @@ MaxFireSpeed = 3600
 MinFireRadius = 200
 MaxFireRadius = 650
 BarrelLength = 80
+SelectionWidth = 45.0
+SelectionHeight = 65.0
+SelectionOffset = { 0.0, -65.5 }
 Root =
 {
 	Name = "Mortar",

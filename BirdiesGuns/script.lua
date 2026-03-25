@@ -1,9 +1,10 @@
 dofile("scripts/forts.lua")
 dofile(path .. "/scripts/sseparams.lua")
-
+dofile(path .. "/scripts/math.lua")
 
 --load
 music_effect = 0
+AIMICON_INACTIVE_POS = Vec3(0,9999999)
 function Load(gameStart)
 	--disable kinetic beam for high seas maps. it pushes boats out of build zones or into terrain.
 	if GetWaterLevel(0) < 123456 then
@@ -13,6 +14,8 @@ function Load(gameStart)
 	--count pebbles
 	data.pebbles = {}
 	data.music_device = 0
+	--coilmortareffect
+	aimicon_effect_id = SpawnEffect(path .. "/effects/coilmortardest.lua", AIMICON_INACTIVE_POS)
 end
 
 --barrel creating function
@@ -147,18 +150,41 @@ function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
 end
 
 function OnWeaponFired(teamId, saveName, weaponId, projectileNodeId, projectileNodeIdFrom)
+	--coil mortar sfx, pitch changes based on weapon power
 	if saveName == "sbcoilmortar" and projectileNodeIdFrom == 0 then
+		--get power level 0 min, 1 max
 		local velocity = NodeVelocity(projectileNodeId)
 		local minpower = GetWeaponMinFireSpeed(teamId, saveName)
 		local maxpower = GetWeaponMaxFireSpeed(teamId, saveName)
 		local magnitude = (velocity.x^2 + velocity.y^2)^0.5
 		local power = (magnitude - minpower) / (maxpower - minpower)
+		--spawn effect
 		local effect_id = SpawnEffectEx(path .. "/effects/fire_coilmortar.lua", GetWeaponHardpointPosition(weaponId), Vec3(velocity.x / magnitude, velocity.y / magnitude))
-		
-		--SetAudioParameter2(effect_id, "weaponpower", power)
 		ScheduleCall(0.08, SetAudioParameter, effect_id, "weaponpower", power)
-		Log(tostring(effect_id))
-		Log(tostring(power))
+	end
+end
+
+function Update(frame)
+	
+	
+end
+function OnUpdate(delta_fake)
+	--show landing spot for coil mortar when selected
+	local id = GetLocalSelectedDeviceId()
+	if id > 0 and GetDeviceType(id) == "sbcoilmortar" and IsDeviceFullyBuilt(id) and GetMouseAiming() then
+		--get values
+		local muzzle_velocity = GetFireVel(id)
+		local hardpoint = GetWeaponHardpointPosition(id)
+		local gravity = GetConstant("Physics.Gravity")
+		--calculate stuff
+		local airtime = (2 * muzzle_velocity.y) / gravity
+		local range = muzzle_velocity.x * airtime
+		local destination = hardpoint
+		destination.x = destination.x - range
+		--draw location
+		SetEffectPosition(aimicon_effect_id, destination)
+	else
+		SetEffectPosition(aimicon_effect_id, AIMICON_INACTIVE_POS)
 	end
 end
 --christmas rm music

@@ -146,6 +146,21 @@ function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
 	end
 end
 
+function OnWeaponFired(teamId, saveName, weaponId, projectileNodeId, projectileNodeIdFrom)
+	if saveName == "sbcoilmortar" and projectileNodeIdFrom == 0 then
+		local velocity = NodeVelocity(projectileNodeId)
+		local minpower = GetWeaponMinFireSpeed(teamId, saveName)
+		local maxpower = GetWeaponMaxFireSpeed(teamId, saveName)
+		local magnitude = (velocity.x^2 + velocity.y^2)^0.5
+		local power = (magnitude - minpower) / (maxpower - minpower)
+		local effect_id = SpawnEffectEx(path .. "/effects/fire_coilmortar.lua", GetWeaponHardpointPosition(weaponId), Vec3(velocity.x / magnitude, velocity.y / magnitude))
+		
+		--SetAudioParameter2(effect_id, "weaponpower", power)
+		ScheduleCall(0.08, SetAudioParameter, effect_id, "weaponpower", power)
+		Log(tostring(effect_id))
+		Log(tostring(power))
+	end
+end
 --christmas rm music
 --[[
 dofile("ui/uihelper.lua")

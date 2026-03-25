@@ -2294,6 +2294,25 @@ if sbrailgun then
 		)
 	)
 end
+local sbcoilmortar = FindWeapon("mortar2")
+if sbcoilmortar then
+	table.insert(Weapons, IndexOfWeapon("machinegun"),
+		InheritType(FindWeapon("mortar2"),nil,
+			{
+				Enabled = false,
+				SaveName = "sbcoilmortar",
+				FileName = path .. "/weapons/sbcoilmortar/coilmortar.lua",
+				MetalCost = 300,
+				EnergyCost = 3000,
+				Prerequisite = "factory",
+				CompatibleGroupTypes = {"sbcoilmortar"},
+				SpotterFactor = 0,
+				BuildTimeComplete = 60.0,
+				Upgrades = {},
+			}
+		)
+	)
+end
 --END WEAPON INSERTION
 
 if not sbToG then

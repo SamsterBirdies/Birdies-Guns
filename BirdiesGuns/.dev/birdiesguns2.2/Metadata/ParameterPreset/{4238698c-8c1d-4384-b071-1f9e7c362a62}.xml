@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4238698c-8c1d-4384-b071-1f9e7c362a62}">
+		<property name="name">
+			<value>weaponpower</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e17bc097-402e-48cf-9781-870d0d3b3a7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e9d81ca4-e8b1-4a7c-b58a-1e4861d3d256}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e9d81ca4-e8b1-4a7c-b58a-1e4861d3d256}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

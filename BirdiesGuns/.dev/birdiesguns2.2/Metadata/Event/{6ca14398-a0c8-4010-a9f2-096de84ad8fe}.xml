@@ -472,7 +472,7 @@
 			<destination>{81b92284-83fb-4e46-8d4e-56ba559a8483}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationPoint" id="{3547b841-0067-4e01-8ae7-1abba1e32d6c}">

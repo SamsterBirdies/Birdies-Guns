@@ -46,7 +46,6 @@
 		<relationship name="automationTracks">
 			<destination>{2aafd3f0-0d3d-4915-9bd4-ee1a7ddd1f72}</destination>
 			<destination>{4f280a3c-0978-4221-aacc-4f3c894c167f}</destination>
-			<destination>{7c1e37de-8b1c-4ed5-bd16-5461b55e47df}</destination>
 			<destination>{472db20d-6857-4693-ae74-d8f815d48d09}</destination>
 			<destination>{bc65880f-5a01-493b-847e-b67434f028e6}</destination>
 			<destination>{d893cea3-7821-479c-af8e-4049483b853f}</destination>
@@ -137,11 +136,6 @@
 			<destination>{5530ada5-6a07-4e55-b882-b5abd76b92d8}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{7c1e37de-8b1c-4ed5-bd16-5461b55e47df}">
-		<relationship name="automator">
-			<destination>{927cc8fd-84d4-47ea-bbd8-ea3362cd8928}</destination>
-		</relationship>
-	</object>
 	<object class="AutomationTrack" id="{472db20d-6857-4693-ae74-d8f815d48d09}">
 		<relationship name="automator">
 			<destination>{013bee91-aa47-43f7-9afa-67eb2f6a01f8}</destination>
@@ -214,7 +208,6 @@
 			<destination>{2664eb65-ef8e-446f-a290-36b3b6263044}</destination>
 			<destination>{82bb3ceb-3a34-43cf-ae98-207def43d92d}</destination>
 			<destination>{8e0d9e23-a7a1-4c1f-b279-e6f147eb69ad}</destination>
-			<destination>{2d423344-5ff5-47d8-bf42-441b19d44f56}</destination>
 			<destination>{604f0516-2067-4848-b37a-6af25e7d72f0}</destination>
 			<destination>{bd02cee3-9a85-4c56-a4cf-9dbcb8b08f63}</destination>
 		</relationship>
@@ -282,17 +275,6 @@
 		</relationship>
 		<relationship name="modulators">
 			<destination>{4578f7fa-e9b3-4f61-b0f8-1c4e3d5643b6}</destination>
-		</relationship>
-	</object>
-	<object class="MixerSend" id="{2d423344-5ff5-47d8-bf42-441b19d44f56}">
-		<property name="inputFormat">
-			<value>2</value>
-		</property>
-		<relationship name="automators">
-			<destination>{927cc8fd-84d4-47ea-bbd8-ea3362cd8928}</destination>
-		</relationship>
-		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
 		</relationship>
 	</object>
 	<object class="LowpassSimpleEffect" id="{604f0516-2067-4848-b37a-6af25e7d72f0}">
@@ -391,14 +373,6 @@
 			<value>280</value>
 		</property>
 	</object>
-	<object class="Automator" id="{927cc8fd-84d4-47ea-bbd8-ea3362cd8928}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>level</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{db99b9bf-a804-46b8-a10a-34662aa40241}</destination>
-		</relationship>
-	</object>
 	<object class="Automator" id="{013bee91-aa47-43f7-9afa-67eb2f6a01f8}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>cutoff</value>
@@ -447,15 +421,6 @@
 		<relationship name="automationPoints">
 			<destination>{582c9fe0-2569-43fe-a501-149568da4852}</destination>
 			<destination>{892eec65-b119-4b85-8ccf-5fa181372609}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{db99b9bf-a804-46b8-a10a-34662aa40241}">
-		<relationship name="parameter">
-			<destination>{f1aa7dab-76df-423b-8b51-a579b29b668c}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{97761500-ef7c-46bb-b28b-a8c0b27e4ec5}</destination>
-			<destination>{56991236-4f64-4666-a257-f96a6a908d33}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{12c51e1a-7510-48fd-b55d-cd89f6daad6d}">
@@ -524,25 +489,6 @@
 		</property>
 		<property name="value">
 			<value>300</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{97761500-ef7c-46bb-b28b-a8c0b27e4ec5}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.334387451</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{56991236-4f64-4666-a257-f96a6a908d33}">
-		<property name="position">
-			<value>10000</value>
-		</property>
-		<property name="value">
-			<value>-4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{38eb66d9-91e7-45f8-b0e6-d64c60872d31}">

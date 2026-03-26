@@ -1,5 +1,23 @@
 sbBGpath = path
 dofile("scripts/type.lua")
+function sbDetailSprite(name, filename, path)
+	if path then
+		path = path .. "/"
+	else
+		path = ""
+	end
+	path = path .. "ui/textures/HUD/detail/"
+
+	return
+	{
+		Name = name,
+		States =
+		{
+			Normal = { Frames = {{ texture =  path .. filename ..".dds", bottom = 1.45},},},
+		},
+	}
+end
+
 for k,v in pairs(Weapons) do
     if not v.Upgrades then v.Upgrades = {} end
 end
@@ -21,8 +39,8 @@ end
 
 --fire rocket
 if FindWeapon("rocket") and FindWeapon("rocketemp") then
-	table.insert(Sprites, DetailSprite("hud-detail-sbfirerocket", "sbfirerocket", path))
-	table.insert(Sprites, ButtonSprite("hud-sbfirerocket-icon", "HUD/HUD-sbfirerocket", nil, ButtonSpriteBottom, nil, nil, path))
+	table.insert(Sprites,sbDetailSprite("hud-detail-sbfirerocket", "sbfirerocket", path))
+	table.insert(Sprites, ButtonSprite("hud-sbfirerocket-icon", "HUD/HUD-sbfirerocket", nil, nil, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("rocketemp") + 1,
 	{
 		Enabled = true,
@@ -74,8 +92,8 @@ if FindWeapon("rocket") and FindWeapon("rocketemp") then
 		table.insert(rocket.CompatibleGroupTypes, "sbfirerocket")
 	end
 end
-table.insert(Sprites, DetailSprite("hud-detail-sbimploder", "sbimploder", path))
-table.insert(Sprites, ButtonSprite("hud-sbimploder-icon", "HUD/HUD-sbimploder", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbimploder", "sbimploder", path))
+table.insert(Sprites, ButtonSprite("hud-sbimploder-icon", "HUD/HUD-sbimploder", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("laser") + 1,
 {
 	Enabled = true,
@@ -159,7 +177,7 @@ table.insert(Weapons, IndexOfWeapon("sbimploder") + 1,
 	},
 		
 })
-table.insert(Sprites, ButtonSprite("hud-sbroofgunner-icon", "HUD/HUD-sbroofgunner", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbroofgunner-icon", "HUD/HUD-sbroofgunner", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("machinegun") + 1,
 {
 		SaveName = "sbroofgunner",
@@ -235,8 +253,8 @@ table.insert(cannon20mmupg.Upgrades,
 		Button = "hud-sbbg-upgrade",
 	})
 end
-table.insert(Sprites, DetailSprite("hud-detail-sbbigminigun", "sbbigminigun", path))
-table.insert(Sprites, ButtonSprite("hud-sbbigminigun-icon", "HUD/HUD-sbbigminigun", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbbigminigun", "sbbigminigun", path))
+table.insert(Sprites, ButtonSprite("hud-sbbigminigun-icon", "HUD/HUD-sbbigminigun", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("cannon20mm") + 1,
 {
 		Enabled = false,
@@ -263,8 +281,8 @@ table.insert(Weapons, IndexOfWeapon("cannon20mm") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		ObserverBuildEvent = true,
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbminishotgun", "sbminishotgun", path))
-table.insert(Sprites, ButtonSprite("hud-sbminishotgun-icon", "HUD/HUD-sbminishotgun", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbminishotgun", "sbminishotgun", path))
+table.insert(Sprites, ButtonSprite("hud-sbminishotgun-icon", "HUD/HUD-sbminishotgun", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("mortar") + 2,
 {
 		SaveName = "sbminishotgun",
@@ -428,7 +446,7 @@ if shotgun then
 	if not shotgun.CompatibleGroupTypes then shotgun.CompatibleGroupTypes = {} end
 	table.insert(shotgun.CompatibleGroupTypes, "sbheshotgun")
 end
-table.insert(Sprites, DetailSprite("hud-detail-sbssm", "sbssm", path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbssm", "sbssm", path))
 table.insert(Weapons, IndexOfWeapon("sbbigminigun") + 1,
 {
 	Enabled = false,
@@ -504,8 +522,8 @@ table.insert(Weapons, IndexOfWeapon("sbssm") + 1,
 		"sbssm",
 	},
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbquadcannon", "sbquadcannon", path))
-table.insert(Sprites, ButtonSprite("hud-sbquadcannon-icon", "HUD/HUD-sbquadcannon", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbquadcannon", "sbquadcannon", path))
+table.insert(Sprites, ButtonSprite("hud-sbquadcannon-icon", "HUD/HUD-sbquadcannon", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbssm"),
 {
 	Enabled = true,
@@ -666,8 +684,8 @@ table.insert(Weapons, IndexOfWeapon("sniper2") + 1,
 		DrawBlurredProjectile = true,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbpullbeam", "sbpullbeam", path))
-table.insert(Sprites, ButtonSprite("hud-sbpullbeam-icon", "HUD/HUD-sbpullbeam", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbpullbeam", "sbpullbeam", path))
+table.insert(Sprites, ButtonSprite("hud-sbpullbeam-icon", "HUD/HUD-sbpullbeam", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("laser"),
 {
 	SaveName = "sbpullbeam",
@@ -695,8 +713,8 @@ table.insert(Weapons, IndexOfWeapon("laser"),
 	PopulationCap = 1,
 	
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbshieldbeam", "sbshieldbeam", path))
-table.insert(Sprites, ButtonSprite("hud-sbshieldbeam-icon", "HUD/HUD-sbshieldbeam", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbshieldbeam", "sbshieldbeam", path))
+table.insert(Sprites, ButtonSprite("hud-sbshieldbeam-icon", "HUD/HUD-sbshieldbeam", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("laser"),
 {
 	SaveName = "sbshieldbeam",
@@ -733,8 +751,8 @@ table.insert(Weapons, IndexOfWeapon("laser"),
 		},
 	},
 })
-table.insert(Sprites, ButtonSprite("hud-sbdrunklaser-icon", "HUD/HUD-sbdrunklaser", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbdrunklaser", "sbdrunklaser", path))
+table.insert(Sprites, ButtonSprite("hud-sbdrunklaser-icon", "HUD/HUD-sbdrunklaser", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbdrunklaser", "sbdrunklaser", path))
 table.insert(Weapons, IndexOfWeapon("sbshieldbeam") + 1,
 {
 		Enabled = false,
@@ -762,8 +780,8 @@ table.insert(Weapons, IndexOfWeapon("sbshieldbeam") + 1,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 		PopulationCap = 1,
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbfog", "sbfog", path))
-table.insert(Sprites, ButtonSprite("hud-sbfog-icon", "HUD/HUD-sbfog", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbfog", "sbfog", path))
+table.insert(Sprites, ButtonSprite("hud-sbfog-icon", "HUD/HUD-sbfog", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("rocketemp"),
 {
 		SaveName = "sbfog",
@@ -801,8 +819,8 @@ table.insert(Weapons, IndexOfWeapon("rocketemp"),
 			},
 		},
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbrm", "sbrm", path))
-table.insert(Sprites, ButtonSprite("hud-sbrmhe-icon", "HUD/HUD-sbrmhe", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbrm", "sbrm", path))
+table.insert(Sprites, ButtonSprite("hud-sbrmhe-icon", "HUD/HUD-sbrmhe", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmhe",
@@ -839,7 +857,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	},
 	ObserverBuildEvent = true,
 })
-table.insert(Sprites, ButtonSprite("hud-sbrmfire-icon", "HUD/HUD-sbrmfire", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmfire-icon", "HUD/HUD-sbrmfire", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmfire",
@@ -885,7 +903,7 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 		"sbrmemp", "sbrmfire", "sbrmhe", "sbrmempinv", "sbrmfireinv", "sbrmheinv", 
 	},
 })
-table.insert(Sprites, ButtonSprite("hud-sbrmemp-icon", "HUD/HUD-sbrmemp", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmemp-icon", "HUD/HUD-sbrmemp", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 {
 	SaveName = "sbrmemp",
@@ -932,9 +950,9 @@ table.insert(Weapons, IndexOfWeapon("missile2") + 1,
 	},
 })
 --marine versions
-table.insert(Sprites, ButtonSprite("hud-sbrmempmarine-icon", "HUD/HUD-sbrmempmarine", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, ButtonSprite("hud-sbrmfiremarine-icon", "HUD/HUD-sbrmfiremarine", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, ButtonSprite("hud-sbrmhemarine-icon", "HUD/HUD-sbrmhemarine", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmempmarine-icon", "HUD/HUD-sbrmempmarine", nil, nil, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmfiremarine-icon", "HUD/HUD-sbrmfiremarine", nil, nil, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbrmhemarine-icon", "HUD/HUD-sbrmhemarine", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
 	InheritType(FindWeapon("sbrmhe"), nil,
 	{
@@ -1055,8 +1073,8 @@ table.insert(Weapons, IndexOfWeapon("sbrmhe") + 1,
 		},
 	})
 )
-table.insert(Sprites, DetailSprite("hud-detail-sbsur", "sbsur", path))
-table.insert(Sprites, ButtonSprite("hud-sbsuremp-icon", "HUD/HUD-sbsuremp", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbsur", "sbsur", path))
+table.insert(Sprites, ButtonSprite("hud-sbsuremp-icon", "HUD/HUD-sbsuremp", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("rocketemp"),
 {
 		SaveName = "sbsuremp",
@@ -1099,7 +1117,7 @@ table.insert(Weapons, IndexOfWeapon("rocketemp"),
 			"sbsurhe", "sbsurfire",
 		},
 })	
-table.insert(Sprites, ButtonSprite("hud-sbsurfire-icon", "HUD/HUD-sbsurfire", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbsurfire-icon", "HUD/HUD-sbsurfire", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("rocketemp"),
 {
 		SaveName = "sbsurfire",
@@ -1142,7 +1160,7 @@ table.insert(Weapons, IndexOfWeapon("rocketemp"),
 			"sbsuremp", "sbsurhe",
 		},
 })	
-table.insert(Sprites, ButtonSprite("hud-sbsurhe-icon", "HUD/HUD-sbsurhe", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbsurhe-icon", "HUD/HUD-sbsurhe", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("rocketemp"),
 {
 		SaveName = "sbsurhe",
@@ -1186,8 +1204,8 @@ table.insert(Weapons, IndexOfWeapon("rocketemp"),
 		},
 })
 table.insert(Sprites, ButtonSprite("hud-group-sbperiscope", "groups/Group-sbperiscope", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbperiscope1", "sbperiscope1", path))
-table.insert(Sprites, ButtonSprite("hud-sbperiscope-icon", "HUD/HUD-sbperiscope", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbperiscope1", "sbperiscope1", path))
+table.insert(Sprites, ButtonSprite("hud-sbperiscope-icon", "HUD/HUD-sbperiscope", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 {
 		SaveName = "sbperiscope1",
@@ -1225,7 +1243,7 @@ table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 			},
 		},
 })	
-table.insert(Sprites, DetailSprite("hud-detail-sbperiscope2", "sbperiscope2", path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbperiscope2", "sbperiscope2", path))
 table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 {
 		SaveName = "sbperiscope2",
@@ -1252,7 +1270,7 @@ table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 		FireGroupWhenDoorBlocks = true,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbswarmshield", "sbswarmshield", path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbswarmshield", "sbswarmshield", path))
 table.insert(Weapons, IndexOfWeapon("sbfog") + 1,
 {
 		SaveName = "sbswarmshield",
@@ -1332,8 +1350,8 @@ table.insert(Weapons, IndexOfWeapon("mortar2") + 1,
 		},
 })
 table.insert(Sprites, ButtonSprite("hud-group-sbslingshot", "groups/Group-sbslingshot", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, ButtonSprite("hud-sbslingshotfire-icon", "HUD/HUD-sbslingshotfire", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbslingshotfire", "sbslingshotfire", path))
+table.insert(Sprites, ButtonSprite("hud-sbslingshotfire-icon", "HUD/HUD-sbslingshotfire", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbslingshotfire", "sbslingshotfire", path))
 table.insert(Weapons, IndexOfWeapon("machinegun") + 2,
 {
 		SaveName = "sbslingshotfire",
@@ -1378,8 +1396,8 @@ table.insert(Weapons, IndexOfWeapon("machinegun") + 2,
 	
 })
 
-table.insert(Sprites, ButtonSprite("hud-sbslingshotgrenade-icon", "HUD/HUD-sbslingshotgrenade", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbslingshotgrenade", "sbslingshotgrenade", path))
+table.insert(Sprites, ButtonSprite("hud-sbslingshotgrenade-icon", "HUD/HUD-sbslingshotgrenade", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbslingshotgrenade", "sbslingshotgrenade", path))
 table.insert(Weapons, IndexOfWeapon("sbslingshotfire") + 1,
 {
 		SaveName = "sbslingshotgrenade",
@@ -1411,8 +1429,8 @@ table.insert(Weapons, IndexOfWeapon("sbslingshotfire") + 1,
 		},
 	
 })
-table.insert(Sprites, ButtonSprite("hud-sbslingshotpebble-icon", "HUD/HUD-sbslingshotpebble", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbslingshotpebble", "sbslingshotpebble", path))
+table.insert(Sprites, ButtonSprite("hud-sbslingshotpebble-icon", "HUD/HUD-sbslingshotpebble", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbslingshotpebble", "sbslingshotpebble", path))
 table.insert(Weapons, IndexOfWeapon("machinegun") + 2,
 {
 		SaveName = "sbslingshotpebble",
@@ -1464,8 +1482,8 @@ table.insert(Weapons,
 	)
 )
 table.insert(Sprites, ButtonSprite("hud-group-sbflame", "groups/Group-sbflame", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbflamethrower", "sbflamethrower", path))
-table.insert(Sprites, ButtonSprite("hud-sbflamethrower-icon", "HUD/HUD-sbflamethrower", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbflamethrower", "sbflamethrower", path))
+table.insert(Sprites, ButtonSprite("hud-sbflamethrower-icon", "HUD/HUD-sbflamethrower", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 {
 		SaveName = "sbflamethrower",
@@ -1518,7 +1536,7 @@ table.insert(Weapons, IndexOfWeapon("sbrmemp"),
 		}
 	)
 )]]
-table.insert(Sprites, ButtonSprite("hud-sbdownmortar-icon", "HUD/HUD-sbdownmortar", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbdownmortar-icon", "HUD/HUD-sbdownmortar", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
 {
 		Enabled = true,
@@ -1633,7 +1651,7 @@ table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
 		},
 })
 ---------
-table.insert(Sprites, ButtonSprite("hud-sbdowngunner-icon", "HUD/HUD-sbdowngunner", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, ButtonSprite("hud-sbdowngunner-icon", "HUD/HUD-sbdowngunner", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbroofgunner") + 1,
 {
 		SaveName = "sbdowngunner",
@@ -1696,8 +1714,8 @@ table.insert(Weapons, IndexOfWeapon("sbroofminigun") + 1,
 		BuildOnGroundOnly = false,
 		SelectEffect = "ui/hud/weapons/ui_weapons",
 })
-table.insert(Sprites, DetailSprite("hud-detail-sbdowncannon", "sbdowncannon", path))
-table.insert(Sprites, ButtonSprite("hud-sbdowncannon-icon", "HUD/HUD-sbdowncannon", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbdowncannon", "sbdowncannon", path))
+table.insert(Sprites, ButtonSprite("hud-sbdowncannon-icon", "HUD/HUD-sbdowncannon", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("cannon"),
 {
 	Enabled = true,
@@ -1736,8 +1754,8 @@ table.insert(Weapons, IndexOfWeapon("cannon"),
 	},
 	ObserverBuildEvent = true,
 })
-table.insert(Sprites, ButtonSprite("hud-sbdrone-icon", "HUD/HUD-sbdowndrone", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbdrone", "sbdrone", path))
+table.insert(Sprites, ButtonSprite("hud-sbdrone-icon", "HUD/HUD-sbdowndrone", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbdrone", "sbdrone", path))
 table.insert(Weapons, IndexOfWeapon("sbdowncannon") + 1,
 {
 	Enabled = false,
@@ -1766,8 +1784,8 @@ table.insert(Weapons, IndexOfWeapon("sbdowncannon") + 1,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
 	ObserverBuildEvent = true,
 })
-table.insert(Sprites, DetailSprite("hud-detail-sb50cal", "sb50cal", path))
-table.insert(Sprites, ButtonSprite("hud-sb50cal-icon", "HUD/HUD-sb50cal", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites, sbDetailSprite("hud-detail-sb50cal", "sb50cal", path))
+table.insert(Sprites, ButtonSprite("hud-sb50cal-icon", "HUD/HUD-sb50cal", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("mortar"),
 {
 		Enabled = false,
@@ -1796,8 +1814,8 @@ table.insert(Weapons, IndexOfWeapon("mortar"),
 })
 --HELICOPTER SECTION----------------------------------------------------------------------------------------------------
 table.insert(Sprites, ButtonSprite("hud-group-sbheli", "groups/Group-sbheli", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbhelicopter", "sbhelicopter", path))
-table.insert(Sprites, ButtonSprite("hud-sbhelicopter-icon", "HUD/HUD-sbhelicopter", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbhelicopter", "sbhelicopter", path))
+table.insert(Sprites, ButtonSprite("hud-sbhelicopter-icon", "HUD/HUD-sbhelicopter", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbimplodernocap") + 1,
 {
 		Enabled = false,
@@ -2049,7 +2067,7 @@ table.insert(sbcannonupg.Upgrades,
 		Button = "hud-sbbg-upgrade",
 	})
 end
-table.insert(Sprites, DetailSprite("hud-detail-sbsaw", "sbsaw", path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbsaw", "sbsaw", path))
 table.insert(Weapons, IndexOfWeapon("cannon") + 1,
 {
 	Enabled = false,
@@ -2080,8 +2098,8 @@ table.insert(Weapons, IndexOfWeapon("cannon") + 1,
 		
 })
 table.insert(Sprites, ButtonSprite("hud-group-sbbow", "groups/Group-sbbow", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, ButtonSprite("hud-sbbow-icon", "HUD/HUD-sbbow", nil, ButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sbbow", "sbbow", path))
+table.insert(Sprites, ButtonSprite("hud-sbbow-icon", "HUD/HUD-sbbow", nil, nil, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sbbow", "sbbow", path))
 table.insert(Weapons, IndexOfWeapon("sniper"),
 {
 		SaveName = "sbbow",
@@ -2150,8 +2168,8 @@ table.insert(Weapons, IndexOfWeapon("sniper"),
 	
 })
 table.insert(Sprites, ButtonSprite("hud-group-sbbarrel", "groups/Group-sbbarrel", GroupButtonSpriteBottom, GroupButtonSpriteBottom, nil, nil, path))
-table.insert(Sprites, DetailSprite("hud-detail-sboilgun", "sboildrum", path))
-table.insert(Sprites, ButtonSprite("hud-sboilgun-icon", "HUD/HUD-sboildrum", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sboilgun", "sboildrum", path))
+table.insert(Sprites, ButtonSprite("hud-sboilgun-icon", "HUD/HUD-sboildrum", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
 {
 		SaveName = "sboilgun",
@@ -2183,8 +2201,8 @@ table.insert(Weapons, IndexOfWeapon("sbminishotgun"),
 		},
 	
 })
-table.insert(Sprites, DetailSprite("hud-detail-sboilgunemp", "sboildrumemp", path))
-table.insert(Sprites, ButtonSprite("hud-sboilgunemp-icon", "HUD/HUD-sboildrumemp", nil, ButtonSpriteBottom, nil, nil, path))
+table.insert(Sprites,sbDetailSprite("hud-detail-sboilgunemp", "sboildrumemp", path))
+table.insert(Sprites, ButtonSprite("hud-sboilgunemp-icon", "HUD/HUD-sboildrumemp", nil, nil, nil, nil, path))
 table.insert(Weapons, IndexOfWeapon("sboilgun"),
 {
 		SaveName = "sboilgunemp",
@@ -2229,8 +2247,8 @@ table.insert(Weapons, IndexOfWeapon("sboilgun"),
 })
 local mosin = FindWeapon("sniper")
 if mosin then
-	table.insert(Sprites, DetailSprite("hud-detail-sbmosin", "sbmosin", path))
-	table.insert(Sprites, ButtonSprite("hud-sbmosin-icon", "HUD/HUD-mosin", nil, ButtonSpriteBottom, nil, nil, path))
+	table.insert(Sprites,sbDetailSprite("hud-detail-sbmosin", "sbmosin", path))
+	table.insert(Sprites, ButtonSprite("hud-sbmosin-icon", "HUD/HUD-mosin", nil, nil, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("sniper2"),
 		InheritType(FindWeapon("sniper"),nil,
 			{
@@ -2276,12 +2294,14 @@ if bpc then
 end]]
 local sbrailgun = FindWeapon("cannon")
 if sbrailgun then
+	table.insert(Sprites, sbDetailSprite("hud-detail-sbrailgun", "railgun2", path))
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
 		InheritType(FindWeapon("cannon"),nil,
 			{
 				Enabled = false,
 				SaveName = "sbrailgun",
 				FileName = path .. "/weapons/sbrailgun/railgun.lua",
+				Detail = "hud-detail-sbrailgun",
 				MetalCost = 1800,
 				EnergyCost = 15000,
 				Prerequisite = "factory",

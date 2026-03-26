@@ -9,7 +9,7 @@ Effects =
 		LocalVelocity = { x = 0, y = 0, z = 0 },
 		Acceleration = { x = 0, y = 0, z = 0 },
 		Drag = 1.0,
-		Sprite = path .. "/effects/media/aim_icon",
+		Sprite = path .. "/effects/media/aimring",
 		Additive = false,
 		KillParticleOnEffectExpire = true,
 		KillParticleOnEffectCancel = true,
@@ -19,7 +19,7 @@ Effects =
 		AngularVelocity = 0,
 		Angle = 90,
 		RandomAngularVelocityMagnitude = 0,
-		Colour1 = { 255, 255, 255, 128 },
-		Colour2 = { 255, 255, 255, 128 },
+		Colour1 = { 255, 255, 255, 192 },
+		Colour2 = { 255, 255, 255, 192 },
 	},
 }

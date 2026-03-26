@@ -66,6 +66,17 @@ function Vec2Mag(vector)
 	--get magnitude from vector
 	return math.sqrt(vector.x^2 + vector.y^2)
 end
+function VecEqual(vector1, vector2)
+	local equality = true
+	if vector1.x ~= vector2.x then
+		equality = false
+	elseif vector1.y ~= vector2.y then
+		equality = false
+	elseif vector1.z ~= vector2.z then
+		equality = false
+	end
+	return equality
+end
 function RadMag2Vec(radians, magnitude)
 	--convert radians to vector
 	return Vec3(math.cos(radians) * magnitude, math.sin(radians) * magnitude)

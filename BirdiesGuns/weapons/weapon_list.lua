@@ -1,6 +1,7 @@
 sbBGpath = path
 dofile("scripts/type.lua")
 function sbDetailSprite(name, filename, path)
+	--used for my non-standard texture size.
 	if path then
 		path = path .. "/"
 	else
@@ -2250,7 +2251,7 @@ if mosin then
 	table.insert(Sprites,sbDetailSprite("hud-detail-sbmosin", "sbmosin", path))
 	table.insert(Sprites, ButtonSprite("hud-sbmosin-icon", "HUD/HUD-mosin", nil, nil, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("sniper2"),
-		InheritType(FindWeapon("sniper"),nil,
+		InheritType(mosin,nil,
 			{
 				Enabled = false,
 				SaveName = "sbmosin",
@@ -2296,7 +2297,7 @@ local sbrailgun = FindWeapon("cannon")
 if sbrailgun then
 	table.insert(Sprites, sbDetailSprite("hud-detail-sbrailgun", "railgun2", path))
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
-		InheritType(FindWeapon("cannon"),nil,
+		InheritType(sbrailgun,nil,
 			{
 				Enabled = false,
 				SaveName = "sbrailgun",
@@ -2317,7 +2318,7 @@ end
 local sbcoilmortar = FindWeapon("mortar2")
 if sbcoilmortar then
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
-		InheritType(FindWeapon("mortar2"),nil,
+		InheritType(sbcoilmortar,nil,
 			{
 				Enabled = false,
 				SaveName = "sbcoilmortar",

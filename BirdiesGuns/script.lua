@@ -2,20 +2,42 @@ dofile("scripts/forts.lua")
 dofile(path .. "/scripts/sseparams.lua")
 dofile(path .. "/scripts/math.lua")
 
---load
-music_effect = 0
-AIMICON_INACTIVE_POS = Vec3(0,9999999)
+--constants
+PEBBLE_MAX = 42 --max pebbles before conversion to gamer
+AIMICON_INACTIVE_POS = Vec3(0,9999999) --resting pos when aim assist not in use
+--AIMICON_STEP_RESOLUTION = 5 --place aim assist dot every seconds/AIMICON_STEP_RESOLUTION of projectile flight. may change later to reflect projectile speed
+AIMICON_STEPS = 50 --max dots for aim assist
+AIM_ASSIST_WEAPONS = { ["sbcoilmortar"] = 5,} --weapons to give aim assist for with resolution
+
+--timing
+previous_delta_fake = 0
+delta = 0
+frame_progress = 0
+framerate = 25
+--aim assist vars
+aim_icons = {}
+draw_aim = false
+previous_firevel = Vec3(0,0)
+current_firevel = Vec3(0,0)
+selected_id = 0
+selected_savename = ""
+
 function Load(gameStart)
 	--disable kinetic beam for high seas maps. it pushes boats out of build zones or into terrain.
 	if GetWaterLevel(0) < 123456 then
 		EnableWeapon("sbpullbeam", false, 1)
 		EnableWeapon("sbpullbeam", false, 2)
 	end
+	--get frametime
+	framerate = GetConstant("Physics.FramesRate")
 	--count pebbles
 	data.pebbles = {}
-	data.music_device = 0
+	
 	--coilmortareffect
-	aimicon_effect_id = SpawnEffect(path .. "/effects/coilmortardest.lua", AIMICON_INACTIVE_POS)
+	for i = 1, AIMICON_STEPS do
+		local aimicon_effect_id = SpawnEffect(path .. "/effects/coilmortardest.lua", AIMICON_INACTIVE_POS)
+		table.insert(aim_icons, aimicon_effect_id)
+	end
 end
 
 --barrel creating function
@@ -84,7 +106,7 @@ function OnDeviceCompleted(teamId, deviceId, saveName)
 			data.pebbles[tostring(teamId)] = {}
 		end
 		table.insert(data.pebbles[tostring(teamId)], deviceId)
-		if #data.pebbles[tostring(teamId)] >= 42 then
+		if #data.pebbles[tostring(teamId)] >= PEBBLE_MAX then
 			UpgradeDevice(data.pebbles[tostring(teamId)][1], "sbslingshotpebble_OP")
 			for k, v in pairs(data.pebbles[tostring(teamId)]) do
 				ApplyDamageToDevice(v, 1000)
@@ -105,10 +127,6 @@ function OnDeviceDestroyed(teamId, deviceId, saveName, nodeA, nodeB, t)
 			end
 		end
 	end
-	if deviceId == data.music_device then
-		CancelEffect(music_effect)
-		data.music_device = 0
-	end
 end
 function OnDeviceDeleted(teamId, deviceId, saveName, nodeA, nodeB, t)
 	if saveName == "sbslingshotpebble" then
@@ -121,10 +139,6 @@ function OnDeviceDeleted(teamId, deviceId, saveName, nodeA, nodeB, t)
 				break
 			end
 		end
-	end
-	if deviceId == data.music_device then
-		CancelEffect(music_effect)
-		data.music_device = 0
 	end
 end
 function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
@@ -142,10 +156,6 @@ function OnDeviceTeamUpdated(oldTeamId, newTeamId, deviceId, saveName)
 			end
 		end
 		table.insert(data.pebbles[tostring(newTeamId)], deviceId)
-	end
-	if deviceId == data.music_device then
-		CancelEffect(music_effect)
-		data.music_device = 0
 	end
 end
 
@@ -165,79 +175,45 @@ function OnWeaponFired(teamId, saveName, weaponId, projectileNodeId, projectileN
 end
 
 function Update(frame)
-	
-	
+	frame_progress = 0
+	--aim assist
+	selected_id = GetLocalSelectedDeviceId()
+	selected_savename = GetDeviceType(selected_id)
+	if draw_aim then
+		previous_firevel = current_firevel
+		current_firevel = GetFireVel(selected_id)
+	end
 end
 function OnUpdate(delta_fake)
-	--show landing spot for coil mortar when selected
-	local id = GetLocalSelectedDeviceId()
-	if id > 0 and GetDeviceType(id) == "sbcoilmortar" and IsDeviceFullyBuilt(id) and GetMouseAiming() then
-		--get values
-		local muzzle_velocity = GetFireVel(id)
-		local hardpoint = GetWeaponHardpointPosition(id)
-		local gravity = GetConstant("Physics.Gravity")
-		--calculate stuff
-		local airtime = (2 * muzzle_velocity.y) / gravity
-		local range = muzzle_velocity.x * airtime
-		local destination = hardpoint
-		destination.x = destination.x - range
-		--draw location
-		SetEffectPosition(aimicon_effect_id, destination)
-	else
-		SetEffectPosition(aimicon_effect_id, AIMICON_INACTIVE_POS)
-	end
-end
---christmas rm music
---[[
-dofile("ui/uihelper.lua")
-Sprites = { ButtonSprite("music_btn", "context/HUD-music_btn", nil, nil, nil, nil, path) }
-function SetData(variable, value)
-	if string.find(variable, "data.") then
-		local newvar = string.gsub(variable, "data.", "")
-		data[newvar] = value
-	else
-		_G[variable] = value
-	end
-end
-function SpawnMusic(sound, deviceId)
+	--delta time stuff 
+	delta = delta_fake - previous_delta_fake
+	previous_delta_fake = delta_fake
+	frame_progress = frame_progress + delta * framerate
 	
-	local effectid = SpawnEffect(path .. sound, GetDevicePosition(deviceId))
-	SetData(data.music_device, deviceId)
-	SetData(music_effect, effectid)
+	--aim assist code
+	if selected_id > 0 and GetMouseAiming() and AIM_ASSIST_WEAPONS[selected_savename] then
+		draw_aim = true
+		--get values
+		local hardpoint = GetWeaponHardpointPosition(selected_id)
+		local gravity = GetConstant("Physics.Gravity")
+		--interpolate velocity
+		local firevel = Vec3(
+			previous_firevel.x + (current_firevel.x - previous_firevel.x) * frame_progress,
+			previous_firevel.y + (current_firevel.y - previous_firevel.y) * frame_progress
+		)
+		--calculate and place effects
+		local position = Vec3(0,0)
+		for k, v in pairs(aim_icons) do
+			local time_elapsed = k / AIM_ASSIST_WEAPONS[selected_savename]
+			position.x = hardpoint.x + firevel.x * time_elapsed
+			position.y = hardpoint.y + firevel.y * time_elapsed + 0.5 * gravity * time_elapsed * time_elapsed
+			SetEffectPosition(v, position)
+		end
+	elseif draw_aim then
+		--remove (store off-screen) effects when not aiming 
+		draw_aim = false
+		for k, v in pairs(aim_icons) do
+			SetEffectPosition(v, AIMICON_INACTIVE_POS)
+		end
+	end
 end
-function OnContextMenuDevice(deviceTeamId, deviceId, saveName)
-	local devices = {'sbrmemp', 'sbrmfire', 'sbrmhe', 'sbrmempinv', 'sbrmfireinv', 'sbrmheinv', 'sbrmempmarine', 'sbrmfiremarine', 'sbrmhemarine'}
-	local rm_device = false
-	for k, v in pairs(devices) do
-		if GetDeviceType(deviceId) == v then
-			rm_device = true
-			break
-		end
-	end
-	if rm_device then
-		local pressed = false
-		if data.music_device == deviceId then
-			pressed = true
-		end
-		AddContextButton("music_btn", "Christmas music", 1, true, pressed)
-	end
-end
-function OnContextButtonDevice(name, deviceTeamId, deviceId, saveName)
-	--Log(crapinmypants)
-	if name == "Christmas music" then
-		SendScriptEvent("CancelEffect", SSEParams(music_effect), "script.lua", true)
-		if data.music_device == deviceId then
-			SendScriptEvent("SetData", SSEParams('data.music_device', 0), "script.lua", true)
-		else
-			local music_path = ""
-			if saveName == "sbrmemp" or saveName == "sbrmempinv" or saveName == "sbrmempmarine" then
-				music_path = "/effects/music_rm_jinglebells.lua"
-			elseif saveName == "sbrmfire" or saveName == "sbrmfireinv" or saveName == "sbrmfiremarine" then
-				music_path = "/effects/music_rm_silentnight.lua"
-			elseif saveName == "sbrmhe" or saveName == "sbrmheinv" or saveName == "sbrmhemarine" then
-				music_path = "/effects/music_rm_deckthehalls.lua"
-			end
-			SendScriptEvent("SpawnMusic", SSEParams(music_path, deviceId), "script.lua", true)
-		end
-	end
-end]]

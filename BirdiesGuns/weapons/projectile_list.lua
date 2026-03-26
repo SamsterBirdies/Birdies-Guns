@@ -3035,7 +3035,7 @@ if sbrailgun then
 	sbrailgun.ProjectileDamage = 1899
 	sbrailgun.DestroyShields = false
 	sbrailgun.DeflectedByShields = true
-	sbrailgun.Impact = 400000
+	sbrailgun.Impact = 800000
 	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
 	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
 	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
@@ -3047,18 +3047,24 @@ if sbrailgun then
 		{ SaveName = "reactor", Direct = 0.1, Splash = 1.0 },
 		{ Savename = "sandbags", Direct = 0.5, Splash = 1.0 },
 	}
+	sbrailgun.MomentumThreshold =
+	{
+		["shield"] = { Reflect = 40000, Penetrate = 0 },
+	}
 	sbrailgun.Effects =
 	{
 		Impact =
 		{
 			["antiair"] = "effects/mortar_air_burst.lua",
 			["default"] = "effects/impact_medium.lua",
+			["shield"] = path .. "/effects/impact_shield_large.lua",
 		},
 		Deflect =
 		{
 			["armour"] = "effects/armor_ricochet.lua",
 			["door"] = "effects/armor_ricochet.lua",
-			["shield"] = "effects/energy_shield_ricochet.lua",
+			["default"] = path .. "/effects/impact_shield_large.lua",
+			["shield"] = path .. "/effects/impact_shield_large.lua",
 		},
 	}
 	table.insert(Projectiles, sbrailgun)

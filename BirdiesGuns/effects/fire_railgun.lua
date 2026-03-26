@@ -22,6 +22,15 @@ Effects =
 {
 	--cylindar effects (i cant spell cylander
 	{
+		Type = "shake",
+		PlayForEnemy = true,
+		FalloffStart = 1500,
+		FalloffEnd = 5000,
+		TimeToTrigger = LaunchDelay,
+		TimeToLive = 0.3,
+		Magnitude = 120,
+	},
+	{
 		Type = "sprite",
 		TimeToTrigger = 0,
 		LocalPosition = CYL_POS,

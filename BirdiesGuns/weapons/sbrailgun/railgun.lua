@@ -23,6 +23,7 @@ RoundPeriod = 1.5
 FireStdDev = 0.0015
 FireStdDevAuto = 0.004
 ReloadTime = 40
+Recoil = 1800000
 
 FireEffect = path .. "/effects/fire_railgun.lua"
 ShellEffect = nil

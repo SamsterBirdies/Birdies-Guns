@@ -3032,20 +3032,22 @@ if sbrailgun then
 	sbrailgun.SaveName = "sbrailgun"
 	sbrailgun.ProjectileSplashDamage = 0
 	sbrailgun.ProjectileSplashDamageMaxRadius = 0
-	sbrailgun.ProjectileDamage = 1899
+	sbrailgun.ProjectileDamage = 3798
 	sbrailgun.DestroyShields = false
 	sbrailgun.DeflectedByShields = true
 	sbrailgun.Impact = 800000
 	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
 	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
 	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
-	sbrailgun.AntiAirHitpoints = 3000
-	sbrailgun.AntiAirDamage = 4000
+	sbrailgun.AntiAirHitpoints = 4000
+	sbrailgun.AntiAirDamage = 6000
 	sbrailgun.DamageMultiplier =
 	{
-		--{ SaveName = "bracing", Direct = 1.3, Splash = 1.0 },
-		{ SaveName = "reactor", Direct = 0.1, Splash = 1.0 },
-		{ Savename = "sandbags", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "bracing", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "armour", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "door", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "reactor", Direct = 0.05, Splash = 1.0 },
+		{ Savename = "sandbags", Direct = 0.25, Splash = 1.0 },	
 	}
 	sbrailgun.MomentumThreshold =
 	{

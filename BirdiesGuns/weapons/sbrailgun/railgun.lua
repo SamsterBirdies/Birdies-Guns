@@ -24,10 +24,23 @@ FireStdDev = 0.0015
 FireStdDevAuto = 0.004
 ReloadTime = 40
 Recoil = 1800000
+DeviceSplashDamage = 120
+DeviceSplashDamageMaxRadius = 300
+DeviceSplashDamageDelay = 0.2
+StructureSplashDamage = 120
+StructureSplashDamageMaxRadius = 300
+IncendiaryRadius = 240
+IncendiaryRadiusHeated = 280
+IgnitePlatformOnDestruct = true
+EagleEyeReloadBank =
+{
+	ReloadTime = 5,
+}
+
 
 FireEffect = path .. "/effects/fire_railgun.lua"
 ShellEffect = nil
-
+DestroyEffect = path .. "/effects/destroy_railgun.lua"
 
 Root =
 {

@@ -30,6 +30,7 @@ if sbUraniumCannoncheck then
 	sbUraniumSupport("sbdrone", 720)
 	sbUraniumSupport("sbdownmortar2", 480)
 	sbUraniumSupport("sbbigminigun", 400)
+	sbUraniumSupport("sbrailgun", 1000)
 
 	if active then
 		local sbsawcheck = FindProjectile("sbsaw")

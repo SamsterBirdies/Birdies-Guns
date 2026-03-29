@@ -27,10 +27,10 @@ Recoil = 1800000
 DeviceSplashDamage = 120
 DeviceSplashDamageMaxRadius = 300
 DeviceSplashDamageDelay = 0.2
-StructureSplashDamage = 120
+StructureSplashDamage = 150
 StructureSplashDamageMaxRadius = 300
-IncendiaryRadius = 240
-IncendiaryRadiusHeated = 280
+IncendiaryRadius = 200
+IncendiaryRadiusHeated = 240
 IgnitePlatformOnDestruct = true
 EagleEyeReloadBank =
 {

@@ -15,8 +15,7 @@ Effects =
 	DeviceExplodeSprite(),
 	Smoke(9, 9, 6, 200),
 	Smoke(9, 4, 6, 350),
-	Dirt(1, 1000),
-	Dirt(0.3, 3000),
+	Dirt(0.3, 1000),
 	{
 		Type = "shake",
 		PlayForEnemy = true,

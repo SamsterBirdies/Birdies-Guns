@@ -1,5 +1,5 @@
 LifeSpan = 2.5
-
+SoundEvent = "mods/sbBGsoundbank/effects/railgun_trail"
 Effects =
 {
 

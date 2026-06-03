@@ -41,6 +41,8 @@ EagleEyeReloadBank =
 FireEffect = path .. "/effects/fire_railgun.lua"
 ShellEffect = nil
 DestroyEffect = path .. "/effects/destroy_railgun.lua"
+ReloadEffect = path .. "/effects/reload_railgun.lua"
+ReloadEffectOffset = -4.5
 
 Root =
 {

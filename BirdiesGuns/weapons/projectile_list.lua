@@ -3071,6 +3071,14 @@ if sbrailgun then
 	}
 	table.insert(Projectiles, sbrailgun)
 end
+local sbminilightning = DeepCopy(FindProjectile("striker"))
+if sbminilightning then
+	sbminilightning.SaveName = "sbminilightning"
+	sbminilightning.ProjectileThickness = 150
+	sbminilightning.AntiAirDamage = 10
+	sbminilightning.BeamDamage = nil
+	table.insert(Projectiles, sbminilightning)
+end
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:

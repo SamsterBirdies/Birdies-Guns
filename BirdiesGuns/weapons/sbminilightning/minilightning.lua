@@ -22,7 +22,7 @@ BeamDuration = 20
 RoundsEachBurst = 240
 RoundPeriod = 0.04
 FireStdDev = 0.005
-Projectile = "striker"
+Projectile = "sbminilightning"
 MinFireSpread = 8
 MaxFireClamp = 0.8
 FireEffect = path .. "/effects/fire_minilightning.lua"
@@ -84,8 +84,8 @@ Root =
 					Name = "Hardpoint0",
 					Angle = 90,
 					Pivot = {
-						-0.15000000596046448,
-						0.05000000074505806
+						-0.15,
+						-0.15
 					},
 					PivotOffset = {
 						0,
@@ -149,3 +149,18 @@ Root =
 		0
 	}
 }
+
+BeamTable =
+{
+	{ 0,	3,	50, },
+	{ 0.04, 0,  50, },
+}
+
+function BeamThickness(t)
+	return InterpolateTable(BeamTable, t, 2)
+end
+
+function BeamDamage(t)
+--	return 0
+	return InterpolateTable(BeamTable, t, 3)
+end

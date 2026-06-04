@@ -460,8 +460,8 @@ table.insert(Weapons, IndexOfWeapon("sbbigminigun") + 1,
 	BuildTimeIntermediate = 10.0,
 	BuildTimeComplete = 45.0,
 	ScrapPeriod = 5,
-	MetalCost = 700,
-	EnergyCost = 5000,
+	MetalCost = 600,
+	EnergyCost = 4000,
 	MetalRepairCost = 132,
 	EnergyRepairCost = 1320,
 	MetalReclaimMin = 0.5,
@@ -474,7 +474,6 @@ table.insert(Weapons, IndexOfWeapon("sbbigminigun") + 1,
 	BuildOnGroundOnly = false,
 	RequiresSpotterToFire = false,
 	SelectEffect = "ui/hud/weapons/ui_weapons",
-	PopulationCap = 6,
 	Upgrades =
 		{
 			["sbssmfire"] =
@@ -503,8 +502,8 @@ table.insert(Weapons, IndexOfWeapon("sbssm") + 1,
 	BuildTimeIntermediate = 10.0,
 	BuildTimeComplete = 60.0,
 	ScrapPeriod = 5,
-	MetalCost = 900,
-	EnergyCost = 7000,
+	MetalCost = 800,
+	EnergyCost = 6000,
 	MetalRepairCost = 132,
 	EnergyRepairCost = 1320,
 	MetalReclaimMin = 0.5,
@@ -537,7 +536,7 @@ table.insert(Weapons, IndexOfWeapon("sbssm"),
 	BuildTimeIntermediate = 30.0,
 	BuildTimeComplete = 95.0,
 	ScrapPeriod = 6,
-	MetalCost = 400,
+	MetalCost = 450,
 	EnergyCost = 3000,
 	MetalRepairCost = 132,
 	EnergyRepairCost = 1320,
@@ -557,8 +556,8 @@ table.insert(Weapons, IndexOfWeapon("sbssm"),
 			{
 				Enabled = true,
 				SaveName = "sbssm",
-				MetalCost = 300,
-				EnergyCost = 2000,
+				MetalCost = 150,
+				EnergyCost = 1000,
 				Button = "hud-sbbg-upgrade",
 			},
 		},
@@ -2294,14 +2293,16 @@ if bpc then
 	)
 end]]
 local sbrailgun = FindWeapon("cannon")
-if sbrailgun then
+if sbrailgun and FindWeapon("lightningbeam") then
 	table.insert(Sprites, sbDetailSprite("hud-detail-sbrailgun", "railgun2", path))
-	table.insert(Weapons, IndexOfWeapon("machinegun"),
+	table.insert(Sprites, ButtonSprite("hud-sbrailgun-icon", "HUD/HUD-railgun", nil, nil, nil, nil, path))
+	table.insert(Weapons, IndexOfWeapon("lightningbeam") + 1,
 		InheritType(sbrailgun,nil,
 			{
 				Enabled = false,
 				SaveName = "sbrailgun",
 				FileName = path .. "/weapons/sbrailgun/railgun.lua",
+				Icon = "hud-sbrailgun-icon",
 				Detail = "hud-detail-sbrailgun",
 				MetalCost = 1800,
 				EnergyCost = 15000,
@@ -2316,8 +2317,8 @@ if sbrailgun then
 	)
 end
 local sbcoilmortar = FindWeapon("mortar2")
-if sbcoilmortar then
-	table.insert(Weapons, IndexOfWeapon("machinegun"),
+if sbcoilmortar and FindWeapon("striker") then
+	table.insert(Weapons, IndexOfWeapon("striker"),
 		InheritType(sbcoilmortar,nil,
 			{
 				Enabled = false,
@@ -2334,6 +2335,7 @@ if sbcoilmortar then
 		)
 	)
 end
+--[[
 local sbcoilmortar = FindWeapon("striker")
 if sbcoilmortar then
 	table.insert(Weapons, IndexOfWeapon("machinegun"),
@@ -2352,7 +2354,7 @@ if sbcoilmortar then
 			}
 		)
 	)
-end
+end]]
 --END WEAPON INSERTION
 
 if not sbToG then

@@ -2316,6 +2316,7 @@ if sbrailgun and FindWeapon("lightningbeam") then
 		)
 	)
 end
+--[[
 local sbcoilmortar = FindWeapon("mortar2")
 if sbcoilmortar and FindWeapon("striker") then
 	table.insert(Weapons, IndexOfWeapon("striker"),
@@ -2334,7 +2335,7 @@ if sbcoilmortar and FindWeapon("striker") then
 			}
 		)
 	)
-end
+end]]
 --[[
 local sbcoilmortar = FindWeapon("striker")
 if sbcoilmortar then

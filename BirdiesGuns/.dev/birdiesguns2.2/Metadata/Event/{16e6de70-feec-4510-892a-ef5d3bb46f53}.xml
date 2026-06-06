@@ -70,8 +70,11 @@
 		<property name="voiceStealing">
 			<value>2</value>
 		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
 		<property name="dopplerScale">
-			<value>20</value>
+			<value>50</value>
 		</property>
 		<property name="minimumDistance">
 			<value>2000</value>
@@ -223,7 +226,7 @@
 			<destination>{2e56d748-1df1-43b3-b272-3e9aa1c41a83}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d80b87e7-2dad-4040-9c0c-5b7e22899f5c}" />

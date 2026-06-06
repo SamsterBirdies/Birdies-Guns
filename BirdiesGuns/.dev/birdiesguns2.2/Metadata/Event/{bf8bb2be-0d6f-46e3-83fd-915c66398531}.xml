@@ -277,7 +277,7 @@
 			<destination>{5e5cc65a-1ad7-495e-8df3-c3b22e589e42}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{14344fb0-2e3f-4100-a669-232fe012b706}" />

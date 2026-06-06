@@ -71,8 +71,11 @@
 		<property name="voiceStealing">
 			<value>4</value>
 		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
 		<property name="dopplerScale">
-			<value>24</value>
+			<value>30</value>
 		</property>
 		<property name="minimumDistance">
 			<value>2000</value>
@@ -225,7 +228,7 @@
 			<destination>{b17ff35b-8883-47d5-87fb-f61bfca66295}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="ThreeEQEffect" id="{6c2a1bff-53ed-4f41-a6c9-1e9af8f116e9}">

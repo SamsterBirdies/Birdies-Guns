@@ -61,6 +61,7 @@ MetalFireCost = 20.0
 DoorCloseDelay = 1.0
 RoundsEachBurst = 2
 RoundPeriod = 0.01
+CutOffEffects = true
 
 Sprites =
 {

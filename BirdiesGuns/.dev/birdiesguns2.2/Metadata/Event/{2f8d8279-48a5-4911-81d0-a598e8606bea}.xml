@@ -130,6 +130,9 @@
 		<relationship name="automators">
 			<destination>{cea1696a-83e5-4298-8237-420d30534c88}</destination>
 		</relationship>
+		<relationship name="modulators">
+			<destination>{a8be3343-4dd9-42d9-8423-be285510bb6f}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{93b2ad6d-3547-4b0a-89fc-b5ab4d6d4aed}</destination>
 		</relationship>
@@ -252,6 +255,23 @@
 			<destination>{bbb7c196-81cf-47c3-b888-d44b19ecc836}</destination>
 		</relationship>
 	</object>
+	<object class="ADSRModulator" id="{a8be3343-4dd9-42d9-8423-be285510bb6f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="releaseTime">
+			<value>0</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{93b2ad6d-3547-4b0a-89fc-b5ab4d6d4aed}">
 		<relationship name="effects">
 			<destination>{9567eb8e-4ada-4f3d-8b1c-4adc081265ed}</destination>
@@ -335,7 +355,7 @@
 			<destination>{3e89b61b-2f6a-4562-9962-4033425075d8}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{933f1ae1-0802-460c-afc1-be9c1a2a1152}" />

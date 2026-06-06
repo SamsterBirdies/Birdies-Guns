@@ -78,7 +78,7 @@
 			<value>true</value>
 		</property>
 		<property name="dopplerScale">
-			<value>20</value>
+			<value>30</value>
 		</property>
 		<property name="minimumDistance">
 			<value>2000</value>
@@ -338,7 +338,7 @@
 			<destination>{4f279f2a-c6bf-4f00-9dcb-c5d343fef437}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{10df43dc-1566-4bcd-8a14-e904489d7c46}">

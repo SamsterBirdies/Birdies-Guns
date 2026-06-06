@@ -60,7 +60,7 @@ FireStdDevAuto = 0.012
 Recoil = 600000
 EnergyFireCost = 3330.0
 MetalFireCost = 75.0
-
+CutOffEffects = true
 ShowFireAngle = true
 
 TargetIcon =

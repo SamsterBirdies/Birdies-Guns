@@ -70,6 +70,9 @@
 		<property name="maxVoices">
 			<value>12</value>
 		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
 		<property name="dopplerScale">
 			<value>30</value>
 		</property>
@@ -418,7 +421,7 @@
 			<destination>{56cb4a73-0087-4759-bf19-2402af982928}</destination>
 		</relationship>
 		<relationship name="mixerReturn">
-			<destination>{6a4b0cfb-0eee-40f1-880b-84cac7b15904}</destination>
+			<destination>{3af97983-b22f-48ba-847d-cb76d389a587}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationPoint" id="{c9d71184-39e6-410a-8cf5-0fca629bd37a}">

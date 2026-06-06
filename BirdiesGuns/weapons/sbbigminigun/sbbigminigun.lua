@@ -83,31 +83,15 @@ SmokeEmitter = StandardDeviceSmokeEmitter
 
 Sprites =
 {
-	{
-		Name = "sbbigminigun-base",
-		States =
-		{
-			Normal = { Frames = { { texture = path .. "/weapons/sbbigminigun/base.tga" }, mipmap = true, }, },
-			Idle = Normal,
-		},
-	},
-	{
-		Name = "sbbigminigun-head",
-		States =
-		{
-			Normal = { Frames = { { texture = path .. "/weapons/sbbigminigun/head.tga" }, mipmap = true, }, },
-			Idle = Normal,
-		},
-	},
 }
 
 Root =
 {
 	Name = "Minigun",
 	Angle = 0,
-	Pivot = { 0, -0.37 },
+	Pivot = { 0, -0.57 },
 	PivotOffset = { 0, 0 },
-	Sprite = "sbbigminigun-base",
+	Sprite = "20mmcannon-base",
 	UserData = 0,
 	
 	ChildrenBehind =
@@ -116,8 +100,8 @@ Root =
 			Name = "Head",
 			Angle = 0,
 			Pivot = { 0, -0.01 },
-			PivotOffset = { 0.07, 0.05 },
-			Sprite = "sbbigminigun-head",
+			PivotOffset = { 0.07, 0 },
+			Sprite = path .. "/weapons/sbbigminigun/head.tga",
 			UserData = 50,
 
 			ChildrenInFront =
@@ -169,7 +153,7 @@ Root =
 			},
 		},
 	},
-	ChildrenInFront =
+	--[[ChildrenInFront =
 	{
 		{
 			Name = "hat",
@@ -178,5 +162,5 @@ Root =
 			Pivot = {-0.162, 0.058},
 			UserData = 100,
 		}
-	}
+	}]]
 }

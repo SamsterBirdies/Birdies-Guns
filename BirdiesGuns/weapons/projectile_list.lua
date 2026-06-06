@@ -3027,7 +3027,66 @@ if mosin then
 	mosin.WeaponDamageBonus = mosin.WeaponDamageBonus / 2
 	table.insert(Projectiles, mosin)
 end
+local sbrailgun = DeepCopy(FindProjectile("cannon"))
+if sbrailgun then
+	sbrailgun.SaveName = "sbrailgun"
+	sbrailgun.ProjectileSplashDamage = 0
+	sbrailgun.ProjectileSplashDamageMaxRadius = 0
+	sbrailgun.ProjectileDamage = 3798
+	sbrailgun.DestroyShields = false
+	sbrailgun.DeflectedByShields = true
+	sbrailgun.Impact = 800000
+	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
+	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
+	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
+	sbrailgun.AntiAirHitpoints = 4000
+	sbrailgun.AntiAirDamage = 6000
+	sbrailgun.DamageMultiplier =
+	{
+		{ SaveName = "bracing", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "armour", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "door", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "reactor", Direct = 0.05, Splash = 1.0 },
+		{ Savename = "sandbags", Direct = 0.25, Splash = 1.0 },	
+	}
+	sbrailgun.MomentumThreshold =
+	{
+		["shield"] = { Reflect = 40000, Penetrate = 0 },
+	}
+	sbrailgun.Effects =
+	{
+		Impact =
+		{
+			["antiair"] = "effects/mortar_air_burst.lua",
+			["default"] = "effects/impact_medium.lua",
+			["shield"] = path .. "/effects/impact_shield_large.lua",
+		},
+		Deflect =
+		{
+			["armour"] = "effects/armor_ricochet.lua",
+			["door"] = "effects/armor_ricochet.lua",
+			["default"] = path .. "/effects/impact_shield_large.lua",
+			["shield"] = path .. "/effects/impact_shield_large.lua",
+		},
+	}
+	table.insert(Projectiles, sbrailgun)
+	
+	local sbrailgunweak = DeepCopy(sbrailgun)
+	sbrailgunweak.SaveName = "sbrailgunweak"
+	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage / 2
+	sbrailgunweak.Impact = 400000
+	table.insert(Projectiles, sbrailgunweak)
+end
 
+--[[
+local sbminilightning = DeepCopy(FindProjectile("striker"))
+if sbminilightning then
+	sbminilightning.SaveName = "sbminilightning"
+	sbminilightning.ProjectileThickness = 150
+	sbminilightning.AntiAirDamage = 10
+	sbminilightning.BeamDamage = nil
+	table.insert(Projectiles, sbminilightning)
+end]]
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:
@@ -3204,6 +3263,7 @@ MakeVacuumVersion("sbsaw", "vacuumtrail", 10000, 650000)
 		vacuumsbsawarmour = { Projectile = { Count = 1, Type = "vacuumsbsawarmour", StdDev = 0.0}, Splash = false, Terminate = true, Offset = -5, }
 		local sbsawfind = FindProjectile("vacuumsbsaw") if sbsawfind then sbsawfind.Effects.Impact.bracing = vacuumsbsawwood end
 		local sbsawwoodfind = FindProjectile("vacuumsbsawwood") if sbsawwoodfind then sbsawwoodfind.Effects.Impact.default = vacuumsbsawarmour end
+MakeVacuumVersion("sbrailgun", "vacuumtrailsmall", 1800000)
 --vacuumbeamversions_helicopters
 
 --vacuumbeamversions_moonshot
@@ -3476,6 +3536,8 @@ sbMakeFlamingVersion("sb50cal", 1.25, 0.2, "flaming_sniper_trail", nil, smallArm
 sbMakeFlamingVersion("sboildrumprojectile", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sboildrumprojectileshock", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbdrone", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
+sbMakeFlamingVersion("sbrailgun", 1.0, 0.3, "flaming_sniper_trail", 80, nil, nil)
+sbMakeFlamingVersion("sbrailgunweak", 1.0, 0.3, "flaming_sniper_trail", 80, nil, nil)
 
 --armored versions
 MakeArmouredVersion("sbsuremp", path .. "/weapons/sbsur/armorprojectileemp", "effects/missile_armor_debris.lua")

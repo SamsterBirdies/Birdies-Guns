@@ -3070,7 +3070,15 @@ if sbrailgun then
 		},
 	}
 	table.insert(Projectiles, sbrailgun)
+	
+	local sbrailgunweak = DeepCopy(sbrailgun)
+	sbrailgunweak.SaveName = "sbrailgunweak"
+	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage / 2
+	sbrailgunweak.Impact = 400000
+	table.insert(Projectiles, sbrailgunweak)
 end
+
+--[[
 local sbminilightning = DeepCopy(FindProjectile("striker"))
 if sbminilightning then
 	sbminilightning.SaveName = "sbminilightning"
@@ -3078,7 +3086,7 @@ if sbminilightning then
 	sbminilightning.AntiAirDamage = 10
 	sbminilightning.BeamDamage = nil
 	table.insert(Projectiles, sbminilightning)
-end
+end]]
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:
@@ -3529,6 +3537,7 @@ sbMakeFlamingVersion("sboildrumprojectile", 1.3, 0.1, "flaming_trail", 125, nil,
 sbMakeFlamingVersion("sboildrumprojectileshock", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbdrone", 1.3, 0.1, "flaming_trail", 125, nil, missileStructureHit)
 sbMakeFlamingVersion("sbrailgun", 1.0, 0.3, "flaming_sniper_trail", 80, nil, nil)
+sbMakeFlamingVersion("sbrailgunweak", 1.0, 0.3, "flaming_sniper_trail", 80, nil, nil)
 
 --armored versions
 MakeArmouredVersion("sbsuremp", path .. "/weapons/sbsur/armorprojectileemp", "effects/missile_armor_debris.lua")

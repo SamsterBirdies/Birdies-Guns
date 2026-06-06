@@ -2306,10 +2306,10 @@ if sbrailgun and FindWeapon("lightningbeam") then
 				Detail = "hud-detail-sbrailgun",
 				MetalCost = 1800,
 				EnergyCost = 15000,
-				Prerequisite = "factory",
+				Prerequisite = "smelter",
 				CompatibleGroupTypes = {"sbrailgun"},
 				SpotterFactor = 0,
-				BuildTimeComplete = 200.0,
+				BuildTimeComplete = 180.0,
 				Upgrades = {},
 				MaxWeaponGroupSize = 1,
 			}

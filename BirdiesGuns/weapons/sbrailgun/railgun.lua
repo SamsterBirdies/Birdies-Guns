@@ -15,7 +15,7 @@ SelectionOffset = { -12, -65.5 }
 FireDelay = 4.9
 CutOffEffects = true
 Projectile = "sbrailgun"
-EnergyFireCost = 10000
+EnergyFireCost = 8000
 MetalFireCost = 75
 WeaponMass = 200
 RoundsEachBurst = 1
@@ -46,7 +46,25 @@ ReloadEffect = path .. "/effects/reload_railgun.lua"
 ReloadEffectOffset = -4.5
 
 NodeEffects = nil
-
+dlc2_Ammunition =
+{
+	{
+		--Sprite = "",
+		MinFireSpeed = MinFireSpeed / 2,
+		MaxFireSpeed = MaxFireSpeed / 2,
+		Projectile = "sbrailgunweak",
+		Recoil = Recoil / 2,
+		FireEffect = path .. "/effects/fire_railgun_weak.lua",
+		FireDelay = 2.4,
+		ReloadTime = 30,
+		EnergyFireCost = 5000,
+	},
+	{ 
+		Sprite = "hud-context-ammo-canister",
+		Devices = { {Name = "volatile_canister", Consume = true}, },
+		Projectile = "sbrailgun",
+	},
+}
 Root =
 {
 	Name = "Railgun",

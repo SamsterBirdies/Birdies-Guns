@@ -2,11 +2,24 @@ sbBGpath = path
 dofile("scripts/type.lua")
 dofile( path .. "/scripts/sb.lua")
 dofile( path .. "/scripts/sbweirdprojectiles.lua")
---test for tog
+--test for tog and dlc
 sbToG = false
+sbDLC1 = false
+sbDLC2 = false
+sbDLC3 = false
 if FindProjectile("flak") or FindProjectile("shotgun") or FindProjectile("rocketemp") or FindProjectile("rocket") or FindProjectile("cannon20mm") or FindProjectile ("firebeam") then
 	sbToG = true
 end
+if FindProjectile("howitzer") then
+	sbDLC1 = true
+end
+if FindProjectile("turret") then
+	sbDLC2 = true
+end
+if FindProjectile("striker") then
+	sbDLC3 = true
+end
+
 --common paths
 local xmas_snowball = "mods/theme_christmas/weapons/media/bullet_snowball_sml"
 local xmas_snowball_h = "mods/theme_christmas/weapons/media/bullet_snowball_lg"
@@ -3027,8 +3040,9 @@ if mosin then
 	mosin.WeaponDamageBonus = mosin.WeaponDamageBonus / 2
 	table.insert(Projectiles, mosin)
 end
+
 local sbrailgun = DeepCopy(FindProjectile("cannon"))
-if sbrailgun then
+if sbrailgun and sbDLC3 then
 	sbrailgun.SaveName = "sbrailgun"
 	sbrailgun.ProjectileSplashDamage = 0
 	sbrailgun.ProjectileSplashDamageMaxRadius = 0
@@ -3070,14 +3084,39 @@ if sbrailgun then
 		},
 	}
 	table.insert(Projectiles, sbrailgun)
-	
+	--weak version (no canister)
 	local sbrailgunweak = DeepCopy(sbrailgun)
 	sbrailgunweak.SaveName = "sbrailgunweak"
 	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage / 2
 	sbrailgunweak.Impact = 400000
 	table.insert(Projectiles, sbrailgunweak)
 end
-
+--[[
+local sbzap = DeepCopy(FindProjectile("mortar2"))
+if sbzap and sbDLC3 then
+	sbzap.SaveName = "sbzapmortar"
+	sbzap.ProjectileSplashDamage = sbzap.ProjectileSplashDamage / 2
+	sbzap.LightningParams =
+	{
+		MaxTravel = 10000,
+        ChainDistance = 500,
+        AdditionalChargeDamage = 65,
+        MaxAngle = 10,
+        Damage = 65,
+	}
+	sbzap.LightningProjectileParams = 
+        {
+            ZapChargesOnDeviceDestroyed = 0,
+            Count = 2,
+            SeparationAngle = 20,
+        }
+	sbzap.Effects.Impact =
+	{
+		default = { Effect =  "effects/mortar_air_burst.lua", Projectile = { Count = 1, Type = "lightningbolt", StdDev = 0.0 },  Terminate = true, }
+	}
+	table.insert(Projectiles, sbzap)
+end
+]]
 --[[
 local sbminilightning = DeepCopy(FindProjectile("striker"))
 if sbminilightning then

@@ -22,7 +22,7 @@ RoundsEachBurst = 1
 RoundPeriod = 1.5
 FireStdDev = 0.0015
 FireStdDevAuto = 0.004
-ReloadTime = 40
+ReloadTime = 36
 Recoil = 1800000
 DeviceSplashDamage = 120
 DeviceSplashDamageMaxRadius = 300
@@ -56,7 +56,7 @@ dlc2_Ammunition =
 		Recoil = Recoil / 2,
 		FireEffect = path .. "/effects/fire_railgun_weak.lua",
 		FireDelay = 2.4,
-		ReloadTime = 30,
+		ReloadTime = 18,
 		EnergyFireCost = 5000,
 	},
 	{ 

@@ -9,6 +9,15 @@ BarrelLength = 80
 SelectionWidth = 45.0
 SelectionHeight = 65.0
 SelectionOffset = { 0.0, -65.5 }
+RoundPeriod = 0
+
+dlc2_Ammunition =
+{
+	{ 
+		Projectile = "sbzapmortar",
+	},
+}
+
 Root =
 {
 	Name = "Mortar",

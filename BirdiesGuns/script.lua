@@ -34,10 +34,11 @@ function Load(gameStart)
 	data.pebbles = {}
 	
 	--coilmortareffect
+	--[[
 	for i = 1, AIMICON_STEPS do
 		local aimicon_effect_id = SpawnEffect(path .. "/effects/coilmortardest.lua", AIMICON_INACTIVE_POS)
 		table.insert(aim_icons, aimicon_effect_id)
-	end
+	end]]
 end
 
 --barrel creating function
@@ -173,7 +174,7 @@ function OnWeaponFired(teamId, saveName, weaponId, projectileNodeId, projectileN
 		ScheduleCall(0.08, SetAudioParameter, effect_id, "weaponpower", power)
 	end
 end
-
+--[[
 function Update(frame)
 	frame_progress = 0
 	--aim assist
@@ -216,4 +217,4 @@ function OnUpdate(delta_fake)
 			SetEffectPosition(v, AIMICON_INACTIVE_POS)
 		end
 	end
-end
+end]]

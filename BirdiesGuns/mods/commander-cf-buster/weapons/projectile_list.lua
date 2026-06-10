@@ -22,6 +22,8 @@ if sbUraniumCannoncheck then
 	sbUraniumSupport("sbsuremp", 480)
 	sbUraniumSupport("sbsurfire", 480)
 	sbUraniumSupport("sbsurhe", 480)
+	sbUraniumSupport("sbrailgun", 480)
+	sbUraniumSupport("sbrailgunweak", 480)
 	sbUraniumSupport("sbdowncannon", 720)
 	sbUraniumSupport("sbsawarmour", 720)
 	sbUraniumSupport("sbtriplemortar1", 480)

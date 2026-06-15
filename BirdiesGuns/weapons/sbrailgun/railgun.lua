@@ -44,8 +44,10 @@ DestroyEffect = path .. "/effects/destroy_railgun.lua"
 DestroyUnderwaterEffect = DestroyEffect
 ReloadEffect = path .. "/effects/reload_railgun.lua"
 ReloadEffectOffset = -4.5
+--ConstructEffect = "effects/device_upgrade_tier2.lua"
 
 NodeEffects = nil
+
 dlc2_Ammunition =
 {
 	{

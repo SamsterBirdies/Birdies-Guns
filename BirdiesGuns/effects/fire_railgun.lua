@@ -48,6 +48,7 @@ Effects =
 		Colour1 = { 255, 180, 180, 64 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	{
 		Type = "sprite",
@@ -67,6 +68,7 @@ Effects =
 		Colour1 = { 255, 255, 255, 255 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	--shocks
 	{
@@ -87,6 +89,7 @@ Effects =
 		Colour1 = { 255, 255, 255, 255 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	{
 		Type = "sprite",
@@ -106,6 +109,7 @@ Effects =
 		Colour1 = { 255, 255, 255, 255 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	{
 		Type = "sprite",
@@ -125,6 +129,7 @@ Effects =
 		Colour1 = { 255, 255, 255, 255 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	{
 		Type = "sprite",
@@ -144,6 +149,7 @@ Effects =
 		Colour1 = { 255, 255, 255, 255 },
 		Colour2 = { 255, 255, 255, 255 },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	},
 	
 	--firing effects
@@ -190,6 +196,7 @@ for i = 1, 8 do
 		Colour1 = { 255, 255, 255, RAIL_OPACITY },
 		Colour2 = { 255, 255, 255, RAIL_OPACITY },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	})
 end
 for i = 1, 6 do
@@ -213,6 +220,7 @@ for i = 1, 6 do
 		Colour1 = { 255, 255, 255, RAIL_OPACITY },
 		Colour2 = { 255, 255, 255, RAIL_OPACITY },
 		KillParticleOnEffectCancel = true,
+		FlipVertOnLeft = true,
 	})
 end
 --firing effect

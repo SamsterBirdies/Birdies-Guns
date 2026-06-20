@@ -3091,6 +3091,85 @@ if sbrailgun and sbDLC3 then
 	sbrailgunweak.Impact = 400000
 	table.insert(Projectiles, sbrailgunweak)
 end
+table.insert(Sprites, 
+{
+	Name = "sblightball_projectile",
+			
+	States =
+	{
+		Normal =  
+		{  
+			Frames =
+			{
+				{ texture = "effects/media/HowitzerParticles05" },
+				{ texture = "effects/media/HowitzerParticles06" },
+				{ texture = "effects/media/HowitzerParticles07" },
+				{ texture = "effects/media/HowitzerParticles08" },
+				{ texture = "effects/media/HowitzerParticles09" },
+				{ texture = "effects/media/HowitzerParticles10" },
+				{ texture = "effects/media/HowitzerParticles11" },
+				{ texture = "effects/media/HowitzerParticles12" },
+				{ texture = "effects/media/HowitzerParticles13" },
+				{ texture = "effects/media/HowitzerParticles14" },
+				
+				duration = 0.05,
+				mipmap = true,
+			},
+			NextState = "Normal",
+		},
+	},
+})
+table.insert(Sprites, 
+{
+	Name = "sblightball_bloom",
+			
+	States =
+	{
+		Normal =  
+		{  
+			Frames =
+			{
+				{ texture = path .. "/effects/media/bloom1", colour = { 0.3, 0.3, 1, 0.45 } },			
+				duration = 0.05,
+				mipmap = true,
+			},
+			NextState = "Normal",
+		},
+	},
+})
+local sblightball = DeepCopy(FindProjectile("cannon20mm"))
+if sblightball then
+	sblightball.SaveName = "sblightball"
+	sblightball.Gravity = 0
+	sblightball.TrailEffect = path .. "/effects/lightball_trail.lua"
+	--sblightball.TrailEffect = "effects/missile_trail.lua"
+	sblightball.DrawBlurredProjectile = false
+	sblightball.Projectile =
+	{
+		Root =
+		{
+			Name = "Root",
+			Angle = 0,
+			Sprite = "sblightball_projectile",
+			Scale = 3,
+			
+			ChildrenInFront =
+			{
+				{
+					Name = "Flame",
+					Angle = 0,
+					Offset = { 0, 0 },
+					Pivot = { 0, 0 },
+					PivotOffset = { 0, 0 },
+					Sprite = "sblightball_bloom",
+					Additive = true,
+					Scale = 2.5,
+				},
+			},
+		}
+	}
+	table.insert(Projectiles, sblightball)
+end
 --[[
 local sbzap = DeepCopy(FindProjectile("mortar2"))
 if sbzap and sbDLC3 then
@@ -3162,6 +3241,28 @@ SetDamageMultiplier("howitzer", { SaveName = "sbperiscope1", Direct = 2.5, Splas
 --shrapnel multipliers against barrel cannons
 SetDamageMultiplier("shrapnel", {SaveName = "sboilgunemp", Direct = 1.1, Splash = 1 })
 SetDamageMultiplier("shrapnel", {SaveName = "sboilgun", Direct = 1.1, Splash = 1 })
+--lasers no break me projectiles
+SetDamageMultiplierSpecific("laser", "sbrailgun", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbrailgunweak", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbflames", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbroofgunner", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbbigminigun", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbfirebullet", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbdowncannon", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbdowngunner", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sbdownminigun", "AntiAir", 0)
+SetDamageMultiplierSpecific("laser", "sb50cal", "AntiAir", 0)
+
+SetDamageMultiplierSpecific("striker", "sbrailgun", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbrailgunweak", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbflames", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbroofgunner", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbbigminigun", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbfirebullet", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbdowncannon", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbdowngunner", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sbdownminigun", "AntiAir", 0)
+SetDamageMultiplierSpecific("striker", "sb50cal", "AntiAir", 0)
 
 --tanya gemini beam
 local tanyageminicheck = FindProjectile("geminibeam")

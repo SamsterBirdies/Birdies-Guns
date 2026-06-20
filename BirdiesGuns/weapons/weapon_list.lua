@@ -2299,7 +2299,7 @@ if sbrailgun and FindWeapon("lightningbeam") then
 	table.insert(Weapons, IndexOfWeapon("lightningbeam") + 1,
 		InheritType(sbrailgun,nil,
 			{
-				Enabled = false,
+				Enabled = true,
 				SaveName = "sbrailgun",
 				FileName = path .. "/weapons/sbrailgun/railgun.lua",
 				Icon = "hud-sbrailgun-icon",
@@ -2307,11 +2307,28 @@ if sbrailgun and FindWeapon("lightningbeam") then
 				MetalCost = 1800,
 				EnergyCost = 15000,
 				Prerequisite = "smelter",
-				CompatibleGroupTypes = {"sbrailgun"},
 				SpotterFactor = 0,
 				BuildTimeComplete = 180.0,
 				Upgrades = {},
 				MaxWeaponGroupSize = 1,
+			}
+		)
+	)
+end
+local sbcoilmortar = FindWeapon("mortar2")
+if sbcoilmortar and FindWeapon("striker") then
+	table.insert(Weapons, IndexOfWeapon("striker"),
+		InheritType(sbcoilmortar,nil,
+			{
+				Enabled = false,
+				SaveName = "sblightball",
+				FileName = path .. "/weapons/sblightball/lightball.lua",
+				MetalCost = 400,
+				EnergyCost = 3000,
+				Prerequisite = "smelter",
+				SpotterFactor = 0,
+				BuildTimeComplete = 60.0,
+				Upgrades = {},
 			}
 		)
 	)

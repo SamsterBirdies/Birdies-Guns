@@ -2307,6 +2307,7 @@ if sbrailgun and FindWeapon("lightningbeam") then
 				MetalCost = 1800,
 				EnergyCost = 15000,
 				Prerequisite = "smelter",
+				PrerequisiteAlt = "smelter2",
 				SpotterFactor = 0,
 				BuildTimeComplete = 180.0,
 				Upgrades = {},

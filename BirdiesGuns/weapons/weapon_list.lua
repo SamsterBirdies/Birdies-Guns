@@ -2306,8 +2306,8 @@ if sbrailgun and FindWeapon("lightningbeam") then
 				Detail = "hud-detail-sbrailgun",
 				MetalCost = 1800,
 				EnergyCost = 15000,
-				Prerequisite = "smelter",
-				PrerequisiteAlt = "smelter2",
+				Prerequisite = {{"smelter"}, {"smelter2"}},
+				--PrerequisiteAlt = "smelter2",
 				SpotterFactor = 0,
 				BuildTimeComplete = 180.0,
 				Upgrades = {},
@@ -2316,6 +2316,7 @@ if sbrailgun and FindWeapon("lightningbeam") then
 		)
 	)
 end
+--[[
 local sbcoilmortar = FindWeapon("mortar2")
 if sbcoilmortar and FindWeapon("striker") then
 	table.insert(Weapons, IndexOfWeapon("striker"),
@@ -2333,7 +2334,7 @@ if sbcoilmortar and FindWeapon("striker") then
 			}
 		)
 	)
-end
+end]]
 --[[
 local sbcoilmortar = FindWeapon("mortar2")
 if sbcoilmortar and FindWeapon("striker") then

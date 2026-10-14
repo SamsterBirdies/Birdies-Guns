@@ -8,6 +8,7 @@ MinFireSpeed = 20000.0
 MaxFireSpeed = 20000.1
 MinFireAngle = -8
 MaxFireAngle = 8
+MaxFireRadius = 2200.0
 BarrelLength = 217.5
 SelectionWidth = 185.0
 SelectionHeight = 65.0
@@ -39,6 +40,7 @@ EagleEyeReloadBank =
 
 
 FireEffect = path .. "/effects/fire_railgun.lua"
+FireEffect_halloween = path .. "/effects/fire_railgun_halloween.lua"
 ShellEffect = nil
 DestroyEffect = path .. "/effects/destroy_railgun.lua"
 DestroyUnderwaterEffect = DestroyEffect
@@ -57,6 +59,7 @@ dlc2_Ammunition =
 		Projectile = "sbrailgunweak",
 		Recoil = Recoil / 2,
 		FireEffect = path .. "/effects/fire_railgun_weak.lua",
+		FireEffect_halloween = path .. "/effects/fire_railgun_weak_halloween.lua",
 		FireDelay = 2.4,
 		ReloadTime = 18,
 		EnergyFireCost = 5000,
@@ -67,13 +70,55 @@ dlc2_Ammunition =
 		Projectile = "sbrailgun",
 	},
 }
+
+Sprites = 
+{
+	{
+		Name = "sbrailgun_head",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/weapons/sbrailgun/head" }, mipmap = true, }, },
+			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunhead.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunhead.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunhead.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunhead.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunhead.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			
+			--Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+		},
+	},
+	{
+		Name = "sbrailgun_base",
+		States =
+		{
+			Normal = { Frames = { { texture = path .. "/weapons/sbrailgun/base" }, mipmap = true, }, },
+			Idle = Normal,
+			Normal_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunbase.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalAsia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunbase.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalBPO_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunbase.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalRussia_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunbase.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			NormalCF_halloween = { Frames = { { texture = path .. "/seasonal/halloween/railgunbase.tga" }, mipmap = true, }, EventTag = "_halloween"},
+			
+			--Normal_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalAsia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalBPO_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalRussia_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+			--NormalCF_christmas = { Frames = { { texture = path .. "/seasonal/xmas/mosin_barrel.tga" }, mipmap = true, }, EventTag = "_christmas"},
+		},
+	},
+}
 Root =
 {
 	Name = "Railgun",
 	Angle = 0,
 	Pivot = { 0, -0.57 },
 	PivotOffset = { 0, 0 },
-	Sprite = path .. "/weapons/sbrailgun/base",
+	Sprite = "sbrailgun_base",
 	UserData = 0,
 	
 	ChildrenBehind =
@@ -83,7 +128,7 @@ Root =
 			Angle = 0,
 			Pivot = {-0.08854166666666667, 0.0546875},
 			PivotOffset = {0.0927734375, -0.24609375},
-			Sprite = path .. "/weapons/sbrailgun/head",
+			Sprite = "sbrailgun_head",
 			UserData = 50,
 			
 			ChildrenInFront =

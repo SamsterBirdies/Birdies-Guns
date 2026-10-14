@@ -189,7 +189,7 @@ Root =
 				{
 					Name = "xmashat",
 					Scale = 0.5,
-					Pivot = {-0.3171, -0.2792},
+					Pivot = {-0.2771, -0.2792},
 					Sprite = "sbHat",
 					UserData = 100,
 				}

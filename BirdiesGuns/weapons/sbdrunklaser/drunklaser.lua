@@ -261,20 +261,6 @@ Root =
 							Sprite = "sbdlfirebeam-spinning-barrel",
 							Visible = false,
 						},
-						{
-							Name = "xmashat",
-							Scale = 0.35,
-							Pivot = {-0.29, -0.31071},
-							Sprite = "sbSantaHat",
-							UserData = 100,
-						},
-						{
-							Name = "pumpkin",
-							Scale = 0.35,
-							Pivot = {-0.27, -0.31071},
-							Sprite = "sbPumpkinHat",
-							UserData = 100,
-						}
 					},
 				},
 			},

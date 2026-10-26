@@ -54,14 +54,14 @@ dlc2_Ammunition =
 {
 	{
 		--Sprite = "",
-		MinFireSpeed = MinFireSpeed / 2,
-		MaxFireSpeed = MaxFireSpeed / 2,
+		MinFireSpeed = MinFireSpeed * 0.65,
+		MaxFireSpeed = MaxFireSpeed * 0.65,
 		Projectile = "sbrailgunweak",
 		Recoil = Recoil / 2,
 		FireEffect = path .. "/effects/fire_railgun_weak.lua",
 		FireEffect_halloween = path .. "/effects/fire_railgun_weak_halloween.lua",
 		FireDelay = 2.4,
-		ReloadTime = 18,
+		ReloadTime = 21,
 		EnergyFireCost = 5000,
 	},
 	{ 

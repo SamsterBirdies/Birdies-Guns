@@ -3054,10 +3054,10 @@ if sbrailgun and sbDLC3 then
 	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
 	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
 	sbrailgun.AntiAirHitpoints = 4000
-	sbrailgun.AntiAirDamage = 6000
+	sbrailgun.AntiAirDamage = 8000
 	sbrailgun.DamageMultiplier =
 	{
-		{ SaveName = "bracing", Direct = 0.5, Splash = 1.0 },
+		{ SaveName = "bracing", Direct = 0.6, Splash = 1.0 },
 		{ SaveName = "armour", Direct = 0.5, Splash = 1.0 },
 		{ SaveName = "door", Direct = 0.5, Splash = 1.0 },
 		{ SaveName = "reactor", Direct = 0.05, Splash = 1.0 },
@@ -3087,7 +3087,7 @@ if sbrailgun and sbDLC3 then
 	--weak version (no canister)
 	local sbrailgunweak = DeepCopy(sbrailgun)
 	sbrailgunweak.SaveName = "sbrailgunweak"
-	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage / 2
+	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage * 0.65
 	sbrailgunweak.Impact = 400000
 	table.insert(Projectiles, sbrailgunweak)
 end

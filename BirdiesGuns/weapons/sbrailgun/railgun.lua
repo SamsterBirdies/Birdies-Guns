@@ -33,6 +33,8 @@ StructureSplashDamageMaxRadius = 300
 IncendiaryRadius = 200
 IncendiaryRadiusHeated = 240
 IgnitePlatformOnDestruct = true
+KickbackMean = 0
+KickbackStdDev = 0
 EagleEyeReloadBank =
 {
 	ReloadTime = 5,

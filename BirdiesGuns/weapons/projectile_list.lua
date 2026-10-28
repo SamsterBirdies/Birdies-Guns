@@ -3040,171 +3040,249 @@ if mosin then
 	mosin.WeaponDamageBonus = mosin.WeaponDamageBonus / 2
 	table.insert(Projectiles, mosin)
 end
-
-local sbrailgun = DeepCopy(FindProjectile("cannon"))
-if sbrailgun and sbDLC3 then
-	sbrailgun.SaveName = "sbrailgun"
-	sbrailgun.ProjectileSplashDamage = 0
-	sbrailgun.ProjectileSplashDamageMaxRadius = 0
-	sbrailgun.ProjectileDamage = 3798
-	sbrailgun.DestroyShields = false
-	sbrailgun.DeflectedByShields = true
-	sbrailgun.Impact = 800000
-	sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
-	sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
-	sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
-	sbrailgun.AntiAirHitpoints = 4000
-	sbrailgun.AntiAirDamage = 8000
-	sbrailgun.DamageMultiplier =
-	{
-		{ SaveName = "bracing", Direct = 0.6, Splash = 1.0 },
-		{ SaveName = "armour", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "door", Direct = 0.5, Splash = 1.0 },
-		{ SaveName = "reactor", Direct = 0.05, Splash = 1.0 },
-		{ Savename = "sandbags", Direct = 0.25, Splash = 1.0 },	
-	}
-	sbrailgun.MomentumThreshold =
-	{
-		["shield"] = { Reflect = 40000, Penetrate = 0 },
-	}
-	sbrailgun.Effects =
-	{
-		Impact =
+if sbDLC3 then
+	local sbrailgun = DeepCopy(FindProjectile("cannon"))
+	if sbrailgun then
+		sbrailgun.SaveName = "sbrailgun"
+		sbrailgun.ProjectileSplashDamage = 0
+		sbrailgun.ProjectileSplashDamageMaxRadius = 0
+		sbrailgun.ProjectileDamage = 3798
+		sbrailgun.DestroyShields = false
+		sbrailgun.DeflectedByShields = true
+		sbrailgun.Impact = 800000
+		sbrailgun.ProjectileSprite = path .. "/weapons/sbrailgun/bullet"
+		sbrailgun.ProjectileThickness = sbrailgun.ProjectileThickness * 0.75
+		sbrailgun.TrailEffect = path .. "/effects/trail_railgun.lua"
+		sbrailgun.AntiAirHitpoints = 4000
+		sbrailgun.AntiAirDamage = 8000
+		sbrailgun.DamageMultiplier =
 		{
-			["antiair"] = "effects/mortar_air_burst.lua",
-			["default"] = "effects/impact_medium.lua",
-			["shield"] = path .. "/effects/impact_shield_large.lua",
-		},
-		Deflect =
+			{ SaveName = "bracing", Direct = 0.6, Splash = 1.0 },
+			{ SaveName = "armour", Direct = 0.5, Splash = 1.0 },
+			{ SaveName = "door", Direct = 0.5, Splash = 1.0 },
+			{ SaveName = "reactor", Direct = 0.05, Splash = 1.0 },
+			{ Savename = "sandbags", Direct = 0.25, Splash = 1.0 },	
+		}
+		sbrailgun.MomentumThreshold =
 		{
-			["armour"] = "effects/armor_ricochet.lua",
-			["door"] = "effects/armor_ricochet.lua",
-			["default"] = path .. "/effects/impact_shield_large.lua",
-			["shield"] = path .. "/effects/impact_shield_large.lua",
-		},
-	}
-	table.insert(Projectiles, sbrailgun)
-	--weak version (no canister)
-	local sbrailgunweak = DeepCopy(sbrailgun)
-	sbrailgunweak.SaveName = "sbrailgunweak"
-	sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage * 0.65
-	sbrailgunweak.Impact = 400000
-	table.insert(Projectiles, sbrailgunweak)
-end
-table.insert(Sprites, 
-{
-	Name = "sblightball_projectile",
-			
-	States =
-	{
-		Normal =  
-		{  
-			Frames =
+			["shield"] = { Reflect = 40000, Penetrate = 0 },
+		}
+		sbrailgun.Effects =
+		{
+			Impact =
 			{
-				{ texture = "effects/media/HowitzerParticles05" },
-				{ texture = "effects/media/HowitzerParticles06" },
-				{ texture = "effects/media/HowitzerParticles07" },
-				{ texture = "effects/media/HowitzerParticles08" },
-				{ texture = "effects/media/HowitzerParticles09" },
-				{ texture = "effects/media/HowitzerParticles10" },
-				{ texture = "effects/media/HowitzerParticles11" },
-				{ texture = "effects/media/HowitzerParticles12" },
-				{ texture = "effects/media/HowitzerParticles13" },
-				{ texture = "effects/media/HowitzerParticles14" },
-				
-				duration = 0.05,
-				mipmap = true,
+				["antiair"] = "effects/mortar_air_burst.lua",
+				["default"] = "effects/impact_medium.lua",
+				["shield"] = path .. "/effects/impact_shield_large.lua",
 			},
-			NextState = "Normal",
-		},
-	},
-})
-table.insert(Sprites, 
-{
-	Name = "sblightball_bloom",
-			
-	States =
-	{
-		Normal =  
-		{  
-			Frames =
+			Deflect =
 			{
-				{ texture = path .. "/effects/media/bloom1", colour = { 0.3, 0.3, 1, 0.45 } },			
-				duration = 0.05,
-				mipmap = true,
-			},
-			NextState = "Normal",
-		},
-	},
-})
-local sblightball = DeepCopy(FindProjectile("cannon20mm"))
-if sblightball then
-	sblightball.SaveName = "sblightball"
-	sblightball.Gravity = 0
-	sblightball.TrailEffect = path .. "/effects/lightball_trail.lua"
-	--sblightball.TrailEffect = "effects/missile_trail.lua"
-	sblightball.DrawBlurredProjectile = false
-	sblightball.Projectile =
-	{
-		Root =
-		{
-			Name = "Root",
-			Angle = 0,
-			Sprite = "sblightball_projectile",
-			Scale = 3,
-			
-			ChildrenInFront =
-			{
-				{
-					Name = "Flame",
-					Angle = 0,
-					Offset = { 0, 0 },
-					Pivot = { 0, 0 },
-					PivotOffset = { 0, 0 },
-					Sprite = "sblightball_bloom",
-					Additive = true,
-					Scale = 2.5,
-				},
+				["armour"] = "effects/armor_ricochet.lua",
+				["door"] = "effects/armor_ricochet.lua",
+				["default"] = path .. "/effects/impact_shield_large.lua",
+				["shield"] = path .. "/effects/impact_shield_large.lua",
 			},
 		}
-	}
-	table.insert(Projectiles, sblightball)
-end
---[[
-local sbzap = DeepCopy(FindProjectile("mortar2"))
-if sbzap and sbDLC3 then
-	sbzap.SaveName = "sbzapmortar"
-	sbzap.ProjectileSplashDamage = sbzap.ProjectileSplashDamage / 2
-	sbzap.LightningParams =
+		table.insert(Projectiles, sbrailgun)
+		--weak version (no canister)
+		local sbrailgunweak = DeepCopy(sbrailgun)
+		sbrailgunweak.SaveName = "sbrailgunweak"
+		sbrailgunweak.ProjectileDamage = sbrailgunweak.ProjectileDamage * 0.65
+		sbrailgunweak.Impact = 400000
+		table.insert(Projectiles, sbrailgunweak)
+	end
+	table.insert(Sprites, 
 	{
-		MaxTravel = 10000,
-        ChainDistance = 500,
-        AdditionalChargeDamage = 65,
-        MaxAngle = 10,
-        Damage = 65,
-	}
-	sbzap.LightningProjectileParams = 
+		Name = "sblightball_projectile",
+				
+		States =
+		{
+			Normal =  
+			{  
+				Frames =
+				{
+					{ texture = "effects/media/HowitzerParticles05" },
+					{ texture = "effects/media/HowitzerParticles06" },
+					{ texture = "effects/media/HowitzerParticles07" },
+					{ texture = "effects/media/HowitzerParticles08" },
+					{ texture = "effects/media/HowitzerParticles09" },
+					{ texture = "effects/media/HowitzerParticles10" },
+					{ texture = "effects/media/HowitzerParticles11" },
+					{ texture = "effects/media/HowitzerParticles12" },
+					{ texture = "effects/media/HowitzerParticles13" },
+					{ texture = "effects/media/HowitzerParticles14" },
+					
+					duration = 0.05,
+					mipmap = true,
+				},
+				NextState = "Normal",
+			},
+		},
+	})
+	table.insert(Sprites, 
+	{
+		Name = "sblightball_bloom",
+				
+		States =
+		{
+			Normal =  
+			{  
+				Frames =
+				{
+					{ texture = path .. "/effects/media/bloom1", colour = { 0.3, 0.3, 1, 0.45 } },			
+					duration = 0.05,
+					mipmap = true,
+				},
+				NextState = "Normal",
+			},
+		},
+	})
+	local sblightball = DeepCopy(FindProjectile("cannon20mm"))
+	if sblightball then
+		sblightball.SaveName = "sblightball"
+		sblightball.Gravity = 0
+		sblightball.TrailEffect = path .. "/effects/lightball_trail.lua"
+		--sblightball.TrailEffect = "effects/missile_trail.lua"
+		sblightball.DrawBlurredProjectile = false
+		sblightball.Projectile =
+		{
+			Root =
+			{
+				Name = "Root",
+				Angle = 0,
+				Sprite = "sblightball_projectile",
+				Scale = 3,
+				
+				ChildrenInFront =
+				{
+					{
+						Name = "Flame",
+						Angle = 0,
+						Offset = { 0, 0 },
+						Pivot = { 0, 0 },
+						PivotOffset = { 0, 0 },
+						Sprite = "sblightball_bloom",
+						Additive = true,
+						Scale = 2.5,
+					},
+				},
+			}
+		}
+		table.insert(Projectiles, sblightball)
+	end
+	
+	-- Lightning sniper starter projectile. Adjust these values to tune it without
+	-- changing the standard sniper projectile.
+	local sbzapsniper = DeepCopy(FindProjectile("laser"))
+	if sbzapsniper then
+		sbzapsniper.SaveName = "sbzapsniper"
+		sbzapsniper.ProjectileIncendiary = false
+		sbzapsniper.IgnitesBackgroundMaterials = false
+		sbzapsniper.IgnitesBackgroundMaterialsPassing = false
+		sbzapsniper.IgnitesBackgroundMaterialsPassingSource = false
+		sbzapsniper.ProjectileDamage = 52
+		sbzapsniper.AntiAirDamage = 1.5
+		sbzapsniper.DamageMultiplier =
+		{
+			{ SaveName = "machinegun", AntiAir = 0 },
+			{ SaveName = "minigun", AntiAir = 0 },
+			{ SaveName = "sniper", AntiAir = 0 },
+			{ SaveName = "sniper2", AntiAir = 0 },
+			{ SaveName = "cannon", AntiAir = 0 },
+			{ SaveName = "shotgun", AntiAir = 0 },
+			{ SaveName = "flak", AntiAir = 0 },
+			{ SaveName = "flak", AntiAir = 0 },
+			{ SaveName = "sbrailgun", AntiAir = 0 },
+			{ SaveName = "sbrailgunweak", AntiAir = 0 },
+			{ SaveName = "sbflames", AntiAir = 0 },
+			{ SaveName = "sbroofgunner", AntiAir = 0 },
+			{ SaveName = "sbbigminigun", AntiAir = 0 },
+			{ SaveName = "sbfirebullet", AntiAir = 0 },
+			{ SaveName = "sbdowncannon", AntiAir = 0 },
+			{ SaveName = "sbdowngunner", AntiAir = 0 },
+			{ SaveName = "sbdownminigun", AntiAir = 0 },
+			{ SaveName = "sb50cal", AntiAir = 0 },
+			{ SaveName = "weapon", Direct = 1.5 },
+			{ SaveName = "turbine", Direct = 0.6 },
+			{ SaveName = "turbine2", Direct = 0.6 },
+			{ SaveName = "sniper", Direct = 1 },
+			{ SaveName = "sniper2", Direct = 1 },
+			{ SaveName = "armour", Direct = 0.7 },
+			{ SaveName = "door", Direct = 0.5 },
+		}
+		sbzapsniper.ProjectileSprite = nil
+		sbzapsniper.Beam = 
         {
-            ZapChargesOnDeviceDestroyed = 0,
-            Count = 2,
-            SeparationAngle = 20,
-        }
-	sbzap.Effects.Impact =
-	{
-		default = { Effect =  "effects/mortar_air_burst.lua", Projectile = { Count = 1, Type = "lightningbolt", StdDev = 0.0 },  Terminate = true, }
-	}
-	table.insert(Projectiles, sbzap)
+            Sprites = 
+            {
+                [1] = 
+                {
+                    Sprite = "lightning_beam",
+                    TileRate = 2400,
+                    ScrollRate = -4,
+                    Additive = true,
+                },
+                [2] = 
+                {
+                    Sprite = "striker",
+                    TileRate = 2400,
+                    ScrollRate = -2,
+                    Additive = true,
+                },
+                [3] = 
+                {
+                    Sprite = "striker_highlight",
+                    TileRate = 300,
+                    ScrollRate = -10,
+                    Additive = true,
+                },
+                [4] = 
+                {
+                    Sprite = "striker_highlightB",
+                    TileRate = 500,
+                    ScrollRate = -5,
+                    Additive = true,
+                },
+            },
+        },
+		table.insert(Projectiles, sbzapsniper)
+	end
+	--[[
+	local sbzap = DeepCopy(FindProjectile("mortar2"))
+	if sbzap and sbDLC3 then
+		sbzap.SaveName = "sbzapmortar"
+		sbzap.ProjectileSplashDamage = sbzap.ProjectileSplashDamage / 2
+		sbzap.LightningParams =
+		{
+			MaxTravel = 10000,
+			ChainDistance = 500,
+			AdditionalChargeDamage = 65,
+			MaxAngle = 10,
+			Damage = 65,
+		}
+		sbzap.LightningProjectileParams = 
+			{
+				ZapChargesOnDeviceDestroyed = 0,
+				Count = 2,
+				SeparationAngle = 20,
+			}
+		sbzap.Effects.Impact =
+		{
+			default = { Effect =  "effects/mortar_air_burst.lua", Projectile = { Count = 1, Type = "lightningbolt", StdDev = 0.0 },  Terminate = true, }
+		}
+		table.insert(Projectiles, sbzap)
+	end
+	]]
+	--[[
+	local sbminilightning = DeepCopy(FindProjectile("striker"))
+	if sbminilightning then
+		sbminilightning.SaveName = "sbminilightning"
+		sbminilightning.ProjectileThickness = 150
+		sbminilightning.AntiAirDamage = 10
+		sbminilightning.BeamDamage = nil
+		table.insert(Projectiles, sbminilightning)
+	end]]
 end
-]]
---[[
-local sbminilightning = DeepCopy(FindProjectile("striker"))
-if sbminilightning then
-	sbminilightning.SaveName = "sbminilightning"
-	sbminilightning.ProjectileThickness = 150
-	sbminilightning.AntiAirDamage = 10
-	sbminilightning.BeamDamage = nil
-	table.insert(Projectiles, sbminilightning)
-end]]
 --//END PROJECTILE INSERTION//--
 
 --Isolated projectile lists:

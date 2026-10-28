@@ -23,10 +23,23 @@ for k,v in pairs(Weapons) do
     if not v.Upgrades then v.Upgrades = {} end
 end
 table.insert(Sprites, ButtonSprite("hud-sbbg-upgrade", "context/sbbgupgrade", nil, nil, nil, nil, path))
---test for tog
+
+--test for additions
 sbToG = false
+sbMS = false
+sbHS = false
+sbFB = false
 if FindWeapon("flak") or FindWeapon("shotgun") or FindWeapon("rocketemp") or FindWeapon("rocket") or FindWeapon("cannon20mm") or FindWeapon("firebeam") then
 	sbToG = true
+end
+if FindWeapon('buzzsaw') or FindWeapon("howitzer") then
+	sbMS = true
+end
+if FindWeapon('dome') or FindWeapon('turret') then
+	sbHS = true
+end
+if FindWeapon('zapper') or FindWeapon('striker') then
+	sbFB = true
 end
 
 --if tog is disabled then add tog sprites 
@@ -563,6 +576,7 @@ table.insert(Weapons, IndexOfWeapon("sbssm"),
 		},
 	ObserverBuildEvent = true,
 })
+
 table.insert(Weapons, IndexOfWeapon("sniper") + 1,
 {
 		Enabled = false,
@@ -2292,29 +2306,58 @@ if bpc then
 		)
 	)
 end]]
-local sbrailgun = FindWeapon("cannon")
-if sbrailgun and FindWeapon("lightningbeam") then
-	table.insert(Sprites, sbDetailSprite("hud-detail-sbrailgun", "railgun2", path))
-	table.insert(Sprites, ButtonSprite("hud-sbrailgun-icon", "HUD/HUD-railgun", nil, nil, nil, nil, path))
-	table.insert(Weapons, IndexOfWeapon("lightningbeam") + 1,
-		InheritType(sbrailgun,nil,
-			{
-				Enabled = true,
-				SaveName = "sbrailgun",
-				FileName = path .. "/weapons/sbrailgun/railgun.lua",
-				Icon = "hud-sbrailgun-icon",
-				Detail = "hud-detail-sbrailgun",
-				MetalCost = 1650,
-				EnergyCost = 14000,
-				Prerequisite = {{"smelter"}, {"smelter2"}},
-				--PrerequisiteAlt = "smelter2",
-				SpotterFactor = 0,
-				BuildTimeComplete = 180.0,
-				Upgrades = {},
-				MaxWeaponGroupSize = 1,
-			}
+if sbFB then
+	table.insert(Weapons, IndexOfWeapon("striker"),
+	{
+		Enabled = true,
+		SaveName = "sbzapsniper",
+		FileName = path .. "/weapons/sbzapsniper/sbzapsniper.lua",
+		Icon = "hud-snipertower-icon",
+		GroupButton = "hud-group-sniper",
+		Detail = "hud-detail-sniper",
+		Prerequisite = "smelter",
+		BuildTimeIntermediate = 3.0,
+		BuildTimeComplete = 18.0,
+		ScrapPeriod = 5,
+		MetalCost = 200,
+		EnergyCost = 2000,
+		MetalRepairCost = 15,
+		EnergyRepairCost = 180,
+		MetalReclaimMin = 0.25,
+		MetalReclaimMax = 0.5,
+		EnergyReclaimMin = 0.1,
+		EnergyReclaimMax = 0.5,
+		SpotterFactor = 1,
+		MaxSpotterAssistance = 0.2,
+		MaxUpAngle = StandardMaxUpAngle,
+		MaxWeaponGroupSize = 1,
+		BuildOnGroundOnly = false,
+		SelectEffect = "ui/hud/weapons/ui_weapons",
+	})
+	local sbrailgun = FindWeapon("cannon")
+	if sbrailgun then
+		table.insert(Sprites, sbDetailSprite("hud-detail-sbrailgun", "railgun2", path))
+		table.insert(Sprites, ButtonSprite("hud-sbrailgun-icon", "HUD/HUD-railgun", nil, nil, nil, nil, path))
+		table.insert(Weapons, IndexOfWeapon("lightningbeam") + 1,
+			InheritType(sbrailgun,nil,
+				{
+					Enabled = true,
+					SaveName = "sbrailgun",
+					FileName = path .. "/weapons/sbrailgun/railgun.lua",
+					Icon = "hud-sbrailgun-icon",
+					Detail = "hud-detail-sbrailgun",
+					MetalCost = 1650,
+					EnergyCost = 14000,
+					Prerequisite = {{"smelter"}, {"smelter2"}},
+					--PrerequisiteAlt = "smelter2",
+					SpotterFactor = 0,
+					BuildTimeComplete = 180.0,
+					Upgrades = {},
+					MaxWeaponGroupSize = 1,
+				}
+			)
 		)
-	)
+	end
 end
 --[[
 local sbcoilmortar = FindWeapon("mortar2")

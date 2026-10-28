@@ -3577,8 +3577,8 @@ end
 --firebeamversions
 sbflametrail = "mods/weapon_pack/effects/flaming_trail.lua"
 sbflametrailsmall = "mods/weapon_pack/effects/flaming_sniper_trail.lua"
---In older versions of forts, their built in function was broken. Its fixed now, but this still works so theres no point in removing it.
-function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
+--In older versions of forts, their built in function was broken. Its fixed now, and mine is now outdated. Replacing it with a simple wrapper function.
+--[[function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
 	local projectile = FindProjectile(saveName)
 	--cancel if projectile not found
 	if not projectile then return end
@@ -3634,6 +3634,9 @@ function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incend
 		end
 	end
 	table.insert(Projectiles, flamingProjectile)
+end]]
+function sbMakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)
+	MakeFlamingVersion(saveName, damageBoost, maxAge, path .. "/effects/" .. trailEffect .. ".lua", incendiaryRadius, flareEffect, expireEffect)
 end
 --flaming versions
 --MakeFlamingVersion(saveName, damageBoost, maxAge, trailEffect, incendiaryRadius, flareEffect, expireEffect)

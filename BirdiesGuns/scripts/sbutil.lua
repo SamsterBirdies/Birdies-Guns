@@ -160,10 +160,10 @@ function SpriteSheet(texture, iterations, iterations_per_row, duration)
 		table.insert(Frames, 
 		{ 
 			texture = texture, 
-			left = (i % iterations_per_row) / iterations_per_row
-			right = ((i % iterations_per_row) + 1) / iterations_per_row
-			top = math.floor(i / iterations_per_row) / math.ceil(iterations / iterations_per_row)
-			bottom = math.floor((i / iterations_per_row) + 1) / math.ceil(iterations / iterations_per_row)
+			left = (i % iterations_per_row) / iterations_per_row,
+			right = ((i % iterations_per_row) + 1) / iterations_per_row,
+			top = math.floor(i / iterations_per_row) / math.ceil(iterations / iterations_per_row),
+			bottom = math.floor((i / iterations_per_row) + 1) / math.ceil(iterations / iterations_per_row),
 		})
 	end
 	Frames.duration = duration

@@ -2327,7 +2327,6 @@ if sbFB then
 		MetalReclaimMax = 0.5,
 		EnergyReclaimMin = 0.1,
 		EnergyReclaimMax = 0.5,
-		SpotterFactor = 1,
 		MaxSpotterAssistance = 0.2,
 		MaxUpAngle = StandardMaxUpAngle,
 		MaxWeaponGroupSize = 1,

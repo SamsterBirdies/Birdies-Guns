@@ -3181,7 +3181,7 @@ if sbDLC3 then
 		sbzapsniper.IgnitesBackgroundMaterialsPassing = false
 		sbzapsniper.IgnitesBackgroundMaterialsPassingSource = false
 		sbzapsniper.ProjectileDamage = 52
-		sbzapsniper.AntiAirDamage = 1.5
+		sbzapsniper.AntiAirDamage = 2
 		sbzapsniper.DamageMultiplier =
 		{
 			{ SaveName = "machinegun", AntiAir = 0 },
@@ -3244,7 +3244,19 @@ if sbDLC3 then
                     Additive = true,
                 },
             },
-        },
+        }
+		sbzapsniper.Effects = sbzapsniper.Effects or {}
+		sbzapsniper.Effects.Impact =
+		{
+			["default"] = path .. "/effects/sbzapsniper_impact.lua",
+			["shield"] = path .. "/effects/sbzapsniper_deflect.lua",
+		}
+		sbzapsniper.Effects.Deflect =
+		{
+			["armour"] = path .. "/effects/sbzapsniper_deflect.lua",
+			["door"] = path .. "/effects/sbzapsniper_deflect.lua",
+			["default"] = path .. "/effects/sbzapsniper_deflect.lua",
+		}
 		table.insert(Projectiles, sbzapsniper)
 	end
 	--[[

@@ -27,20 +27,30 @@ Sprites =
 }
 
 Projectile = "sbzapsniper"
+FireEffect = path .. "/effects/sbzapsniper_fire.lua"
+ReloadEffect = path .. "/effects/sbzapsniper_reload.lua"
 
 -- Basic firing and economy tuning.
-EnergyFireCost = 100
+EnergyFireCost = 200
 MetalFireCost = 0
-BeamDuration = 4
+BeamDuration = 5
 HoldToFire = true
 CanUpdateAimWhileFiring = true
 
 CanOverheat = true
-HeatPeriod = 3.96
-CoolPeriod = 10
-CoolPeriodOverheated = 12
+HeatPeriod = 4.2
+CoolPeriod = 11
+CoolPeriodOverheated = 14
 KickbackMean = 0
 KickbackStdDev = 0
+NodeEffects =
+{
+	{
+		NodeName = "Hardpoint0",
+		EffectPath = path .. "/effects/sbzapsniper_overheat.lua",
+		Automatic = false,
+	},
+}
 MinFireAngle = -25
 MaxFireAngle = 40
 BarrelLength = 76

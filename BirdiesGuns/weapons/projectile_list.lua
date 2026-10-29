@@ -3244,6 +3244,17 @@ if sbDLC3 then
                     Additive = true,
                 },
             },
+			LightningEffects = 
+			{
+				{
+					Additive = true,
+					Effect = path .. "/effects/sbzapsniper_trail.lua",
+					EffectDuration = 0.04,
+					Frequency = 0.08,
+					MinSegmentLength = 1000,
+					MaxSegmentLength = 10000,
+				},
+			}
         }
 		sbzapsniper.Effects = sbzapsniper.Effects or {}
 		sbzapsniper.Effects.Impact =

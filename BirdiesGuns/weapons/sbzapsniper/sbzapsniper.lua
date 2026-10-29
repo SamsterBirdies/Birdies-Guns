@@ -9,19 +9,28 @@ ReloadTime = 0
 Sprites =
 {
 	{
-		Name = "sbzapsniper-base",
+		Name = "sbzapsniperfire",
+		InitialState = "Null",
 		States =
 		{
-			Normal = { Frames = { { texture = path .. "/weapons/sbzapsniper/base.png" }, mipmap = true, }, },
-			Idle = Normal,
-		},
-	},
-	{
-		Name = "sbzapsniper-head",
-		States =
-		{
-			Normal = { Frames = { { texture = path .. "/weapons/sbzapsniper/head.png" }, mipmap = true, }, },
-			Idle = Normal,
+			Null = {},
+			Flash =
+			{
+				Frames =
+				{
+					{ texture = path .. "/weapons/sbzapsniper/zapsniperfire.png", colour = { 1, 1, 1, 1 }} ,
+					{ texture = path .. "/weapons/sbzapsniper/zapsniperfire.png", colour = { 1, 1, 1, 0.5 }} ,
+					{ texture = path .. "/weapons/sbzapsniper/zapsniperfire.png", colour = { 1, 1, 1, 1 }} ,
+					{ texture = path .. "/weapons/sbzapsniper/zapsniperfire.png", colour = { 1, 1, 1, 0.5 }} ,
+					duration = 0.04,
+					mipmap = true,
+				},
+				--RandomPlayLength = 2,
+				NextState = "Flash",
+				
+				LoopLength = 5,
+				LoopExitState = "Null",
+			},
 		},
 	},
 }
@@ -29,6 +38,7 @@ Sprites =
 Projectile = "sbzapsniper"
 FireEffect = path .. "/effects/sbzapsniper_fire.lua"
 ReloadEffect = path .. "/effects/sbzapsniper_reload.lua"
+ShellEffect = nil
 
 -- Basic firing and economy tuning.
 EnergyFireCost = 200
@@ -36,7 +46,7 @@ MetalFireCost = 0
 BeamDuration = 5
 HoldToFire = true
 CanUpdateAimWhileFiring = true
-
+HitPoints = 70
 CanOverheat = true
 HeatPeriod = 4.2
 CoolPeriod = 11
@@ -47,10 +57,11 @@ NodeEffects =
 {
 	{
 		NodeName = "Hardpoint0",
-		EffectPath = path .. "/effects/sbzapsniper_overheat.lua",
+		EffectPath = "effects/weapon_overheated.lua",
 		Automatic = false,
 	},
 }
+
 MinFireAngle = -25
 MaxFireAngle = 40
 BarrelLength = 76
@@ -63,7 +74,7 @@ Root =
 	Angle = 0,
 	Pivot = { 0.0, -0.55 },
 	PivotOffset = { 0, 0 },
-	Sprite = "sbzapsniper-base",
+	Sprite = path .. "/weapons/sbzapsniper/base.png",
 	UserData = 0,
 
 	ChildrenBehind =
@@ -73,7 +84,7 @@ Root =
 			Angle = 0,
 			Pivot = {-0.13671875, -0.05859375},
 			PivotOffset = {0.224609375, 0.1171875},
-			Sprite = "sbzapsniper-head",
+			Sprite = path .. "/weapons/sbzapsniper/head.png",
 			UserData = 75,
 
 			ChildrenInFront =
@@ -89,6 +100,15 @@ Root =
 					Angle = 0,
 					Pivot = { -0.17, -0.15 },
 					PivotOffset = { 0, 0 },
+				},
+				{
+					Name = "MuzzleFlash",
+					Angle = 0,
+					Pivot = {0.125, -0.125},
+					PivotOffset = { 0, 0 },
+					Sprite = "sbzapsniperfire",
+					Visible = false,
+					Additive = true,
 				},
 			},
 		},

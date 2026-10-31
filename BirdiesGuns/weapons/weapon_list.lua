@@ -2307,17 +2307,19 @@ if bpc then
 	)
 end]]
 if sbFB then
+	table.insert(Sprites, sbDetailSprite("hud-detail-sbzapsniper", "zapsniper", path))
+	table.insert(Sprites, ButtonSprite("hud-sbzapsniper-icon", "HUD/HUD-zapsniper", nil, nil, nil, nil, path))
 	table.insert(Weapons, IndexOfWeapon("striker"),
 	{
 		Enabled = true,
 		SaveName = "sbzapsniper",
 		FileName = path .. "/weapons/sbzapsniper/sbzapsniper.lua",
-		Icon = "hud-snipertower-icon",
-		GroupButton = "hud-group-sniper",
-		Detail = "hud-detail-sniper",
+		Icon = "hud-sbzapsniper-icon",
+		GroupButton = "hud-group-laser",
+		Detail = "hud-detail-sbzapsniper",
 		Prerequisite = "smelter",
 		BuildTimeIntermediate = 3.0,
-		BuildTimeComplete = 40.0,
+		BuildTimeComplete = 35.0,
 		ScrapPeriod = 5,
 		MetalCost = 300,
 		EnergyCost = 2000,

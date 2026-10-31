@@ -2317,7 +2317,7 @@ if sbFB then
 		Icon = "hud-sbzapsniper-icon",
 		GroupButton = "hud-group-laser",
 		Detail = "hud-detail-sbzapsniper",
-		Prerequisite = "smelter",
+		Prerequisite = {{"smelter"}, {"smelter2"}},
 		BuildTimeIntermediate = 3.0,
 		BuildTimeComplete = 35.0,
 		ScrapPeriod = 5,

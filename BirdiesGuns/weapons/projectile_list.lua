@@ -3182,6 +3182,7 @@ if sbDLC3 then
 		sbzapsniper.IgnitesBackgroundMaterialsPassingSource = false
 		sbzapsniper.ProjectileDamage = 52
 		sbzapsniper.AntiAirDamage = 2
+		sbzapsniper.Impact = 1
 		sbzapsniper.DamageMultiplier =
 		{
 			{ SaveName = "weapon", Direct = 1.5 },

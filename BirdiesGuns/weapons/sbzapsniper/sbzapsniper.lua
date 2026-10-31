@@ -41,6 +41,7 @@ ReloadEffect = path .. "/effects/sbzapsniper_reload.lua"
 ShellEffect = nil
 
 -- Basic firing and economy tuning.
+Recoil = 1
 EnergyFireCost = 200
 MetalFireCost = 0
 BeamDuration = 5

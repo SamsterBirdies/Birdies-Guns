@@ -3250,7 +3250,7 @@ if sbDLC3 then
 					Additive = true,
 					Effect = path .. "/effects/sbzapsniper_trail.lua",
 					EffectDuration = 0.04,
-					Frequency = 0.08,
+					Frequency = 0.04,
 					MinSegmentLength = 1000,
 					MaxSegmentLength = 10000,
 				},

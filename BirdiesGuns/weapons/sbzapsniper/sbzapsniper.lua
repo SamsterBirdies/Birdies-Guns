@@ -4,7 +4,7 @@
 dofile("weapons/snipertower.lua")
 
 -- Define this before the arm's animation frames below use it.
-ReloadTime = 0
+ReloadTime = 0.04
 
 Sprites =
 {
@@ -57,11 +57,11 @@ NodeEffects =
 {
 	{
 		NodeName = "Hardpoint0",
-		EffectPath = "effects/weapon_overheated.lua",
+		--EffectPath = "effects/weapon_overheated.lua",
+		EffectPath = path .. "/effects/sbzapsniper_overheated.lua",
 		Automatic = false,
 	},
 }
-
 MinFireAngle = -25
 MaxFireAngle = 40
 BarrelLength = 76

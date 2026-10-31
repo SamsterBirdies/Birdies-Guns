@@ -3209,6 +3209,8 @@ if sbDLC3 then
 			{ SaveName = "sniper2", Direct = 1 },
 			{ SaveName = "armour", Direct = 0.7 },
 			{ SaveName = "door", Direct = 0.5 },
+			{ SaveName = "sandbags", Direct = 0.5 },
+			{ SaveName = "reactor", Direct = 0.3 },
 		}
 		sbzapsniper.ProjectileSprite = nil
 		sbzapsniper.Beam = 
